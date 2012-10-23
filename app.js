@@ -1,6 +1,6 @@
 var express = require('express')
 	, hb = require('handlebars')
-	, app = express()
+	, app = express.createServer()
 	, data = {}
 	, port = process.env.PORT || 3000;
 
