@@ -1,0 +1,584 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>KeyLimeTie - Resource Allocation</title>
+
+<link href="Styles/Styles.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+<header>
+
+	<h1>Resource Allocation</h1>
+
+</header>
+
+<ul class="Employees">
+	<li><h2>Design Team</h2></li>
+	<li><p>Tammie Babbitt</p></li>
+	<li><p>Elizabeth Karagitlieva</p></li>
+	<li><p>David Mansch</p></li>
+	<li><p>Kevin Mech</p></li>
+	<li><h2>Everyone Else</h2></li>
+	<li><p>Bob Dole</p></li>
+	<li><p>Robert Paulson</p></li>
+</ul>
+
+<div class="Calendar">
+
+	<div class="Dates">
+	
+		<ul class="Month">
+			<li style="width: 532px;">
+				<span></span>
+				<h4>October</h4>
+			</li>
+			<li style="width: 901px;">
+				<span></span>
+				<h4>November</h4>
+			</li>
+			<li style="width: 862px;">
+				<span></span>
+				<h4>December</h4>
+			</li>
+		</ul>
+
+		<ul class="Day">
+			<li>
+				<span></span>
+				<ul><li>
+					<h5>15<br /><span>Mon</span></h5></li><li>
+					<h5>16<br /><span>Tue</span></h5></li><li>
+					<h5>17<br /><span>Wed</span></h5></li><li>
+					<h5>18<br /><span>Thr</span></h5></li><li>
+					<h5>19<br /><span>Fri</span></h5></li>
+				</ul>
+			</li><li>
+				<span></span>
+				<ul><li>
+					<h5>22<br /><span>Mon</span></h5></li><li>
+					<h5>23<br /><span>Tue</span></h5></li><li>
+					<h5>24<br /><span>Wed</span></h5></li><li>
+					<h5>25<br /><span>Thr</span></h5></li><li>
+					<h5>26<br /><span>Fri</span></h5></li>
+				</ul>
+			</li><li>
+				<span></span>
+				<ul><li>
+					<h5>29<br /><span>Mon</span></h5></li><li>
+					<h5>30<br /><span>Tue</span></h5></li><li>
+					<h5>31<br /><span>Wed</span></h5></li><li>
+					<h5>1<br /><span>Thr</span></h5></li><li>
+					<h5>2<br /><span>Fri</span></h5></li>
+				</ul>
+			</li><li>
+				<span></span>
+				<ul><li>
+					<h5>5<br /><span>Mon</span></h5></li><li>
+					<h5>6<br /><span>Tue</span></h5></li><li>
+					<h5>7<br /><span>Wed</span></h5></li><li>
+					<h5>8<br /><span>Thr</span></h5></li><li>
+					<h5>9<br /><span>Fri</span></h5></li>
+				</ul>
+			</li><li>
+				<span></span>
+				<ul><li>
+					<h5>12<br /><span>Mon</span></h5></li><li>
+					<h5>13<br /><span>Tue</span></h5></li><li>
+					<h5>14<br /><span>Wed</span></h5></li><li>
+					<h5>15<br /><span>Thr</span></h5></li><li>
+					<h5>16<br /><span>Fri</span></h5></li>
+				</ul>
+			</li><li>
+				<span></span>
+				<ul><li>
+					<h5>19<br /><span>Mon</span></h5></li><li>
+					<h5>20<br /><span>Tue</span></h5></li><li>
+					<h5>21<br /><span>Wed</span></h5></li><li>
+					<h5>22<br /><span>Thr</span></h5></li><li>
+					<h5>23<br /><span>Fri</span></h5></li>
+				</ul>
+			</li><li>
+				<span></span>
+				<ul><li>
+					<h5>26<br /><span>Mon</span></h5></li><li>
+					<h5>27<br /><span>Tue</span></h5></li><li>
+					<h5>28<br /><span>Wed</span></h5></li><li>
+					<h5>29<br /><span>Thr</span></h5></li><li>
+					<h5>30<br /><span>Fri</span></h5></li>
+				</ul>
+			</li><li>
+				<span></span>
+				<ul><li>
+					<h5>3<br /><span>Mon</span></h5></li><li>
+					<h5>4<br /><span>Tue</span></h5></li><li>
+					<h5>5<br /><span>Wed</span></h5></li><li>
+					<h5>6<br /><span>Thr</span></h5></li><li>
+					<h5>7<br /><span>Fri</span></h5></li>
+				</ul>
+			</li><li>
+				<span></span>
+				<ul><li>
+					<h5>10<br /><span>Mon</span></h5></li><li>
+					<h5>11<br /><span>Tue</span></h5></li><li>
+					<h5>12<br /><span>Wed</span></h5></li><li>
+					<h5>13<br /><span>Thr</span></h5></li><li>
+					<h5>14<br /><span>Fri</span></h5></li>
+				</ul>
+			</li><li>
+				<span></span>
+				<ul><li>
+					<h5>17<br /><span>Mon</span></h5></li><li>
+					<h5>18<br /><span>Tue</span></h5></li><li>
+					<h5>19<br /><span>Wed</span></h5></li><li>
+					<h5>20<br /><span>Thr</span></h5></li><li>
+					<h5>21<br /><span>Fri</span></h5></li>
+				</ul>
+			</li><li>
+				<span></span>
+				<ul><li>
+					<h5>24<br /><span>Mon</span></h5></li><li>
+					<h5>25<br /><span>Tue</span></h5></li><li>
+					<h5>26<br /><span>Wed</span></h5></li><li>
+					<h5>27<br /><span>Thr</span></h5></li><li>
+					<h5>28<br /><span>Fri</span></h5></li>
+				</ul>
+			</li><li>
+				<span></span>
+				<ul><li>
+					<h5>31<br /><span>Mon</span></h5></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+
+	<div class="Projects">
+	
+		<ul>
+			<li> <!-- ------------------ Tammie Babbitt ------------------ -->
+				<ul>
+					<li class="Duration-1 Day-1 Purple Expanded-">
+						<div>
+							<div>
+								<h6 contenteditable="true">Resolute Consulting</h6>
+								<span class="Dash">&ndash;</span>
+								<p contenteditable="true">Description of the project in question.</p>
+								<span class="Colors"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span class="Selected"></span><span></span><span></span></span>
+								<span class="Dots"><span></span><span></span><span></span></span>
+							</div>
+						</div>
+					</li>
+					<li class="Duration-1 Day-2 Lime Expanded-">
+						<div>
+							<div>
+								<h6 contenteditable="true">KeyLimeTie</h6>
+								<span class="Dash">&ndash;</span>
+								<p contenteditable="true">Description of the project in question.</p>
+								<span class="Colors"><span></span><span></span><span></span><span></span><span class="Selected"></span><span></span><span></span><span></span><span></span><span></span></span>
+								<span class="Dots"><span></span><span></span><span></span></span>
+							</div>
+						</div>
+					</li>
+					<li class="Duration-8 Day-3 Red Expanded-">
+						<div>
+							<div>
+								<h6 contenteditable="true">MojoBistro</h6>
+								<span class="Dash">&ndash;</span>
+								<p contenteditable="true">Description of the project in question.</p>
+								<span class="Colors"><span class="Selected"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span>
+								<span class="Dots"><span></span><span></span><span></span></span>
+							</div>
+						</div>
+					</li>
+					<li class="Duration-5 Day-11 Lime Expanded-">
+						<div>
+							<div>
+								<h6 contenteditable="true">KeyLimeTie</h6>
+								<span class="Dash">&ndash;</span>
+								<p contenteditable="true">Description of the project in question.</p>
+								<span class="Colors"><span></span><span></span><span></span><span class="Selected"></span><span></span><span></span><span></span><span></span><span></span><span></span></span>
+								<span class="Dots"><span></span><span></span><span></span></span>
+							</div>
+						</div>
+					</li>
+					<li class="Duration-10 Day-16 Red Expanded-">
+						<div>
+							<div>
+								<h6 contenteditable="true">MojoBistro</h6>
+								<span class="Dash">&ndash;</span>
+								<p contenteditable="true">Description of the project in question.</p>
+								<span class="Colors"><span class="Selected"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span>
+								<span class="Dots"><span></span><span></span><span></span></span>
+							</div>
+						</div>
+					</li>
+					<li class="Duration-1 Day-26 Placement"><div></div></li>
+					<li class="Duration-2 Day-29 White Expanded- Placement">
+						<div>
+							<div>
+								<h6 contenteditable="true">Vacation</h6>
+								<span class="Dash">&ndash;</span>
+								<p contenteditable="true">Thanksgiving</p>
+								<span class="Colors"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span class="Selected"></span></span>
+								<span class="Dots"><span></span><span></span><span></span></span>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li> <!-- ------------------ Elizabeth Karagitlieva ------------------ -->
+				<ul>
+					<li class="Duration-5 Day-1 Blue Expanded-">
+						<div>
+							<div>
+								<h6 contenteditable="true">iTravel</h6>
+								<span class="Dash">&ndash;</span>
+								<p contenteditable="true">Description of the project in question.</p>
+								<span class="Colors"><span></span><span></span><span></span><span></span><span></span><span></span><span class="Selected"></span><span></span><span></span><span></span></span>
+								<span class="Dots"><span></span><span></span><span></span></span>
+							</div>
+						</div>
+					</li>
+					<li class="Duration-2 Day-6 Green Expanded-">
+						<div>
+							<div>
+								<h6 contenteditable="true">Carlucci</h6>
+								<span class="Dash">&ndash;</span>
+								<p contenteditable="true">Description of the project in question.</p>
+								<span class="Colors"><span></span><span></span><span></span><span></span><span class="Selected"></span><span></span><span></span><span></span><span></span><span></span></span>
+								<span class="Dots"><span></span><span></span><span></span></span>
+							</div>
+						</div>
+					</li>
+					<li class="Duration-8 Day-8 Blue Expanded-">
+						<div>
+							<div>
+								<h6 contenteditable="true">ACG</h6>
+								<span class="Dash">&ndash;</span>
+								<p contenteditable="true">Description of the project in question.</p>
+								<span class="Colors"><span></span><span></span><span></span><span></span><span></span><span></span><span class="Selected"></span><span></span><span></span><span></span></span>
+								<span class="Dots"><span></span><span></span><span></span></span>
+							</div>
+						</div>
+					</li>
+					<li class="Duration-13 Day-16 Blue Expanded-">
+						<div>
+							<div>
+								<h6 contenteditable="true">iTravel</h6>
+								<span class="Dash">&ndash;</span>
+								<p contenteditable="true">Description of the project in question.</p>
+								<span class="Colors"><span></span><span></span><span></span><span></span><span></span><span></span><span class="Selected"></span><span></span><span></span><span></span></span>
+								<span class="Dots"><span></span><span></span><span></span></span>
+							</div>
+						</div>
+					</li>
+					<li class="Duration-2 Day-29 White Expanded-">
+						<div>
+							<div>
+								<h6 contenteditable="true">Vacation</h6>
+								<span class="Dash">&ndash;</span>
+								<p contenteditable="true">Thanksgiving</p>
+								<span class="Colors"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span class="Selected"></span></span>
+								<span class="Dots"><span></span><span></span><span></span></span>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li> <!-- ------------------ David Mansch ------------------ -->
+				<ul>
+					<li class="Duration-1 Day-1 Orange Expanded-">
+						<div>
+							<div>
+								<h6 contenteditable="true">Energy Infuser</h6>
+								<span class="Dash">&ndash;</span>
+								<p contenteditable="true">Description of the project in question.</p>
+								<span class="Colors"><span></span><span class="Selected"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span>
+								<span class="Dots"><span></span><span></span><span></span></span>
+							</div>
+						</div>
+					</li>
+					<li class="Duration-2 Day-2 Blue Expanded-">
+						<div>
+							<div>
+								<h6 contenteditable="true">iTravel</h6>
+								<span class="Dash">&ndash;</span>
+								<p contenteditable="true">Description of the project in question.</p>
+								<span class="Colors"><span></span><span></span><span></span><span></span><span></span><span></span><span class="Selected"></span><span></span><span></span><span></span></span>
+								<span class="Dots"><span></span><span></span><span></span></span>
+							</div>
+						</div>
+					</li>
+					<li class="Duration-2 Day-4 Orange Expanded-">
+						<div>
+							<div>
+								<h6 contenteditable="true">Energy Infuser</h6>
+								<span class="Dash">&ndash;</span>
+								<p contenteditable="true">Description of the project in question.</p>
+								<span class="Colors"><span></span><span class="Selected"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span>
+								<span class="Dots"><span></span><span></span><span></span></span>
+							</div>
+						</div>
+					</li>
+					<li class="Duration-2 Day-6 Aqua Expanded-">
+						<div>
+							<div>
+								<h6 contenteditable="true">Scrubzz</h6>
+								<span class="Dash">&ndash;</span>
+								<p contenteditable="true">Description of the project in question.</p>
+								<span class="Colors"><span></span><span></span><span></span><span></span><span></span><span class="Selected"></span><span></span><span></span><span></span><span></span></span>
+								<span class="Dots"><span></span><span></span><span></span></span>
+							</div>
+						</div>
+					</li>
+					<li class="Duration-3 Day-8 Orange Expanded-">
+						<div>
+							<div>
+								<h6 contenteditable="true">Energy Infuser</h6>
+								<span class="Dash">&ndash;</span>
+								<p contenteditable="true">Description of the project in question.</p>
+								<span class="Colors"><span></span><span class="Selected"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span>
+								<span class="Dots"><span></span><span></span><span></span></span>
+							</div>
+						</div>
+					</li>
+					<li class="Duration-1 Day-11 Green Expanded-">
+						<div>
+							<div>
+								<h6 contenteditable="true">Carlucci</h6>
+								<span class="Dash">&ndash;</span>
+								<p contenteditable="true">Description of the project in question.</p>
+								<span class="Colors"><span></span><span></span><span></span><span></span><span class="Selected"></span><span></span><span></span><span></span><span></span><span></span></span>
+								<span class="Dots"><span></span><span></span><span></span></span>
+							</div>
+						</div>
+					</li>
+					<li class="Duration-4 Day-12 Orange Expanded-">
+						<div>
+							<div>
+								<h6 contenteditable="true">Energy Infuser</h6>
+								<span class="Dash">&ndash;</span>
+								<p contenteditable="true">Description of the project in question.</p>
+								<span class="Colors"><span></span><span class="Selected"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span>
+								<span class="Dots"><span></span><span></span><span></span></span>
+							</div>
+						</div>
+					</li>
+					<li class="Duration-10 Day-16 Aqua Expanded-">
+						<div>
+							<div>
+								<h6 contenteditable="true">Scrubzz</h6>
+								<span class="Dash">&ndash;</span>
+								<p contenteditable="true">Description of the project in question.</p>
+								<span class="Colors"><span></span><span></span><span></span><span></span><span></span><span class="Selected"></span><span></span><span></span><span></span><span></span></span>
+								<span class="Dots"><span></span><span></span><span></span></span>
+							</div>
+						</div>
+					</li>
+					<li class="Duration-3 Day-26 Red Expanded-">
+						<div>
+							<div>
+								<h6 contenteditable="true">MojoBistro</h6>
+								<span class="Dash">&ndash;</span>
+								<p contenteditable="true">Description of the project in question.</p>
+								<span class="Colors"><span class="Selected"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span>
+								<span class="Dots"><span></span><span></span><span></span></span>
+							</div>
+						</div>
+					</li>
+					<li class="Duration-2 Day-29 White Expanded-">
+						<div>
+							<div>
+								<h6 contenteditable="true">Vacation</h6>
+								<span class="Dash">&ndash;</span>
+								<p contenteditable="true">Thanksgiving</p>
+								<span class="Colors"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span class="Selected"></span></span>
+								<span class="Dots"><span></span><span></span><span></span></span>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li> <!-- ------------------ Kevin Mech ------------------ -->
+				<ul>
+					<li class="Duration-1 Day-1 Purple Expanded-">
+						<div>
+							<div>
+								<h6 contenteditable="true">Resolute Consulting</h6>
+								<span class="Dash">&ndash;</span>
+								<p contenteditable="true">Description of the project in question.</p>
+								<span class="Colors"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span class="Selected"></span><span></span><span></span></span>
+								<span class="Dots"><span></span><span></span><span></span></span>
+							</div>
+						</div>
+					</li>
+					<li class="Duration-2 Day-2 Blue Expanded-">
+						<div>
+							<div>
+								<h6 contenteditable="true">iTravel</h6>
+								<span class="Dash">&ndash;</span>
+								<p contenteditable="true">Description of the project in question.</p>
+								<span class="Colors"><span></span><span></span><span></span><span></span><span></span><span></span><span class="Selected"></span><span></span><span></span><span></span></span>
+								<span class="Dots"><span></span><span></span><span></span></span>
+							</div>
+						</div>
+					</li>
+					<li class="Duration-2 Day-4 Orange Expanded-">
+						<div>
+							<div>
+								<h6 contenteditable="true">Energy Infuser</h6>
+								<span class="Dash">&ndash;</span>
+								<p contenteditable="true">Description of the project in question.</p>
+								<span class="Colors"><span></span><span class="Selected"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span>
+								<span class="Dots"><span></span><span></span><span></span></span>
+							</div>
+						</div>
+					</li>
+					<li class="Duration-2 Day-6 Aqua Expanded-">
+						<div>
+							<div>
+								<h6 contenteditable="true">Scrubzz</h6>
+								<span class="Dash">&ndash;</span>
+								<p contenteditable="true">Description of the project in question.</p>
+								<span class="Colors"><span></span><span></span><span></span><span></span><span></span><span class="Selected"></span><span></span><span></span><span></span><span></span></span>
+								<span class="Dots"><span></span><span></span><span></span></span>
+							</div>
+						</div>
+					</li>
+					<li class="Duration-3 Day-8 Blue Expanded-">
+						<div>
+							<div>
+								<h6 contenteditable="true">ACG</h6>
+								<span class="Dash">&ndash;</span>
+								<p contenteditable="true">Description of the project in question.</p>
+								<span class="Colors"><span></span><span></span><span></span><span></span><span></span><span></span><span class="Selected"></span><span></span><span></span><span></span></span>
+								<span class="Dots"><span></span><span></span><span></span></span>
+							</div>
+						</div>
+					</li>
+					<li class="Duration-1 Day-11 Green Expanded-">
+						<div>
+							<div>
+								<h6 contenteditable="true">Carlucci</h6>
+								<span class="Dash">&ndash;</span>
+								<p contenteditable="true">Description of the project in question.</p>
+								<span class="Colors"><span></span><span></span><span></span><span></span><span class="Selected"></span><span></span><span></span><span></span><span></span><span></span></span>
+								<span class="Dots"><span></span><span></span><span></span></span>
+							</div>
+						</div>
+					</li>
+					<li class="Duration-2 Day-12 Orange Expanded-">
+						<div>
+							<div>
+								<h6 contenteditable="true">Energy Infuser</h6>
+								<span class="Dash">&ndash;</span>
+								<p contenteditable="true">Description of the project in question.</p>
+								<span class="Colors"><span></span><span class="Selected"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span>
+								<span class="Dots"><span></span><span></span><span></span></span>
+							</div>
+						</div>
+					</li>
+					<li class="Duration-1 Day-14 Red Expanded-">
+						<div>
+							<div>
+								<h6 contenteditable="true">MojoBistro</h6>
+								<span class="Dash">&ndash;</span>
+								<p contenteditable="true">Description of the project in question.</p>
+								<span class="Colors"><span class="Selected"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span>
+								<span class="Dots"><span></span><span></span><span></span></span>
+							</div>
+						</div>
+					</li>
+					<li class="Duration-1 Day-15 Lime Expanded-">
+						<div>
+							<div>
+								<h6 contenteditable="true">KeyLimeTie</h6>
+								<span class="Dash">&ndash;</span>
+								<p contenteditable="true">Description of the project in question.</p>
+								<span class="Colors"><span></span><span></span><span></span><span></span><span class="Selected"></span><span></span><span></span><span></span><span></span><span></span></span>
+								<span class="Dots"><span></span><span></span><span></span></span>
+							</div>
+						</div>
+					</li>
+					<li class="Duration-2 Day-16 Aqua Expanded-">
+						<div>
+							<div>
+								<h6 contenteditable="true">Scrubzz</h6>
+								<span class="Dash">&ndash;</span>
+								<p contenteditable="true">Description of the project in question.</p>
+								<span class="Colors"><span></span><span></span><span></span><span></span><span></span><span class="Selected"></span><span></span><span></span><span></span><span></span></span>
+								<span class="Dots"><span></span><span></span><span></span></span>
+							</div>
+						</div>
+					</li>
+					<li class="Duration-3 Day-18 Blue Expanded-">
+						<div>
+							<div>
+								<h6 contenteditable="true">ACG</h6>
+								<span class="Dash">&ndash;</span>
+								<p contenteditable="true">Description of the project in question.</p>
+								<span class="Colors"><span></span><span></span><span></span><span></span><span></span><span></span><span class="Selected"></span><span></span><span></span><span></span></span>
+								<span class="Dots"><span></span><span></span><span></span></span>
+							</div>
+						</div>
+					</li>
+					<li class="Duration-5 Day-21 Blue Expanded-">
+						<div>
+							<div>
+								<h6 contenteditable="true">iTravel</h6>
+								<span class="Dash">&ndash;</span>
+								<p contenteditable="true">Description of the project in question.</p>
+								<span class="Colors"><span></span><span></span><span></span><span></span><span></span><span></span><span class="Selected"></span><span></span><span></span><span></span></span>
+								<span class="Dots"><span></span><span></span><span></span></span>
+							</div>
+						</div>
+					</li>
+					<li class="Duration-3 Day-26 Red Expanded-">
+						<div>
+							<div>
+								<h6 contenteditable="true">MojoBistro</h6>
+								<span class="Dash">&ndash;</span>
+								<p contenteditable="true">Description of the project in question.</p>
+								<span class="Colors"><span class="Selected"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span>
+								<span class="Dots"><span></span><span></span><span></span></span>
+							</div>
+						</div>
+					</li>
+					<li class="Duration-2 Day-29 White Expanded-">
+						<div>
+							<div>
+								<h6 contenteditable="true">Vacation</h6>
+								<span class="Dash">&ndash;</span>
+								<p contenteditable="true">Thanksgiving</p>
+								<span class="Colors"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span class="Selected"></span></span>
+								<span class="Dots"><span></span><span></span><span></span></span>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<ul>
+					<li class="Duration-30 Day-1 White Expanded-">
+						<div>
+							<div>
+								<h6 contenteditable="true">Stuff To Do</h6>
+								<span class="Dash">&ndash;</span>
+								<p contenteditable="true">• Click me Boxes • PTO Overlay • WFH Overlay • Text-select Color • Drag/Drop Style • Delete Project • Month Divider • Project Row Spacing</p>
+								<span class="Colors"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span class="Selected"></span></span>
+								<span class="Dots"><span></span><span></span><span></span></span>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	
+	</div>
+<script data-main="Scripts/main" src="js/require.js"></script>
+</body>
+
+</html>

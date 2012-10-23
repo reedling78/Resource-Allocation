@@ -1,0 +1,899 @@
+@charset "UTF-8";
+/* CSS Document */
+
+* {
+	margin: 0;
+	padding: 0;
+	outline: 0;
+}
+
+body {
+	font-size: 62.5%; /* Base font size 10px */
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #d4d4d4;
+}
+
+@font-face {
+    font-family: 'helveticaneuelt_std_med_cnRg';
+    src: url('../Fonts/helveticaneueltstd-mdcn-webfont.eot');
+    src: url('../Fonts/helveticaneueltstd-mdcn-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../Fonts/helveticaneueltstd-mdcn-webfont.woff') format('woff'),
+         url('../Fonts/helveticaneueltstd-mdcn-webfont.ttf') format('truetype'),
+         url('../Fonts/helveticaneueltstd-mdcn-webfont.svg#helveticaneuelt_std_med_cnRg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'HelveticaNeueLTStd45Light';
+    src: url('../Fonts/helveticaneueltstd-lt-webfont.eot');
+    src: url('../Fonts/helveticaneueltstd-lt-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../Fonts/helveticaneueltstd-lt-webfont.woff') format('woff'),
+         url('../Fonts/helveticaneueltstd-lt-webfont.ttf') format('truetype'),
+         url('../Fonts/helveticaneueltstd-lt-webfont.svg#HelveticaNeueLTStd45Light') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'helveticaneuelt_std_lt_cnRg';
+    src: url('../Fonts/helveticaneueltstd-ltcn-webfont.eot');
+    src: url('../Fonts/helveticaneueltstd-ltcn-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../Fonts/helveticaneueltstd-ltcn-webfont.woff') format('woff'),
+         url('../Fonts/helveticaneueltstd-ltcn-webfont.ttf') format('truetype'),
+         url('../Fonts/helveticaneueltstd-ltcn-webfont.svg#helveticaneuelt_std_lt_cnRg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+::selection {background-color: #000; color: #fff;}
+::-moz-selection {background-color: #000; color: #fff;}
+
+/* -------------------------------------------------------- Header -------------------------------------------------------- */
+
+header {
+	padding: 20px 20px 15px;
+}
+
+h1 {
+	font:4.5em/1.2em helveticaneuelt_std_lt_cnRg, Helvetica, Arial, sans-serif;
+	color: #333;
+	text-shadow: 0 1px rgba(255,255,255,1);
+	margin-left: 182px;
+	white-space: nowrap;
+}
+
+/* -------------------------------------------------------- Employees -------------------------------------------------------- */
+
+.Employees {
+	float: left;
+	width: 18.5em;
+	margin-top: 6.8em;
+}
+
+.Employees li {
+	text-align: right;
+	list-style: none;
+}
+
+.Employees li p {
+	font: 2em/1.95em helveticaneuelt_std_med_cnRg, Helvetica, Arial, sans-serif;
+	color: #444;
+	text-shadow: 0 1px rgba(255,255,255,0.8);
+}
+
+.Employees h2 {
+	font: 1.6em/1.2em helveticaneuelt_std_lt_cnRg, Helvetica, Arial, sans-serif;
+	color: #666;
+	text-transform: uppercase;
+	text-shadow: 0 1px rgba(255,255,255,0.8);
+	letter-spacing: 0.05em;
+	margin: 2em 0 0.5em;
+}
+
+.Employees li:first-child h2 {
+	margin-top: 0;
+}
+
+/* -------------------------------------------------------- Calendar -------------------------------------------------------- */
+
+.Calendar {
+	margin: 0 25px 0 195px;
+	border: 1px solid #bbb;
+	position: relative;
+	overflow-x: auto;
+	overflow-y: hidden;
+	box-shadow: 0 1px 10px rgba(0,0,0,0.2);
+	background-color: #fff;
+}
+
+/* -------------------------------------------------------- Dates - Months -------------------------------------------------------- */
+
+.Dates {
+	width: 100%;
+}
+
+.Month {
+	white-space: nowrap;
+}
+
+.Month li {
+	display: inline-block;
+	position: relative;
+/* --------- START Gradient --------- */
+background: #ebebeb;
+
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ViZWJlYiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNkOGQ4ZDgiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+
+background: -moz-linear-gradient(left,  #ebebeb 0%, #d8d8d8 100%);
+
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ebebeb), color-stop(100%,#d8d8d8));
+
+background: -webkit-linear-gradient(left,  #ebebeb 0%,#d8d8d8 100%);
+
+background: -o-linear-gradient(left,  #ebebeb 0%,#d8d8d8 100%);
+
+background: -ms-linear-gradient(left,  #ebebeb 0%,#d8d8d8 100%);
+
+background: linear-gradient(to right,  #ebebeb 0%,#d8d8d8 100%);
+
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebebeb', endColorstr='#d8d8d8',GradientType=1 );
+
+
+/* --------- END Gradient --------- */
+	box-shadow: inset 1px 1px rgba(255,255,255,0.6), inset 0 -1px 14px rgba(0,0,0,0.1);
+	border-left: 1px solid #bbb;
+	border-bottom: 1px solid #ccc;
+}
+
+.Month li:first-child {
+	border-left: 0;
+	padding-left: 7px;
+}
+
+.Month span {
+	display: inline-block;
+	width: 20px;
+	background-color: #aaa;
+	position: absolute;
+	left: -20px;
+	top: 0;
+	z-index: 100;
+	box-shadow: 1px 0 rgba(255,255,255,0.6);
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjAyIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijc1JSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjA1Ii8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC4wOCIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+
+background: -moz-linear-gradient(left,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.02) 50%, rgba(0,0,0,0.05) 75%, rgba(0,0,0,0.08) 100%);
+
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(0,0,0,0)), color-stop(50%,rgba(0,0,0,0.02)), color-stop(75%,rgba(0,0,0,0.05)), color-stop(100%,rgba(0,0,0,0.08)));
+
+background: -webkit-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.02) 50%,rgba(0,0,0,0.05) 75%,rgba(0,0,0,0.08) 100%);
+
+background: -o-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.02) 50%,rgba(0,0,0,0.05) 75%,rgba(0,0,0,0.08) 100%);
+
+background: -ms-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.02) 50%,rgba(0,0,0,0.05) 75%,rgba(0,0,0,0.08) 100%);
+
+background: linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.02) 50%,rgba(0,0,0,0.05) 75%,rgba(0,0,0,0.08) 100%);
+
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#14000000',GradientType=1 );
+
+
+}
+
+.Month h4 {
+	font: 1.7em/1.6em helveticaneuelt_std_lt_cnRg, Helvetica, Arial, sans-serif;
+	color: #555;
+	text-shadow: 0 1px #fff;
+	text-transform: uppercase;
+	height: 26px;
+	padding-left: 7px;
+}
+
+.Month li:first-child h4 {
+	padding-left: 0;
+}
+
+/* -------------------------------------------------------- Dates - Weeks -------------------------------------------------------- */
+
+.Day, .Day > li, .Day ul li, .Dates, .Month span {
+	height: 370px;
+}
+
+.Day {
+	white-space: nowrap;
+}
+
+.Day > li {
+	position: relative;
+	display: inline-block;
+	border-left: 1px solid #c8c8c8;
+	overflow: hidden;
+/* --------- START Gradient --------- */
+	background: #fbfbfb;
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZiZmJmYiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijk2JSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+	background: -moz-linear-gradient(left,  #fbfbfb 0%, #ffffff 96%);
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#fbfbfb), color-stop(96%,#ffffff));
+	background: -webkit-linear-gradient(left,  #fbfbfb 0%,#ffffff 96%);
+	background: -o-linear-gradient(left,  #fbfbfb 0%,#ffffff 96%);
+	background: -ms-linear-gradient(left,  #fbfbfb 0%,#ffffff 96%);
+	background: linear-gradient(to right,  #fbfbfb 0%,#ffffff 96%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbfbfb', endColorstr='#ffffff',GradientType=1 );
+/* --------- END Gradient --------- */
+}
+
+.Day > li:first-child {
+	border-left: 0;
+}
+
+.Day > li > span {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 204px;
+	height: 44px;
+/* --------- START Gradient --------- */
+background: #eaeaea;
+
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2VhZWFlYSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmYWZhZmEiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+
+background: -moz-linear-gradient(left,  #eaeaea 0%, #fafafa 100%);
+
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,#eaeaea), color-stop(100%,#fafafa));
+
+background: -webkit-linear-gradient(left,  #eaeaea 0%,#fafafa 100%);
+
+background: -o-linear-gradient(left,  #eaeaea 0%,#fafafa 100%);
+
+background: -ms-linear-gradient(left,  #eaeaea 0%,#fafafa 100%);
+
+background: linear-gradient(to right,  #eaeaea 0%,#fafafa 100%);
+
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eaeaea', endColorstr='#fafafa',GradientType=1 );
+
+/* --------- END Gradient --------- */
+	box-shadow: inset 1px 1px rgba(255,255,255,1);
+	border-bottom: 1px solid #c8c8c8;
+}
+
+.Day > li:hover {
+	background: #f8f8f8;
+	box-shadow: inset 0 0 30px rgba(0,0,0,0.10);
+}
+
+.Day > li:hover > span {
+background: rgb(204,204,204);
+
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2NjY2NjYyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNkZGRkZGQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+
+background: -moz-linear-gradient(left,  rgba(204,204,204,1) 0%, rgba(221,221,221,1) 100%);
+
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(204,204,204,1)), color-stop(100%,rgba(221,221,221,1)));
+
+background: -webkit-linear-gradient(left,  rgba(204,204,204,1) 0%,rgba(221,221,221,1) 100%);
+
+background: -o-linear-gradient(left,  rgba(204,204,204,1) 0%,rgba(221,221,221,1) 100%);
+
+background: -ms-linear-gradient(left,  rgba(204,204,204,1) 0%,rgba(221,221,221,1) 100%);
+
+background: linear-gradient(to right,  rgba(204,204,204,1) 0%,rgba(221,221,221,1) 100%);
+
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cccccc', endColorstr='#dddddd',GradientType=1 );
+
+
+
+	box-shadow: inset 0 2px 10px rgba(0,0,0,0.3), inset 0 1px rgba(0,0,0,0.25), inset -1px 0 rgba(0,0,0,.25), inset 1px 0 rgba(0,0,0,.25);
+	border-bottom: 1px solid #999;
+}
+
+.Day > li:hover h5 {
+	color: #000;
+	text-shadow: 0 1px rgba(255,255,255,0.7);
+}
+
+.Day > li:hover h5 span {
+	color: #333;
+	text-shadow: 0 1px rgba(255,255,255,0.5);
+}
+
+.Day > li:hover li:nth-child(2), .Day > li:hover  li:nth-child(3), .Day > li:hover  li:nth-child(4), .Day > li:hover  li:nth-child(5)		{border-color: #ddd;}
+
+
+/* -------------------------------------------------------- Dates - Days -------------------------------------------------------- */
+
+.Day ul li {
+	width: 40px;
+	display: inline-block;
+	border-left: 1px solid #ededed;
+}
+
+.Day ul li:nth-child(2)		{border-color: #eaeaea;}
+.Day ul li:nth-child(3)		{border-color: #ededed;}
+.Day ul li:nth-child(4)		{border-color: #f0f0f0;}
+.Day ul li:nth-child(5)		{border-color: #f3f3f3;}
+
+.Day ul li:first-child {
+	border-left: 0;
+}
+
+.Day li:first-child li:first-child {
+	width: 47px;
+}
+
+.Day li:first-child li:first-child h5 {
+	left: 4px;
+}
+
+.Day > li:first-child > span {
+	width: 211px;
+}
+
+.Day h5 {
+	position: relative;
+	z-index: 100;
+	text-align: center;
+	font: 2.2em/0.65em helveticaneuelt_std_med_cnRg, Helvetica, Arial, sans-serif;
+	color: #333;
+	text-shadow: 0 1px #fff;
+	padding-top: 8px;
+}
+
+.Day h5 span {
+	font: 0.5em/1em HelveticaNeueLTStd45Light, Helvetica, Arial, sans-serif;
+	color: #666;
+	text-shadow: 0 1px #fff;
+	text-transform: uppercase;
+}
+
+/* -------------------------------------------------------- Project Blocks -------------------------------------------------------- */
+
+.Projects {
+	position: absolute;
+	left: 8px;
+	top: 95px;
+	z-index: 1000;
+}
+
+.Projects li			{list-style: none;}
+.Projects ul ul		{height: 3.9em;}
+.Projects li li		{position: relative;}
+
+.Projects li > div { /* Color Blocks */
+	display: inline-block;
+	height: 3em;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	box-shadow: inset 0 7px 15px rgba(255,255,255,0.4), 0 0 5px rgba(255,255,255,1);
+	position: absolute;
+	top: 2px;
+	padding: 0 10px 0 7px;
+}
+
+.Projects li.Placement {
+	width: 4.1em;
+	height: 3em;
+}
+
+.Projects li.Placement > div { /* Placement Block */
+	height: 2.8em;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	-webkit-box-shadow: 0;
+	box-shadow: 0;
+	top: 2px;
+	padding: 0 9px 0 6px;
+	background-color: rgba(0,0,0,0.05);
+	border: 2px dashed rgba(0,0,0,0.25);
+	visibility: hidden;
+}
+
+.Projects li.Placement:hover > div {
+	visibility: visible;
+}
+
+.Projects div div {
+	overflow: hidden;
+	height: 3em;
+	white-space: nowrap;
+	cursor: default;
+}
+
+.Projects h6 {
+	font: 1.8em/1.7em helveticaneuelt_std_med_cnRg, Helvetica, Arial, sans-serif;
+	white-space: nowrap;
+	overflow: hidden;
+	display: inline;
+	text-shadow: 0 1px rgba(255,255,255,0.5);
+	cursor: default;
+}
+
+.Projects .Dash, .Projects p {
+	display: inline;
+	font: 1.6em/1.7em helveticaneuelt_std_lt_cnRg, Helvetica, Arial, sans-serif;
+	cursor: default;
+}
+
+.Projects p {
+	line-height: 1.2em;
+	text-shadow: 0 1px rgba(255,255,255,0.35);
+}
+
+/* -------------------------------------------------------- Project Blocks Expanded -------------------------------------------------------- */
+
+.Projects .Expanded h6 {
+	padding: 0 7px;
+	display: block;
+}
+
+.Projects .Expanded h6, .Projects .Expanded p {
+	border-width: 1px;
+	border-style: solid;
+	background-color: rgba(255,255,255,0.6);
+	margin-bottom: 9px;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	box-shadow: 0 1px rgba(255,255,255,0.7);
+	cursor: inherit;
+}
+
+.Projects .Expanded h6:hover, .Projects .Expanded p:hover {
+	background-color: rgba(255,255,255,0.8);
+}
+
+.Projects .Expanded h6:focus, .Projects .Expanded p:focus {
+	background-color: rgba(255,255,255,1);
+	text-shadow: 0;
+}
+
+.Projects .Expanded h6:focus {
+	color: #333;
+}
+
+.Projects .Expanded p:focus {
+	color: #666;
+}
+
+.Projects .Expanded p {
+	display: block;
+	padding: 4px 7px 5px;
+}
+
+.Projects .Expanded > div {
+	width: 296px;
+	z-index: 2000;
+	padding: 7px;
+	top: -6px;
+	left: -8px;
+	height: inherit;
+}
+
+.Projects .Expanded > div .Dash {
+	display: none;
+}
+
+.Projects .Expanded div div {
+	height: inherit;
+	overflow: inherit;
+	white-space: inherit;
+	cursor: inherit;
+}
+
+/* -------------------------------------------------------- Color Pickers -------------------------------------------------------- */
+
+.Projects .Colors {display: none;}
+.Projects .Expanded .Colors {display: block;}
+
+.Projects .Colors span {
+	display: inline-block;
+	width: 22px;
+	height: 22px;
+	margin: 1px 2px 1px 4px;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-width: 1px;
+	border-style: solid;
+	box-shadow: 0 1px rgba(255,255,255,0.7);
+	position: relative;
+}
+
+.Projects .Colors span:first-child					{margin-left: 1px;}
+.Projects .Colors span:last-child					{margin-right: 0;}
+.Projects .Colors span.Selected						{margin: 0 1px 0 3px; border-width: 2px;}
+.Projects .Colors span:first-child.Selected		{margin-left: 0;}
+.Projects .Colors span:last-child.Selected		{margin-right: 0;}
+.Projects .Colors span:hover							{cursor: pointer;}
+.Projects .Colors span:active							{top: 1px;}
+
+/* -------------------------- Red -------------------------- */
+.Colors span:nth-child(1)																{background-color: hsl(0,100%,80%); border-color: hsl(0,40%,50%);}
+.Colors span:nth-child(1):hover, .Colors span.Selected:nth-child(1)		{background-color: hsl(0,100%,84%); border-color: hsl(0,40%,40%); box-shadow: 0 0 6px hsla(0,100%,50%,0.4);}
+.Colors span:nth-child(1):active, .Colors span.Selected:nth-child(1)		{background-color: hsl(0,100%,70%);}
+/* -------------------------- Orange -------------------------- */
+.Colors span:nth-child(2)																{background-color: hsl(35,100%,75%); border-color: hsl(35,40%,45%);}
+.Colors span:nth-child(2):hover, .Colors span.Selected:nth-child(2)		{background-color: hsl(35,100%,81%); border-color: hsl(35,40%,35%); box-shadow: 0 0 6px hsla(35,100%,50%,0.7);}
+.Colors span:nth-child(2):active, .Colors span.Selected:nth-child(2)		{background-color: hsl(35,100%,60%);}
+/* -------------------------- Yellow -------------------------- */
+.Colors span:nth-child(3)																{background-color: hsl(60,100%,70%); border-color: hsl(60,40%,43%);}
+.Colors span:nth-child(3):hover, .Colors span.Selected:nth-child(3)		{background-color: hsl(60,100%,84%); border-color: hsl(60,10%,35%); box-shadow: 0 0 6px hsla(60,100%,50%,1);}
+.Colors span:nth-child(3):active, .Colors span.Selected:nth-child(3)		{background-color: hsl(60,100%,50%);}
+/* -------------------------- Lime -------------------------- */
+.Colors span:nth-child(4)																{background-color: hsl(75,100%,72%); border-color: hsl(75,40%,43%);}
+.Colors span:nth-child(4):hover, .Colors span.Selected:nth-child(4)		{background-color: hsl(75,100%,82%); border-color: hsl(75,10%,33%); box-shadow: 0 0 6px hsla(75,100%,50%,0.9);}
+.Colors span:nth-child(4):active, .Colors span.Selected:nth-child(4)		{background-color: hsl(75,100%,50%);}
+/* -------------------------- Green -------------------------- */
+.Colors span:nth-child(5)																{background-color: hsl(110,100%,80%); border-color: hsl(110,40%,43%);}
+.Colors span:nth-child(5):hover, .Colors span.Selected:nth-child(5)		{background-color: hsl(110,100%,86%); border-color: hsl(110,10%,33%); box-shadow: 0 0 6px hsla(110,100%,50%,0.6);}
+.Colors span:nth-child(5):active, .Colors span.Selected:nth-child(5)		{background-color: hsl(110,100%,60%);}
+/* -------------------------- Aqua -------------------------- */
+.Colors span:nth-child(6)																{background-color: hsl(170,100%,75%); border-color: hsl(170,40%,45%);}
+.Colors span:nth-child(6):hover, .Colors span.Selected:nth-child(6)		{background-color: hsl(170,100%,86%); border-color: hsl(170,10%,35%); box-shadow: 0 0 6px hsla(170,100%,50%,0.5);}
+.Colors span:nth-child(6):active, .Colors span.Selected:nth-child(6)		{background-color: hsl(170,100%,60%);}
+/* -------------------------- Blue -------------------------- */
+.Colors span:nth-child(7)																{background-color: hsl(210,100%,80%); border-color: hsl(210,40%,47%);}
+.Colors span:nth-child(7):hover, .Colors span.Selected:nth-child(7)		{background-color: hsl(210,100%,85%); border-color: hsl(210,10%,37%); box-shadow: 0 0 6px hsla(210,100%,50%,0.4);}
+.Colors span:nth-child(7):active, .Colors span.Selected:nth-child(7)		{background-color: hsl(210,100%,70%);}
+/* -------------------------- Purple -------------------------- */
+.Colors span:nth-child(8)																{background-color: hsl(280,100%,80%); border-color: hsl(280,40%,47%);}
+.Colors span:nth-child(8):hover, .Colors span.Selected:nth-child(8)		{background-color: hsl(280,100%,85%); border-color: hsl(280,10%,37%); box-shadow: 0 0 6px hsla(280,100%,50%,0.4);}
+.Colors span:nth-child(8):active, .Colors span.Selected:nth-child(8)		{background-color: hsl(280,100%,70%);}
+/* -------------------------- Grey -------------------------- */
+.Colors span:nth-child(9)																{background-color: hsl(0,0%,78%); border-color: hsl(0,0%,50%);}
+.Colors span:nth-child(9):hover, .Colors span.Selected:nth-child(9)		{background-color: hsl(0,0%,87%); border-color: hsl(0,0%,40%); box-shadow: 0 0 6px hsla(0,0%,50%,0.4);}
+.Colors span:nth-child(9):active, .Colors span.Selected:nth-child(9)		{background-color: hsl(0,0%,70%);}
+/* -------------------------- White -------------------------- */
+.Colors span:nth-child(10)																{background-color: hsl(0,0%,100%); border-color: hsl(0,0%,50%);}
+.Colors span:nth-child(10):hover, .Colors span.Selected:nth-child(10)	{border-color: hsl(0,0%,35%); box-shadow: 0 0 9px hsla(0,0%,100%,1);}
+
+/* -------------------------------------------------------- Extender Dots -------------------------------------------------------- */
+
+.Dots {
+	display: inline-block;
+	position: absolute;
+	right: -1px;
+	top: -1px;
+	width: 11px;
+	height: 32px;
+	border-radius: 0 4px 4px 0;
+	-webkit-border-radius: 0 4px 4px 0;
+	cursor: col-resize;
+}
+
+.Dots span {
+	display: inline-block;
+	width: 4px;
+	height: 4px;
+	position: absolute;
+	border-radius: 3px;
+	top: 6px;
+	left: 3px;
+	padding: 0;
+	box-shadow: 0 1px rgba(255,255,255,0.5);
+}
+
+.Dots span:nth-child(2) {top: 14px;}
+.Dots span:nth-child(3) {top: 22px;}
+
+.Projects li.Expanded .Dots {
+	display: none;
+}
+
+/* -------------------------------------------------------- Block Sizes and Positions -------------------------------------------------------- */
+
+.Duration-1 > div {width: 19px;}
+.Duration-2 > div {width: 60px;}
+.Duration-3 > div {width: 101px;}
+.Duration-4 > div {width: 142px;}
+.Duration-5 > div {width: 183px;}
+.Duration-6 > div {width: 224px;}
+.Duration-7 > div {width: 265px;}
+.Duration-8 > div {width: 306px;}
+.Duration-9 > div {width: 347px;}
+.Duration-10 > div {width: 388px;}
+.Duration-11 > div {width: 429px;}
+.Duration-12 > div {width: 470px;}
+.Duration-13 > div {width: 511px;}
+.Duration-14 > div {width: 552px;}
+.Duration-15 > div {width: 593px;}
+.Duration-16 > div {width: 634px;}
+.Duration-17 > div {width: 675px;}
+.Duration-18 > div {width: 716px;}
+.Duration-19 > div {width: 757px;}
+.Duration-20 > div {width: 798px;}
+.Duration-21 > div {width: 839px;}
+.Duration-22 > div {width: 880px;}
+.Duration-23 > div {width: 921px;}
+.Duration-24 > div {width: 962px;}
+.Duration-25 > div {width: 1003px;}
+.Duration-26 > div {width: 1044px;}
+.Duration-27 > div {width: 1085px;}
+.Duration-28 > div {width: 1126px;}
+.Duration-29 > div {width: 1167px;}
+.Duration-30 > div {width: 1208px;}
+
+.Day-1 {left: 0;}
+.Day-2 {left: 41px;}
+.Day-3 {left: 82px;}
+.Day-4 {left: 123px;}
+.Day-5 {left: 164px;}
+.Day-6 {left: 205px;}
+.Day-7 {left: 246px;}
+.Day-8 {left: 287px;}
+.Day-9 {left: 328px;}
+.Day-10 {left: 369px;}
+.Day-11 {left: 410px;}
+.Day-12 {left: 451px;}
+.Day-13 {left: 492px;}
+.Day-14 {left: 533px;}
+.Day-15 {left: 574px;}
+.Day-16 {left: 615px;}
+.Day-17 {left: 656px;}
+.Day-18 {left: 697px;}
+.Day-19 {left: 738px;}
+.Day-20 {left: 779px;}
+.Day-21 {left: 820px;}
+.Day-22 {left: 861px;}
+.Day-23 {left: 902px;}
+.Day-24 {left: 943px;}
+.Day-25 {left: 984px;}
+.Day-26 {left: 1025px;}
+.Day-27 {left: 1066px;}
+.Day-28 {left: 1107px;}
+.Day-29 {left: 1148px;}
+.Day-30 {left: 1189px;}
+
+/* -------------------------------------------------------- Block Color - Red -------------------------------------------------------- */
+
+.Red > div															{background-color: hsl(10,100%,92%); border: 1px solid hsl(10,23%,67%);}
+.Red:hover > div, .Red.Expanded > div						{background-color: hsl(10,100%,95%); border: 1px solid hsl(10,23%,60%); box-shadow: 0 0 3px hsla(10,11%,30%,0.7);}
+.Red h6																{color: hsl(10,11%,30%);}
+.Red:hover h6														{color: hsl(10,11%,25%);}
+.Red .Dots span													{background-color: hsla(10,23%,58%,0.5);}
+.Red .Dots:hover													{background-color: hsla(10,23%,58%,.4);}
+.Red .Dots:hover span											{background-color: hsla(10,23%,52%,1);}
+.Red p, .Red .Dash												{color: hsl(10,11%,50%);}
+.Red.Expanded h6, .Red.Expanded p							{border-color: hsla(10,23%,75%,1);}
+.Red.Expanded h6:hover, .Red.Expanded p:hover			{border-color: hsla(10,23%,60%,1);}
+.Red.Expanded h6:focus, .Red.Expanded p:focus			{border-color: hsla(10,23%,55%,1); box-shadow: 0 0 5px hsla(10,23%,55%,0.75);}
+
+/* -------------------------------------------------------- Block Color - Orange -------------------------------------------------------- */
+
+.Orange > div														{background-color: hsl(35,100%,92%); border: 1px solid hsl(35,23%,67%);}
+.Orange:hover > div, .Orange.Expanded > div				{background-color: hsl(35,100%,95%); border: 1px solid hsl(35,23%,60%); box-shadow: 0 0 3px hsla(35,11%,30%,0.7);}
+.Orange h6															{color: hsl(35,11%,30%);}
+.Orange:hover h6													{color: hsl(35,11%,25%);}
+.Orange .Dots span												{background-color: hsla(35,23%,58%,0.5);}
+.Orange .Dots:hover												{background-color: hsla(35,23%,58%,.4);}
+.Orange .Dots:hover span										{background-color: hsla(35,23%,52%,1);}
+.Orange p, .Orange .Dash										{color: hsl(35,11%,50%);}
+.Orange.Expanded h6, .Orange.Expanded p					{border-color: hsla(35,23%,75%,1);}
+.Orange.Expanded h6:hover, .Orange.Expanded p:hover	{border-color: hsla(35,23%,60%,1);}
+.Orange.Expanded h6:focus, .Orange.Expanded p:focus	{border-color: hsla(35,23%,55%,1); box-shadow: 0 0 5px hsla(35,23%,55%,0.75);}
+
+/* -------------------------------------------------------- Block Color - Yellow -------------------------------------------------------- */
+
+.Yellow > div														{background-color: hsl(60,100%,92%); border: 1px solid hsl(60,23%,67%);}
+.Yellow:hover > div, .Yellow.Expanded > div				{background-color: hsl(60,100%,95%); border: 1px solid hsl(60,23%,60%); box-shadow: 0 0 3px hsla(60,11%,30%,0.7);}
+.Yellow h6															{color: hsl(60,11%,30%);}
+.Yellow:hover h6													{color: hsl(60,11%,25%);}
+.Yellow .Dots span												{background-color: hsla(60,23%,58%,0.5);}
+.Yellow .Dots:hover												{background-color: hsla(60,23%,58%,.4);}
+.Yellow .Dots:hover span										{background-color: hsla(60,23%,52%,1);}
+.Yellow p, .Yellow .Dash										{color: hsl(60,11%,50%);}
+.Yellow.Expanded h6, .Yellow.Expanded p					{border-color: hsla(60,23%,75%,1);}
+.Yellow.Expanded h6:hover, .Yellow.Expanded p:hover	{border-color: hsla(60,23%,60%,1);}
+.Yellow.Expanded h6:focus, .Yellow.Expanded p:focus	{border-color: hsla(60,23%,55%,1); box-shadow: 0 0 5px hsla(60,23%,55%,0.75);}
+
+/* -------------------------------------------------------- Block Color - Lime -------------------------------------------------------- */
+
+.Lime > div															{background-color: hsl(75,100%,92%); border: 1px solid hsl(75,23%,67%);}
+.Lime:hover > div, .Lime.Expanded > div					{background-color: hsl(75,100%,96.5%); border: 1px solid hsl(75,23%,60%); box-shadow: 0 0 3px hsla(75,11%,30%,0.7);}
+.Lime h6																{color: hsl(75,11%,30%);}
+.Lime:hover h6														{color: hsl(75,11%,25%);}
+.Lime .Dots span													{background-color: hsla(75,23%,67%,0.5);}
+.Lime .Dots:hover													{background-color: hsla(75,23%,67%,.25);}
+.Lime .Dots:hover span											{background-color: hsla(75,23%,67%,1);}
+.Lime p, .Lime .Dash												{color: hsl(75,11%,50%);}
+.Lime.Expanded h6, .Lime.Expanded p							{border-color: hsla(75,23%,75%,1);}
+.Lime.Expanded h6:hover, .Lime.Expanded p:hover			{border-color: hsla(75,23%,60%,1);}
+.Lime.Expanded h6:focus, .Lime.Expanded p:focus			{border-color: hsla(75,23%,55%,1); box-shadow: 0 0 5px hsla(75,23%,55%,0.75);}
+
+/* -------------------------------------------------------- Block Color - Green -------------------------------------------------------- */
+
+.Green > div														{background-color: hsl(110,100%,92%); border: 1px solid hsl(110,23%,67%);}
+.Green:hover > div, .Green.Expanded > div					{background-color: hsl(110,100%,96.5%); border: 1px solid hsl(110,23%,60%); box-shadow: 0 0 3px hsla(110,11%,30%,0.7);}
+.Green h6															{color: hsl(110,11%,30%);}
+.Green:hover h6													{color: hsl(110,11%,25%);}
+.Green .Dots span													{background-color: hsla(110,23%,58%,0.5);}
+.Green .Dots:hover												{background-color: hsla(110,23%,58%,.4);}
+.Green .Dots:hover span											{background-color: hsla(110,23%,52%,1);}
+.Green p, .Green .Dash											{color: hsl(110,11%,50%);}
+.Green.Expanded h6, .Green.Expanded p						{border-color: hsla(110,23%,75%,1);}
+.Green.Expanded h6:hover, .Green.Expanded p:hover		{border-color: hsla(110,23%,60%,1);}
+.Green.Expanded h6:focus, .Green.Expanded p:focus		{border-color: hsla(110,23%,55%,1); box-shadow: 0 0 5px hsla(110,23%,55%,0.75);}
+
+/* -------------------------------------------------------- Block Color - Aqua -------------------------------------------------------- */
+
+.Aqua > div															{background-color: hsl(170,100%,92%); border: 1px solid hsl(170,23%,67%);}
+.Aqua:hover > div, .Aqua.Expanded > div					{background-color: hsl(170,100%,95%); border: 1px solid hsl(170,23%,60%); box-shadow: 0 0 3px hsla(170,11%,30%,0.7);}
+.Aqua h6																{color: hsl(170,11%,28%);}
+.Aqua:hover h6														{color: hsl(170,11%,23%);}
+.Aqua .Dots span													{background-color: hsla(170,23%,58%,0.5);}
+.Aqua .Dots:hover													{background-color: hsla(170,23%,58%,.4);}
+.Aqua .Dots:hover span											{background-color: hsla(170,23%,52%,1);}
+.Aqua p, .Aqua .Dash												{color: hsl(170,11%,50%);}
+.Aqua.Expanded h6, .Aqua.Expanded p							{border-color: hsla(170,23%,75%,1);}
+.Aqua.Expanded h6:hover, .Aqua.Expanded p:hover			{border-color: hsla(170,23%,60%,1);}
+.Aqua.Expanded h6:focus, .Aqua.Expanded p:focus			{border-color: hsla(170,23%,55%,1); box-shadow: 0 0 5px hsla(170,23%,55%,0.75);}
+
+/* -------------------------------------------------------- Block Color - Blue -------------------------------------------------------- */
+
+.Blue > div															{background-color: hsl(210,100%,92%); border: 1px solid hsl(210,23%,67%);}
+.Blue:hover > div, .Blue.Expanded > div					{background-color: hsl(210,100%,96%); border: 1px solid hsl(210,23%,60%); box-shadow: 0 0 3px hsla(210,11%,30%,0.7);}
+.Blue h6																{color: hsl(210,11%,30%);}
+.Blue:hover h6														{color: hsl(210,11%,25%);}
+.Blue .Dots span													{background-color: hsla(210,23%,58%,0.5);}
+.Blue .Dots:hover													{background-color: hsla(210,23%,58%,.4);}
+.Blue .Dots:hover span											{background-color: hsla(210,23%,52%,1);}
+.Blue p, .Blue .Dash												{color: hsl(210,11%,50%);}
+.Blue.Expanded h6, .Blue.Expanded p							{border-color: hsla(210,23%,75%,1);}
+.Blue.Expanded h6:hover, .Blue.Expanded p:hover			{border-color: hsla(210,23%,60%,1);}
+.Blue.Expanded h6:focus, .Blue.Expanded p:focus			{border-color: hsla(210,23%,55%,1); box-shadow: 0 0 5px hsla(210,23%,55%,0.75);}
+
+/* -------------------------------------------------------- Block Color - Purple -------------------------------------------------------- */
+
+.Purple > div														{background-color: hsl(280,100%,92%); border: 1px solid hsl(280,23%,67%);}
+.Purple:hover > div, .Purple.Expanded > div				{background-color: hsl(280,100%,95%); border: 1px solid hsl(280,23%,60%); box-shadow: 0 0 3px hsla(280,11%,30%,0.7);}
+.Purple h6															{color: hsl(280,11%,30%);}
+.Purple:hover h6													{color: hsl(280,11%,25%);}
+.Purple .Dots span												{background-color: hsla(280,23%,67%,0.5);}
+.Purple .Dots:hover												{background-color: hsla(280,23%,67%,.25);}
+.Purple .Dots:hover span										{background-color: hsla(280,23%,67%,1);}
+.Purple p, .Purple .Dash										{color: hsl(280,11%,50%);}
+.Purple.Expanded h6, .Purple.Expanded p					{border-color: hsla(280,23%,75%,1);}
+.Purple.Expanded h6:hover, .Purple.Expanded p:hover	{border-color: hsla(280,23%,60%,1);}
+.Purple.Expanded h6:focus, .Purple.Expanded p:focus	{border-color: hsla(280,23%,55%,1); box-shadow: 0 0 5px hsla(280,23%,55%,0.75);}
+
+/* -------------------------------------------------------- Block Color - Grey -------------------------------------------------------- */
+
+.Grey > div															{background-color: hsl(0,0%,92%); border: 1px solid hsl(0,0%,67%);}
+.Grey:hover > div, .Grey.Expanded > div					{background-color: hsl(0,0%,95%); border: 1px solid hsl(0,0%,60%); box-shadow: 0 0 3px hsla(0,0%,30%,0.7);}
+.Grey h6																{color: hsl(0,0%,30%);}
+.Grey:hover h6														{color: hsl(0,0%,25%);}
+.Grey .Dots span													{background-color: hsla(0,0%,0%,0.2);}
+.Grey .Dots:hover													{background-color: hsla(0,0%,0%,0.15);}
+.Grey .Dots:hover span											{background-color: hsla(0,0%,0%,0.4);}
+.Grey p, .Grey .Dash												{color: hsl(0,0%,50%);}
+.Grey.Expanded h6, .Grey.Expanded p							{border-color: hsla(0,0%,0%,.2);}
+.Grey.Expanded h6:hover, .Grey.Expanded p:hover			{border-color: hsla(0,0%,0%,.4);}
+.Grey.Expanded h6:focus, .Grey.Expanded p:focus			{border-color: hsla(0,0%,0%,.5); box-shadow: 0 0 5px hsla(0,0%,0%,0.4);}
+
+/* -------------------------------------------------------- Block Color - White -------------------------------------------------------- */
+
+.White > div														{background-color: hsl(0,0%,100%); border: 1px solid hsl(0,0%,70%);}
+.White:hover > div, .White.Expanded > div					{background-color: hsl(0,0%,100%); border: 1px solid hsl(0,0%,50%); box-shadow: 0 0 3px hsla(0,0%,30%,0.7);}
+.White h6															{color: hsl(0,0%,30%);}
+.White:hover h6													{color: hsl(0,0%,25%);}
+.White .Dots span													{background-color: hsla(0,0%,0%,0.2);}
+.White .Dots:hover												{background-color: hsla(0,0%,0%,0.2);}
+.White .Dots:hover span											{background-color: hsla(0,0%,0%,0.5);}
+.White p, .White .Dash											{color: hsl(0,0%,50%);}
+.White.Expanded h6, .White.Expanded p						{border-color: hsla(0,0%,0%,.2);}
+.White.Expanded h6:hover, .White.Expanded p:hover		{border-color: hsla(0,0%,0%,.4);}
+.White.Expanded h6:focus, .White.Expanded p:focus		{border-color: hsla(0,0%,0%,.5); box-shadow: 0 0 5px hsla(0,0%,0%,0.4);}
+
+/* -------------------------------------------------------- Scrollbars -------------------------------------------------------- */
+
+::-webkit-scrollbar {
+    width: 22px;
+    height: 22px;
+}
+ 
+::-webkit-scrollbar-track:horizontal {
+	 border-top: 1px solid #d0d0d0;
+/* --------- START Gradient --------- */
+	background: #e4e4e4; /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2U0ZTRlNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmMmYyZjIiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top,  #e4e4e4 0%, #f2f2f2 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e4e4e4), color-stop(100%,#f2f2f2)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #e4e4e4 0%,#f2f2f2 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #e4e4e4 0%,#f2f2f2 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #e4e4e4 0%,#f2f2f2 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #e4e4e4 0%,#f2f2f2 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4e4e4', endColorstr='#f2f2f2',GradientType=0 ); /* IE6-8 */
+/* --------- END Gradient --------- */
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+    border-radius: 15px;
+	 border-color: #d0d0d0;
+	 border-style: solid;
+	 border-width: 1px 0 0 0;
+/* --------- START Gradient --------- */
+	background: #d2d2d2; /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2QyZDJkMiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNhYWFhYWEiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top,  #d2d2d2 0%, #aaaaaa 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d2d2d2), color-stop(100%,#aaaaaa)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #d2d2d2 0%,#aaaaaa 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #d2d2d2 0%,#aaaaaa 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #d2d2d2 0%,#aaaaaa 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #d2d2d2 0%,#aaaaaa 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d2d2d2', endColorstr='#aaaaaa',GradientType=0 ); /* IE6-8 */
+/* --------- END Gradient --------- */
+	box-shadow: inset 4px 0 0 #eee, inset -4px 0 0 #eee, inset 0 0 0 3px #eee, inset 0 1px 0 3px #aaa;
+}
+
+::-webkit-scrollbar-thumb:horizontal:hover {
+/* --------- START Gradient --------- */
+background: #c2c2c2; /* Old browsers */
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2MyYzJjMiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM5OTk5OTkiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-linear-gradient(top,  #c2c2c2 0%, #999999 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c2c2c2), color-stop(100%,#999999)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #c2c2c2 0%,#999999 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #c2c2c2 0%,#999999 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #c2c2c2 0%,#999999 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #c2c2c2 0%,#999999 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c2c2c2', endColorstr='#999999',GradientType=0 ); /* IE6-8 */
+/* --------- END Gradient --------- */
+	box-shadow: inset 4px 0 0 #eee, inset -4px 0 0 #eee, inset 0 0 0 3px #eee, inset 0 1px 0 3px #999;
+}
+
+::-webkit-scrollbar-track:vertical {
+	 border-left: 1px solid #d0d0d0;
+/* --------- START Gradient --------- */
+	background: #e4e4e4; /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2U0ZTRlNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmMmYyZjIiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(left,  #e4e4e4 0%, #f2f2f2 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#e4e4e4), color-stop(100%,#f2f2f2)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  #e4e4e4 0%,#f2f2f2 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  #e4e4e4 0%,#f2f2f2 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  #e4e4e4 0%,#f2f2f2 100%); /* IE10+ */
+	background: linear-gradient(to right,  #e4e4e4 0%,#f2f2f2 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4e4e4', endColorstr='#f2f2f2',GradientType=1 ); /* IE6-8 */
+/* --------- END Gradient --------- */
+}
+
+::-webkit-scrollbar-thumb:vertical {
+    border-radius: 15px;
+	 border-color: #d0d0d0;
+	 border-style: solid;
+	 border-width: 0 0 0 1px;
+/* --------- START Gradient --------- */
+	background: #d2d2d2; /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2QyZDJkMiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNhYWFhYWEiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(left,  #d2d2d2 0%, #aaaaaa 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#d2d2d2), color-stop(100%,#aaaaaa)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  #d2d2d2 0%,#aaaaaa 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  #d2d2d2 0%,#aaaaaa 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  #d2d2d2 0%,#aaaaaa 100%); /* IE10+ */
+	background: linear-gradient(to right,  #d2d2d2 0%,#aaaaaa 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d2d2d2', endColorstr='#aaaaaa',GradientType=1 ); /* IE6-8 */
+/* --------- END Gradient --------- */
+	box-shadow: inset 0 4px 0 #eee, inset 0 -4px 0 #eee, inset 0 0 0 3px #eee, inset 1px 0 0 3px #aaa;
+}
+
+::-webkit-scrollbar-thumb:vertical:hover {
+/* --------- START Gradient --------- */
+	background: #c2c2c2; /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2MyYzJjMiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM5OTk5OTkiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(left,  #c2c2c2 0%, #999999 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#c2c2c2), color-stop(100%,#999999)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  #c2c2c2 0%,#999999 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  #c2c2c2 0%,#999999 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  #c2c2c2 0%,#999999 100%); /* IE10+ */
+	background: linear-gradient(to right,  #c2c2c2 0%,#999999 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c2c2c2', endColorstr='#999999',GradientType=1 ); /* IE6-8 */
+/* --------- END Gradient --------- */
+	box-shadow: inset 0 4px 0 #eee, inset 0 -4px 0 #eee, inset 0 0 0 3px #eee, inset 1px 0 0 3px #999;
+}
+
+/*
+::-webkit-scrollbar-button {
+}
+
+::-webkit-scrollbar-track-piece {
+}
+*/
