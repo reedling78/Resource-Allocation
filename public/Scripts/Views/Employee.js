@@ -7,13 +7,14 @@ o.Views.EmployeeCollectionView = Backbone.View.extend({
 		//console.log('cccc');
 	},
 	render: function () {
+
+		this.collection.byTeam();
+
 		var view = this, 
-		employees = this.collection.byTeam(),
+		employees = this.collection.get('Employees'),
 		headers = this.collection.get('Teams');
 
 		var currentHeader = '';
-
-
 
 		for (i = 0; i < employees.length; i++) {
 			console.log(currentHeader + "  --  " + employees[i].headername);

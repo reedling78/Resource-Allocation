@@ -1,6 +1,7 @@
 o.Controller = Backbone.Model.extend({
 	defaults: {
-		
+		EmployeeList : [
+		]
 	},
 	initialize: function(){
 
@@ -28,6 +29,10 @@ o.Controller = Backbone.Model.extend({
 			collection: employeeModel
 		});
 		employeeView.render();
+
+
+		//Projects
+		var projectCollectionView = new o.Views.ProjectCollectionView();
 
 	}
 });

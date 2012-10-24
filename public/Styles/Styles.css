@@ -353,7 +353,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cccccc', end
 }
 
 .Projects li			{list-style: none;}
-.Projects ul ul		{height: 3.9em;}
+.Projects ul ul		{height: 3.9em; width:3000px; border:dotted 1px red;}
 .Projects li li		{position: relative;}
 
 .Projects li > div { /* Color Blocks */

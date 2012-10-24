@@ -1,0 +1,727 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"bind",
+				"bindView"
+			],
+			[
+				"for",
+				"for	for (…) {…} (Improved Native For-Loop)"
+			],
+			[
+				"conso",
+				"console.log();"
+			],
+			[
+				"mo",
+				"model"
+			],
+			[
+				"resp",
+				"Response"
+			],
+			[
+				"reset",
+				"resetForm"
+			],
+			[
+				"data-r",
+				"data-requiredIf"
+			],
+			[
+				"convert",
+				"convertTo"
+			],
+			[
+				"margin-",
+				"margin-right"
+			],
+			[
+				"index",
+				"indexOf"
+			],
+			[
+				"rel",
+				"relative"
+			],
+			[
+				"marg",
+				"margin"
+			],
+			[
+				"background",
+				"background-color"
+			],
+			[
+				"posit",
+				"position"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"border-",
+				"border-bottom"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"Pho",
+				"PhotoTemplate"
+			],
+			[
+				"init",
+				"initPhotoSwipe"
+			],
+			[
+				"len",
+				"length"
+			],
+			[
+				"photo",
+				"photos"
+			],
+			[
+				"phot",
+				"photos"
+			],
+			[
+				"images",
+				"images"
+			],
+			[
+				"ca",
+				"cache"
+			],
+			[
+				"remove",
+				"removeClass"
+			],
+			[
+				"ht",
+				"html"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"bacgr",
+				"background-color"
+			],
+			[
+				"ab",
+				"absolute"
+			],
+			[
+				"in",
+				"initialize"
+			],
+			[
+				"pro",
+				"prototype"
+			],
+			[
+				"Ic",
+				"IconTray"
+			],
+			[
+				"er",
+				"error"
+			],
+			[
+				"Simula",
+				"Simulator"
+			],
+			[
+				"Prev",
+				"previous"
+			],
+			[
+				"Time",
+				"setTimeout"
+			],
+			[
+				"sub",
+				"substring"
+			],
+			[
+				"Four",
+				"txtFoursquare"
+			],
+			[
+				"label",
+				"labelName"
+			],
+			[
+				"Ac",
+				"ActivityBar"
+			],
+			[
+				"set",
+				"setTimeout"
+			],
+			[
+				"Spla",
+				"SplashPage"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "public/Scripts/Views/Project.js",
+			"settings":
+			{
+				"buffer_size": 780,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/index.html",
+			"settings":
+			{
+				"buffer_size": 1998,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/Scripts/controller.js",
+			"settings":
+			{
+				"buffer_size": 732,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/Scripts/main.js",
+			"settings":
+			{
+				"buffer_size": 323,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/default.html",
+			"settings":
+			{
+				"buffer_size": 24306,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/Styles/Styles.css",
+			"settings":
+			{
+				"buffer_size": 45398,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 267.0,
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"html",
+				"HTMLPrettify: Prettify"
+			],
+			[
+				"",
+				"HTMLPrettify: Prettify"
+			]
+		],
+		"width": 467.0
+	},
+	"console":
+	{
+		"height": 188.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/reed.rizzo/Developer/Resource Allocation/public/js/require.js",
+		"/Users/reed.rizzo/Developer/Resource Allocation/app.js",
+		"/Users/reed.rizzo/Developer/Resource Allocation/public/index.html",
+		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/controller.js",
+		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/Views/Calendar.js",
+		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/Views/Employee.js",
+		"/Users/reed.rizzo/Developer/Takeda/takeda-ism-webservice/public/scripts/models/controller.js",
+		"/Users/reed.rizzo/Developer/Backbone Workshop/cwc2012-backbone-workshop/source.js",
+		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/Models/Employee.js",
+		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/main.js",
+		"/Users/reed.rizzo/Developer/Resource Allocation/.git/config",
+		"/Users/reed.rizzo/Developer/Chatter/app.js",
+		"/Users/reed.rizzo/Developer/Takeda/takeda-ism-webservice/pgconnect.js",
+		"/Users/reed.rizzo/Developer/node/TestApp/app_connect.js",
+		"/Users/reed.rizzo/Developer/Takeda/takeda-ism-webservice/app.js",
+		"/Users/reed.rizzo/Developer/Takeda/takeda-ism-webservice/public/default.htm",
+		"/Users/reed.rizzo/Developer/Takeda/takeda-ism-employeeapp/scripts/main.js",
+		"/Users/reed.rizzo/Developer/Takeda/takeda-ism-employeeapp/scripts/models/profiles.js",
+		"/Users/reed.rizzo/Developer/Takeda/profile.txt",
+		"/Users/reed.rizzo/Developer/Takeda/takeda-ism-employeeapp/scripts/models/organizations.js",
+		"/Users/reed.rizzo/Developer/Takeda/takeda-ism-employeeapp/scripts/models/functions.js",
+		"/Users/reed.rizzo/Developer/Takeda/takeda-ism-employeeapp/scripts/models/users.js",
+		"/Users/reed.rizzo/Developer/Takeda/takeda-ism-employeeapp/scripts/models/taggings.js",
+		"/Users/reed.rizzo/Developer/Takeda/takeda-ism-employeeapp/scripts/models/tags.js",
+		"/Users/reed.rizzo/Developer/Takeda/takeda-ism-employeeapp/scripts/libraries/jquery.js",
+		"/Users/reed.rizzo/Developer/Takeda/takeda-ism-employeeapp/scripts/libraries/backbone.js",
+		"/Users/reed.rizzo/Developer/Takeda/takeda-ism-employeeapp/scripts/libraries/underscore.js",
+		"/Users/reed.rizzo/Developer/Takeda/takeda-ism-employeeapp/scripts/libraries/requirejs.js",
+		"/Users/reed.rizzo/Developer/Takeda/takeda-ism-employeeapp/scripts/libraries/modernizr.js",
+		"/Users/reed.rizzo/Developer/takeda-ism-webservice/.git/config",
+		"/Users/reed.rizzo/Developer/takeda-ism-webservice/helloworld.js",
+		"/Users/reed.rizzo/Developer/takeda-ism-webservice/pgconnect.js",
+		"/Users/reed.rizzo/Developer/takeda-ism-webservice/package.json",
+		"/Users/reed.rizzo/Developer/takeda-ism-webservice/Procfile",
+		"/Users/reed.rizzo/Developer/takeda-ism-webservice/app.js",
+		"/Users/reed.rizzo/Library/Application Support/Sublime Text 2/Packages/Pretty JSON/Pretty JSON.sublime-settings",
+		"/Volumes/S/InetPub/wwwroot/Library/include/loadGraphics.js",
+		"/Users/reed.rizzo/Developer/node/test/package.json",
+		"/Users/reed.rizzo/Developer/node/test/app.js",
+		"/Users/reed.rizzo/Developer/node/test/Procfile",
+		"/Users/reed.rizzo/takeda-ism-production/.gitignore",
+		"/Users/reed.rizzo/Developer/HSLcolortester/wColorPicker.js",
+		"/Volumes/C/_code/Mojo-WebBuilder/SourceCode/Mojo.Web/Customers/APP000172/App-Data.js",
+		"/Volumes/C/_code/Mojo-WebBuilder/SourceCode/Mojo.Web/Customers/Assets/iOS/styles.css",
+		"/Volumes/C/_code/Mojo-WebBuilder/SourceCode/Mojo.Web/Customers/Assets/iOS/jquery.mobile-1.1.0.min.css",
+		"/Users/reed.rizzo/Library/Application Support/Sublime Text 2/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/reed.rizzo/Library/Application Support/Sublime Text 2/Packages/CSSTidy/CSSTidy.sublime-settings",
+		"/Users/reed.rizzo/Library/Application Support/Sublime Text 2/Packages/User/CSSTidy.sublime-settings",
+		"/Users/reed.rizzo/Developer/ThirtyOne/scripts/libraries/jquery.js",
+		"/Users/reed.rizzo/Developer/ThirtyOne/scripts/libraries/require.js",
+		"/Volumes/C/_code/Mojo-WebBuilder/SourceCode/Mojo.Web/Customers/Assets/themes/images/ajax-loader.gif",
+		"/Volumes/C/_code/Mojo-WebBuilder/SourceCode/Mojo.Web/Common/Styles/Site.css",
+		"/Volumes/C/_code/Mojo-WebBuilder/SourceCode/Mojo.Web/Customers/Assets/jquery.touchSwipe-1.2.5.js",
+		"/Volumes/C/_code/Mojo-WebBuilder/SourceCode/Mojo.Web/Customers/Assets/jquery.mobile-1.1.0.min.js",
+		"/Volumes/C/_code/Mojo-WebBuilder/SourceCode/Mojo.Web/Simulator/main.js",
+		"/Volumes/C/_code/Mojo-WebBuilder/SourceCode/Mojo.Web/Simulator/mojo.js",
+		"/Volumes/C/_code/Mojo-WebBuilder/SourceCode/Mojo.Web/Customers/Assets/scripts.js",
+		"/private/tmp/55170/C/_code/Mojo-WebBuilder/SourceCode/Mojo.Web/Simulator/",
+		"/private/tmp/55170/C/_code/Mojo-WebBuilder/SourceCode/Mojo.Web/C:\\_code\\Mojo-WebBuilder\\SourceCode\\Mojo.Web\\Simulator\\main.js",
+		"/private/tmp/55170/C/_code/Mojo-WebBuilder/SourceCode/Mojo.Web/C:\\_code\\Mojo-WebBuilder\\SourceCode\\Mojo.Web\\Simulator\\mojo.js",
+		"/private/tmp/55170/C/_code/Mojo-WebBuilder/SourceCode/Mojo.Web/Simulator/styles.css",
+		"/private/tmp/354/C/_code/Mojo-WebBuilder/SourceCode/Mojo.Web/Customers/Rizzos/App-Data.js",
+		"/private/tmp/354/C/_code/Mojo-WebBuilder/SourceCode/Mojo.Web/Common/Styles/Site.css",
+		"/private/tmp/55170/C/_code/Mojo-WebBuilder/SourceCode/Mojo.Web/Customers/KeyLimeTie36/App-Data.js",
+		"/private/tmp/55170/C/_code/Mojo-WebBuilder/SourceCode/Mojo.Web/Customers/KeyLimeTie23/App-Data.js",
+		"/Users/reed.rizzo/Library/Application Support/Sublime Text 2/Packages/User/Default (OSX).sublime-keymap",
+		"/private/tmp/55170/C/_code/Mojo-WebBuilder/SourceCode/Mojo.Web/Customers/Assets/jquery.touchSwipe-1.2.5.js",
+		"/private/tmp/55170/C/_code/Mojo-WebBuilder/SourceCode/Mojo.Web/Simulator/views/Device.js",
+		"/private/tmp/55170/C/_code/Mojo-WebBuilder/SourceCode/Mojo.Web/Simulator/views/Phone.js",
+		"/private/tmp/55170/C/_code/Mojo-WebBuilder/SourceCode/Mojo.Web/Simulator/Phone.js",
+		"/private/tmp/55170/C/_code/Mojo-WebBuilder/SourceCode/Mojo.Web/Simulator/views/ActivityBar.js",
+		"/private/tmp/55170/C/_code/Mojo-WebBuilder/SourceCode/Mojo.Web/Simulator/js/require.js",
+		"/private/tmp/55170/C/_code/Mojo-WebBuilder/SourceCode/Mojo.Web/Simulator/mojo.js",
+		"/Users/reed.rizzo/Developer/Aptana Studio 3 Workspace/MyHomeTown/scripts/main.js",
+		"/Users/reed.rizzo/Developer/Aptana Studio 3 Workspace/MyHomeTown/default.html",
+		"/Users/reed.rizzo/Developer/Aptana Studio 3 Workspace/MyHomeTown/scripts/klt.brightcove.js",
+		"/Users/reed.rizzo/Developer/Aptana Studio 3 Workspace/MyHomeTown/scripts/libraries/main.js",
+		"/Users/reed.rizzo/Developer/Aptana Studio 3 Workspace/MyHomeTown/scripts/libraries/BrightcoveExperiences_all.js",
+		"/Users/reed.rizzo/Developer/Aptana Studio 3 Workspace/MyHomeTown/scripts/libraries/require.js",
+		"/Users/reed.rizzo/Developer/Aptana Studio 3 Workspace/MyHomeTown/scripts/klt.core.js",
+		"/Users/reed.rizzo/Developer/SublimeTest/default.htm",
+		"/Users/reed.rizzo/Developer/SublimeTest/style.css",
+		"/Users/reed.rizzo/Developer/SublimeTest/script.js"
+	],
+	"find":
+	{
+		"height": 40.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"<open folders>"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"UserModel",
+			"unFilteredProfileStack",
+			"navigation",
+			"PostCollectionView",
+			"Collection",
+			"container",
+			"Mustache",
+			"clientPROD",
+			"state",
+			"select-one",
+			"startDate",
+			"startDate ",
+			"ACGSupervisorNameAndContactNumber",
+			"ACG Supervisor ID ",
+			"getACGSupervisorInfo",
+			"logo",
+			"INCLUDE",
+			"sqlite3",
+			"currentNavBar",
+			"that.currentNavBar",
+			"B4D71B53-2443-4C6D-8314-797B72E619F1",
+			"PageTemplate",
+			"hover",
+			"ui-link-inherit:",
+			"ui-link-inherit",
+			"iframe.",
+			"month",
+			"Page Type",
+			"http://mojo.localhost/Customers/KeyLimeTie3/Simulator/",
+			"random",
+			"ajax-loader.gif",
+			"alpha",
+			"SMojo.NavBar",
+			"navbar",
+			"ChangePage",
+			"App-Preview",
+			"-Navigation-",
+			"icon",
+			"MobileWeb/",
+			"icon",
+			"listview(",
+			"listview",
+			"secondarycolorText",
+			"when",
+			"then",
+			"inactive",
+			"Inactive",
+			"appData",
+			"imgSelTopImageEvent",
+			"EventTemplate",
+			"\");",
+			"sb.Append(\"",
+			"cc00ff",
+			"secondarycolorBackground",
+			"basictextText",
+			"tertiarycolorText",
+			"tertiarycolorBackground",
+			"secondarycolorText",
+			"primarycolorBackground",
+			"primarycolorText",
+			"RefreshImage",
+			"SMojo",
+			"iconClass",
+			"TabNavigation",
+			"ChangePage",
+			"activePage",
+			"mobile.urlHistory.getActive()",
+			"subHead",
+			"htmlTemplates.PageTemplate",
+			"MenuTemplate",
+			"TabNavigation",
+			"HandleBackBtn",
+			"htmlTemplates.PageTemplate",
+			"isTabPage",
+			"this.isTabPage",
+			"startClock",
+			"simFunctions.SplashPage.Start()",
+			"SplashPage",
+			"hdPageGUID",
+			"HandleBackBtn",
+			"isTabPage",
+			"hasIntroPage",
+			"console.log",
+			"ChangePage",
+			"originalImages",
+			"></",
+			"phone",
+			"simSwitcher",
+			"simType",
+			"simFunctions",
+			"constants",
+			"startClo",
+			"();\n",
+			"simFunctions.SplashPage",
+			"toLowerCase",
+			"changePage",
+			"simActions",
+			"startSplash",
+			"SplashPage",
+			"that.templates",
+			"this.templates",
+			"templ",
+			"changePage",
+			"'));\n"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"client",
+			"",
+			"-",
+			"",
+			"htmlTemplates"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "public/Scripts/Views/Project.js",
+					"settings":
+					{
+						"buffer_size": 780,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								586,
+								586
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "public/index.html",
+					"settings":
+					{
+						"buffer_size": 1998,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								664,
+								672
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 678.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "public/Scripts/controller.js",
+					"settings":
+					{
+						"buffer_size": 732,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								722,
+								722
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 40.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "public/Scripts/main.js",
+					"settings":
+					{
+						"buffer_size": 323,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								209,
+								209
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "public/default.html",
+					"settings":
+					{
+						"buffer_size": 24306,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4516,
+								4345
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 3690.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "public/Styles/Styles.css",
+					"settings":
+					{
+						"buffer_size": 45398,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								13862,
+								13862
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 8634.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 40.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 35.0
+	},
+	"output.jslint_result_view":
+	{
+		"height": 390.0
+	},
+	"replace":
+	{
+		"height": 74.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 207.0,
+	"status_bar_visible": true
+}

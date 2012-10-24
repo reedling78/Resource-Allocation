@@ -24,7 +24,14 @@ o.Models.Employee = Backbone.Model.extend({
 		]
 	},
 	initialize: function(){
-		//console.log(this.byTeam());
+		this.bind("change:Employees", function(){
+			console.log('changed');
+		});
+	},
+	bindView: function(){
+		this.bind("change:Employees", function(){
+			console.log('changed');
+		});
 	},
 	byTeam : function(){
 		var employees = this.get('Employees');
@@ -43,7 +50,7 @@ o.Models.Employee = Backbone.Model.extend({
 		for (var i = employees.length - 1; i >= 0; i--) {
 			employees[i].headername = $.grep(teams, function(e){ return e.id == employees[i].teamid; })[0].name;
 		};
-
-		return employees;
+		
+		this.set({ Employees : employees});
 	}
 });
