@@ -6,7 +6,8 @@ window.o.models = {};
 
 
 
-require(['Views/Calendar', 'Models/Calendar', 'controller'], function() { 
+require(['Views/Calendar', 'Models/Calendar', 
+		 'Views/Employee', 'Models/Employee', 'controller'], function() { 
 	$(document).ready(function(){
 		o.controller = new o.Controller();
 	});

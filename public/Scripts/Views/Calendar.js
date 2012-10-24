@@ -17,6 +17,14 @@ o.Views.MonthCollectionView = Backbone.View.extend({
 });
 
 
+o.Views.Calendar = Backbone.View.extend({
+	el: $('ul.Day'),
+	render: function (){
+		this.$el.html(Mustache.render(this.template, this.model));
+	}
+});
+
+
 o.Views.Month = Backbone.View.extend({
 	template: '<li style="width:{{ width }}px;"><span></span><h4>{{ name }}</h4></li>',
 	render: function (){
