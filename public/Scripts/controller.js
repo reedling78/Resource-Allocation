@@ -7,7 +7,6 @@ o.Controller = Backbone.Model.extend({
 
 		//Build Calendar 
 		var calendarModel = new o.Models.Calendar();
-		//console.log(calendarModel);
 
 		var weekView = new o.Views.WeekCollectionView({
 			collection: calendarModel
@@ -23,7 +22,6 @@ o.Controller = Backbone.Model.extend({
 
 		//Build Employees 
 		var employeeModel = new o.Models.Employee();
-		//console.log(employeeModel);
 
 		var employeeView = new o.Views.EmployeeCollectionView({
 			collection: employeeModel
@@ -31,8 +29,16 @@ o.Controller = Backbone.Model.extend({
 		employeeView.render();
 
 
+		//Build Employees 
+		var projectModel = new o.Models.Project();
+
 		//Projects
-		var projectCollectionView = new o.Views.ProjectCollectionView();
+		var projectCollectionView = new o.Views.ProjectCollectionView({
+			collection: projectModel,
+			employeeList: employeeView.collection.attributes.Employees
+		});
+		projectCollectionView.render();
+
 
 	}
 });

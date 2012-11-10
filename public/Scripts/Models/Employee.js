@@ -1,21 +1,23 @@
 o.Models.Employee = Backbone.Model.extend({
 	defaults: {
 		Employees : [
-			{name:'Reed Rizzo', id:1, teamid:1, jobid:2},
-			{name:'Tammie Babbitt', id:2, teamid:2, jobid:1},
-			{name:'Elizabeth Karagitlieva', id:3, teamid:3, jobid:1},
-			{name:'David Mansch', id:4, teamid:1, jobid:1},
-			{name:'Kevin Mech', id:5, teamid:3, jobid:1},
-			{name:'Kevin Mech', id:6, teamid:4, jobid:3},
-			{name:'Kevin Mech', id:7, teamid:2, jobid:1},
-			{name:'Kevin Mech', id:8, teamid:4, jobid:2},
-			{name:'Kevin Mech', id:9, teamid:3, jobid:2}
+			{name:'Tammie Babbitt',         id:1, teamid:1, jobid:2},
+			{name:'Elizabeth Karagitlieva', id:2, teamid:1, jobid:1},
+			{name:'David Mansch',           id:3, teamid:1, jobid:1},
+			{name:'Kevin Mech',             id:4, teamid:1, jobid:1},
+			{name:'Mike Biasi',             id:5, teamid:4, jobid:1},
+			{name:'Donna Gailus',           id:6, teamid:4, jobid:3},
+			{name:'Larry Gasik',            id:7, teamid:4, jobid:1},
+			{name:'Jeff Novak',             id:8, teamid:4, jobid:2},
+			{name:'Michael Shuck',          id:9, teamid:4, jobid:2},
+			{name:'Reed Rizzo',             id:10, teamid:3, jobid:2},
+			{name:'Rich Pesek',             id:11, teamid:3, jobid:2},
 		],
 		Teams: [
-			{name:'Design', id:1},
+			{name:'Design Team', id:1},
 			{name:'CMS', id:2},
-			{name:'ACG', id:3},
-			{name:'Universal', id:4}
+			{name:'ACG Team', id:3},
+			{name:'Universal Team', id:4}
 		],
 		Job: [
 			{name:'Designer', id:1},
@@ -25,12 +27,12 @@ o.Models.Employee = Backbone.Model.extend({
 	},
 	initialize: function(){
 		this.bind("change:Employees", function(){
-			console.log('changed');
+			//console.log('changed');
 		});
 	},
 	bindView: function(){
 		this.bind("change:Employees", function(){
-			console.log('changed');
+			//console.log('changed');
 		});
 	},
 	byTeam : function(){

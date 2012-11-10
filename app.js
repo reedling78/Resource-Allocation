@@ -8,6 +8,7 @@ var express = require('express')
 app.configure(function(){
 	app.use(express.static(__dirname + '/public'));
 	//app.register('.html', hb);
+	//app.register('.css', hb);
 	app.set('view engine', 'handlebars');
 	app.set("view options", { layout: false });
 	app.set('views', __dirname + '/public');
@@ -19,7 +20,14 @@ app.get('/', function(req, res) {
 });
 
 
-//Start web server
-app.listen(port, function() {
-	console.log('Listening on:', port);
+
+
+//Default route
+app.get('/day.css', function(req, res) {
+	//data.css = 'body { background-color:red; }';
+	res.render('/Styles/custom.css', data);
+	//res.render('default.html', data);
 });
+
+//Start web server
+app.listen(port);

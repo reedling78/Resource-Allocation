@@ -8,7 +8,7 @@ window.o.models = {};
 
 require(['Views/Calendar', 'Models/Calendar', 
 		 'Views/Employee', 'Models/Employee', 
-		 'Views/Project', 
+		 'Views/Project',  'Models/Project',
 		 'controller'], function() { 
 	$(document).ready(function(){
 		o.controller = new o.Controller();

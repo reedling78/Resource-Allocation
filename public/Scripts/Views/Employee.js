@@ -2,9 +2,10 @@
 o.Views.EmployeeCollectionView = Backbone.View.extend({
 	el: $('ul.Employees'),
 	EmployeeHeight : 39,
-	HeaderHeight :50,
+	HeaderHeight :80,
+	TotalHeight : 0,
 	initialize: function(){
-		//console.log('cccc');
+		
 	},
 	render: function () {
 
@@ -17,19 +18,28 @@ o.Views.EmployeeCollectionView = Backbone.View.extend({
 		var currentHeader = '';
 
 		for (i = 0; i < employees.length; i++) {
-			console.log(currentHeader + "  --  " + employees[i].headername);
+
 			if(currentHeader != employees[i].headername){
 				currentHeader = employees[i].headername;
+
+				//add header to total height
+				view.TotalHeight = view.TotalHeight + view.HeaderHeight;
+
 				headerView = new o.Views.Header({
 					model: { 
 						name: currentHeader
 					}
 				});
+
 				view.renderView(headerView);
 				currentHeader = employees[i].headername;
 			}
 
 			employeeView = new o.Views.Employee({model: employees[i]});
+
+			//add employee to total height
+			view.TotalHeight = view.TotalHeight + view.EmployeeHeight;
+
 			view.renderView(employeeView);
 
 		}
@@ -40,8 +50,11 @@ o.Views.EmployeeCollectionView = Backbone.View.extend({
 		this.$el.append(view.$el.contents().unwrap());
 	},
 	adjustCalendarHeight: function(){
-		//TODO: this should not be in the model
-		$('.Day, .Day > li, .Day ul li, .Dates, .Month span').css('height', '625px');
+		var view = this, 
+		employees = this.collection.get('Employees'),
+		headers = this.collection.get('Teams');
+
+		$('.Day, .Day > li, .Day ul li, .Dates, .Month span').css('height', view.TotalHeight + 'px');
 	}
 });
 

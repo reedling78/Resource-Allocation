@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"cur",
+				"currentHeadername"
+			],
+			[
+				"emp",
+				"employeeList"
+			],
+			[
+				"em",
+				"employee"
+			],
+			[
 				"bind",
 				"bindView"
 			],
@@ -180,26 +192,18 @@
 	"buffers":
 	[
 		{
-			"file": "public/Scripts/Views/Project.js",
+			"file": "public/Scripts/Models/Project.js",
 			"settings":
 			{
-				"buffer_size": 780,
+				"buffer_size": 595,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "public/index.html",
+			"file": "public/Scripts/Models/Employee.js",
 			"settings":
 			{
-				"buffer_size": 1998,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "public/Scripts/controller.js",
-			"settings":
-			{
-				"buffer_size": 732,
+				"buffer_size": 1674,
 				"line_ending": "Unix"
 			}
 		},
@@ -207,23 +211,15 @@
 			"file": "public/Scripts/main.js",
 			"settings":
 			{
-				"buffer_size": 323,
+				"buffer_size": 341,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "public/default.html",
+			"file": "public/Scripts/controller.js",
 			"settings":
 			{
-				"buffer_size": 24306,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "public/Styles/Styles.css",
-			"settings":
-			{
-				"buffer_size": 45398,
+				"buffer_size": 930,
 				"line_ending": "Unix"
 			}
 		}
@@ -264,16 +260,23 @@
 	},
 	"file_history":
 	[
+		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/controller.js",
+		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/Models/Calendar.js",
+		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/Views/Calendar.js",
+		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/Models/Employee.js",
+		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/Views/Employee.js",
+		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/Views/Project.js",
+		"/Volumes/KeyLimeTie/Design/Web - Resource Allocation/Web Ready/index.html",
+		"/Users/reed.rizzo/Developer/Resource Allocation/public/index.html",
+		"/Users/reed.rizzo/Developer/Resource Allocation/public/default.html",
+		"/Users/reed.rizzo/Developer/Resource Allocation/public/Styles/Styles.css",
+		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/main.js",
+		"/Volumes/KeyLimeTie/Design/Web - Resource Allocation/Web Ready/Styles/Styles.css",
+		"/Volumes/C/_code/Mojo-WebBuilder/SourceCode/Mojo.Web/Simulator/mojo.js",
 		"/Users/reed.rizzo/Developer/Resource Allocation/public/js/require.js",
 		"/Users/reed.rizzo/Developer/Resource Allocation/app.js",
-		"/Users/reed.rizzo/Developer/Resource Allocation/public/index.html",
-		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/controller.js",
-		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/Views/Calendar.js",
-		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/Views/Employee.js",
 		"/Users/reed.rizzo/Developer/Takeda/takeda-ism-webservice/public/scripts/models/controller.js",
 		"/Users/reed.rizzo/Developer/Backbone Workshop/cwc2012-backbone-workshop/source.js",
-		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/Models/Employee.js",
-		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/main.js",
 		"/Users/reed.rizzo/Developer/Resource Allocation/.git/config",
 		"/Users/reed.rizzo/Developer/Chatter/app.js",
 		"/Users/reed.rizzo/Developer/Takeda/takeda-ism-webservice/pgconnect.js",
@@ -319,7 +322,6 @@
 		"/Volumes/C/_code/Mojo-WebBuilder/SourceCode/Mojo.Web/Customers/Assets/jquery.touchSwipe-1.2.5.js",
 		"/Volumes/C/_code/Mojo-WebBuilder/SourceCode/Mojo.Web/Customers/Assets/jquery.mobile-1.1.0.min.js",
 		"/Volumes/C/_code/Mojo-WebBuilder/SourceCode/Mojo.Web/Simulator/main.js",
-		"/Volumes/C/_code/Mojo-WebBuilder/SourceCode/Mojo.Web/Simulator/mojo.js",
 		"/Volumes/C/_code/Mojo-WebBuilder/SourceCode/Mojo.Web/Customers/Assets/scripts.js",
 		"/private/tmp/55170/C/_code/Mojo-WebBuilder/SourceCode/Mojo.Web/Simulator/",
 		"/private/tmp/55170/C/_code/Mojo-WebBuilder/SourceCode/Mojo.Web/C:\\_code\\Mojo-WebBuilder\\SourceCode\\Mojo.Web\\Simulator\\main.js",
@@ -365,6 +367,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"adjustCalendarHeight",
+			"console",
+			"main started",
 			"UserModel",
 			"unFilteredProfileStack",
 			"navigation",
@@ -496,18 +501,18 @@
 			[
 				{
 					"buffer": 0,
-					"file": "public/Scripts/Views/Project.js",
+					"file": "public/Scripts/Models/Project.js",
 					"settings":
 					{
-						"buffer_size": 780,
+						"buffer_size": 595,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								586,
-								586
+								16,
+								16
 							]
 						],
 						"settings":
@@ -523,45 +528,18 @@
 				},
 				{
 					"buffer": 1,
-					"file": "public/index.html",
+					"file": "public/Scripts/Models/Employee.js",
 					"settings":
 					{
-						"buffer_size": 1998,
+						"buffer_size": 1674,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								664,
-								672
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 678.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "public/Scripts/controller.js",
-					"settings":
-					{
-						"buffer_size": 732,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								722,
-								722
+								1105,
+								1105
 							]
 						],
 						"settings":
@@ -570,25 +548,25 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 40.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 2,
 					"file": "public/Scripts/main.js",
 					"settings":
 					{
-						"buffer_size": 323,
+						"buffer_size": 341,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								209,
-								209
+								230,
+								230
 							]
 						],
 						"settings":
@@ -602,55 +580,28 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "public/default.html",
+					"buffer": 3,
+					"file": "public/Scripts/controller.js",
 					"settings":
 					{
-						"buffer_size": 24306,
+						"buffer_size": 930,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4516,
-								4345
+								819,
+								819
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 3690.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "public/Styles/Styles.css",
-					"settings":
-					{
-						"buffer_size": 45398,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								13862,
-								13862
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 8634.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

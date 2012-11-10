@@ -46,13 +46,14 @@ body {
     font-style: normal;
 }
 
-::selection {background-color: #000; color: #fff;}
-::-moz-selection {background-color: #000; color: #fff;}
+::selection {background-color: #666; color: #fff; text-shadow: none;}
+::-moz-selection {background-color: #666; color: #fff; text-shadow: none;}
 
 /* -------------------------------------------------------- Header -------------------------------------------------------- */
 
 header {
-	padding: 20px 20px 15px;
+	padding: 25px 20px 20px;
+	position: relative;
 }
 
 h1 {
@@ -62,6 +63,156 @@ h1 {
 	margin-left: 182px;
 	white-space: nowrap;
 }
+
+/* -------------------------------------------------------- Trash -------------------------------------------------------- */
+
+.Trash {
+	display: inline-block;
+	width: 63px;
+	height: 65px;
+	margin-right: 10px;
+	padding-top: 10px;
+	text-align: center;
+	border: 1px solid rgba(0,0,0,0);
+	border-radius: 7px;
+	position: absolute;
+	right: 15px;
+	top: 11px;
+}
+
+.Trash p {
+	margin-top: 44px;
+	font: 1.4em/1.2em HelveticaNeueLTStd45Light, Arial, Helvetica, sans-serif;
+	color: #666;
+}
+
+.Trash > span {
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	background: #eee;
+	position: relative;
+	border-width: 0 0 5px;
+	border-style: solid;
+	border-color: #888;
+}
+
+.Trash > span > span {
+	display: inline-block;
+	width: 35px;
+	height: 40px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjIiLz4KICAgIDxzdG9wIG9mZnNldD0iMzUlIiBzdG9wLWNvbG9yPSIjMDAwMDAwIiBzdG9wLW9wYWNpdHk9IjAiLz4KICAgIDxzdG9wIG9mZnNldD0iNjUlIiBzdG9wLWNvbG9yPSIjMDAwMDAwIiBzdG9wLW9wYWNpdHk9IjAiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjIiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+	background: -moz-linear-gradient(left,  rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 35%, rgba(0,0,0,0) 65%, rgba(0,0,0,0.2) 100%);
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(0,0,0,0.2)), color-stop(35%,rgba(0,0,0,0)), color-stop(65%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.2)));
+	background: -webkit-linear-gradient(left,  rgba(0,0,0,0.2) 0%,rgba(0,0,0,0) 35%,rgba(0,0,0,0) 65%,rgba(0,0,0,0.2) 100%);
+	background: -o-linear-gradient(left,  rgba(0,0,0,0.2) 0%,rgba(0,0,0,0) 35%,rgba(0,0,0,0) 65%,rgba(0,0,0,0.2) 100%);
+	background: -ms-linear-gradient(left,  rgba(0,0,0,0.2) 0%,rgba(0,0,0,0) 35%,rgba(0,0,0,0) 65%,rgba(0,0,0,0.2) 100%);
+	background: linear-gradient(to right,  rgba(0,0,0,0.2) 0%,rgba(0,0,0,0) 35%,rgba(0,0,0,0) 65%,rgba(0,0,0,0.2) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#33000000', endColorstr='#33000000',GradientType=1 );
+}
+
+.Trash > span > span > span {
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	background: -moz-repeating-linear-gradient(-30deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 3%, rgba(0,0,0,0.2) 4.5%, rgba(0,0,0,0.2) 5.5%, rgba(0,0,0,0) 7%),
+					-moz-repeating-linear-gradient(30deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 3%, rgba(0,0,0,0.2) 4.5%, rgba(0,0,0,0.2) 5.5%, rgba(0,0,0,0) 7%);
+	background: -webkit-repeating-linear-gradient(-30deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 3%, rgba(0,0,0,0.2) 4.5%, rgba(0,0,0,0.2) 5.5%, rgba(0,0,0,0) 7%),
+					-webkit-repeating-linear-gradient(30deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 3%, rgba(0,0,0,0.2) 4.5%, rgba(0,0,0,0.2) 5.5%, rgba(0,0,0,0) 7%);
+	background: repeating-linear-gradient(-30deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 3%, rgba(0,0,0,0.2) 4.5%, rgba(0,0,0,0.2) 5.5%, rgba(0,0,0,0) 7%),
+					repeating-linear-gradient(30deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 3%, rgba(0,0,0,0.2) 4.5%, rgba(0,0,0,0.2) 5.5%, rgba(0,0,0,0) 7%);
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.Trash span span span span {
+	font-size: 0px;
+	line-height: 0%;
+	width: 0px;
+	position: absolute;
+}
+
+.Trash span span span span:nth-child(1) {
+	border-top: 46px solid transparent;
+	border-right: 6px solid #666;
+	right: 0;
+	bottom: -5px;
+	z-index: 100;
+}
+
+.Trash span span span span:nth-child(2) {
+	border-top: 46px solid transparent;
+	border-right: 6px solid #d4d4d4;
+	right: -1px;
+	bottom: -6px;
+	z-index: 200;
+}
+
+.Trash span span span span:nth-child(3) {
+	border-top: 46px solid transparent;
+	border-left: 6px solid #666;
+	left: 0;
+	bottom: -5px;
+	z-index: 100;
+}
+
+.Trash span span span span:nth-child(4) {
+	border-top: 46px solid transparent;
+	border-left: 6px solid #d4d4d4;
+	left: -1px;
+	bottom: -6px;
+	z-index: 200;
+}
+
+.Trash span span span span:nth-child(5) {
+	display: inline-block;
+	width: 39px;
+	height: 10px;
+	background: #d4d4d4;
+	top: -9px;
+	left: -2px;
+	z-index: 300;
+}
+
+.Trash span span span span:nth-child(6) {
+	display: inline-block;
+	width: 35px;
+	height: 1px;
+	border-radius: 3px;
+	border: 1px solid #777;
+	background: rgba(0,0,0,0.1);
+	top: 0;
+	left: -1px;
+	z-index: 400;
+}
+
+.Dragged {
+	background: #e4e4e4;
+	border: 1px solid rgba(0,0,0,0.25);
+	box-shadow: 0 1px 10px rgba(0,0,0,0.25), inset 0 1px hsla(0,0%,100%,0.75);
+}
+
+.Dragged span span span span:nth-child(2) {
+	border-right: 6px solid #e4e4e4;
+}
+
+.Dragged span span span span:nth-child(4) {
+	border-left: 6px solid #e4e4e4;
+}
+
+.Dragged span span span span:nth-child(5) {
+	background: #e4e4e4;
+}
+
+.Dragged > span {
+	background: #fff;
+	border-color: #888;
+}
+
 
 /* -------------------------------------------------------- Employees -------------------------------------------------------- */
 
@@ -95,6 +246,9 @@ h1 {
 	margin-top: 0;
 }
 
+.Employees h2::selection			{background-color: #e7e7e7; color: #000;}
+.Employees h2::-moz-selection		{background-color: #e7e7e7; color: #000;}
+
 /* -------------------------------------------------------- Calendar -------------------------------------------------------- */
 
 .Calendar {
@@ -106,6 +260,9 @@ h1 {
 	box-shadow: 0 1px 10px rgba(0,0,0,0.2);
 	background-color: #fff;
 }
+
+.Calendar ::selection			{background-color: #fff; color: #000;}
+.Calendar ::-moz-selection		{background-color: #fff; color: #000;}
 
 /* -------------------------------------------------------- Dates - Months -------------------------------------------------------- */
 
@@ -195,7 +352,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 /* -------------------------------------------------------- Dates - Weeks -------------------------------------------------------- */
 
 .Day, .Day > li, .Day ul li, .Dates, .Month span {
-	height: 370px;
+	height: 520px;
 }
 
 .Day {
@@ -353,8 +510,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cccccc', end
 }
 
 .Projects li			{list-style: none;}
-.Projects ul ul		{height: 3.9em; width:3000px; border:dotted 1px red;}
+.Projects ul ul		{height: 3.9em; }
 .Projects li li		{position: relative;}
+
+.Projects li.Divider {height: 5.9em;}
 
 .Projects li > div { /* Color Blocks */
 	display: inline-block;
@@ -365,28 +524,46 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cccccc', end
 	position: absolute;
 	top: 2px;
 	padding: 0 10px 0 7px;
-}
-
-.Projects li.Placement {
-	width: 4.1em;
-	height: 3em;
+	border-left-width: 10px;
 }
 
 .Projects li.Placement > div { /* Placement Block */
 	height: 2.8em;
-	-webkit-border-radius: 3px;
-	border-radius: 3px;
-	-webkit-box-shadow: 0;
-	box-shadow: 0;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: 0 0 4px #fff;
+	box-shadow: 0 0 4px #fff;
 	top: 2px;
 	padding: 0 9px 0 6px;
-	background-color: rgba(0,0,0,0.05);
-	border: 2px dashed rgba(0,0,0,0.25);
-	visibility: hidden;
+	background-color: rgba(0,0,0,0.04);
+	border: 2px dotted rgba(0,0,0,0.35);
+	opacity: 0;
 }
 
-.Projects li.Placement:hover > div {
-	visibility: visible;
+.Projects li.Placement > div:hover {
+	opacity: 1;
+}
+
+.Projects li.White > div { /* White PTO/OOO Block */
+	height: 2.6em;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	top: 4px;
+	padding: 0 1px 0 6px;
+	background-color: rgba(255,255,255,0.95);
+	border: 1px dashed rgba(0,0,0,0.5);
+	z-index: 1000;
+	background-clip: padding-box;
+}
+
+.Projects li.White .Dots, .Projects li.White .Colors {
+	display: none;
+}
+
+.Projects li.White h6 {
+	line-height: 1em;
 }
 
 .Projects div div {
@@ -414,6 +591,34 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cccccc', end
 .Projects p {
 	line-height: 1.2em;
 	text-shadow: 0 1px rgba(255,255,255,0.35);
+}
+
+/* -------------------------------------------------------- Project Blocks White -------------------------------------------------------- */
+
+.Projects .White.Expanded > div {
+	width: 196px;
+	z-index: 2000;
+	padding: 8px;
+	top: 0px;
+	left: -2px;
+	height: inherit;
+	background-color: #fff;
+}
+
+.Projects .White.Expanded h6, .Projects .White.Expanded h6:focus, .Projects .White.Expanded p, .Projects .White.Expanded p:focus {
+	border: none;
+	box-shadow: none;
+	padding: 0;
+}
+
+.Projects .White.Expanded h6, .Projects .White.Expanded h6:hover, .Projects .White.Expanded h6:focus {
+	margin: 0 0 4px 0;
+	color: #484848;
+}
+
+.Projects .White.Expanded p, .Projects .White.Expanded p:hover, .Projects .White.Expanded p:focus {
+	margin: 0 0 2px 0;
+	color: #808080;
 }
 
 /* -------------------------------------------------------- Project Blocks Expanded -------------------------------------------------------- */
@@ -459,9 +664,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cccccc', end
 .Projects .Expanded > div {
 	width: 296px;
 	z-index: 2000;
-	padding: 7px;
-	top: -6px;
-	left: -8px;
+	padding: 8px;
+	top: -7px;
+	left: 0px;
 	height: inherit;
 }
 
@@ -501,6 +706,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cccccc', end
 .Projects .Colors span:last-child.Selected		{margin-right: 0;}
 .Projects .Colors span:hover							{cursor: pointer;}
 .Projects .Colors span:active							{top: 1px;}
+
+
+
 
 /* -------------------------- Red -------------------------- */
 .Colors span:nth-child(1)																{background-color: hsl(0,100%,80%); border-color: hsl(0,40%,50%);}
@@ -542,6 +750,43 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cccccc', end
 .Colors span:nth-child(10)																{background-color: hsl(0,0%,100%); border-color: hsl(0,0%,50%);}
 .Colors span:nth-child(10):hover, .Colors span.Selected:nth-child(10)	{border-color: hsl(0,0%,35%); box-shadow: 0 0 9px hsla(0,0%,100%,1);}
 
+/* -------------------------------------------------------- Grabber -------------------------------------------------------- */
+
+.Grabber {
+	display: inline-block;
+	position: absolute;
+	left: -10px;
+	top: -1px;
+	width: 10px;
+	height: 32px;
+	-webkit-border-radius: 3px 0 0 3px;
+	border-radius: 3px 0 0 3px;
+	cursor: move;
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC4xNSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.15) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.15)));
+	background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.15) 100%);
+	background: -o-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.15) 100%);
+	background: -ms-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.15) 100%);
+	background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.15) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#26000000',GradientType=0 );
+}
+
+.Grabber:hover {
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjI1Ii8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC41Ii8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+	background: -moz-linear-gradient(top,  rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.5) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.25)), color-stop(100%,rgba(0,0,0,0.5)));
+	background: -webkit-linear-gradient(top,  rgba(0,0,0,0.25) 0%,rgba(0,0,0,0.5) 100%);
+	background: -o-linear-gradient(top,  rgba(0,0,0,0.25) 0%,rgba(0,0,0,0.5) 100%);
+	background: -ms-linear-gradient(top,  rgba(0,0,0,0.25) 0%,rgba(0,0,0,0.5) 100%);
+	background: linear-gradient(to bottom,  rgba(0,0,0,0.25) 0%,rgba(0,0,0,0.5) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#40000000', endColorstr='#80000000',GradientType=0 );
+}
+
+.Expanded .Grabber, .White .Grabber {
+	display: none;
+}
+
 /* -------------------------------------------------------- Extender Dots -------------------------------------------------------- */
 
 .Dots {
@@ -551,8 +796,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cccccc', end
 	top: -1px;
 	width: 11px;
 	height: 32px;
-	border-radius: 0 4px 4px 0;
 	-webkit-border-radius: 0 4px 4px 0;
+	border-radius: 0 4px 4px 0;
 	cursor: col-resize;
 }
 
@@ -577,67 +822,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cccccc', end
 
 /* -------------------------------------------------------- Block Sizes and Positions -------------------------------------------------------- */
 
-.Duration-1 > div {width: 19px;}
-.Duration-2 > div {width: 60px;}
-.Duration-3 > div {width: 101px;}
-.Duration-4 > div {width: 142px;}
-.Duration-5 > div {width: 183px;}
-.Duration-6 > div {width: 224px;}
-.Duration-7 > div {width: 265px;}
-.Duration-8 > div {width: 306px;}
-.Duration-9 > div {width: 347px;}
-.Duration-10 > div {width: 388px;}
-.Duration-11 > div {width: 429px;}
-.Duration-12 > div {width: 470px;}
-.Duration-13 > div {width: 511px;}
-.Duration-14 > div {width: 552px;}
-.Duration-15 > div {width: 593px;}
-.Duration-16 > div {width: 634px;}
-.Duration-17 > div {width: 675px;}
-.Duration-18 > div {width: 716px;}
-.Duration-19 > div {width: 757px;}
-.Duration-20 > div {width: 798px;}
-.Duration-21 > div {width: 839px;}
-.Duration-22 > div {width: 880px;}
-.Duration-23 > div {width: 921px;}
-.Duration-24 > div {width: 962px;}
-.Duration-25 > div {width: 1003px;}
-.Duration-26 > div {width: 1044px;}
-.Duration-27 > div {width: 1085px;}
-.Duration-28 > div {width: 1126px;}
-.Duration-29 > div {width: 1167px;}
-.Duration-30 > div {width: 1208px;}
 
-.Day-1 {left: 0;}
-.Day-2 {left: 41px;}
-.Day-3 {left: 82px;}
-.Day-4 {left: 123px;}
-.Day-5 {left: 164px;}
-.Day-6 {left: 205px;}
-.Day-7 {left: 246px;}
-.Day-8 {left: 287px;}
-.Day-9 {left: 328px;}
-.Day-10 {left: 369px;}
-.Day-11 {left: 410px;}
-.Day-12 {left: 451px;}
-.Day-13 {left: 492px;}
-.Day-14 {left: 533px;}
-.Day-15 {left: 574px;}
-.Day-16 {left: 615px;}
-.Day-17 {left: 656px;}
-.Day-18 {left: 697px;}
-.Day-19 {left: 738px;}
-.Day-20 {left: 779px;}
-.Day-21 {left: 820px;}
-.Day-22 {left: 861px;}
-.Day-23 {left: 902px;}
-.Day-24 {left: 943px;}
-.Day-25 {left: 984px;}
-.Day-26 {left: 1025px;}
-.Day-27 {left: 1066px;}
-.Day-28 {left: 1107px;}
-.Day-29 {left: 1148px;}
-.Day-30 {left: 1189px;}
+
+
+
 
 /* -------------------------------------------------------- Block Color - Red -------------------------------------------------------- */
 
@@ -652,6 +840,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cccccc', end
 .Red.Expanded h6, .Red.Expanded p							{border-color: hsla(10,23%,75%,1);}
 .Red.Expanded h6:hover, .Red.Expanded p:hover			{border-color: hsla(10,23%,60%,1);}
 .Red.Expanded h6:focus, .Red.Expanded p:focus			{border-color: hsla(10,23%,55%,1); box-shadow: 0 0 5px hsla(10,23%,55%,0.75);}
+.Red ::selection													{background-color: hsl(10,100%,50%); color: #fff;}
+.Red ::-moz-selection											{background-color: hsl(10,100%,50%); color: #fff;}
 
 /* -------------------------------------------------------- Block Color - Orange -------------------------------------------------------- */
 
@@ -666,6 +856,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cccccc', end
 .Orange.Expanded h6, .Orange.Expanded p					{border-color: hsla(35,23%,75%,1);}
 .Orange.Expanded h6:hover, .Orange.Expanded p:hover	{border-color: hsla(35,23%,60%,1);}
 .Orange.Expanded h6:focus, .Orange.Expanded p:focus	{border-color: hsla(35,23%,55%,1); box-shadow: 0 0 5px hsla(35,23%,55%,0.75);}
+.Orange ::selection												{background-color: hsl(35,100%,50%); color: #000;}
+.Orange ::-moz-selection										{background-color: hsl(35,100%,50%); color: #000;}
 
 /* -------------------------------------------------------- Block Color - Yellow -------------------------------------------------------- */
 
@@ -680,6 +872,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cccccc', end
 .Yellow.Expanded h6, .Yellow.Expanded p					{border-color: hsla(60,23%,75%,1);}
 .Yellow.Expanded h6:hover, .Yellow.Expanded p:hover	{border-color: hsla(60,23%,60%,1);}
 .Yellow.Expanded h6:focus, .Yellow.Expanded p:focus	{border-color: hsla(60,23%,55%,1); box-shadow: 0 0 5px hsla(60,23%,55%,0.75);}
+.Yellow ::selection												{background-color: hsl(60,100%,50%); color: #000;}
+.Yellow ::-moz-selection										{background-color: hsl(60,100%,50%); color: #000;}
 
 /* -------------------------------------------------------- Block Color - Lime -------------------------------------------------------- */
 
@@ -694,6 +888,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cccccc', end
 .Lime.Expanded h6, .Lime.Expanded p							{border-color: hsla(75,23%,75%,1);}
 .Lime.Expanded h6:hover, .Lime.Expanded p:hover			{border-color: hsla(75,23%,60%,1);}
 .Lime.Expanded h6:focus, .Lime.Expanded p:focus			{border-color: hsla(75,23%,55%,1); box-shadow: 0 0 5px hsla(75,23%,55%,0.75);}
+.Lime ::selection													{background-color: hsl(75,100%,50%); color: #000;}
+.Lime ::-moz-selection											{background-color: hsl(75,100%,50%); color: #000;}
 
 /* -------------------------------------------------------- Block Color - Green -------------------------------------------------------- */
 
@@ -708,6 +904,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cccccc', end
 .Green.Expanded h6, .Green.Expanded p						{border-color: hsla(110,23%,75%,1);}
 .Green.Expanded h6:hover, .Green.Expanded p:hover		{border-color: hsla(110,23%,60%,1);}
 .Green.Expanded h6:focus, .Green.Expanded p:focus		{border-color: hsla(110,23%,55%,1); box-shadow: 0 0 5px hsla(110,23%,55%,0.75);}
+.Green ::selection												{background-color: hsl(110,100%,50%); color: #000;}
+.Green ::-moz-selection											{background-color: hsl(110,100%,50%); color: #000;}
 
 /* -------------------------------------------------------- Block Color - Aqua -------------------------------------------------------- */
 
@@ -722,6 +920,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cccccc', end
 .Aqua.Expanded h6, .Aqua.Expanded p							{border-color: hsla(170,23%,75%,1);}
 .Aqua.Expanded h6:hover, .Aqua.Expanded p:hover			{border-color: hsla(170,23%,60%,1);}
 .Aqua.Expanded h6:focus, .Aqua.Expanded p:focus			{border-color: hsla(170,23%,55%,1); box-shadow: 0 0 5px hsla(170,23%,55%,0.75);}
+.Aqua ::selection													{background-color: hsl(170,100%,50%); color: #000;}
+.Aqua ::-moz-selection											{background-color: hsl(170,100%,50%); color: #000;}
 
 /* -------------------------------------------------------- Block Color - Blue -------------------------------------------------------- */
 
@@ -736,6 +936,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cccccc', end
 .Blue.Expanded h6, .Blue.Expanded p							{border-color: hsla(210,23%,75%,1);}
 .Blue.Expanded h6:hover, .Blue.Expanded p:hover			{border-color: hsla(210,23%,60%,1);}
 .Blue.Expanded h6:focus, .Blue.Expanded p:focus			{border-color: hsla(210,23%,55%,1); box-shadow: 0 0 5px hsla(210,23%,55%,0.75);}
+.Blue ::selection													{background-color: hsl(210,100%,50%); color: #fff;}
+.Blue ::-moz-selection											{background-color: hsl(210,100%,50%); color: #fff;}
 
 /* -------------------------------------------------------- Block Color - Purple -------------------------------------------------------- */
 
@@ -750,6 +952,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cccccc', end
 .Purple.Expanded h6, .Purple.Expanded p					{border-color: hsla(280,23%,75%,1);}
 .Purple.Expanded h6:hover, .Purple.Expanded p:hover	{border-color: hsla(280,23%,60%,1);}
 .Purple.Expanded h6:focus, .Purple.Expanded p:focus	{border-color: hsla(280,23%,55%,1); box-shadow: 0 0 5px hsla(280,23%,55%,0.75);}
+.Purple ::selection												{background-color: hsl(280,100%,50%); color: #fff;}
+.Purple ::-moz-selection										{background-color: hsl(280,100%,50%); color: #fff;}
 
 /* -------------------------------------------------------- Block Color - Grey -------------------------------------------------------- */
 
@@ -764,11 +968,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cccccc', end
 .Grey.Expanded h6, .Grey.Expanded p							{border-color: hsla(0,0%,0%,.2);}
 .Grey.Expanded h6:hover, .Grey.Expanded p:hover			{border-color: hsla(0,0%,0%,.4);}
 .Grey.Expanded h6:focus, .Grey.Expanded p:focus			{border-color: hsla(0,0%,0%,.5); box-shadow: 0 0 5px hsla(0,0%,0%,0.4);}
+.Grey ::selection													{background-color: hsl(0,0%,20%); color: #fff;}
+.Grey ::-moz-selection											{background-color: hsl(0,0%,20%); color: #fff;}
 
 /* -------------------------------------------------------- Block Color - White -------------------------------------------------------- */
 
 .White > div														{background-color: hsl(0,0%,100%); border: 1px solid hsl(0,0%,70%);}
-.White:hover > div, .White.Expanded > div					{background-color: hsl(0,0%,100%); border: 1px solid hsl(0,0%,50%); box-shadow: 0 0 3px hsla(0,0%,30%,0.7);}
+.White:hover > div, .White.Expanded > div					{background-color: hsl(0,0%,100%); border: 1px dashed hsl(0,0%,40%); box-shadow: 0 0 3px hsla(0,0%,30%,0.7);}
+.Projects li.White:hover > div, .Projects li.White.Expanded > div {border: 1px dashed hsl(0,0%,40%); box-shadow: 0 0 3px hsla(0,0%,30%,0.7);}
 .White h6															{color: hsl(0,0%,30%);}
 .White:hover h6													{color: hsl(0,0%,25%);}
 .White .Dots span													{background-color: hsla(0,0%,0%,0.2);}
@@ -778,6 +985,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cccccc', end
 .White.Expanded h6, .White.Expanded p						{border-color: hsla(0,0%,0%,.2);}
 .White.Expanded h6:hover, .White.Expanded p:hover		{border-color: hsla(0,0%,0%,.4);}
 .White.Expanded h6:focus, .White.Expanded p:focus		{border-color: hsla(0,0%,0%,.5); box-shadow: 0 0 5px hsla(0,0%,0%,0.4);}
+.White ::selection												{background-color: hsl(0,0%,80%); color: #000;}
+.White ::-moz-selection											{background-color: hsl(0,0%,80%); color: #000;}
+
+/* -------------------------------------------------------- Block Color - All Colors -------------------------------------------------------- */
+
+.Red:hover > div, .Orange:hover > div, .Yellow:hover > div, .Lime:hover > div, .Green:hover > div, .Aqua:hover > div, .Blue:hover > div, .Purple:hover > div, .Grey:hover > div {
+	border-left-width: 10px;	
+}
+
+.Red.Expanded > div, .Orange.Expanded > div, .Yellow.Expanded > div, .Lime.Expanded > div, .Green.Expanded > div, .Aqua.Expanded > div, .Blue.Expanded > div, .Purple.Expanded > div, .Grey.Expanded > div {
+	border-left-width: 1px;	
+}
 
 /* -------------------------------------------------------- Scrollbars -------------------------------------------------------- */
 

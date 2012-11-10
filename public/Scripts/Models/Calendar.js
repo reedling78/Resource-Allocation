@@ -35,6 +35,7 @@ o.Models.Calendar = Backbone.Model.extend({
 					if (newDate.getMonth() == currentMonth) {
 						if (newDate.getMonth() == today.getMonth()){
 							if (newDate.getDate() > (today.getDate() - 1)){
+
 								if (newDate.getDay() != 0 && newDate.getDay() != 6){
 									
 									if(newDate.getDay() == 1){
@@ -46,10 +47,11 @@ o.Models.Calendar = Backbone.Model.extend({
 										date: newDate.getDate()
 									})
 									dayCount++;
-
 								}
+								
 							}
 						} else {
+
 							if (newDate.getDay() != 0 && newDate.getDay() != 6){
 
 								if(newDate.getDay() == 1){
@@ -62,6 +64,7 @@ o.Models.Calendar = Backbone.Model.extend({
 								})
 								dayCount++;
 							}
+
 						}
 					} 
 					addOne = true;
