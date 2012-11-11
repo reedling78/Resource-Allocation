@@ -1,15 +1,17 @@
 
 o.Views.ProjectCollectionView = Backbone.View.extend({
 	el: $('div.Projects ul'),
-	initialize: function(){
-		//console.log(this.options.employeeList);
-		
+	initialize: function () {
+		'use strict';
 	},
+	colors: ['Red', 'Orange', 'Yellow', 'Lime', 'Green', 'Aqua', 'Blue', 'Purple', 'Gray', 'White'],
+	dayWidth : 41,
 	render: function () {
-		var view = this, 
+		'use strict';
+		var view = this,
 			gutters = this.options.employeeList,
-			projects = this.collection.get('Projects'), 
-			i, 
+			projects = this.collection.get('Projects'),
+			i,
 			gutterView,
 			projectView;
 
@@ -17,7 +19,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 
 		for (i = 0; i < gutters.length; i++) {
 			gutterView = new o.Views.Gutter({
-				model: gutters[i], 
+				model: gutters[i],
 				currentHeadername: view.currentHeadername
 			});
 			view.renderGutterView(gutterView);
@@ -37,11 +39,12 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 
 		view.setEventHandlers();
 	},
-	renderGutterView: function (gutterView){
+	renderGutterView: function (gutterView) {
+		'use strict';
 		gutterView.render();
 		this.$el.append(gutterView.$el.contents().unwrap());
 	},
-	renderProjectView: function(projectView){
+	renderProjectView: function (projectView) {
 		projectView.render();
 		this.$el.find('li[data-employee-id="' + projectView.model.empId + '"] ul').append(projectView.$el.contents().unwrap())
 	},
@@ -84,15 +87,13 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 		return model;
 	},
 	setEventHandlers: function(){
+		var view = this,
+			nextEl, 
+			thisElStartDuration, 
+			thisElStartDay, 
+			thisElNewDuration;
 
-		$(function() {
-			var nextEl, 
-				thisElStartDuration, 
-				thisElStartDay, 
-				thisElNewDuration;
-
-
-			//Project edit
+			//Project edit area
 			$('div.editproj').on('click', function(){
 				$(this).parent().parent().addClass('Expanded');
 			})
@@ -105,14 +106,14 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 				var projLi = $(this).parent().parent().parent().parent();
 				$(this).parent().find('span').removeClass('Selected');
 				$(this).addClass('Selected');
-				removeColor(projLi);
+				view.updateProjectColor(projLi, $(this).data('color'));
 				$(projLi).addClass($(this).data('color'));
 			})
 
-
+			//Project resizable
 			$("div.Projects li>div").resizable({
 				handles: 'e',
-				grid: 41,
+				grid: view.dayWidth,
 				alsoResize: $(this).parent(),
 				start: function(e, ui){
 					nextEl = $(this).parent().nextAll();
@@ -120,20 +121,11 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 					thisElStartDay = parseInt($(this).attr('data-day'));
 				},
 				resize: function(e, ui){
-					thisElNewDuration = parseInt((ui.size.width / 41) + 1);
+
+					thisElNewDuration = parseInt((ui.size.width / view.dayWidth) + 1);
 					var DurationChange = thisElNewDuration - thisElStartDuration,
 						curentElDayIncrease = thisElStartDay + thisElNewDuration,
 						lastElEndDay = 0;
-
-					function updateEl(el, day){
-						$(el)
-							.removeClass(function (index, css) {
-								return (css.match (/\bDay-\S+/g) || []).join(' ');
-							})
-							.addClass('Day-' + day);
-
-						$(el).find('div').first().attr('data-day', day);
-					};
 
 					if(DurationChange > 0){
 						for (var i = 0; i < nextEl.length; i++) { 
@@ -142,13 +134,13 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 								elName = $(nextEl[i]).find('h6').text();
 
 							if(lastElEndDay > nxtElDay){
-								updateEl(nextEl[i], lastElEndDay);
+								view.updateProjectEl(nextEl[i], lastElEndDay);
 								nxtElDay = $(nextEl[i]).find('div').first().data('day');
 								lastElEndDay = lastElEndDay + nxtElDur;
 							} else {
 								if(curentElDayIncrease > nxtElDay){
 									var newDays = nxtElDay + (curentElDayIncrease - nxtElDay);
-									updateEl(nextEl[i], newDays);
+									view.updateProjectEl(nextEl[i], newDays);
 									lastElEndDay = newDays + nxtElDur;
 								}
 							}
@@ -171,36 +163,41 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 			$("div.Projects li").draggable({ 
 				handle: "span.Grabber",
 				snap: "div.Projects ul ul",
-				grid: [41,1],
+				grid: [view.dayWidth,1],
 				snapMode: 'inner'
-				
 			});
 
 			$("div.Projects .droparea").droppable({
 				tolerance: "pointer",
 				drop: function(event, ui) {
-					console.log(ui);
-					console.log(this);
-					var dropped = ui.draggable;
-            		var droppedOn = $(this);
-            		$(dropped).detach().css({top: 0,left: 0}).appendTo(droppedOn);
+					var dropped = ui.draggable, droppedOn = $(this);
+            		$(dropped).detach().attr('style', '').appendTo(droppedOn);
+            		view.updateProjectEl(dropped, (ui.position.left / view.dayWidth)+1);
+
+            		droppedOn.find('li').sortElements(function(a, b){
+					    return $(a).find('div').first().attr('data-day') > $(b).find('div').first().attr('data-day') ? 1 : -1;
+					});
+
+					console.log(droppedOn);
+
 				}
 			});
+	},
+	updateProjectEl: function(el, day){
+		$(el).removeClass(function (index, css) {
+			return (css.match (/\bDay-\S+/g) || []).join(' ');
+		}).addClass('Day-' + day);
 
-			function removeColor(el){
-				$(el).removeClass('Red');
-				$(el).removeClass('Orange');
-				$(el).removeClass('Yellow');
-				$(el).removeClass('Lime');
-				$(el).removeClass('Green');
-				$(el).removeClass('Aqua');
-				$(el).removeClass('Blue');
-				$(el).removeClass('Purple');
-				$(el).removeClass('Gray');
-				$(el).removeClass('White');
-			}
-	        
-	    });
+		$(el).find('div').first().attr('data-day', day);
+	},
+	updateProjectColor: function(el, color){
+		var view = this;
+
+		for (var i = 0; i < view.colors.length; i++) {
+			$(el).removeClass(view.colors[i]);
+		};
+
+		$(el).addClass(color);
 	}
 
 });
