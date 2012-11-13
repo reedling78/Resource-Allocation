@@ -21,6 +21,12 @@
   socket.on('projects', function (data) {
     console.log(data);
     socket.emit('get');
+
+	socket.on('message', function (from, msg) {
+		console.log('I received a private message by ', from, ' saying ', msg);
+	});
+
+
   });
 </script>
 
