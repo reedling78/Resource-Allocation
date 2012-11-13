@@ -22,7 +22,11 @@ app.get('/', function(req, res) {
 	res.render('default.html', data);
 });
 
-
+// assuming io is the Socket.IO server object
+io.configure(function () { 
+  io.set("transports", ["xhr-polling"]); 
+  io.set("polling duration", 10); 
+});
 
 
 //Default route
