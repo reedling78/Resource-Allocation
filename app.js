@@ -30,11 +30,16 @@ io.sockets.on('connection', function (socket) {
     console.log(data);
   });
 
-  socket.broadcast.emit('user connected');
-  socket.broadcast.json.send({ a: 'message' });
 
+  socket.on('sendData', function (data) {
+    socket.broadcast.emit('Change Made');
+  	socket.broadcast.json.send(data);
+  });
 
   
+
+
+
 });
 
 //Default route
