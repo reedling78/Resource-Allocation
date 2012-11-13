@@ -26,9 +26,10 @@ io.sockets.on('connection', function (socket) {
   	hello: 'world',
   	whatever: 'test'
   });
-  
+
   socket.on('get', function (data) {
     console.log(data);
+    socket.broadcast.json.send(data);
   });
 
 
