@@ -22,14 +22,16 @@
     console.log(data);
     socket.emit('get');
 
-	socket.on('sendData', function (from, msg) {
-		console.log('I received a private message by ', from, ' saying ', msg);
-	});
+	
 
-	socket.emit('sendData', { name : 'reed', age : 34 });
+	
 
 
   });
+
+  socket.on('sendData', function (data) {
+		console.log('I received a private message by ', from, ' saying ', msg);
+	});
 </script>
 
 </head>
