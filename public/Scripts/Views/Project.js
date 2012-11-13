@@ -201,10 +201,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 		};
 
 		$(el).addClass(color);
-		view.save();
-	},
-	save : function(){
-		o.socket.emit('save', { name: 'Reed Rizzo', nickname: 'badass'});
+		view.collection.sendToServer(color);
 	}
 
 
