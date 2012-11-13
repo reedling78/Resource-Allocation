@@ -1,12 +1,10 @@
 var express = require('express')
 	, hb = require('handlebars')
 	, app = express.createServer()
-	, server = require('http').createServer(app)
-	, io = require('socket.io').listen(server)
+	, io = require('socket.io')
 	, data = {}
 	, port = process.env.PORT || 3000;
 
-server.listen(80);
 
 app.configure(function(){
 	app.use(express.static(__dirname + '/public'));
@@ -22,11 +20,6 @@ app.get('/', function(req, res) {
 	res.render('default.html', data);
 });
 
-// assuming io is the Socket.IO server object
-io.configure(function () { 
-  io.set("transports", ["xhr-polling"]); 
-  io.set("polling duration", 10); 
-});
 
 
 //Default route
