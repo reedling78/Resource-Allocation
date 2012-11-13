@@ -26,6 +26,11 @@ io.sockets.on('connection', function (socket) {
   	hello: 'world',
   	whatever: 'test'
   });
+
+	socket.on('user message', function (msg) {
+		socket.broadcast.emit('user message', msg);
+	});
+
 });
 
 //Default route
