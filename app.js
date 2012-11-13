@@ -17,18 +17,19 @@ app.configure(function(){
 });
 
 io.configure(function () { 
-  io.set("transports", ["xhr-polling"]); 
-  io.set("polling duration", 10); 
+	io.set("transports", ["xhr-polling"]); 
+	io.set("polling duration", 10); 
 });
 
 io.sockets.on('connection', function (socket) {
-  socket.emit('projects', { 
-  	hello: 'world',
-  	whatever: 'test'
-  });
+	
+	socket.emit('projects', { 
+		hello: 'world',
+		whatever: 'test'
+	});
 
-	socket.on('user message', function (msg) {
-		socket.broadcast.emit('user message', msg);
+	socket.on('save', function (data) {
+		socket.broadcast.emit('save', data);
 	});
 
 });
