@@ -18,9 +18,9 @@
 
 <script>
   var socket = io.connect('http://klt.rizzonet.com');
-  socket.on('news', function (data) {
+  socket.on('projects', function (data) {
     console.log(data);
-    socket.emit('my other event', { my: 'data' });
+    socket.emit('get', { my: 'data' });
   });
 </script>
 
