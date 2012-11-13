@@ -29,6 +29,12 @@ io.sockets.on('connection', function (socket) {
   socket.on('get', function (data) {
     console.log(data);
   });
+
+  socket.broadcast.emit('user connected');
+  socket.broadcast.json.send({ a: 'message' });
+
+
+  
 });
 
 //Default route
