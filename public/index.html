@@ -17,7 +17,7 @@
 <script type="text/javascript" src="http://klt.rizzonet.com/socket.io/socket.io.js"></script>
 
 <script>
-  var socket = io.connect('http://localhost');
+  var socket = io.connect('http://klt.rizzonet.com');
   socket.on('news', function (data) {
     console.log(data);
     socket.emit('my other event', { my: 'data' });
