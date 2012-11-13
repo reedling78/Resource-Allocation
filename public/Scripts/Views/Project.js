@@ -4,9 +4,6 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 	initialize: function () {
 		'use strict';
 	},
-	events: {
-    	'save': 'sendToServer'
-  	},
 	colors: ['Red', 'Orange', 'Yellow', 'Lime', 'Green', 'Aqua', 'Blue', 'Purple', 'Grey', 'White'],
 	dayWidth : 41,
 	render: function () {
