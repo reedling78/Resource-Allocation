@@ -4,7 +4,8 @@ var express = require('express')
 	, socket = require('socket.io')
 	, io = socket.listen(app)
 	, data = {}
-	, port = process.env.PORT || 3000;
+	, port = process.env.PORT || 3000
+	, klt = require('./serverjs/static').klt();
 
 
 app.configure(function(){
@@ -27,6 +28,8 @@ io.sockets.on('connection', function (socket) {
 		hello: 'world',
 		whatever: 'test'
 	});
+
+	socket.emit('static', klt);
 
 	socket.on('save', function (data) {
 		socket.broadcast.emit('save', data);
