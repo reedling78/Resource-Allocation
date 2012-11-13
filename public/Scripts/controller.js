@@ -4,6 +4,7 @@ o.Controller = Backbone.Model.extend({
 		]
 	},
 	initialize: function(){
+		o.socket = io.connect('http://klt.rizzonet.com');
 
 		//Build Calendar 
 		var calendarModel = new o.Models.Calendar();
