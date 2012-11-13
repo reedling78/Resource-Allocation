@@ -16,6 +16,11 @@ app.configure(function(){
 	app.set('views', __dirname + '/public');
 });
 
+io.configure(function () { 
+  io.set("transports", ["xhr-polling"]); 
+  io.set("polling duration", 10); 
+});
+
 //Default route
 app.get('/', function(req, res) {
 	res.render('default.html', data);
