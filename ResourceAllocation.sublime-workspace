@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"for",
+				"for	for (…) {…}"
+			],
+			[
 				"cur",
 				"currentHeadername"
 			],
@@ -18,10 +22,6 @@
 			[
 				"bind",
 				"bindView"
-			],
-			[
-				"for",
-				"for	for (…) {…} (Improved Native For-Loop)"
 			],
 			[
 				"conso",
@@ -192,34 +192,18 @@
 	"buffers":
 	[
 		{
-			"file": "public/Scripts/Models/Project.js",
+			"file": "public/Scripts/Views/Project.js",
 			"settings":
 			{
-				"buffer_size": 595,
+				"buffer_size": 7292,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "public/Scripts/Models/Employee.js",
+			"file": "/Users/reed.rizzo/Developer/Facebook Sandbox/default.htm",
 			"settings":
 			{
-				"buffer_size": 1674,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "public/Scripts/main.js",
-			"settings":
-			{
-				"buffer_size": 341,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "public/Scripts/controller.js",
-			"settings":
-			{
-				"buffer_size": 930,
+				"buffer_size": 1175,
 				"line_ending": "Unix"
 			}
 		}
@@ -227,7 +211,7 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 267.0,
+		"height": 27.0,
 		"selected_items":
 		[
 			[
@@ -243,7 +227,7 @@
 				"HTMLPrettify: Prettify"
 			]
 		],
-		"width": 467.0
+		"width": 449.0
 	},
 	"console":
 	{
@@ -260,21 +244,26 @@
 	},
 	"file_history":
 	[
-		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/controller.js",
-		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/Models/Calendar.js",
-		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/Views/Calendar.js",
-		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/Models/Employee.js",
-		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/Views/Employee.js",
-		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/Views/Project.js",
-		"/Volumes/KeyLimeTie/Design/Web - Resource Allocation/Web Ready/index.html",
+		"/Users/reed.rizzo/Library/Application Support/Sublime Text 2/Packages/User/CSSTidy.sublime-settings",
 		"/Users/reed.rizzo/Developer/Resource Allocation/public/index.html",
-		"/Users/reed.rizzo/Developer/Resource Allocation/public/default.html",
 		"/Users/reed.rizzo/Developer/Resource Allocation/public/Styles/Styles.css",
+		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/Models/Project.js",
+		"/Users/reed.rizzo/Developer/Resource Allocation/public/js/sortElements.js",
+		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/Views/Project.js",
+		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/controller.js",
+		"/Users/reed.rizzo/Library/Application Support/Sublime Text 2/Packages/CSSTidy/CSSTidy.sublime-settings",
+		"/Users/reed.rizzo/Developer/Resource Allocation/app.js",
+		"/Users/reed.rizzo/Developer/Resource Allocation/public/Styles/custom.css",
+		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/Views/Employee.js",
+		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/Models/Employee.js",
+		"/Volumes/KeyLimeTie/Design/Web - Resource Allocation/Web Ready/index.html",
+		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/Models/Calendar.js",
 		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/main.js",
+		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/Views/Calendar.js",
+		"/Users/reed.rizzo/Developer/Resource Allocation/public/default.html",
 		"/Volumes/KeyLimeTie/Design/Web - Resource Allocation/Web Ready/Styles/Styles.css",
 		"/Volumes/C/_code/Mojo-WebBuilder/SourceCode/Mojo.Web/Simulator/mojo.js",
 		"/Users/reed.rizzo/Developer/Resource Allocation/public/js/require.js",
-		"/Users/reed.rizzo/Developer/Resource Allocation/app.js",
 		"/Users/reed.rizzo/Developer/Takeda/takeda-ism-webservice/public/scripts/models/controller.js",
 		"/Users/reed.rizzo/Developer/Backbone Workshop/cwc2012-backbone-workshop/source.js",
 		"/Users/reed.rizzo/Developer/Resource Allocation/.git/config",
@@ -313,8 +302,6 @@
 		"/Volumes/C/_code/Mojo-WebBuilder/SourceCode/Mojo.Web/Customers/Assets/iOS/styles.css",
 		"/Volumes/C/_code/Mojo-WebBuilder/SourceCode/Mojo.Web/Customers/Assets/iOS/jquery.mobile-1.1.0.min.css",
 		"/Users/reed.rizzo/Library/Application Support/Sublime Text 2/Packages/Default/Default (OSX).sublime-keymap",
-		"/Users/reed.rizzo/Library/Application Support/Sublime Text 2/Packages/CSSTidy/CSSTidy.sublime-settings",
-		"/Users/reed.rizzo/Library/Application Support/Sublime Text 2/Packages/User/CSSTidy.sublime-settings",
 		"/Users/reed.rizzo/Developer/ThirtyOne/scripts/libraries/jquery.js",
 		"/Users/reed.rizzo/Developer/ThirtyOne/scripts/libraries/require.js",
 		"/Volumes/C/_code/Mojo-WebBuilder/SourceCode/Mojo.Web/Customers/Assets/themes/images/ajax-loader.gif",
@@ -367,6 +354,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"removeColor",
+			"Color",
+			"attr",
+			"	",
+			"-3",
+			"01",
 			"adjustCalendarHeight",
 			"console",
 			"main started",
@@ -481,6 +474,12 @@
 		"regex": false,
 		"replace_history":
 		[
+			"",
+			"-8",
+			"-7",
+			"-6",
+			"-5",
+			"-4",
 			"client",
 			"",
 			"-",
@@ -496,23 +495,23 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "public/Scripts/Models/Project.js",
+					"file": "public/Scripts/Views/Project.js",
 					"settings":
 					{
-						"buffer_size": 595,
+						"buffer_size": 7292,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								16,
-								16
+								631,
+								631
 							]
 						],
 						"settings":
@@ -520,7 +519,7 @@
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": 0.0,
+						"translation.x": 3.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
@@ -528,80 +527,27 @@
 				},
 				{
 					"buffer": 1,
-					"file": "public/Scripts/Models/Employee.js",
+					"file": "/Users/reed.rizzo/Developer/Facebook Sandbox/default.htm",
 					"settings":
 					{
-						"buffer_size": 1674,
+						"buffer_size": 1175,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1105,
-								1105
+								964,
+								964
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "public/Scripts/main.js",
-					"settings":
-					{
-						"buffer_size": 341,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								230,
-								230
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "public/Scripts/controller.js",
-					"settings":
-					{
-						"buffer_size": 930,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								819,
-								819
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1029.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

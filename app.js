@@ -1,9 +1,12 @@
 var express = require('express')
 	, hb = require('handlebars')
 	, app = express.createServer()
+	, server = require('http').createServer(app)
+	, io = require('socket.io').listen(server)
 	, data = {}
 	, port = process.env.PORT || 3000;
 
+server.listen(80);
 
 app.configure(function(){
 	app.use(express.static(__dirname + '/public'));

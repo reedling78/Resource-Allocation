@@ -4,13 +4,13 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 	initialize: function () {
 		'use strict';
 	},
-	colors: ['Red', 'Orange', 'Yellow', 'Lime', 'Green', 'Aqua', 'Blue', 'Purple', 'Gray', 'White'],
+	colors: ['Red', 'Orange', 'Yellow', 'Lime', 'Green', 'Aqua', 'Blue', 'Purple', 'Grey', 'White'],
 	dayWidth : 41,
 	render: function () {
 		'use strict';
 		var view = this,
 			gutters = this.options.employeeList,
-			projects = this.collection.get('Projects'),
+			projects = this.collection.models,
 			i,
 			gutterView,
 			projectView;
@@ -29,8 +29,11 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 		//set gutter width
 		$('.Projects').css('width', $('.Calendar')[0].scrollWidth + 'px');
 
+		
 		for (i = 0; i < projects.length; i++) {
-			projects[i] = view.setDayInfo(projects[i]);
+			//console.log(projects[i].attributes);
+			projects[i].attributes = view.setDayInfo(projects[i].attributes);
+			console.log(projects[i]);
 			projectView = new o.Views.Project({
 				model: projects[i]
 			});
@@ -46,7 +49,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 	},
 	renderProjectView: function (projectView) {
 		projectView.render();
-		this.$el.find('li[data-employee-id="' + projectView.model.empId + '"] ul').append(projectView.$el.contents().unwrap())
+		this.$el.find('li[data-employee-id="' + projectView.model.attributes.empId + '"] ul').append(projectView.$el.contents().unwrap())
 	},
 	setDayInfo: function(model){
 		var today = new Date(),
@@ -224,13 +227,14 @@ o.Views.Project = Backbone.View.extend({
 			+ '			<h6 contenteditable="true">{{ name }}</h6>'
 			+ '			<span class="Dash">&ndash;</span>'
 			+ '			<p contenteditable="true">{{ desc }}</p>'
-			+ '			<span class="Colors"><span data-color="Red"></span><span data-color="Orange"></span><span data-color="Yellow"></span><span data-color="Lime"></span><span data-color="Green"></span><span data-color="Aqua"></span><span data-color="Blue"></span><span data-color="Purple"></span><span data-color="Gray"></span><span data-color="White"></span></span>'
+			+ '			<span class="Colors"><span data-color="Red"></span><span data-color="Orange"></span><span data-color="Yellow"></span><span data-color="Lime"></span><span data-color="Green"></span><span data-color="Aqua"></span><span data-color="Blue"></span><span data-color="Purple"></span><span data-color="Grey"></span></span>'
 			+ '			<span class="Grabber"></span>'
 			+ '			<span class="Dots ui-resizable-handle ui-resizable-e"><span></span><span></span><span></span></span>'
 			+ '		</div>'
 			+ '	</div>'
 			+ '</li>',
 	render: function (){
-		this.$el.html(Mustache.render(this.template, this.model));
+		console.log(this.model.attributes);
+		this.$el.html(Mustache.render(this.template, this.model.attributes));
 	}
 });

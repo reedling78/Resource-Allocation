@@ -18,8 +18,6 @@ o.Controller = Backbone.Model.extend({
 		});
 		monthView.render();
 
-
-
 		//Build Employees 
 		var employeeModel = new o.Models.Employee();
 
@@ -28,13 +26,13 @@ o.Controller = Backbone.Model.extend({
 		});
 		employeeView.render();
 
-
 		//Build Employees 
-		var projectModel = new o.Models.Project();
+		var projectCollection = new o.Models.ProjectCollection();
+		//projectCollection.sync();
 
 		//Projects
 		var projectCollectionView = new o.Views.ProjectCollectionView({
-			collection: projectModel,
+			collection: projectCollection,
 			employeeList: employeeView.collection.attributes.Employees
 		});
 		projectCollectionView.render();
