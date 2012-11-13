@@ -77,6 +77,9 @@ o.Models.ProjectCollection = Backbone.Collection.extend({
 	this.add(project5);
     project5.save();
 
+  },
+  save : function(){
+  	console.log('lets do it');
   }
 });
 
