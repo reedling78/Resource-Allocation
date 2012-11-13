@@ -31,6 +31,3 @@ exports.klt = function () {
 	}
 
 }
-
-
-klt = 
