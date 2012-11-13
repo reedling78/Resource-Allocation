@@ -205,7 +205,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 
 		$(el).addClass(color);
 		console.log('zap!!!');
-		view.trigger('save');
+		view.sendToServer();
 	},
 	sendToServer : function(){
 		console.log('bam!!!!');
