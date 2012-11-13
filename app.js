@@ -26,22 +26,6 @@ io.sockets.on('connection', function (socket) {
   	hello: 'world',
   	whatever: 'test'
   });
-
-  socket.on('get', function (data) {
-    console.log(data);
-    socket.broadcast.json.send(data);
-  });
-
-
-  socket.on('sendData', function (data) {
-    socket.broadcast.emit('Change Made');
-  	socket.broadcast.json.send(data);
-  });
-
-  
-
-
-
 });
 
 //Default route
