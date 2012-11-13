@@ -1,7 +1,8 @@
 var express = require('express')
 	, hb = require('handlebars')
 	, app = express.createServer()
-	, io = require('socket.io')
+	, socket = require('socket.io')
+	, io = socket.listen(app)
 	, data = {}
 	, port = process.env.PORT || 3000;
 
