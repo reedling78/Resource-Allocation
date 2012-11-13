@@ -30,10 +30,10 @@ o.Models.Employee = Backbone.Model.extend({
 			//console.log('changed');
 		});
 
-		socket.on('static', function (data) {
+		o.socket.on('static', function (data) {
 			console.log(data);
 		});
-		
+
 	},
 	bindView: function(){
 		this.bind("change:Employees", function(){
