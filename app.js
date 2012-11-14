@@ -21,7 +21,7 @@ io.configure(function () {
 	io.set("polling duration", 10); 
 });
 
-io.sockets.on('connection', function (socket) {
+io.sockets.on('get projects', function (socket) {
 	socket.emit('projects', projectData);
 });
 

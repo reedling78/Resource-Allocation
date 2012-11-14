@@ -5,11 +5,11 @@ o.Models.ProjectCollection = Backbone.Collection.extend({
   model: o.Models.Project,
   localStorage: new Store('ProjectCollection'),
   initialize : function(){
-
+  	
   	o.socket.on('projects', function(data){
-  		console.log('WTF!!!!!!!!!!!!@');
 		console.log(data);
 	});
+	o.socket.emit('get projects');
 
   	var project = new o.Models.Project({
 		id:1,
