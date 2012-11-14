@@ -22,8 +22,12 @@ io.configure(function () {
 });
 
 io.sockets.on('connection', function (socket) {
-	
 	socket.emit('projects', projectData);
+});
+
+io.sockets.on('connection', function (socket) {
+	
+	
 	socket.emit('static', employeeData);
 
 	socket.on('save', function (data) {
