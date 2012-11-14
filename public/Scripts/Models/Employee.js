@@ -1,11 +1,12 @@
 o.Models.Employee = Backbone.Model.extend({
 	fetchData : function(callback){
+		var view = this;
 		console.log('boom');
 		
 		o.socket.on('static', function (data) {
-			this.set('Employees')
-			this.set('Teams')
-			this.set('Job')
+			view.set('Employees')
+			view.set('Teams')
+			view.set('Job')
 			callback();
 		});
 	},
