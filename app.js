@@ -32,7 +32,7 @@ io.sockets.on('connection', function (socket) {
 
 	socket.emit('static', employeeData);
 
-	socket.on('save', function (data) {
+	socket.on('save', function (data) { 
 		socket.broadcast.emit('save', data);
 	});
 
