@@ -25,9 +25,13 @@ io.configure(function () {
 
 io.sockets.on('connection', function (socket) {
 
-	socket.emit('projectizm', { 
-		hello: 'world',
-		whatever: 'test'
+	
+
+	socket.on('get projects', function (data) {
+		socket.emit('projectizm', { 
+			hello: 'world',
+			whatever: 'test'
+		});
 	});
 
 	socket.emit('static', employeeData);
