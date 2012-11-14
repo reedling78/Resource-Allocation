@@ -6,7 +6,7 @@ o.Models.ProjectCollection = Backbone.Collection.extend({
   localStorage: new Store('ProjectCollection'),
   initialize : function(){
 
-  	o.socket.on('projects', function(data){
+  	o.socket.on('static', function(data){
   		console.log('WTF!!!!!!!!!!!!@');
 		console.log(data);
 	});
