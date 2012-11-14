@@ -5,9 +5,17 @@ var express = require('express')
 	, io = socket.listen(app)
 	, data = {}
 	, port = process.env.PORT || 3000
-	, redis = require("redis")
 	, employeeData = require('./serverjs/static').klt()
 	, projectData = require('./serverjs/Project').projects();
+
+if (process.env.REDISTOGO_URL) {
+	var rtg   = require("url").parse(process.env.REDISTOGO_URL);
+	var redis = require("redis").createClient(rtg.port, rtg.hostname);
+
+	redis.auth(rtg.auth.split(":")[1]); 
+} else {
+	var redis = require("redis").createClient();
+}
 
 
 app.configure(function(){
