@@ -25,7 +25,7 @@ io.configure(function () {
 
 io.sockets.on('connection', function (socket) {
 	
-	socket.emit('projects', employeeData);
+	socket.emit('project', projectData);
 
 	socket.emit('static', employeeData);
 
