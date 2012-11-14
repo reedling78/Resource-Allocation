@@ -6,10 +6,9 @@ o.Models.ProjectCollection = Backbone.Collection.extend({
   localStorage: new Store('ProjectCollection'),
   initialize : function(){
   	
-  	o.socket.on('projects', function(data){
-		console.log(data);
-	});
-	o.socket.emit('get projects');
+ //  	o.socket.on('projects', function(data){
+	// 	console.log(data);
+	// });
 
   	var project = new o.Models.Project({
 		id:1,
@@ -85,6 +84,7 @@ o.Models.ProjectCollection = Backbone.Collection.extend({
 
   },
   sendToServer : function(color){
+  	console.log('ff');
   	o.socket.emit('save', { name: 'Reed Rizzo', nickname: 'badass', color: color});
   }
 });

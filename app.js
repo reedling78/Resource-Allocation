@@ -11,6 +11,8 @@ var express = require('express')
 
 app.configure(function(){
 	app.use(express.static(__dirname + '/public'));
+	//app.register('.html', hb);
+	//app.register('.css', hb);
 	app.set('view engine', 'handlebars');
 	app.set("view options", { layout: false });
 	app.set('views', __dirname + '/public');
@@ -21,13 +23,10 @@ io.configure(function () {
 	io.set("polling duration", 10); 
 });
 
-io.sockets.on('get projects', function (socket) {
-	socket.emit('projects', projectData);
-});
-
 io.sockets.on('connection', function (socket) {
 	
-	
+	socket.emit('projects', projectData);
+
 	socket.emit('static', employeeData);
 
 	socket.on('save', function (data) {
