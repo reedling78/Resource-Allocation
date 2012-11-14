@@ -11,12 +11,9 @@ o.Models.Employee = Backbone.Model.extend({
 		});
 	},
 	initialize: function(){
-		this.bind("change:Employees", function(){
-			//console.log('changed');
-		});
-
-		
-
+		// this.bind("change:Employees", function(){
+		// 	//console.log('changed');
+		// });
 	},
 	bindView: function(){
 		this.bind("change:Employees", function(){
