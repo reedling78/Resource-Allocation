@@ -4,16 +4,16 @@ o.Models.Employee = Backbone.Model.extend({
 	
 		o.socket.emit('save', { name: 'Reed Rizzo', nickname: 'badass', color: 'color'});
 
-		o.socket.on('static', function (data) {
-			mod.set({ Employees: data.Employees });
-			mod.set({ Teams: data.Teams });
-			mod.set({ Job: data.Job });
-			callback();
-		});
+		// o.socket.on('static', function (data) {
+		// 	mod.set({ Employees: data.Employees });
+		// 	mod.set({ Teams: data.Teams });
+		// 	mod.set({ Job: data.Job });
+		// 	callback();
+		// });
 
-		o.socket.on('projects', function(data){
-			console.log(data);
-		});
+		// o.socket.on('projects', function(data){
+		// 	console.log(data);
+		// });
 
 		
 	},
