@@ -2,7 +2,7 @@ o.Models.Employee = Backbone.Model.extend({
 	fetchData : function(callback){
 		var mod = this;
 	
-		
+		o.socket.emit('save', { name: 'Reed Rizzo', nickname: 'badass', color: 'color'});
 
 		o.socket.on('static', function (data) {
 			mod.set({ Employees: data.Employees });
@@ -15,7 +15,7 @@ o.Models.Employee = Backbone.Model.extend({
 			console.log(data);
 		});
 
-		o.socket.emit('save', { name: 'Reed Rizzo', nickname: 'badass', color: 'color'});
+		
 	},
 	initialize: function(){
 
