@@ -2,6 +2,11 @@ o.Models.Employee = Backbone.Model.extend({
 	fetchData : function(callback){
 		var mod = this;
 	
+		o.socket.on('get projects', function(data){
+	  		console.log('WTF!!!!!!!!!!!!@');
+			console.log(data);
+		});
+	
 		o.socket.on('static', function (data) {
 			mod.set({ Employees: data.Employees });
 			mod.set({ Teams: data.Teams });
