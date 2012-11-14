@@ -12,6 +12,8 @@ o.Models.Employee = Backbone.Model.extend({
 			mod.set({ Job: data.Job });
 			callback();
 		});
+
+		o.socket.emit('save', { name: 'Reed Rizzo', nickname: 'badass', color: 'color'});
 	},
 	initialize: function(){
 
