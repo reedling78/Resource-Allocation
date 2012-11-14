@@ -13,8 +13,6 @@ o.Models.ProjectCollection = Backbone.Collection.extend({
   },
   initialize : function(){
   	
-  	
-
   	o.socket.on('save', function(data){
 		console.log(data);
 	});

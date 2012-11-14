@@ -25,13 +25,8 @@ io.configure(function () {
 
 io.sockets.on('connection', function (socket) {
 
-	
-
 	socket.on('get projects', function (data) {
-		socket.emit('receive projects', { 
-			hello: 'world',
-			whatever: 'test'
-		});
+		socket.emit('receive projects', projectData);
 	});
 
 	socket.emit('static', employeeData);
