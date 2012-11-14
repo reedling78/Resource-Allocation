@@ -6,7 +6,7 @@ var express = require('express')
 	, data = {}
 	, port = process.env.PORT || 3000
 	, employeeData = require('./serverjs/static').klt()
-	, projectData = require('./serverjs/projects').projects();
+	, projectData = require('./serverjs/Project').projects();
 
 
 app.configure(function(){
