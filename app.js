@@ -5,7 +5,8 @@ var express = require('express')
 	, io = socket.listen(app)
 	, data = {}
 	, port = process.env.PORT || 3000
-	, klt = require('./serverjs/static').klt();
+	, employeeData = require('./serverjs/static').klt()
+	, projectData = require('./serverjs/projects').projects();
 
 
 app.configure(function(){
@@ -24,12 +25,9 @@ io.configure(function () {
 
 io.sockets.on('connection', function (socket) {
 	
-	socket.emit('projects', { 
-		hello: 'world',
-		whatever: 'test'
-	});
+	socket.emit('projects', projectData);
 
-	socket.emit('static', klt);
+	socket.emit('static', employeeData);
 
 	socket.on('save', function (data) {
 		socket.broadcast.emit('save', data);

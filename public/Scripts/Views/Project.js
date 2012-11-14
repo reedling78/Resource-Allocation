@@ -31,9 +31,8 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 
 		
 		for (i = 0; i < projects.length; i++) {
-			//console.log(projects[i].attributes);
 			projects[i].attributes = view.setDayInfo(projects[i].attributes);
-			console.log(projects[i]);
+			
 			projectView = new o.Views.Project({
 				model: projects[i]
 			});
@@ -181,8 +180,6 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 					    return $(a).find('div').first().attr('data-day') > $(b).find('div').first().attr('data-day') ? 1 : -1;
 					});
 
-					console.log(droppedOn);
-
 				}
 			});
 	},
@@ -236,7 +233,6 @@ o.Views.Project = Backbone.View.extend({
 			+ '	</div>'
 			+ '</li>',
 	render: function (){
-		console.log(this.model.attributes);
 		this.$el.html(Mustache.render(this.template, this.model.attributes));
 	}
 });
