@@ -25,6 +25,10 @@ o.Models.Employee = Backbone.Model.extend({
 			{name:'Project Manager', id:3}
 		]
 	},
+	fetchData : function(callback){
+		console.log('boom');
+		callback();
+	},
 	initialize: function(){
 		this.bind("change:Employees", function(){
 			//console.log('changed');

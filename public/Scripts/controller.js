@@ -21,6 +21,9 @@ o.Controller = Backbone.Model.extend({
 
 		//Build Employees 
 		var employeeModel = new o.Models.Employee();
+		employeeModel.fetchData(function(){
+			console.log('callback');
+		});
 
 		var employeeView = new o.Views.EmployeeCollectionView({
 			collection: employeeModel

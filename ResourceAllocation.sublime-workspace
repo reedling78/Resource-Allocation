@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"attr",
+				"attributes"
+			],
+			[
 				"for",
 				"for	for (…) {…}"
 			],
@@ -195,15 +199,63 @@
 			"file": "public/Scripts/Views/Project.js",
 			"settings":
 			{
-				"buffer_size": 7292,
+				"buffer_size": 7447,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/Users/reed.rizzo/Developer/Facebook Sandbox/default.htm",
+			"file": "public/Scripts/Models/Project.js",
 			"settings":
 			{
-				"buffer_size": 1175,
+				"buffer_size": 1880,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/Scripts/controller.js",
+			"settings":
+			{
+				"buffer_size": 965,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app.js",
+			"settings":
+			{
+				"buffer_size": 1178,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "serverjs/static.js",
+			"settings":
+			{
+				"buffer_size": 985,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/index.html",
+			"settings":
+			{
+				"buffer_size": 1385,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/js/socket-io.js",
+			"settings":
+			{
+				"buffer_size": 2443,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/Scripts/Models/Employee.js",
+			"settings":
+			{
+				"buffer_size": 1746,
 				"line_ending": "Unix"
 			}
 		}
@@ -244,9 +296,12 @@
 	},
 	"file_history":
 	[
+		"/Users/reed.rizzo/Developer/Resource Allocation/node_modules/socket.io/lib/socket.js",
+		"/Users/reed.rizzo/Developer/Resource Allocation/public/js/socket-io.js",
+		"/Users/reed.rizzo/Developer/Resource Allocation/public/Styles/Styles.css",
+		"/Users/reed.rizzo/Developer/Facebook Sandbox/default.htm",
 		"/Users/reed.rizzo/Library/Application Support/Sublime Text 2/Packages/User/CSSTidy.sublime-settings",
 		"/Users/reed.rizzo/Developer/Resource Allocation/public/index.html",
-		"/Users/reed.rizzo/Developer/Resource Allocation/public/Styles/Styles.css",
 		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/Models/Project.js",
 		"/Users/reed.rizzo/Developer/Resource Allocation/public/js/sortElements.js",
 		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/Views/Project.js",
@@ -495,7 +550,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 7,
 			"sheets":
 			[
 				{
@@ -503,15 +558,15 @@
 					"file": "public/Scripts/Views/Project.js",
 					"settings":
 					{
-						"buffer_size": 7292,
+						"buffer_size": 7447,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								631,
-								631
+								6018,
+								6018
 							]
 						],
 						"settings":
@@ -519,26 +574,133 @@
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": 3.0,
-						"translation.y": 0.0,
+						"translation.x": 0.0,
+						"translation.y": 164.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "/Users/reed.rizzo/Developer/Facebook Sandbox/default.htm",
+					"file": "public/Scripts/Models/Project.js",
 					"settings":
 					{
-						"buffer_size": 1175,
+						"buffer_size": 1880,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								964,
-								964
+								1711,
+								1711
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 404.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "public/Scripts/controller.js",
+					"settings":
+					{
+						"buffer_size": 965,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								108,
+								108
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app.js",
+					"settings":
+					{
+						"buffer_size": 1178,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								676,
+								676
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "serverjs/static.js",
+					"settings":
+					{
+						"buffer_size": 985,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								985,
+								985
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "public/index.html",
+					"settings":
+					{
+						"buffer_size": 1385,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								791,
+								717
 							]
 						],
 						"settings":
@@ -547,7 +709,62 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1029.0,
+						"translation.y": 149.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "public/js/socket-io.js",
+					"settings":
+					{
+						"buffer_size": 2443,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2443,
+								2443
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2654.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "public/Scripts/Models/Employee.js",
+					"settings":
+					{
+						"buffer_size": 1746,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								890,
+								890
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
