@@ -5,7 +5,7 @@ var express = require('express')
 	, io = socket.listen(app)
 	, data = {}
 	, port = process.env.PORT || 3000
-	, redis = require("redis").createClient()
+	//, redis = require("redis").createClient()
 	, employeeData = require('./serverjs/static').klt()
 	, projectData = require('./serverjs/Project').projects();
 
