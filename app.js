@@ -11,8 +11,6 @@ var express = require('express')
 
 app.configure(function(){
 	app.use(express.static(__dirname + '/public'));
-	//app.register('.html', hb);
-	//app.register('.css', hb);
 	app.set('view engine', 'handlebars');
 	app.set("view options", { layout: false });
 	app.set('views', __dirname + '/public');
@@ -25,8 +23,7 @@ io.configure(function () {
 
 io.sockets.on('connection', function (socket) {
 	
-	socket.emit('get projects', projectData);
-
+	socket.emit('projects', projectData);
 	socket.emit('static', employeeData);
 
 	socket.on('save', function (data) {
