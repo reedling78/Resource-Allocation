@@ -10,6 +10,11 @@ o.Models.ProjectCollection = Backbone.Collection.extend({
 		console.log(data);
 	});
 
+	o.socket.on('projects', function(data){
+		console.log('whatever');
+		console.log(data);
+	});
+
   	var project = new o.Models.Project({
 		id:1,
 		name:'ACGQQQ',

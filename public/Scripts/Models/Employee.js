@@ -9,11 +9,6 @@ o.Models.Employee = Backbone.Model.extend({
 			callback();
 		});
 
-		o.socket.on('projects', function(data){
-			console.log(data);
-		});
-
-		
 	},
 	initialize: function(){
 
