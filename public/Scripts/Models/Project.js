@@ -6,14 +6,16 @@ o.Models.ProjectCollection = Backbone.Collection.extend({
   localStorage: new Store('ProjectCollection'),
   initialize : function(){
   	
+  	o.socket.on('projectizm', function(data){
+		console.log('whatever');
+		console.log(data);
+	});
+
   	o.socket.on('save', function(data){
 		console.log(data);
 	});
 
-	o.socket.on('projects', function(data){
-		console.log('whatever');
-		console.log(data);
-	});
+
 
   	var project = new o.Models.Project({
 		id:1,
