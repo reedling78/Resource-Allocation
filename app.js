@@ -28,7 +28,7 @@ io.sockets.on('connection', function (socket) {
 	
 
 	socket.on('get projects', function (data) {
-		socket.emit('projectizm', { 
+		socket.emit('receive projects', { 
 			hello: 'world',
 			whatever: 'test'
 		});

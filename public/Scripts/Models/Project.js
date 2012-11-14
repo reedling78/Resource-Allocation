@@ -4,20 +4,20 @@
 o.Models.ProjectCollection = Backbone.Collection.extend({
   model: o.Models.Project,
   localStorage: new Store('ProjectCollection'),
+  fetchData : function(callback){
+	o.socket.on('receive projects', function(data){
+		console.log(data);
+		callback();
+	});
+	o.socket.emit('get projects');
+  },
   initialize : function(){
   	
-  	o.socket.on('projectizm', function(data){
-		console.log('whatever');
-		console.log(data);
-	});
-
-	o.socket.emit('get projects');
+  	
 
   	o.socket.on('save', function(data){
 		console.log(data);
 	});
-
-
 
   	var project = new o.Models.Project({
 		id:1,
