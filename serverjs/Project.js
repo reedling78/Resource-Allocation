@@ -43,3 +43,26 @@ exports.projects = function () {
 	}
 
 }
+
+
+exports.getAllProjects = function(){
+	var results = [];
+
+	redis.keys("*", function (err, keys) {
+	    keys.forEach(function (key, pos) {
+	        redis.type(key, function (err, keytype) {
+	            console.log(key + " is " + keytype);
+	            results.push({ key: key, keytype: keytype });
+	            if (pos === (keys.length - 1)) {
+	                redis.quit();
+	                return results;
+	            }
+	        });
+	    });
+	});
+}
+
+exports.setExampleProjects = function(){
+
+
+}
