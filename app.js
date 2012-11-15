@@ -7,7 +7,7 @@ var express = require('express')
 	, port = process.env.PORT || 3000
 	, employeeData = require('./serverjs/static').klt()
 	, projectData = require('./serverjs/Project').projects()
-	, db = require('./serverjs/static');
+	, db = require('./serverjs/Project');
 
 if (process.env.REDISTOGO_URL) {
 	var rtg   = require("url").parse(process.env.REDISTOGO_URL);
