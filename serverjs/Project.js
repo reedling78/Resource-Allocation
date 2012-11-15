@@ -45,7 +45,7 @@ exports.projects = function () {
 }
 
 
-exports.getAllProjects = function(){
+exports.getAllProjects = function(redis){
 	var results = [];
 
 	redis.keys("*", function (err, keys) {

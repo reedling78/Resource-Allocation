@@ -42,7 +42,7 @@ io.sockets.on('connection', function (socket) {
 
 	socket.on('save', function (data) { 
 		redis.set(data.name, data.color, redis.print);
-		socket.broadcast.emit('save', db.getAllProjects());
+		socket.broadcast.emit('save', db.getAllProjects(redis));
 	});
 
 });
