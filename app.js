@@ -18,21 +18,6 @@ app.configure(function(){
 });
 
 
-//Redis Config
-if (process.env.REDISTOGO_URL) {
-	var rtg   = require("url").parse(process.env.REDISTOGO_URL);
-	var redis = require("redis").createClient(rtg.port, rtg.hostname);
-
-	redis.auth(rtg.auth.split(":")[1]); 
-} else {
-	var redis = require("redis").createClient();
-}
-
-redis.on("error", function (err) {
-    console.log("Error " + err);
-});
-
-
 //Socket IO Config
 io.configure(function () { 
 	io.set("transports", ["xhr-polling"]); 
@@ -48,9 +33,7 @@ io.sockets.on('connection', function (socket) {
 	socket.emit('static', employeeData);
 
 	socket.on('save', function (data) { 
-		redis.set(data.name, data.color, redis.print);
-		socket.broadcast.emit('save', db.getAllProjects(redis));
-		console.log('***** SAVE RAN');
+		socket.broadcast.emit('save', data);
 	});
 
 });

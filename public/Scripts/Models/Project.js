@@ -28,7 +28,7 @@ o.Models.ProjectCollection = Backbone.Collection.extend({
 
   },
   sendToServer : function(color){
-  	o.socket.emit('save', { name: Math.floor((Math.random()*100)+1), nickname: 'badass', color: color});
+  	o.socket.emit('save', { name: 'Reed Rizzo', nickname: 'badass', color: color});
   }
 });
 
