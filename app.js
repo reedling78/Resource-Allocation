@@ -9,6 +9,16 @@ var express = require('express')
 	, projectData = require('./serverjs/Project').projects()
 	, db = require('./serverjs/Project');
 
+//Express Config
+app.configure(function(){
+	app.use(express.static(__dirname + '/public'));
+	app.set('view engine', 'handlebars');
+	app.set("view options", { layout: false });
+	app.set('views', __dirname + '/public');
+});
+
+
+//Redis Config
 if (process.env.REDISTOGO_URL) {
 	var rtg   = require("url").parse(process.env.REDISTOGO_URL);
 	var redis = require("redis").createClient(rtg.port, rtg.hostname);
@@ -18,13 +28,10 @@ if (process.env.REDISTOGO_URL) {
 	var redis = require("redis").createClient();
 }
 
-//Express Config
-app.configure(function(){
-	app.use(express.static(__dirname + '/public'));
-	app.set('view engine', 'handlebars');
-	app.set("view options", { layout: false });
-	app.set('views', __dirname + '/public');
+redis.on("error", function (err) {
+    console.log("Error " + err);
 });
+
 
 //Socket IO Config
 io.configure(function () { 

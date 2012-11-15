@@ -48,21 +48,33 @@ exports.projects = function () {
 exports.getAllProjects = function(redis){
 	var results = [];
 	console.log('****** IN FUNCTION');
-	redis.keys("*", function (err, keys) {
-		console.log('****** KEY COUNT: ' +  keys.length);
+	redis.get('*', function (err, keys){
 		console.log('****** KEYS: ' +  keys);
 		console.log('****** ERR: ' +  err);
-	    keys.forEach(function (key, pos) {
-	        redis.type(key, function (err, keytype) {
-	            console.log(key + " is " + keytype);
-	            results.push({ key: key, keytype: keytype });
-	            if (pos === (keys.length - 1)) {
-	                //redis.quit();
-	            }
-	        });
-	    });
-	    return results;
-	});
+	})
+	// redis.keys("*", function (err, keys) {
+	// 	console.log('****** KEY COUNT: ' +  keys.length);
+	// 	console.log('****** KEYS: ' +  keys);
+	// 	console.log('****** ERR: ' +  err);
+	//     keys.forEach(function (key, pos) {
+	//         redis.type(key, function (err, keytype) {
+	//             console.log(key + " is " + keytype);
+	//             results.push({ key: key, keytype: keytype });
+	//             if (pos === (keys.length - 1)) {
+	//                 //redis.quit();
+	//             }
+	//         });
+	//     });
+	//     return results;
+	// });
+
+	// client.hkeys("hash key", function (err, replies) {
+ //        console.log(replies.length + " replies:");
+ //        replies.forEach(function (reply, i) {
+ //            console.log("    " + i + ": " + reply);
+ //        });
+ //        client.quit();
+ //    });
 }
 
 exports.setExampleProjects = function(){
