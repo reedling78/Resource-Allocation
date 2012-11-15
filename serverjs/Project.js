@@ -50,6 +50,8 @@ exports.getAllProjects = function(redis){
 	console.log('****** IN FUNCTION');
 	redis.keys("*", function (err, keys) {
 		console.log('****** KEY COUNT: ' +  keys.length);
+		console.log('****** KEYS: ' +  keys);
+		console.log('****** ERR: ' +  err);
 	    keys.forEach(function (key, pos) {
 	        redis.type(key, function (err, keytype) {
 	            console.log(key + " is " + keytype);
