@@ -58,10 +58,10 @@ exports.getAllProjects = function(redis){
 	            results.push({ key: key, keytype: keytype });
 	            if (pos === (keys.length - 1)) {
 	                //redis.quit();
-	                return results;
 	            }
 	        });
 	    });
+	    return results;
 	});
 }
 
