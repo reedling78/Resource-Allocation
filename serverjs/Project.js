@@ -57,7 +57,7 @@ exports.getAllProjects = function(redis){
 	            console.log(key + " is " + keytype);
 	            results.push({ key: key, keytype: keytype });
 	            if (pos === (keys.length - 1)) {
-	                redis.quit();
+	                //redis.quit();
 	                return results;
 	            }
 	        });
