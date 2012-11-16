@@ -35,7 +35,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 			projectView = new o.Views.Project({
 				model: projects[i]
 			});
-			console.log(projectView);
+			
 			view.renderProjectView(projectView);
 		}
 
@@ -48,6 +48,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 	},
 	renderProjectView: function (projectView) {
 		projectView.render();
+		console.log(projectView);
 		this.$el.find('li[data-employee-id="' + projectView.model.attributes.empId + '"] ul').append(projectView.$el.contents().unwrap())
 	},
 	setDayInfo: function(model){
