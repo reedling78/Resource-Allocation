@@ -11,9 +11,9 @@ o.Models.ProjectCollection = Backbone.Collection.extend({
 	o.socket.emit('get projects');
   },
   generateModels : function(data){
-  		for (var i = 0; i < data.length; i++) {
-  			console.log(data[i]);
-  			var project = new o.Models.Project(data[i]);
+  		for (var i = 0; i < data.rows.length; i++) {
+  			console.log(data.rows[i]);
+  			var project = new o.Models.Project(data.rows[i]);
 			this.add(project);
 		    project.save();
   		};
