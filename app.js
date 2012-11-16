@@ -52,24 +52,24 @@ client.connect();
 
 
 // //Socket IO Config
-// io.configure(function () { 
-// 	io.set("transports", ["xhr-polling"]); 
-// 	io.set("polling duration", 10); 
-// });
+io.configure(function () { 
+	io.set("transports", ["xhr-polling"]); 
+	io.set("polling duration", 10); 
+});
 
-// io.sockets.on('connection', function (socket) {
+io.sockets.on('connection', function (socket) {
 
-// 	socket.on('get projects', function (data) {
-// 		socket.emit('receive projects', projectData);
-// 	});
+	socket.on('get projects', function (data) {
+		socket.emit('receive projects', projectData);
+	});
 
-// 	socket.emit('static', employeeData);
+	socket.emit('static', employeeData);
 
-// 	socket.on('save', function (data) { 
-// 		socket.broadcast.emit('save', data);
-// 	});
+	socket.on('save', function (data) { 
+		socket.broadcast.emit('save', data);
+	});
 
-// });
+});
 
 //Default route
 app.get('/', function(req, res) {
@@ -91,16 +91,8 @@ app.get('/projects', function(req, res){
 
 app.get('/insertprojects', function(req, res){
 
-	var q = 'CREATE TABLE projects ( '
-	    + 'id          SERIAL CONSTRAINT firstkey PRIMARY KEY, '
-	    + 'name        varchar(50), '
-	    + 'description        text, '
-	    + 'empId   	   integer, '
-	    + 'color       varchar(10), '
-	    + 'startdate   date, '
-	    + 'enddate     date, '
-	    + 'day         integer, '
-	    + 'duration    integer )'
+	var q = 'INSERT INTO projects (name, description, empId, color, startdate, enddate)'
+	    + 'VALUES (\'Parts Town\', \'Yojimbo\', 1, \'Red\', \'11/19/2012\', \'11/19/2012\')'
 
     query = client.query(q, function(err, result){
     	if(err != null){
