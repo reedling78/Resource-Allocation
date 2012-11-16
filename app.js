@@ -24,6 +24,13 @@ app.configure(function(){
 var client = new pg.Client(connectionString);
 client.connect();
 
+
+db.selectCurrentProjects(client, function(result){
+	projectData = result;
+});
+
+
+
 // var q = 'CREATE TABLE projects ( '
 //     + 'id          SERIAL CONSTRAINT firstkey PRIMARY KEY, '
 //     + 'name        varchar(50), '
@@ -60,9 +67,7 @@ io.configure(function () {
 io.sockets.on('connection', function (socket) {
 
 	socket.on('get projects', function (data) {
-		db.selectAllProjects(client, function(result){
-			socket.emit('receive projects', result);
-		});
+		socket.emit('receive projects', projectData);
 	});
 
 	socket.emit('static', employeeData);
