@@ -77,7 +77,13 @@ app.get('/', function(req, res) {
 });
 
 
-app.get('/projects', function(req, res){
+app.get('/selectAllProjects', function(req, res){
+	db.selectAllProjects(client, function(result){
+		res.json(result);
+	});
+});
+
+app.get('/selectCurrentProjects', function(req, res){
 	db.selectAllProjects(client, function(result){
 		res.json(result);
 	});
@@ -86,7 +92,7 @@ app.get('/projects', function(req, res){
 app.get('/insertprojects', function(req, res){
 
 	var q = 'INSERT INTO projects (name, description, empId, color, startdate, enddate)'
-	    + 'VALUES (\'Parts Town\', \'Yojimbo\', 1, \'Red\', \'11/19/2012\', \'11/19/2012\')'
+	    + 'VALUES (\'Parts Town\', \'Yojimbo\', 1, \'Red\', \'10/19/2012\', \'10/19/2012\')'
 
     query = client.query(q, function(err, result){
     	if(err != null){
