@@ -46,29 +46,29 @@ client.query(q, function(err, result){
 
 
 
-//Socket IO Config
-io.configure(function () { 
-	io.set("transports", ["xhr-polling"]); 
-	io.set("polling duration", 10); 
-});
+// //Socket IO Config
+// io.configure(function () { 
+// 	io.set("transports", ["xhr-polling"]); 
+// 	io.set("polling duration", 10); 
+// });
 
-io.sockets.on('connection', function (socket) {
+// io.sockets.on('connection', function (socket) {
 
-	socket.on('get projects', function (data) {
-		socket.emit('receive projects', projectData);
-	});
+// 	socket.on('get projects', function (data) {
+// 		socket.emit('receive projects', projectData);
+// 	});
 
-	socket.emit('static', employeeData);
+// 	socket.emit('static', employeeData);
 
-	socket.on('save', function (data) { 
-		socket.broadcast.emit('save', data);
-	});
+// 	socket.on('save', function (data) { 
+// 		socket.broadcast.emit('save', data);
+// 	});
 
-});
+// });
 
 //Default route
 app.get('/', function(req, res) {
-	res.render('default.html', data);
+	//res.render('default.html', data);
 });
 
 
