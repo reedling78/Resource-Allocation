@@ -19,6 +19,11 @@ app.configure(function(){
 	app.set('views', __dirname + '/public');
 });
 
+//DB
+
+var client = new pg.Client(connectionString);
+client.connect();
+
 
 //Socket IO Config
 io.configure(function () { 
