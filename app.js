@@ -60,7 +60,9 @@ io.configure(function () {
 io.sockets.on('connection', function (socket) {
 
 	socket.on('get projects', function (data) {
-		socket.emit('receive projects', projectData);
+		db.selectAllProjects(client, function(result){
+			socket.emit('receive projects', result);
+		});
 	});
 
 	socket.emit('static', employeeData);
