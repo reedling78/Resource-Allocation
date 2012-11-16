@@ -28,6 +28,16 @@ exports.deleteProjects = function (client, id, callback) {
     });
 }
 
+exports.truncateProjects = function (client, id, callback) { 
+	client.query('TRUNCATE projects', function(err, result){
+    	if(err != null){
+    		callback(err);
+    	} else {
+    		callback(result);
+    	}
+    });
+}
+
 exports.insertProjects = function (client, proj, callback) { 
 	var q = 'INSERT INTO projects (name, description, empId, color, startdate, enddate)'
 	    + 'VALUES (\'' + proj.name + '\', \'' + proj.desc + '\', ' + proj.empId + ', \'' + proj.color + '\', \'' + proj.startdate + '\', \'' + proj.enddate + '\')'

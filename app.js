@@ -94,6 +94,12 @@ app.get('/deleteProjects/:id', function(req, res){
 	});
 });
 
+app.get('/truncateProjects', function(req, res){
+	db.truncateProjects(client, function(result){
+		res.json(result);
+	});
+});
+
 app.get('/insertprojects', function(req, res){
 
 	var proj = [
@@ -138,16 +144,24 @@ app.get('/insertprojects', function(req, res){
 	
 	db.insertProjects(client, proj[0], function(result){
 		console.log(result);
-		db.insertProjects(client, proj[1], function(result){
-			console.log(result);
-			db.insertProjects(client, proj[2], function(result){
-				console.log(result);
-					db.insertProjects(client, proj[3], function(result){
-						console.log(result);
-				});
-			});
-		});
+		
 	});
+
+	db.insertProjects(client, proj[1], function(result){
+		console.log(result);
+		
+	});
+
+	db.insertProjects(client, proj[2], function(result){
+		console.log(result);
+			
+	});
+
+	db.insertProjects(client, proj[3], function(result){
+		console.log(result);
+	});
+
+	return [];
 
 })
 
