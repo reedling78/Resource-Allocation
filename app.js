@@ -20,45 +20,13 @@ app.configure(function(){
 });
 
 //DB
-
 var client = new pg.Client(connectionString);
 client.connect();
 
 
-db.selectCurrentProjects(client, function(result){
-	projectData = result;
-});
 
 
-
-// var q = 'CREATE TABLE projects ( '
-//     + 'id          SERIAL CONSTRAINT firstkey PRIMARY KEY, '
-//     + 'name        varchar(50), '
-//     + 'description        text, '
-//     + 'empId   	   integer, '
-//     + 'color       varchar(10), '
-//     + 'startdate   date, '
-//     + 'enddate     date, '
-//     + 'day         integer, '
-//     + 'duration    integer )'
- 
-// console.log(q);
-
-
-
-// var q = 'INSERT INTO projects (name, description, empId, color, startdate, enddate)'
-//     + 'VALUES (\'Parts Town\', \'Yojimbo\', 1, \'Red\', \'11/19/2012\', \'11/19/2012\')'
-
-// client.query(q, function(err, result){ 
-// 	console.log('############# result');
-// 	console.log(result);
-// 	console.log('############# err');
-// 	console.log(err);
-// });
-
-
-
-// //Socket IO Config
+//Socket IO Config
 io.configure(function () { 
 	io.set("transports", ["xhr-polling"]); 
 	io.set("polling duration", 10); 
@@ -67,7 +35,9 @@ io.configure(function () {
 io.sockets.on('connection', function (socket) {
 
 	socket.on('get projects', function (data) {
-		socket.emit('receive projects', projectData);
+		db.selectCurrentProjects(client, function(result){
+			socket.emit('receive projects', result);
+		});
 	});
 
 	socket.emit('static', employeeData);

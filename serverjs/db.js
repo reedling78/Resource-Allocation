@@ -51,6 +51,27 @@ exports.insertProjects = function (client, proj, callback) {
     });
 }
 
+exports.updateProjects = function (client, proj, callback) { 
+	var q = 'UPDATE projects SET '
+		+ 'name = \'' + proj.name + '\' '
+		+ 'description = \'' + proj.description + '\' '
+		+ 'empId = ' + proj.empId + ' '
+		+ 'color = \'' + proj.color + '\' '
+		+ 'startdate = \'' + proj.startdate + '\' '
+		+ 'enddate = \'' + proj.enddate + '\' '
+		+ 'WHERE id = ' + proj.id;
+
+    client.query(q, function(err, result){
+    	if(err != null){
+    		callback(err);
+    	} else {
+    		callback(result);
+    	}
+    });
+}
+
+
+
 
 
 
