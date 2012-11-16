@@ -39,15 +39,15 @@ client.connect();
 
 
 
-var q = 'INSERT INTO projects (name, description, empId, color, startdate, enddate)'
-    + 'VALUES (\'Parts Town\', \'Yojimbo\', 1, \'Red\', \'11/19/2012\', \'11/19/2012\')'
+// var q = 'INSERT INTO projects (name, description, empId, color, startdate, enddate)'
+//     + 'VALUES (\'Parts Town\', \'Yojimbo\', 1, \'Red\', \'11/19/2012\', \'11/19/2012\')'
 
-client.query(q, function(err, result){ 
-	console.log('############# result');
-	console.log(result);
-	console.log('############# err');
-	console.log(err);
-});
+// client.query(q, function(err, result){ 
+// 	console.log('############# result');
+// 	console.log(result);
+// 	console.log('############# err');
+// 	console.log(err);
+// });
 
 
 
@@ -75,6 +75,42 @@ client.query(q, function(err, result){
 app.get('/', function(req, res) {
 	//res.render('default.html', data);
 });
+
+
+app.get('/projects', function(req, res){
+
+    query = client.query('SELECT * FROM projects', function(err, result){
+    	if(err != null){
+    		res.json(err);
+    	} else {
+    		res.json(result);
+    	}
+    });
+
+})
+
+app.get('/insertprojects', function(req, res){
+
+	var q = 'CREATE TABLE projects ( '
+	    + 'id          SERIAL CONSTRAINT firstkey PRIMARY KEY, '
+	    + 'name        varchar(50), '
+	    + 'description        text, '
+	    + 'empId   	   integer, '
+	    + 'color       varchar(10), '
+	    + 'startdate   date, '
+	    + 'enddate     date, '
+	    + 'day         integer, '
+	    + 'duration    integer )'
+
+    query = client.query(q, function(err, result){
+    	if(err != null){
+    		res.json(err);
+    	} else {
+    		res.json(result);
+    	}
+    });
+
+})
 
 
 //Start web server
