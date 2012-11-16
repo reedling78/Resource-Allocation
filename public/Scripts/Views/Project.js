@@ -29,14 +29,13 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 		//set gutter width
 		$('.Projects').css('width', $('.Calendar')[0].scrollWidth + 'px');
 
-		console.log(projects);
-		console.log(projects.length);
 		for (i = 0; i < projects.length; i++) {
 			projects[i].attributes = view.setDayInfo(projects[i].attributes);
 			
 			projectView = new o.Views.Project({
 				model: projects[i]
 			});
+			console.log(projectView);
 			view.renderProjectView(projectView);
 		}
 
@@ -232,7 +231,6 @@ o.Views.Project = Backbone.View.extend({
 			+ '	</div>'
 			+ '</li>',
 	render: function (){
-		console.log(Mustache.render(this.template, this.model.attributes));
 		this.$el.html(Mustache.render(this.template, this.model.attributes));
 	}
 });
