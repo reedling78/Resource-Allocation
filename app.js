@@ -9,7 +9,7 @@ var express = require('express')
 	, connectionString = 'postgres://srboupnqgnwceq:lVyLMZaQNzFBBcXyLlUMF7MIoz@ec2-54-243-139-234.compute-1.amazonaws.com:5432/d7rtclh2oqjsl9'
 	, employeeData = require('./serverjs/static').klt()
 	, projectData = require('./serverjs/Project').projects()
-	, db = require('./serverjs/Project');
+	, db = require('./serverjs/db');
 
 //Express Config
 app.configure(function(){
@@ -78,16 +78,10 @@ app.get('/', function(req, res) {
 
 
 app.get('/projects', function(req, res){
-
-    query = client.query('SELECT * FROM projects', function(err, result){
-    	if(err != null){
-    		res.json(err);
-    	} else {
-    		res.json(result);
-    	}
-    });
-
-})
+	db.selectAllProjects(client, function(result){
+		res.json(result);
+	});
+});
 
 app.get('/insertprojects', function(req, res){
 
