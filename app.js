@@ -84,7 +84,7 @@ app.get('/selectAllProjects', function(req, res){
 });
 
 app.get('/selectCurrentProjects', function(req, res){
-	db.selectAllProjects(client, function(result){
+	db.selectCurrentProjects(client, function(result){
 		res.json(result);
 	});
 });
