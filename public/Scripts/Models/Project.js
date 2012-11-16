@@ -3,6 +3,7 @@ o.Models.ProjectCollection = Backbone.Collection.extend({
   localStorage: new Store('ProjectCollection'),
   fetchData : function(callback){
   	var that = this;
+  	console.log('this');
   	console.log(this);
 	o.socket.on('receive projects', function(data){
 		console.log(data);
