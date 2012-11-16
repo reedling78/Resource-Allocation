@@ -89,6 +89,12 @@ app.get('/selectCurrentProjects', function(req, res){
 	});
 });
 
+app.get('/deleteProjects/:id', function(req, res){
+	db.deleteProjects(client, req.params.id, function(result){
+		res.json(result);
+	});
+});
+
 app.get('/insertprojects', function(req, res){
 
 	var q = 'INSERT INTO projects (name, description, empId, color, startdate, enddate)'

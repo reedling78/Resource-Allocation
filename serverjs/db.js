@@ -17,3 +17,14 @@ exports.selectCurrentProjects = function (client, callback) {
     	}
     });
 }
+
+
+exports.deleteProjects = function (client, id, callback) { 
+	client.query('DELETE FROM projects WHERE id = ' + id, function(err, result){
+    	if(err != null){
+    		callback(err);
+    	} else {
+    		callback(result);
+    	}
+    });
+}
