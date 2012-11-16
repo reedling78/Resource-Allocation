@@ -202,6 +202,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 	},
 	clearProjects: function(){
 		console.log('clear projects');
+		$('.Projects>ul').html('');
 	}
 });
 
