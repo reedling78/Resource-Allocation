@@ -49,6 +49,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 		this.$el.append(gutterView.$el.contents().unwrap());
 	},
 	renderProjectView: function (projectView) {
+		console.log('----------------');
 		projectView.render();
 		this.$el.find('li[data-employee-id="' + projectView.model.attributes.empId + '"] ul').append(projectView.$el.contents().unwrap())
 	},
@@ -202,8 +203,6 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 		$(el).addClass(color);
 		view.collection.sendToServer(color);
 	}
-
-
 });
 
 
@@ -227,7 +226,7 @@ o.Views.Project = Backbone.View.extend({
 			+ '		<div class="editproj">'
 			+ '			<h6 contenteditable="true">{{ name }}</h6>'
 			+ '			<span class="Dash">&ndash;</span>'
-			+ '			<p contenteditable="true">{{ desc }}</p>'
+			+ '			<p contenteditable="true">{{ description }}</p>'
 			+ '			<span class="Colors"><span data-color="Red"></span><span data-color="Orange"></span><span data-color="Yellow"></span><span data-color="Lime"></span><span data-color="Green"></span><span data-color="Aqua"></span><span data-color="Blue"></span><span data-color="Purple"></span><span data-color="Grey"></span></span>'
 			+ '			<span class="Grabber"></span>'
 			+ '			<span class="Dots ui-resizable-handle ui-resizable-e"><span></span><span></span><span></span></span>'
