@@ -32,13 +32,11 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 		console.log(projects);
 		console.log(projects.length);
 		for (i = 0; i < projects.length; i++) {
-			console.log(projects[i].attributes);
-			projects[i] = view.setDayInfo(projects[i].attributes);
+			projects[i].attributes = view.setDayInfo(projects[i].attributes);
 			
 			projectView = new o.Views.Project({
 				model: projects[i]
 			});
-			console.log(projectView);
 			view.renderProjectView(projectView);
 		}
 
@@ -50,7 +48,6 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 		this.$el.append(gutterView.$el.contents().unwrap());
 	},
 	renderProjectView: function (projectView) {
-		console.log(projectView.$el.contents().unwrap());
 		projectView.render();
 		this.$el.find('li[data-employee-id="' + projectView.model.attributes.empId + '"] ul').append(projectView.$el.contents().unwrap())
 	},
@@ -235,6 +232,7 @@ o.Views.Project = Backbone.View.extend({
 			+ '	</div>'
 			+ '</li>',
 	render: function (){
+		console.log(this.model.attributes);
 		this.$el.html(Mustache.render(this.template, this.model.attributes));
 	}
 });
