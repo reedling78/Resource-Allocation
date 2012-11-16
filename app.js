@@ -135,15 +135,19 @@ app.get('/insertprojects', function(req, res){
 		}
 	];
 
-	var result = [];
-
-	for (var i = 0; i < proj.length; i++) {
-		db.insertProjects(client, proj[i], function(result){
+	
+	db.insertProjects(client, proj[0], function(result){
+		result.push(result);
+		db.insertProjects(client, proj[1], function(result){
 			result.push(result);
+			db.insertProjects(client, proj[2], function(result){
+				result.push(result);
+					db.insertProjects(client, proj[3], function(result){
+						result.push(result);
+				});
+			});
 		});
-	};
-
-	res.json(result);
+	});
 
 })
 
