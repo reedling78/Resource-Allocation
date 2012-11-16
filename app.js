@@ -35,7 +35,7 @@ var q = 'CREATE TABLE projects ( '
     + 'day         integer, '
     + 'duration    integer )'
  
-console.log('************************* result');
+console.log(q);
 
 client.query(q, function(err, result){ 
 	console.log('############# result');
