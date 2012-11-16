@@ -1,6 +1,3 @@
-//Red, Orange, Yellow, Lime, Green, Aqua, Blue, Purple, Grey, White
-
-
 o.Models.ProjectCollection = Backbone.Collection.extend({
   model: o.Models.Project,
   localStorage: new Store('ProjectCollection'),

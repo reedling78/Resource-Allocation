@@ -24,6 +24,27 @@ app.configure(function(){
 var client = new pg.Client(connectionString);
 client.connect();
 
+var q = 'CREATE TABLE projects ( '
+    + 'id          SERIAL CONSTRAINT firstkey PRIMARY KEY, '
+    + 'name        varchar(50), '
+    + 'desc        varchar(200), '
+    + 'empId   	   integer, '
+    + 'color       varchar(10), '
+    + 'startdate   date, '
+    + 'enddate     date, '
+    + 'day         integer, '
+    + 'duration    integer )'
+ 
+
+
+client.query(q, function(err, result){ 
+	console.log('result');
+	console.log(result);
+	console.log('err');
+	console.log(err);
+});
+
+
 
 //Socket IO Config
 io.configure(function () { 
