@@ -27,7 +27,7 @@ client.connect();
 var q = 'CREATE TABLE projects ( '
     + 'id          SERIAL CONSTRAINT firstkey PRIMARY KEY, '
     + 'name        varchar(50), '
-    + 'desc        varchar(200), '
+    + 'desc        text, '
     + 'empId   	   integer, '
     + 'color       varchar(10), '
     + 'startdate   date, '
