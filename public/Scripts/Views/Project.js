@@ -49,7 +49,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 		this.$el.append(gutterView.$el.contents().unwrap());
 	},
 	renderProjectView: function (projectView) {
-		console.log('----------------');
+		console.log(projectView.$el.contents().unwrap());
 		projectView.render();
 		this.$el.find('li[data-employee-id="' + projectView.model.attributes.empId + '"] ul').append(projectView.$el.contents().unwrap())
 	},
