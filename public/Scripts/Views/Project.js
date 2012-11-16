@@ -232,7 +232,7 @@ o.Views.Project = Backbone.View.extend({
 			+ '	</div>'
 			+ '</li>',
 	render: function (){
-		console.log(this.model.attributes);
+		console.log(Mustache.render(this.template, this.model.attributes));
 		this.$el.html(Mustache.render(this.template, this.model.attributes));
 	}
 });
