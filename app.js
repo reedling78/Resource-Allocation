@@ -76,7 +76,6 @@ app.get('/', function(req, res) {
 	//res.render('default.html', data);
 });
 
-
 app.get('/selectAllProjects', function(req, res){
 	db.selectAllProjects(client, function(result){
 		res.json(result);
@@ -97,16 +96,54 @@ app.get('/deleteProjects/:id', function(req, res){
 
 app.get('/insertprojects', function(req, res){
 
-	var q = 'INSERT INTO projects (name, description, empId, color, startdate, enddate)'
-	    + 'VALUES (\'Parts Town\', \'Yojimbo\', 1, \'Red\', \'10/19/2012\', \'10/19/2012\')'
+	var proj = [
+		{
+			id:1,
+			name:'ACG',
+			desc:'My AAA Account Redesign', 
+			empId:1,
+			color: 'Lime',
+			startdate: '11/19/2012',
+			enddate: '11/23/2012'
+		},
+		{
+			id:2,
+			name:'Parts Town',
+			desc:'My AAA Account Redesign', 
+			empId:1,
+			color: 'Lime',
+			startdate: '11/26/2012',
+			enddate: '11/30/2012'
+		},
+		{
+			id:3,
+			name:'Takada',
+			desc:'My AAA Account Redesign', 
+			empId:1,
+			color: 'Lime',
+			startdate: '12/03/2012',
+			enddate: '12/07/2012'
+		},
+		{
+			id:4,
+			name:'PLS',
+			desc:'My AAA Account Redesign', 
+			empId:1,
+			color: 'Lime',
+			startdate: '12/10/2012',
+			enddate: '12/14/2012'
+		}
+	];
 
-    query = client.query(q, function(err, result){
-    	if(err != null){
-    		res.json(err);
-    	} else {
-    		res.json(result);
-    	}
-    });
+	var result = [];
+
+	for (var i = 0; i < proj.length; i++) {
+		db.insertProjects(client, proj[i], function(result){
+			result.push(result);
+		});
+	};
+
+	res.json(result);
 
 })
 
