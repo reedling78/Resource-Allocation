@@ -4,6 +4,7 @@ o.Models.ProjectCollection = Backbone.Collection.extend({
   fetchData : function(callback){
   	var that = this;
 	o.socket.on('receive projects', function(data){
+		console.log(data);
 		that.generateModels(data);
 		callback();
 	});
