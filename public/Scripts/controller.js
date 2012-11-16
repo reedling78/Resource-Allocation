@@ -29,16 +29,15 @@ o.Controller = Backbone.Model.extend({
 			employeeView.render();
 
 			//Build Employees 
-			var projectCollectionView;
-			var projectCollection = new o.Models.ProjectCollection(projectCollectionView);
+			var projectCollection = new o.Models.ProjectCollection();
 			projectCollection.fetchData(function(){
 
 				//Projects
-				projectCollectionView = new o.Views.ProjectCollectionView({
+				o.projectCollectionView = new o.Views.ProjectCollectionView({
 					collection: projectCollection,
 					employeeList: employeeView.collection.attributes.Employees
 				});
-				projectCollectionView.render();
+				o.projectCollectionView.render();
 
 			});
 
