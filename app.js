@@ -37,38 +37,43 @@ client.connect();
  
 // console.log(q);
 
-// client.query(q, function(err, result){ 
-// 	console.log('############# result');
-// 	console.log(result);
-// 	console.log('############# err');
-// 	console.log(err);
-// });
+
+
+var q = 'INSERT INTO projects (name, description, empId, color, startdate, enddate)'
+    + 'VALUES (\'Parts Town\', \'Yojimbo\', 1, \'Red\', \'11/19/2012\', \'11/19/2012\')'
+
+client.query(q, function(err, result){ 
+	console.log('############# result');
+	console.log(result);
+	console.log('############# err');
+	console.log(err);
+});
 
 
 
 // //Socket IO Config
-io.configure(function () { 
-	io.set("transports", ["xhr-polling"]); 
-	io.set("polling duration", 10); 
-});
+// io.configure(function () { 
+// 	io.set("transports", ["xhr-polling"]); 
+// 	io.set("polling duration", 10); 
+// });
 
-io.sockets.on('connection', function (socket) {
+// io.sockets.on('connection', function (socket) {
 
-	socket.on('get projects', function (data) {
-		socket.emit('receive projects', projectData);
-	});
+// 	socket.on('get projects', function (data) {
+// 		socket.emit('receive projects', projectData);
+// 	});
 
-	socket.emit('static', employeeData);
+// 	socket.emit('static', employeeData);
 
-	socket.on('save', function (data) { 
-		socket.broadcast.emit('save', data);
-	});
+// 	socket.on('save', function (data) { 
+// 		socket.broadcast.emit('save', data);
+// 	});
 
-});
+// });
 
 //Default route
 app.get('/', function(req, res) {
-	res.render('default.html', data);
+	//res.render('default.html', data);
 });
 
 
