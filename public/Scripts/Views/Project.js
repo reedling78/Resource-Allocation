@@ -199,6 +199,9 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 
 		$(el).addClass(color);
 		view.collection.sendToServer(color);
+	},
+	clearProjects: function(){
+		console.log('clear projects');
 	}
 });
 

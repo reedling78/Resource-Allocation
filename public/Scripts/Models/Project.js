@@ -6,6 +6,7 @@ o.Models.ProjectCollection = Backbone.Collection.extend({
 
 	o.socket.on('receive projects', function(data){
 		that.generateModels(data);
+		o.projectCollectionView.clearProjects();
 		callback();
 	});
 	o.socket.emit('get projects');
