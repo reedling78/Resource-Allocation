@@ -137,13 +137,13 @@ app.get('/insertprojects', function(req, res){
 
 	
 	db.insertProjects(client, proj[0], function(result){
-		result.push(result);
+		console.log(result);
 		db.insertProjects(client, proj[1], function(result){
-			result.push(result);
+			console.log(result);
 			db.insertProjects(client, proj[2], function(result){
-				result.push(result);
+				console.log(result);
 					db.insertProjects(client, proj[3], function(result){
-						result.push(result);
+						console.log(result);
 				});
 			});
 		});
