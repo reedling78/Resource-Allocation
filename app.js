@@ -21,7 +21,7 @@ app.configure(function(){
 
 //DB
 var client = new pg.Client(connectionString);
-client.connect();
+client.connect(); 
 
 
 
