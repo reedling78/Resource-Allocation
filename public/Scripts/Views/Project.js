@@ -71,13 +71,13 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 			startD = today;
 		} 
 		
-		// //Calculate what day to start on
-		// while (today.getTime() < startD.getTime()){
-		// 	if(today.getDay() != 0 && today.getDay() != 6){
-		// 		day++;
-		// 	}
-		// 	today.setDate(today.getDate()+1);
-		// }
+		//Calculate what day to start on
+		while (today.getTime() < startD.getTime()){
+			if(today.getDay() != 0 && today.getDay() != 6){
+				day++;
+			}
+			today.setDate(today.getDate()+1);
+		}
 
 		// //Calculate how many day the project is set for
 		// while (endD.getTime() != startD.getTime()){
