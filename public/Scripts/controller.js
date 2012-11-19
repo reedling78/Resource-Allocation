@@ -31,17 +31,17 @@ o.Controller = Backbone.Model.extend({
 			console.log(employeeModel);
 
 			//Build Employees 
-			// var projectCollection = new o.Models.ProjectCollection();
-			// projectCollection.fetchData(function(){
+			var projectCollection = new o.Models.ProjectCollection();
+			projectCollection.fetchData(function(){
 
-			// 	//Projects
-			// 	o.projectCollectionView = new o.Views.ProjectCollectionView({
-			// 		collection: projectCollection,
-			// 		employeeList: o.employeeView.collection.attributes.Employees
-			// 	});
-			// 	o.projectCollectionView.render();
+				//Projects
+				o.projectCollectionView = new o.Views.ProjectCollectionView({
+					collection: projectCollection,
+					employeeList: employeeModel.attributes.Employees
+				});
+				o.projectCollectionView.render();
 
-			// });
+			});
 
 		});
 
