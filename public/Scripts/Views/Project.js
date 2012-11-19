@@ -30,8 +30,8 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 		$('.Projects').css('width', $('.Calendar')[0].scrollWidth + 'px');
 console.log(view.collection.models); 
 		for (i = 0; i < view.collection.models.length; i++) {
-		// 	projects[i].attributes = view.setDayInfo(projects[i].attributes);
-		console.log(projects[i].attributes); 
+		view.collection.models[i].attributes = view.setDayInfo(view.collection.models[i].attributes);
+		console.log(view.collection.models[i].attributes); 
 		// 	projectView = new o.Views.Project({
 		// 		model: projects[i]
 		// 	});
