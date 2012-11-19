@@ -8,38 +8,38 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 	dayWidth : 41,
 	render: function () {
 		'use strict';
-		var view = this,
-			gutters = this.options.employeeList,
-			projects = this.collection.models,
-			i,
-			gutterView,
-			projectView;
+		// var view = this,
+		// 	gutters = this.options.employeeList,
+		// 	projects = this.collection.models,
+		// 	i,
+		// 	gutterView,
+		// 	projectView;
 
-		view.currentHeadername = gutters[0].headername;
+		// view.currentHeadername = gutters[0].headername;
 
-		for (i = 0; i < gutters.length; i++) {
-			gutterView = new o.Views.Gutter({
-				model: gutters[i],
-				currentHeadername: view.currentHeadername
-			});
-			view.renderGutterView(gutterView);
-			view.currentHeadername = gutters[i].headername;
-		}
+		// for (i = 0; i < gutters.length; i++) {
+		// 	gutterView = new o.Views.Gutter({
+		// 		model: gutters[i],
+		// 		currentHeadername: view.currentHeadername
+		// 	});
+		// 	view.renderGutterView(gutterView);
+		// 	view.currentHeadername = gutters[i].headername;
+		// }
 
-		//set gutter width
-		$('.Projects').css('width', $('.Calendar')[0].scrollWidth + 'px');
+		// //set gutter width
+		// $('.Projects').css('width', $('.Calendar')[0].scrollWidth + 'px');
 
-		for (i = 0; i < projects.length; i++) {
-			projects[i].attributes = view.setDayInfo(projects[i].attributes);
+		// for (i = 0; i < projects.length; i++) {
+		// 	projects[i].attributes = view.setDayInfo(projects[i].attributes);
 			
-			projectView = new o.Views.Project({
-				model: projects[i]
-			});
+		// 	projectView = new o.Views.Project({
+		// 		model: projects[i]
+		// 	});
 			
-			view.renderProjectView(projectView);
-		}
+		// 	view.renderProjectView(projectView);
+		// }
 
-		view.setEventHandlers();
+		// view.setEventHandlers();
 	},
 	renderGutterView: function (gutterView) {
 		'use strict';
