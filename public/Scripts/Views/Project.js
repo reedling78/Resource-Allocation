@@ -12,7 +12,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 			gutters = this.options.employeeList,
 			projects = this.collection.models, 
 			i,
-			gutterView,
+			gutterView, 
 			projectView;
 
 		view.currentHeadername = gutters[0].headername;
