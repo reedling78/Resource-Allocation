@@ -28,6 +28,8 @@ o.Controller = Backbone.Model.extend({
 			});
 			o.employeeView.render();
 
+			console.log(employeeModel);
+
 			//Build Employees 
 			var projectCollection = new o.Models.ProjectCollection();
 			projectCollection.fetchData(function(){

@@ -49,7 +49,7 @@ o.Views.EmployeeCollectionView = Backbone.View.extend({
 		view.render();
 		this.$el.append(view.$el.contents().unwrap());
 	},
-	adjustCalendarHeight: function(){
+	adjustCalendarHeight: function(){ 
 		var view = this, 
 		employees = this.collection.get('Employees'),
 		headers = this.collection.get('Teams');
