@@ -28,18 +28,18 @@ o.Controller = Backbone.Model.extend({
 			});
 			o.employeeView.render();
 
-			// //Build Employees 
-			// var projectCollection = new o.Models.ProjectCollection();
-			// projectCollection.fetchData(function(){
+			//Build Employees 
+			var projectCollection = new o.Models.ProjectCollection();
+			projectCollection.fetchData(function(){
 
-			// 	//Projects
-			// 	o.projectCollectionView = new o.Views.ProjectCollectionView({
-			// 		collection: projectCollection,
-			// 		employeeList: employeeModel.attributes.Employees
-			// 	});
-			// 	o.projectCollectionView.render();
+				//Projects
+				o.projectCollectionView = new o.Views.ProjectCollectionView({
+					collection: projectCollection,
+					employeeList: employeeModel.attributes.Employees
+				});
+				//o.projectCollectionView.render();
 
-			// });
+			});
 
 		});
 
