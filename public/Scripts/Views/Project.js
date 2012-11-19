@@ -87,8 +87,8 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 		// 	startD.setDate(startD.getDate()+1);
 		// }
 		
-		// model.day = (isLessThenToday) ? 1 : day;
-		// model.duration = duration;
+		model.day = (isLessThenToday) ? 1 : day;
+		model.duration = duration;
 		
 		return model;
 	},
