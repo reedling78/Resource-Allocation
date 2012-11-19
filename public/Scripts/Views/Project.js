@@ -10,7 +10,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 		'use strict';
 		var view = this,
 			gutters = this.options.employeeList,
-			projects = this.collection.models,
+			projects = this.collection.models, 
 			i,
 			gutterView,
 			projectView;
