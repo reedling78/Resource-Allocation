@@ -33,11 +33,11 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 		projects[i].attributes = view.setDayInfo(projects[i].attributes);
 
 		console.log(projects[i].attributes); 
-		// 	projectView = new o.Views.Project({
-		// 		model: projects[i]
-		// 	});
+			projectView = new o.Views.Project({
+				model: projects[i]
+			});
 			
-		// 	view.renderProjectView(projectView);
+			view.renderProjectView(projectView);
 		}
 
 		// view.setEventHandlers();
@@ -62,11 +62,6 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 			startD.setDate(startD.getDate()+1);
 			endD.setDate(endD.getDate()+1);
  
-			console.log(startD);
-			console.log(endD);
-
-			
-
 		//reset time so date is comparable
 		today = new Date((today.getMonth() + 1) + '/' + today.getDate() + '/' + today.getFullYear())
 		isLessThenToday = (today.getTime() > startD.getTime());
