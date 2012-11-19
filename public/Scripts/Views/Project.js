@@ -58,7 +58,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 			day = 1,
 			duration = 1
 			isLessThenToday = false;
-
+ 
 			console.log(startD);
 			console.log(endD);
 
