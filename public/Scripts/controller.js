@@ -32,7 +32,7 @@ o.Controller = Backbone.Model.extend({
 			var projectCollection = new o.Models.ProjectCollection();
 			projectCollection.fetchData(function(){
 
-				console.log(o.employeeView.collection.attributes);
+				console.log(o.employeeView.collection.attributes.Employees);
 
 				//Projects
 				o.projectCollectionView = new o.Views.ProjectCollectionView({
