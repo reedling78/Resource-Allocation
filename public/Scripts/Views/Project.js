@@ -28,7 +28,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 
 		//set gutter width
 		$('.Projects').css('width', $('.Calendar')[0].scrollWidth + 'px');
-console.log(view.collection.models); 
+console.log(projects); 
 		for (i = 0; i < view.collection.models.length; i++) {
 		//view.collection.models[i].attributes = view.setDayInfo(view.collection.models[i].attributes);
 		console.log(view.collection.models[i].attributes); 
