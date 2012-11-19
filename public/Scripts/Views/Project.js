@@ -28,11 +28,10 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 
 		//set gutter width
 		$('.Projects').css('width', $('.Calendar')[0].scrollWidth + 'px');
-		console.log(projects); 
+		
 		for (i = 0; i < projects.length; i++) {
 		projects[i].attributes = view.setDayInfo(projects[i].attributes);
 
-		console.log(projects[i].attributes); 
 			projectView = new o.Views.Project({
 				model: projects[i]
 			});
@@ -40,7 +39,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 			view.renderProjectView(projectView);
 		}
 
-		// view.setEventHandlers();
+		view.setEventHandlers();
 	},
 	renderGutterView: function (gutterView) {
 		'use strict';
@@ -61,7 +60,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
  
 			startD.setDate(startD.getDate()+1);
 			endD.setDate(endD.getDate()+1);
- 
+
 		//reset time so date is comparable
 		today = new Date((today.getMonth() + 1) + '/' + today.getDate() + '/' + today.getFullYear())
 		isLessThenToday = (today.getTime() > startD.getTime());
