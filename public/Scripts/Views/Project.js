@@ -15,9 +15,6 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 			gutterView,
 			projectView;
 
-			console.log(gutters);
-			console.log(projects);
-
 		view.currentHeadername = gutters[0].headername;
 
 		for (i = 0; i < gutters.length; i++) {

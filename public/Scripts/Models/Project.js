@@ -15,7 +15,7 @@ o.Models.ProjectCollection = Backbone.Collection.extend({
   },
   generateModels : function(data){
   		for (var i = 0; i < data.rows.length; i++) {
-  			console.log(data.rows[i]);
+  			//console.log(data.rows[i]);
   			var project = new o.Models.Project(data.rows[i]);
 			this.add(project);
 		    project.save();
@@ -23,7 +23,7 @@ o.Models.ProjectCollection = Backbone.Collection.extend({
   },
   initialize : function(){
   	o.socket.on('save', function(data){
-		console.log(data); 
+		//console.log(data); 
 	});
   },
   sendToServer : function(color){
