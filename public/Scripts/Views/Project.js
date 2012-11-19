@@ -8,12 +8,15 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 	dayWidth : 41,
 	render: function () {
 		'use strict';
-		// var view = this,
-		// 	gutters = this.options.employeeList,
-		// 	projects = this.collection.models,
-		// 	i,
-		// 	gutterView,
-		// 	projectView;
+		var view = this,
+			gutters = this.options.employeeList,
+			projects = this.collection.models,
+			i,
+			gutterView,
+			projectView;
+
+			console.log(gutters):
+			console.log(projects):
 
 		// view.currentHeadername = gutters[0].headername;
 
