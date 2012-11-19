@@ -35,11 +35,11 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 		for (i = 0; i < projects.length; i++) {
 			projects[i].attributes = view.setDayInfo(projects[i].attributes);
 			
-			projectView = new o.Views.Project({
-				model: projects[i]
-			});
+			// projectView = new o.Views.Project({
+			// 	model: projects[i]
+			// });
 			
-			view.renderProjectView(projectView);
+			// view.renderProjectView(projectView);
 		}
 
 		// view.setEventHandlers();
