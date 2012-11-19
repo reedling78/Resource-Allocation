@@ -14,7 +14,7 @@ o.Controller = Backbone.Model.extend({
 		});
 		weekView.render();
 
-		var monthView = new o.Views.MonthCollectionView({
+		var monthView = new o.Views.MonthCollectionView({ 
 			collection: calendarModel
 		});
 		monthView.render();
