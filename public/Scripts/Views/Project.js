@@ -18,16 +18,16 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 			console.log(gutters);
 			console.log(projects);
 
-		// view.currentHeadername = gutters[0].headername;
+		view.currentHeadername = gutters[0].headername;
 
-		// for (i = 0; i < gutters.length; i++) {
-		// 	gutterView = new o.Views.Gutter({
-		// 		model: gutters[i],
-		// 		currentHeadername: view.currentHeadername
-		// 	});
-		// 	view.renderGutterView(gutterView);
-		// 	view.currentHeadername = gutters[i].headername;
-		// }
+		for (i = 0; i < gutters.length; i++) {
+			gutterView = new o.Views.Gutter({
+				model: gutters[i],
+				currentHeadername: view.currentHeadername
+			});
+			view.renderGutterView(gutterView);
+			view.currentHeadername = gutters[i].headername;
+		}
 
 		// //set gutter width
 		// $('.Projects').css('width', $('.Calendar')[0].scrollWidth + 'px');
