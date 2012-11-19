@@ -62,6 +62,9 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 			console.log(startD);
 			console.log(endD);
 
+			startD.setDate(startD.getDate()+1);
+			endD.setDate(endD.getDate()+1);
+
 		//reset time so date is comparable
 		today = new Date((today.getMonth() + 1) + '/' + today.getDate() + '/' + today.getFullYear())
 		isLessThenToday = (today.getTime() > startD.getTime());
