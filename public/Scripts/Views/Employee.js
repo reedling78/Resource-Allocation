@@ -55,6 +55,9 @@ o.Views.EmployeeCollectionView = Backbone.View.extend({
 		headers = this.collection.get('Teams');
 
 		$('.Day, .Day > li, .Day ul li, .Dates, .Month span').css('height', view.TotalHeight + 'px');
+	},
+	clearEmployees: function(){
+		
 	}
 });
 

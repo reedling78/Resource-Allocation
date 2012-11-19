@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"sele",
+				"selectAllProjects"
+			],
+			[
+				"emp",
+				"employees"
+			],
+			[
+				"E",
+				"Employees"
+			],
+			[
+				"fetch",
+				"fetchData"
+			],
+			[
 				"attr",
 				"attributes"
 			],
@@ -14,10 +30,6 @@
 			[
 				"cur",
 				"currentHeadername"
-			],
-			[
-				"emp",
-				"employeeList"
 			],
 			[
 				"em",
@@ -196,10 +208,10 @@
 	"buffers":
 	[
 		{
-			"file": "public/Scripts/Views/Project.js",
+			"file": "serverjs/Project.js",
 			"settings":
 			{
-				"buffer_size": 7447,
+				"buffer_size": 781,
 				"line_ending": "Unix"
 			}
 		},
@@ -207,15 +219,7 @@
 			"file": "public/Scripts/Models/Project.js",
 			"settings":
 			{
-				"buffer_size": 1880,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "public/Scripts/controller.js",
-			"settings":
-			{
-				"buffer_size": 965,
+				"buffer_size": 942,
 				"line_ending": "Unix"
 			}
 		},
@@ -223,36 +227,36 @@
 			"file": "app.js",
 			"settings":
 			{
-				"buffer_size": 1178,
+				"buffer_size": 2974,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "serverjs/static.js",
+			"file": "serverjs/db.js",
 			"settings":
 			{
-				"buffer_size": 985,
+				"buffer_size": 1897,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "public/index.html",
+			"file": "public/Scripts/Views/Project.js",
 			"settings":
 			{
-				"buffer_size": 1385,
+				"buffer_size": 7415,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "public/js/socket-io.js",
+			"file": "public/Scripts/controller.js",
 			"settings":
 			{
-				"buffer_size": 2443,
+				"buffer_size": 1048,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "public/Scripts/Models/Employee.js",
+			"file": "public/Scripts/Views/Employee.js",
 			"settings":
 			{
 				"buffer_size": 1746,
@@ -296,21 +300,22 @@
 	},
 	"file_history":
 	[
-		"/Users/reed.rizzo/Developer/Resource Allocation/node_modules/socket.io/lib/socket.js",
+		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/Models/Employee.js",
+		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/controller.js",
+		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/Views/Employee.js",
+		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/Views/Project.js",
 		"/Users/reed.rizzo/Developer/Resource Allocation/public/js/socket-io.js",
+		"/Users/reed.rizzo/Developer/Resource Allocation/public/index.html",
+		"/Users/reed.rizzo/Developer/Resource Allocation/serverjs/static.js",
+		"/Users/reed.rizzo/Developer/Resource Allocation/app.js",
+		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/Models/Project.js",
+		"/Users/reed.rizzo/Developer/Resource Allocation/node_modules/socket.io/lib/socket.js",
 		"/Users/reed.rizzo/Developer/Resource Allocation/public/Styles/Styles.css",
 		"/Users/reed.rizzo/Developer/Facebook Sandbox/default.htm",
 		"/Users/reed.rizzo/Library/Application Support/Sublime Text 2/Packages/User/CSSTidy.sublime-settings",
-		"/Users/reed.rizzo/Developer/Resource Allocation/public/index.html",
-		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/Models/Project.js",
 		"/Users/reed.rizzo/Developer/Resource Allocation/public/js/sortElements.js",
-		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/Views/Project.js",
-		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/controller.js",
 		"/Users/reed.rizzo/Library/Application Support/Sublime Text 2/Packages/CSSTidy/CSSTidy.sublime-settings",
-		"/Users/reed.rizzo/Developer/Resource Allocation/app.js",
 		"/Users/reed.rizzo/Developer/Resource Allocation/public/Styles/custom.css",
-		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/Views/Employee.js",
-		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/Models/Employee.js",
 		"/Volumes/KeyLimeTie/Design/Web - Resource Allocation/Web Ready/index.html",
 		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/Models/Calendar.js",
 		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/main.js",
@@ -409,6 +414,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"db",
+			"soc",
+			"console",
 			"removeColor",
 			"Color",
 			"attr",
@@ -550,131 +558,23 @@
 	"groups":
 	[
 		{
-			"selected": 7,
+			"selected": 6,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "public/Scripts/Views/Project.js",
+					"file": "serverjs/Project.js",
 					"settings":
 					{
-						"buffer_size": 7447,
+						"buffer_size": 781,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6018,
-								6018
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 164.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "public/Scripts/Models/Project.js",
-					"settings":
-					{
-						"buffer_size": 1880,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1711,
-								1711
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 404.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "public/Scripts/controller.js",
-					"settings":
-					{
-						"buffer_size": 965,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								108,
-								108
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "app.js",
-					"settings":
-					{
-						"buffer_size": 1178,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								676,
-								676
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "serverjs/static.js",
-					"settings":
-					{
-						"buffer_size": 985,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								985,
-								985
+								44,
+								44
 							]
 						],
 						"settings":
@@ -688,74 +588,98 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "public/index.html",
+					"buffer": 1,
+					"file": "public/Scripts/Models/Project.js",
 					"settings":
 					{
-						"buffer_size": 1385,
+						"buffer_size": 942,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								791,
-								717
+								237,
+								237
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 149.0,
+						"translation.y": 18.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "public/js/socket-io.js",
+					"buffer": 2,
+					"file": "app.js",
 					"settings":
 					{
-						"buffer_size": 2443,
+						"buffer_size": 2974,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2443,
-								2443
+								803,
+								803
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 2654.0,
+						"translation.y": 308.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 7,
-					"file": "public/Scripts/Models/Employee.js",
+					"buffer": 3,
+					"file": "serverjs/db.js",
 					"settings":
 					{
-						"buffer_size": 1746,
+						"buffer_size": 1897,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								890,
-								890
+								1745,
+								1745
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1144.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "public/Scripts/Views/Project.js",
+					"settings":
+					{
+						"buffer_size": 7415,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2451,
+								2451
 							]
 						],
 						"settings":
@@ -765,6 +689,60 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "public/Scripts/controller.js",
+					"settings":
+					{
+						"buffer_size": 1048,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								648,
+								648
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 269.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "public/Scripts/Views/Employee.js",
+					"settings":
+					{
+						"buffer_size": 1746,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1366,
+								1366
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 994.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
