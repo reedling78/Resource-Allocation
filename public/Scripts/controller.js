@@ -35,13 +35,8 @@ o.Controller = Backbone.Model.extend({
 			o.socket.on('receive projects', function(data){ 
 				console.log('receive projects');
 				console.log(JSON.stringify(data));
-				that.generateModels(data);
-
-				if(o.projectCollectionView != undefined){
-					o.projectCollectionView.clearProjects();
-					o.employeeView.clearEmployees();
-					o.employeeView.render();
-				}
+				
+				
 
 				projectCollection.fetchData(function(){
 
@@ -50,6 +45,13 @@ o.Controller = Backbone.Model.extend({
 						collection: projectCollection, 
 						employeeList: o.employeeView.collection.attributes.Employees
 					});
+
+					if(o.projectCollectionView != undefined){
+						o.projectCollectionView.clearProjects();
+						o.employeeView.clearEmployees();
+						o.employeeView.render();
+					}
+
 					o.projectCollectionView.render();
 
 				});
