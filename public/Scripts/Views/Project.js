@@ -219,7 +219,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 				var count = 0;
 				var d = new Date(o.calendarModel.attributes.dayMap[i].date);
 				var duration = parseInt($(el).find('div').first().attr('data-duration'));
-				var endD = new Date(o.calendarModel.attributes.dayMap[i - duration].date);
+				var endD = new Date(o.calendarModel.attributes.dayMap[(i - duration) - 1].date);
 				console.log('start date');
 				console.log(d);
 
