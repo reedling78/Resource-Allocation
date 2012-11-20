@@ -13,6 +13,7 @@ o.Models.Calendar = Backbone.Model.extend({
 				, monthLoop
 				, addOne
 				, today = new Date(this.currentDate);
+				, dayMap = []
 
 				//roll back a month to account for current month
 				d.setMonth(d.getMonth() - 1);
@@ -42,6 +43,12 @@ o.Models.Calendar = Backbone.Model.extend({
 										weeks.push(days);
 										days = [];
 									}
+
+									dayMap.push({
+										index : 1,
+										date: newDate.getDate()
+									});
+
 									days.push({
 										name: this.dayNames[newDate.getDay()],
 										date: newDate.getDate()
@@ -58,6 +65,12 @@ o.Models.Calendar = Backbone.Model.extend({
 									weeks.push(days);
 									days = [];
 								}
+
+								dayMap.push({
+									index : 1,
+									date: newDate.getDate()
+								});
+
 								days.push({
 									name: this.dayNames[newDate.getDay()],
 									date: newDate.getDate()
@@ -85,7 +98,8 @@ o.Models.Calendar = Backbone.Model.extend({
 
 			this.set({
 				months : months.reverse(),
-				weeks: weeks.reverse()
+				weeks: weeks.reverse(),
+				dayMap: dayMap.reverse()
 			});
 	
 	},
