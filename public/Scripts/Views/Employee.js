@@ -5,10 +5,10 @@ o.Views.EmployeeCollectionView = Backbone.View.extend({
 	HeaderHeight :80,
 	TotalHeight : 0,
 	initialize: function(){
-		
+		this.collection.byTeam();
 	},
 	render: function () {
-		this.collection.byTeam();
+		
 
 		var view = this, 
 		employees = this.collection.get('Employees'),
