@@ -212,6 +212,9 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 		$(el).addClass(color);
 		view.collection.sendToServer($('div.Projects>ul>li'));
 	},
+	findColor: function(classString){
+		console.log(classString);
+	},
 	clearProjects: function(){
 		console.log('clear projects');  
 		$('.Projects>ul').html('');

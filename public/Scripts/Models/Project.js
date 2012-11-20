@@ -37,24 +37,27 @@ o.Models.ProjectCollection = Backbone.Collection.extend({
   },
   sendToServer : function(projectsEl){
     console.log(projectsEl);
+    var projArray = [];
+
+    o.employeeView.findColor('test test test');
     
     $(projectsEl).each(function(index) {
       if($(this).find('ul li').length !== 0){
         $(this).find('ul li').each(function(index){
           var el = $(this);
           console.log(el); 
-
-          // var test = {
-          //   id: el,
+          // projArray.push({
+          //   id: $(el).data('id'),
           //   name: "ACG",
           //   description: "My AAA Account Redesign",
-          //   empid: 1,
+          //   empid: $(el).data('empid'),
           //   color: "Orange",
           //   startdate: "2012-11-19T00:00:00.000Z",
           //   enddate: "2012-11-23T00:00:00.000Z",
           //   day: null,
           //   duration: null
-          // }
+          // });
+          
         });
       }
     });
