@@ -233,7 +233,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 			}
 		};
 
-		//view.collection.sendToServer($('div.Projects>ul>li'));
+		view.collection.sendToServer($('div.Projects>ul>li'));
 	},
 	updateProjectColor: function(el, color){
 		var view = this;
