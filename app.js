@@ -34,7 +34,7 @@ io.sockets.on('connection', function (socket) {
 	socket.on('get projects', function (data) {
 		
 		if(data !== undefined){
-			db.updateProjects(client, data, function(result){
+			db.updateProjects(client, data, function(){
 				db.selectCurrentProjects(client, function(result){
 					socket.emit('receive projects', result);
 				});
