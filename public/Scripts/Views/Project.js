@@ -197,7 +197,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 					var dropped = ui.draggable, droppedOn = $(this);
             		$(dropped).detach().attr('style', '').appendTo(droppedOn);
             		console.log($(droppedOn).parent().attr('data-employee-id'));
-            		view.updateProjectEl(dropped, (ui.position.left / view.dayWidth)+1);
+            		view.updateProjectEl(dropped, (ui.position.left / view.dayWidth)+1, $(droppedOn).parent().attr('data-employee-id'));
 
             		droppedOn.find('li').sortElements(function(a, b){
 					    return $(a).find('div').first().attr('data-day') > $(b).find('div').first().attr('data-day') ? 1 : -1;
@@ -206,7 +206,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 				}
 			});
 	},
-	updateProjectEl: function(el, day){
+	updateProjectEl: function(el, day, empid){
 		var view = this;
 		$(el).removeClass(function (index, css) {
 			return (css.match (/\bDay-\S+/g) || []).join(' ');
@@ -224,7 +224,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 				
 				$(el).find('div').first().attr('data-startdate', d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate());
 				$(el).find('div').first().attr('data-enddate', endD.getFullYear() + '-' + (endD.getMonth() + 1) + '-' + endD.getDate());
-				
+				$(el).find('div').first().attr('data-empid', empid);
 			}
 		};
 
