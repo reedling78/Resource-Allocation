@@ -63,9 +63,10 @@ exports.updateProjects = function (client, projArray, callback) {
         + 'startdate = \'' + projArray[i].startdate + '\', '
         + 'enddate = \'' + projArray[i].enddate + '\' '
         + 'WHERE id = ' + projArray[i].id;
+        
         console.log('-----0000-----0000-----0000-----0000');
-                console.log(s);
-                console.log('-----1111-----1111-----1111-----1111');
+        console.log(s);
+        console.log('-----1111-----1111-----1111-----1111');
         statements.push(s);
         //console.log(s);
     };
@@ -86,7 +87,7 @@ exports.updateProjects = function (client, projArray, callback) {
 //         }
           
 //     })();
-// }
+}
 
 
 
