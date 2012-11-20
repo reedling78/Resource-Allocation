@@ -10,6 +10,7 @@ o.Models.ProjectCollection = Backbone.Collection.extend({
       if(o.projectCollectionView != undefined){
         o.projectCollectionView.clearProjects();
         o.employeeView.clearEmployees();
+        o.employeeView.render();
       }
       callback();
     });
