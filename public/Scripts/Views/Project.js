@@ -183,8 +183,8 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 					var startD = $(this).attr('data-day');
 					var endD = new Date(o.calendarModel.attributes.dayMap[(startD - thisElNewDuration) + 1].date);
 
-					$(this).attr('data-enddate', endD.getFullYear() + '-' + (endD.getMonth() + 1) + '-' + endD.getDate());
-					
+					//$(this).attr('data-enddate', endD.getFullYear() + '-' + (endD.getMonth() + 1) + '-' + endD.getDate());
+					console.log(startD);
 					console.log(endD);
 					//view.collection.sendToServer($('div.Projects>ul>li'));
 				}
