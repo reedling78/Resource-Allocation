@@ -15,9 +15,6 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 			gutterView, 
 			projectView;
 
-		console.log('Collection Models');
-		console.log(this.collection.models);
-
 		view.currentHeadername = gutters[0].headername;
 
 		for (i = 0; i < gutters.length; i++) {
@@ -34,8 +31,6 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 		
 		for (i = 0; i < projects.length; i++) {
 		projects[i].attributes = view.setDayInfo(projects[i].attributes);
-			console.log('-----------');
-			console.log(JSON.stringify(projects[i].attributes));
 			projectView = new o.Views.Project({
 				model: projects[i]
 			});
@@ -130,6 +125,10 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 				$(projLi).addClass($(this).data('color'));
 			})
 
+			$('h6[contenteditable=true]').on('focusout', function(){
+				console.log('tttttttttttttttttttt'):
+			});
+
 			//Project resizable
 			$("div.Projects li>div").resizable({
 				handles: 'e',
@@ -176,7 +175,8 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 						.addClass('Duration-' + thisElNewDuration);
 
 					$(this).attr('style', '')
-						.attr('data-duration', thisElNewDuration);;
+						.attr('data-duration', thisElNewDuration);
+
 				}
 			})
 

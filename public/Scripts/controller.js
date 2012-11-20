@@ -31,9 +31,7 @@ o.Controller = Backbone.Model.extend({
 			//Build Employees 
 			
 
-			o.socket.on('receive projects', function(data){ 
-				console.log('receive projects');
-				console.log(JSON.stringify(data));
+			o.socket.on('receive projects', function(data){
 				var projectCollection = new o.Models.ProjectCollection();
 				projectCollection.fetchData(data, function(){
 
