@@ -47,7 +47,7 @@ o.Models.ProjectCollection = Backbone.Collection.extend({
           var el = $(this);
           console.log(el); 
           console.log($(el)); 
-          console.log($(el).classList); 
+          console.log($(el).attr('class')); 
           console.log(el.classList); 
           o.projectCollectionView.findColor('test test test');
           // projArray.push({
