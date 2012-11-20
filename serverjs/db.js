@@ -69,7 +69,7 @@ exports.updateProjects = function (client, projArray, callback) {
         var statement = statements.shift();
         if (statement) {
           client.query(statement, function(err, response) {
-            if (err) return cb(err);
+            if (err) return callback(err);
                 console.dir(response);
             next();
           });
