@@ -14,6 +14,7 @@ o.Models.Calendar = Backbone.Model.extend({
 				, addOne
 				, today = new Date(this.currentDate)
 				, dayMap = []
+				, dayInc = 0
 
 				//roll back a month to account for current month
 				d.setMonth(d.getMonth() - 1);
@@ -45,8 +46,8 @@ o.Models.Calendar = Backbone.Model.extend({
 									}
 
 									dayMap.push({
-										index : 1,
-										date: newDate.getDate()
+										index : dayInc++,
+										date: new Date((newDate.getMonth() + 1) + '/' + newDate.getDate() + '/' + newDate.getFullYear())
 									});
 
 									days.push({
@@ -67,8 +68,8 @@ o.Models.Calendar = Backbone.Model.extend({
 								}
 
 								dayMap.push({
-									index : 1,
-									date: newDate.getDate()
+									index : dayInc++,
+									date: new Date((newDate.getMonth() + 1) + '/' + newDate.getDate() + '/' + newDate.getFullYear())
 								});
 
 								days.push({
