@@ -29,15 +29,12 @@ o.Controller = Backbone.Model.extend({
 			o.employeeView.render();
 
 			//Build Employees 
-			
-
+			var projectCollection = new o.Models.ProjectCollection();
 
 			o.socket.on('receive projects', function(data){ 
 				console.log('receive projects');
 				console.log(JSON.stringify(data));
 				
-				var projectCollection = new o.Models.ProjectCollection();
-
 				projectCollection.fetchData(function(){
 
 					//Projects
@@ -51,7 +48,7 @@ o.Controller = Backbone.Model.extend({
 						o.employeeView.clearEmployees();
 						o.employeeView.render();
 					}
-					console.log('before render');
+
 					o.projectCollectionView.render();
 
 				});
