@@ -12,7 +12,7 @@ o.Models.Calendar = Backbone.Model.extend({
 				, d = new Date(this.currentDate)
 				, monthLoop
 				, addOne
-				, today = new Date(this.currentDate);
+				, today = new Date(this.currentDate)
 				, dayMap = []
 
 				//roll back a month to account for current month
