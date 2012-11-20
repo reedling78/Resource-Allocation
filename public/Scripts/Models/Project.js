@@ -39,7 +39,7 @@ o.Models.ProjectCollection = Backbone.Collection.extend({
     console.log(projectsEl);
     var projArray = [];
 
-    o.employeeView.findColor('test test test');
+    o.projectCollectionView.findColor('test test test');
     
     $(projectsEl).each(function(index) {
       if($(this).find('ul li').length !== 0){
