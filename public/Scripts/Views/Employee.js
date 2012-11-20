@@ -5,11 +5,10 @@ o.Views.EmployeeCollectionView = Backbone.View.extend({
 	HeaderHeight :80,
 	TotalHeight : 0,
 	initialize: function(){
+		//Sorts emplyeees by team. Get fancy later with other sort options. 
 		this.collection.byTeam();
 	},
 	render: function () {
-		
-
 		var view = this, 
 		employees = this.collection.get('Employees'),
 		headers = this.collection.get('Teams');
@@ -57,9 +56,6 @@ o.Views.EmployeeCollectionView = Backbone.View.extend({
 		headers = this.collection.get('Teams');
 
 		$('.Day, .Day > li, .Day ul li, .Dates, .Month span').css('height', view.TotalHeight + 'px');
-	},
-	clearEmployees: function(){
-		
 	},
 	clearEmployees: function(){
 		console.log('clear projects');  

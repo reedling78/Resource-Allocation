@@ -210,7 +210,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 		};
 
 		$(el).addClass(color);
-		view.collection.sendToServer(color);
+		view.collection.sendToServer($('div.Projects ul'));
 	},
 	clearProjects: function(){
 		console.log('clear projects');  
