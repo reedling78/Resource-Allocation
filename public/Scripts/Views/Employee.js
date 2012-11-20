@@ -58,6 +58,10 @@ o.Views.EmployeeCollectionView = Backbone.View.extend({
 	},
 	clearEmployees: function(){
 		
+	},
+	clearEmployees: function(){
+		console.log('clear projects');  
+		$('ul.Employees').html('');
 	}
 });
 

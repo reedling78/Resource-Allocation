@@ -4,14 +4,17 @@ o.Models.ProjectCollection = Backbone.Collection.extend({
   fetchData : function(callback){
   	var that = this;
 
-	o.socket.on('receive projects', function(data){ 
-		that.generateModels(data);
-		if(o.projectCollectionView != undefined){
-			o.projectCollectionView.clearProjects();
-		}
-		callback();
-	});
-	o.socket.emit('get projects');
+    //Project has changed. Redraw
+    o.socket.on('receive projects', function(data){ 
+      that.generateModels(data);
+      if(o.projectCollectionView != undefined){
+        o.projectCollectionView.clearProjects();
+        o.employeeView.clearEmployees();
+      }
+      callback();
+    });
+    o.socket.emit('get projects');
+
   },
   generateModels : function(data){
   		for (var i = 0; i < data.rows.length; i++) {
