@@ -59,7 +59,7 @@ o.Models.ProjectCollection = Backbone.Collection.extend({
 
     console.log(projArray);
 
-    o.socket.emit('get projects', { name: 'test' });
+    o.socket.emit('get projects', projArray);
   	//o.socket.emit('save', { name: 'Reed Rizzo', nickname: 'badass', color: color});
   }
 });

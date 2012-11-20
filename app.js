@@ -32,6 +32,9 @@ io.configure(function () {
 io.sockets.on('connection', function (socket) {
 
 	socket.on('get projects', function (data) {
+		console.log('-----0000-----0000-----0000-----0000-----0000-----0000-----0000-----');
+		console.log(data);
+		console.log('-----1111-----1111-----1111-----1111-----1111-----1111-----1111-----');
 		db.selectCurrentProjects(client, function(result){
 			socket.emit('receive projects', result);
 		});
