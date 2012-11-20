@@ -41,7 +41,20 @@ o.Models.ProjectCollection = Backbone.Collection.extend({
     $(projectsEl).each(function(index) {
       if($(this).find('ul li').length !== 0){
         $(this).find('ul li').each(function(index){
-          console.log($(this)); 
+          var el = $(this);
+          console.log(el); 
+
+          // var test = {
+          //   id: el,
+          //   name: "ACG",
+          //   description: "My AAA Account Redesign",
+          //   empid: 1,
+          //   color: "Orange",
+          //   startdate: "2012-11-19T00:00:00.000Z",
+          //   enddate: "2012-11-23T00:00:00.000Z",
+          //   day: null,
+          //   duration: null
+          // }
         });
       }
     });

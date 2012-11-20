@@ -235,7 +235,7 @@ o.Views.Gutter = Backbone.View.extend({
 
 o.Views.Project = Backbone.View.extend({
 	template: '<li class="projli Duration-{{ duration }} Day-{{ day }} {{ color }}">'
-			+ '	<div data-duration="{{ duration }}" data-day="{{ day }}" class="editarea">'
+			+ '	<div data-id="{{ id }}" data-empid={{ empid }} data-duration="{{ duration }}" data-day="{{ day }}" class="editarea">'
 			+ '		<div class="editproj">'
 			+ '			<h6 contenteditable="true">{{ name }}</h6>'
 			+ '			<span class="Dash">&ndash;</span>'
