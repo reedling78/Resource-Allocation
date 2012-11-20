@@ -3,7 +3,7 @@ o.Models.ProjectCollection = Backbone.Collection.extend({
   localStorage: new Store('ProjectCollection'),
   fetchData : function(callback){
   	var that = this;
-
+    that.generateModels(data);
     //Project has changed. Redraw
     // o.socket.on('receive projects', function(data){ 
     //   console.log('receive projects');
@@ -20,7 +20,7 @@ o.Models.ProjectCollection = Backbone.Collection.extend({
     //   callback();
     // });
     // o.socket.emit('get projects');
-
+    callback();
     o.socket.on('save', function(data){ 
       console.log(data);
 
