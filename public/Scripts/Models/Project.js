@@ -32,8 +32,8 @@ o.Models.ProjectCollection = Backbone.Collection.extend({
             description: $(el).find('p').first().text().trim(),
             empid: $(el).find('div').first().data('empid'),
             color: o.projectCollectionView.findColor($(el).attr('class')),
-            startdate: $(el).find('div').first().data('startdate'),
-            enddate: $(el).find('div').first().data('enddate')
+            startdate: $(el).find('div').first().attr('data-startdate'),
+            enddate: $(el).find('div').first().attr('data-enddate')
           });
           
         });
