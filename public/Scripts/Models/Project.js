@@ -16,6 +16,11 @@ o.Models.ProjectCollection = Backbone.Collection.extend({
     });
     o.socket.emit('get projects');
 
+    o.socket.on('save', function(data){ 
+      console.log(data);
+
+    });
+
   },
   generateModels : function(data){
   		for (var i = 0; i < data.rows.length; i++) {
@@ -31,6 +36,7 @@ o.Models.ProjectCollection = Backbone.Collection.extend({
 	});
   },
   sendToServer : function(color){
+    console.log('save');
   	o.socket.emit('save', { name: 'Reed Rizzo', nickname: 'badass', color: color});
   }
 });
