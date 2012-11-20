@@ -58,12 +58,12 @@ exports.updateProjects = function (client, projArray, callback) {
         var s = 'UPDATE projects SET '
         + 'name = \'' + projArray[i].name + '\', '
         + 'description = \'' + projArray[i].description + '\', '
-        + 'empId = ' + projArray[i].empId + ', '
+        + 'empid = ' + projArray[i].empid + ', '
         + 'color = \'' + projArray[i].color + '\', '
         + 'startdate = \'' + projArray[i].startdate + '\', '
         + 'enddate = \'' + projArray[i].enddate + '\' '
         + 'WHERE id = ' + projArray[i].id;
-        
+
         console.log('-----0000-----0000-----0000-----0000');
         console.log(s);
         console.log('-----1111-----1111-----1111-----1111');
