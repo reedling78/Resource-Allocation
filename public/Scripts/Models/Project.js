@@ -1,7 +1,7 @@
 o.Models.ProjectCollection = Backbone.Collection.extend({
   model: o.Models.Project,
   localStorage: new Store('ProjectCollection'),
-  fetchData : function(callback){
+  fetchData : function(data, callback){
   	var that = this;
     that.generateModels(data);
     //Project has changed. Redraw

@@ -35,7 +35,7 @@ o.Controller = Backbone.Model.extend({
 				console.log('receive projects');
 				console.log(JSON.stringify(data));
 				
-				projectCollection.fetchData(function(){
+				projectCollection.fetchData(data, function(){
 
 					//Projects
 					o.projectCollectionView = new o.Views.ProjectCollectionView({
