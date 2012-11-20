@@ -9,8 +9,8 @@ o.Models.ProjectCollection = Backbone.Collection.extend({
       console.log('receive projects');
       console.log(JSON.stringify(data));
       that.generateModels(data);
-      console.log('collenctoin'):
-      console.log(that):
+      console.log('collenctoin');
+      console.log(that);
       //clear
       if(o.projectCollectionView != undefined){
         o.projectCollectionView.clearProjects();
