@@ -9,11 +9,15 @@ o.Models.ProjectCollection = Backbone.Collection.extend({
       console.log('receive projects');
       console.log(JSON.stringify(data));
       that.generateModels(data);
+      console.log('collenctoin'):
+      console.log(that):
+      //clear
       if(o.projectCollectionView != undefined){
         o.projectCollectionView.clearProjects();
         o.employeeView.clearEmployees();
         o.employeeView.render();
       }
+
       callback();
     });
     o.socket.emit('get projects');
@@ -28,7 +32,7 @@ o.Models.ProjectCollection = Backbone.Collection.extend({
   		for (var i = 0; i < data.rows.length; i++) {
   			//console.log(data.rows[i]);
   			var project = new o.Models.Project(data.rows[i]);
-			this.add(project);  
+			  this.add(project);  
 		    project.save();
   		};
   },
