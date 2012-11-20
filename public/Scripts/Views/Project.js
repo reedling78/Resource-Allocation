@@ -215,8 +215,20 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 		for (var i = 0; i < o.calendarModel.attributes.dayMap.length; i++) {
 			if(o.calendarModel.attributes.dayMap[i].index == day){
 				console.log(o.calendarModel.attributes.dayMap[i].date);
+				var count = 0;
+				var d = new Date(o.calendarModel.attributes.dayMap[i].date);
+				var duration = (el).find('div').first().attr('data-duration');
+				var endD = new Date(o.calendarModel.attributes.dayMap[i + duration].date);
+				
+
+				$(el).find('div').first().attr('data-startdate', new Date((d.getFullYear() + '-' + d.getMonth() + 1) + '-' + d.getDate()));
+				$(el).find('div').first().attr('data-enddate', new Date((endD.getFullYear() + '-' + endD.getMonth() + 1) + '-' + endD.getDate()));
+				
+				//data-startdate="2012-11-19"
 			}
 		};
+
+		//view.collection.sendToServer($('div.Projects>ul>li'));
 	},
 	updateProjectColor: function(el, color){
 		var view = this;
