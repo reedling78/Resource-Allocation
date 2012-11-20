@@ -196,7 +196,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 				drop: function(event, ui) {
 					var dropped = ui.draggable, droppedOn = $(this);
             		$(dropped).detach().attr('style', '').appendTo(droppedOn);
-            		console.log($(droppedOn).parent().attr('data-empid'));
+            		console.log($(droppedOn).parent().attr('data-employee-id'));
             		view.updateProjectEl(dropped, (ui.position.left / view.dayWidth)+1);
 
             		droppedOn.find('li').sortElements(function(a, b){
