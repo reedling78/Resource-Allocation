@@ -196,6 +196,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 				drop: function(event, ui) {
 					var dropped = ui.draggable, droppedOn = $(this);
             		$(dropped).detach().attr('style', '').appendTo(droppedOn);
+            		console.log(droppedOn);
             		view.updateProjectEl(dropped, (ui.position.left / view.dayWidth)+1);
 
             		droppedOn.find('li').sortElements(function(a, b){
@@ -215,19 +216,12 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 
 		for (var i = 0; i < o.calendarModel.attributes.dayMap.length; i++) {
 			if(o.calendarModel.attributes.dayMap[i].index == day){
-				console.log('Date found');
-				console.log(o.calendarModel.attributes.dayMap[i].date);
 				
 				var count = 0;
 				var d = new Date(o.calendarModel.attributes.dayMap[i].date);
 				var duration = parseInt($(el).find('div').first().attr('data-duration'));
 				var endD = new Date(o.calendarModel.attributes.dayMap[(i - duration) + 1].date);
-				console.log('start date');
-				console.log(d);
-
-				console.log('end date');
-				console.log(endD);
-
+				
 				$(el).find('div').first().attr('data-startdate', d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate());
 				$(el).find('div').first().attr('data-enddate', endD.getFullYear() + '-' + (endD.getMonth() + 1) + '-' + endD.getDate());
 				

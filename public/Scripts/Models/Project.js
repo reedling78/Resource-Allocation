@@ -30,7 +30,7 @@ o.Models.ProjectCollection = Backbone.Collection.extend({
             id: $(el).find('div').first().data('id'),
             name: $(el).find('h6').text().trim(),
             description: $(el).find('p').first().text().trim(),
-            empid: $(el).find('div').first().data('empid'),
+            empid: $(el).find('div').first().attr('data-empid'),
             color: o.projectCollectionView.findColor($(el).attr('class')),
             startdate: $(el).find('div').first().attr('data-startdate'),
             enddate: $(el).find('div').first().attr('data-enddate')
