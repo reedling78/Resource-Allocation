@@ -61,13 +61,10 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 			startD.setDate(startD.getDate()+1);
 			endD.setDate(endD.getDate()+1);
 
-			console.log(startD);
-			console.log(endD);
-
+		//reset time so date is comparable
 		startD = new Date((startD.getMonth() + 1) + '/' + startD.getDate() + '/' + startD.getFullYear());
 		endD = new Date((endD.getMonth() + 1) + '/' + endD.getDate() + '/' + endD.getFullYear());
-		
-		//reset time so date is comparable
+
 		today = new Date((today.getMonth() + 1) + '/' + today.getDate() + '/' + today.getFullYear())
 		isLessThenToday = (today.getTime() > startD.getTime());
 
@@ -101,7 +98,8 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 			console.log(duration);
 			startD.setDate(startD.getDate()+1);
 
-			if(duration > 50){
+			//just in case date compair goes wrong. 
+			if(duration > 300){
 				break;
 			}
 		}
