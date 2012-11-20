@@ -226,8 +226,8 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 				console.log('end date');
 				console.log(endD);
 
-				$(el).find('div').first().attr('data-startdate', new Date(d.getFullYear() + '-' + d.getMonth() + 1 + '-' + d.getDate()));
-				$(el).find('div').first().attr('data-enddate', new Date(endD.getFullYear() + '-' + endD.getMonth() + 1 + '-' + endD.getDate()));
+				$(el).find('div').first().attr('data-startdate', d.getFullYear() + '-' + d.getMonth() + 1 + '-' + d.getDate());
+				$(el).find('div').first().attr('data-enddate', endD.getFullYear() + '-' + endD.getMonth() + 1 + '-' + endD.getDate());
 				
 				//data-startdate="2012-11-19"
 			}
