@@ -55,14 +55,16 @@ exports.updateProjects = function (client, projArray, callback) {
     var statements = [];
 
     for (var i = 0; i < projArray.length; i++) {
-        statements.push('UPDATE projects SET '
+        var s = 'UPDATE projects SET '
         + 'name = \'' + projArray[i].name + '\', '
         + 'description = \'' + projArray[i].description + '\', '
         + 'empId = ' + projArray[i].empId + ', '
         + 'color = \'' + projArray[i].color + '\', '
         + 'startdate = \'' + projArray[i].startdate + '\', '
         + 'enddate = \'' + projArray[i].enddate + '\' '
-        + 'WHERE id = ' + projArray[i].id);
+        + 'WHERE id = ' + projArray[i].id;
+        statements.push(s);
+        console.log(s);
     };
 
 	(function next() {
