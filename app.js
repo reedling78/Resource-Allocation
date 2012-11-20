@@ -32,18 +32,19 @@ io.configure(function () {
 io.sockets.on('connection', function (socket) {
 
 	socket.on('get projects', function (data) {
-		console.log('-----0000-----0000-----0000-----0000-----0000-----0000-----0000-----');
 		
 		if(data !== undefined){
-			console.log(data);
+			db.updateProjects(client, data, function(result){
+				db.selectCurrentProjects(client, function(result){
+					socket.emit('receive projects', result);
+				});
+			});
 		} else {
-			console.log('return data NO UPDATE');
-		}
-		
-		console.log('-----1111-----1111-----1111-----1111-----1111-----1111-----1111-----');
-		db.selectCurrentProjects(client, function(result){
-			socket.emit('receive projects', result);
-		});
+			db.selectCurrentProjects(client, function(result){
+				socket.emit('receive projects', result);
+			});
+		}	
+
 	});
 
 	socket.emit('static', employeeData);

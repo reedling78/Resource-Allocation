@@ -51,23 +51,34 @@ exports.insertProjects = function (client, proj, callback) {
     });
 }
 
-exports.updateProjects = function (client, proj, callback) { 
-	var q = 'UPDATE projects SET '
-		+ 'name = \'' + proj.name + '\' '
-		+ 'description = \'' + proj.description + '\' '
-		+ 'empId = ' + proj.empId + ' '
-		+ 'color = \'' + proj.color + '\' '
-		+ 'startdate = \'' + proj.startdate + '\' '
-		+ 'enddate = \'' + proj.enddate + '\' '
-		+ 'WHERE id = ' + proj.id;
+exports.updateProjects = function (client, projArray, callback) { 
+    var statements = [];
 
-    client.query(q, function(err, result){
-    	if(err != null){
-    		callback(err);
-    	} else {
-    		callback(result);
-    	}
-    });
+    for (var i = 0; i < projArray.length; i++) {
+        statements.push('UPDATE projects SET '
+        + 'name = \'' + projArray[i].name + '\' '
+        + 'description = \'' + projArray[i].description + '\' '
+        + 'empId = ' + projArray[i].empId + ' '
+        + 'color = \'' + projArray[i].color + '\' '
+        + 'startdate = \'' + projArray[i].startdate + '\' '
+        + 'enddate = \'' + projArray[i].enddate + '\' '
+        + 'WHERE id = ' + projArray[i].id);
+    };
+
+	(function next() {
+        var statement = statements.shift();
+        if (statement) {
+          client.query(statement, function(err, response) {
+            if (err) return cb(err);
+                console.dir(response);
+            next();
+          });
+        }
+        else{
+            callback();
+        }
+          
+    })();
 }
 
 
