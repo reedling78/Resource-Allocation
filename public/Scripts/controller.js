@@ -34,7 +34,7 @@ o.Controller = Backbone.Model.extend({
 
 				//Projects
 				o.projectCollectionView = new o.Views.ProjectCollectionView({
-					collection: projectCollection,
+					collection: projectCollection, 
 					employeeList: o.employeeView.collection.attributes.Employees
 				});
 				o.projectCollectionView.render();
