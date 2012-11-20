@@ -2,30 +2,8 @@ o.Models.ProjectCollection = Backbone.Collection.extend({
   model: o.Models.Project,
   localStorage: new Store('ProjectCollection'),
   fetchData : function(data, callback){
-  	var that = this;
-    that.generateModels(data);
-    //Project has changed. Redraw
-    // o.socket.on('receive projects', function(data){ 
-    //   console.log('receive projects');
-    //   console.log(JSON.stringify(data));
-    //   that.generateModels(data);
-
-    //   //clear
-    //   if(o.projectCollectionView != undefined){
-    //     o.projectCollectionView.clearProjects();
-    //     o.employeeView.clearEmployees();
-    //     o.employeeView.render();
-    //   }
-
-    //   callback();
-    // });
-    // o.socket.emit('get projects');
+    this.generateModels(data);
     callback();
-    o.socket.on('save', function(data){ 
-      console.log(data);
-
-    });
-
   },
   generateModels : function(data){
   		for (var i = 0; i < data.rows.length; i++) {
@@ -61,11 +39,7 @@ o.Models.ProjectCollection = Backbone.Collection.extend({
         });
       }
     });
-
-    console.log(projArray);
-
     o.socket.emit('get projects', projArray);
-  	//o.socket.emit('save', { name: 'Reed Rizzo', nickname: 'badass', color: color});
   }
 });
 

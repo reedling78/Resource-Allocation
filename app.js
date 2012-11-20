@@ -35,9 +35,6 @@ io.sockets.on('connection', function (socket) {
 		
 		if(data !== undefined){
 			db.updateProjects(client, data, function(err){
-				console.log('-----0000-----0000-----0000-----0000');
-				console.log(err);
-				console.log('-----1111-----1111-----1111-----1111');
 				db.selectCurrentProjects(client, function(result){
 					socket.broadcast.emit('receive projects', result);
 				});
@@ -51,11 +48,6 @@ io.sockets.on('connection', function (socket) {
 	});
 
 	socket.emit('static', employeeData);
-
-	socket.on('save', function (data) { 
-		socket.emit('get projects');
-		socket.broadcast.emit('save', data);
-	});
 
 });
 
