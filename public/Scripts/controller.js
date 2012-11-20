@@ -7,15 +7,15 @@ o.Controller = Backbone.Model.extend({
 		o.socket = io.connect('http://klt.rizzonet.com');
 
 		//Build Calendar 
-		var calendarModel = new o.Models.Calendar();
+		o.calendarModel = new o.Models.Calendar();
 
 		var weekView = new o.Views.WeekCollectionView({
-			collection: calendarModel
+			collection: o.calendarModel
 		});
 		weekView.render();
 
 		var monthView = new o.Views.MonthCollectionView({ 
-			collection: calendarModel
+			collection: o.calendarModel
 		});
 		monthView.render();
 
