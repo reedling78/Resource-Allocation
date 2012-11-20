@@ -21,7 +21,7 @@ o.Models.ProjectCollection = Backbone.Collection.extend({
   		for (var i = 0; i < data.rows.length; i++) {
   			//console.log(data.rows[i]);
   			var project = new o.Models.Project(data.rows[i]);
-			this.add(project); 
+			this.add(project);  
 		    project.save();
   		};
   },
