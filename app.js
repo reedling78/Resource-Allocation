@@ -23,9 +23,6 @@ app.configure(function(){
 var client = new pg.Client(connectionString);
 client.connect(); 
 
-
-
-
 //Socket IO Config
 io.configure(function () { 
 	io.set("transports", ["xhr-polling"]); 
