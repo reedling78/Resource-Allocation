@@ -7,7 +7,7 @@ o.Models.ProjectCollection = Backbone.Collection.extend({
     //Project has changed. Redraw
     o.socket.on('receive projects', function(data){ 
       console.log('receive projects');
-      console.log(data);
+      console.log(JSON.stringify(data));
       that.generateModels(data);
       if(o.projectCollectionView != undefined){
         o.projectCollectionView.clearProjects();
