@@ -215,13 +215,17 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 	findColor: function(classString){
 		var classList = classString.split(/\s+/);
 		var view =  this;
+		var returnColor = '';
+
 		$.each( classList, function(index, cssclass){
 			$.each( view.colors, function(index, color){
 		    	if(cssclass == color){
-		    		console.log(cssclass);
+		    		returnColor = cssclass;
 		    	}
 		    });
 		});
+
+		return returnColor;
 	},
 	clearProjects: function(){
 		console.log('clear projects');  

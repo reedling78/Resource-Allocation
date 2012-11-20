@@ -36,31 +36,28 @@ o.Models.ProjectCollection = Backbone.Collection.extend({
 	});
   },
   sendToServer : function(projectsEl){
-    console.log(projectsEl);
     var projArray = [];
 
-
-    
     $(projectsEl).each(function(index) {
       if($(this).find('ul li').length !== 0){
         $(this).find('ul li').each(function(index){
           var el = $(this);
-          o.projectCollectionView.findColor($(el).attr('class'));
-          // projArray.push({
-          //   id: $(el).data('id'),
-          //   name: "ACG",
-          //   description: "My AAA Account Redesign",
-          //   empid: $(el).data('empid'),
-          //   color: "Orange",
-          //   startdate: "2012-11-19T00:00:00.000Z",
-          //   enddate: "2012-11-23T00:00:00.000Z",
-          //   day: null,
-          //   duration: null
-          // });
+          
+          projArray.push({
+            id: $(el).data('id'),
+            name: $(el).find('h6').trim(),
+            description: $(el).find('p').trim(),
+            empid: $(el).data('empid'),
+            color: o.projectCollectionView.findColor($(el).attr('class')),
+            startdate: "2012-11-19T00:00:00.000Z",
+            enddate: "2012-11-23T00:00:00.000Z"
+          });
           
         });
       }
     });
+
+    console.log(projArray);
 
     o.socket.emit('get projects', { name: 'test' });
   	//o.socket.emit('save', { name: 'Reed Rizzo', nickname: 'badass', color: color});
