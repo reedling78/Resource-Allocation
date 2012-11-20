@@ -212,10 +212,11 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 
 		$(el).find('div').first().attr('data-day', day);
 
-		// for (var i = 0; i < Things.length; i++) {
-		// 	Things[i]
-		// };
-		// o.calendarModel
+		for (var i = 0; i < o.calendarModel.attributes.dayMap.length; i++) {
+			if(o.calendarModel.attributes.dayMap[i].index == day){
+				console.log(o.calendarModel.attributes.dayMap[i].date);
+			}
+		};
 	},
 	updateProjectColor: function(el, color){
 		var view = this;
