@@ -58,8 +58,8 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 			duration = 1
 			isLessThenToday = false;
  
-			//startD.setDate(startD.getDate()+1);
-			//endD.setDate(endD.getDate()+1);
+			startD.setDate(startD.getDate()+1);
+			endD.setDate(endD.getDate()+1);
 
 			console.log(startD);
 			console.log(endD);
