@@ -63,25 +63,30 @@ exports.updateProjects = function (client, projArray, callback) {
         + 'startdate = \'' + projArray[i].startdate + '\', '
         + 'enddate = \'' + projArray[i].enddate + '\' '
         + 'WHERE id = ' + projArray[i].id;
+        console.log('-----0000-----0000-----0000-----0000');
+                console.log(s);
+                console.log('-----1111-----1111-----1111-----1111');
         statements.push(s);
-        console.log(s);
+        //console.log(s);
     };
 
-	(function next() {
-        var statement = statements.shift();
-        if (statement) { 
-          client.query(statement, function(err, response) {
-            if (err) return callback(err);
-                console.dir(response);
-            next();
-          });
-        }
-        else{
-            callback();
-        }
+    callback();
+
+// 	(function next() {
+//         var statement = statements.shift();
+//         if (statement) { 
+//           client.query(statement, function(err, response) {
+//             if (err) return callback(err);
+//                 console.dir(response);
+//             next();
+//           });
+//         }
+//         else{
+//             callback();
+//         }
           
-    })();
-}
+//     })();
+// }
 
 
 
