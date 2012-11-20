@@ -39,7 +39,7 @@ io.sockets.on('connection', function (socket) {
 				console.log(err);
 				console.log('-----1111-----1111-----1111-----1111');
 				db.selectCurrentProjects(client, function(result){
-					socket.emit('receive projects', result);
+					socket.broadcast.emit('receive projects', result);
 				});
 			});
 		} else {
