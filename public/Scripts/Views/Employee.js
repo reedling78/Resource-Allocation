@@ -8,6 +8,8 @@ o.Views.EmployeeCollectionView = Backbone.View.extend({
 		
 	},
 	render: function () {
+		//reset height
+		view.TotalHeight = 0;
 
 		this.collection.byTeam();
 
