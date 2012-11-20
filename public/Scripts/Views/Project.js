@@ -15,8 +15,6 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 			gutterView, 
 			projectView;
 
-		console.log('coll in view');
-		console.log(this.collection.models);	
 		view.currentHeadername = gutters[0].headername;
 
 		for (i = 0; i < gutters.length; i++) {
@@ -33,7 +31,8 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 		
 		for (i = 0; i < projects.length; i++) {
 		projects[i].attributes = view.setDayInfo(projects[i].attributes);
-
+			console.log('-----------');
+			console.log(JSON.stringify(projects[i].attributes));
 			projectView = new o.Views.Project({
 				model: projects[i]
 			});
