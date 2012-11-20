@@ -126,7 +126,11 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 			})
 
 			$('h6[contenteditable=true]').on('focusout', function(){
-				console.log('tttttttttttttttttttt');
+				view.collection.sendToServer($('div.Projects>ul>li'));
+			});
+
+			$('p[contenteditable=true]').on('focusout', function(){
+				view.collection.sendToServer($('div.Projects>ul>li'));
 			});
 
 			//Project resizable
