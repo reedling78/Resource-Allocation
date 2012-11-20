@@ -206,6 +206,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 			});
 	},
 	updateProjectEl: function(el, day){
+		var view = this;
 		$(el).removeClass(function (index, css) {
 			return (css.match (/\bDay-\S+/g) || []).join(' ');
 		}).addClass('Day-' + day);
@@ -216,6 +217,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 			if(o.calendarModel.attributes.dayMap[i].index == day){
 				console.log('Date found');
 				console.log(o.calendarModel.attributes.dayMap[i].date);
+				
 				var count = 0;
 				var d = new Date(o.calendarModel.attributes.dayMap[i].date);
 				var duration = parseInt($(el).find('div').first().attr('data-duration'));
@@ -229,7 +231,6 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 				$(el).find('div').first().attr('data-startdate', d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate());
 				$(el).find('div').first().attr('data-enddate', endD.getFullYear() + '-' + (endD.getMonth() + 1) + '-' + endD.getDate());
 				
-				//data-startdate="2012-11-19"
 			}
 		};
 
