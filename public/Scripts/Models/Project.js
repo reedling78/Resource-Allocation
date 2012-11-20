@@ -40,7 +40,7 @@ o.Models.ProjectCollection = Backbone.Collection.extend({
     
    
     $(projectsEl).each(function(index) {
-      console.log($(this).find('ul'));
+      console.log($(this).find('ul li').length);
     });
 
     o.socket.emit('get projects', { name: 'test' });
