@@ -8,14 +8,14 @@ o.Views.EmployeeCollectionView = Backbone.View.extend({
 		
 	},
 	render: function () {
-		//reset height
-		view.TotalHeight = 0;
-
 		this.collection.byTeam();
 
 		var view = this, 
 		employees = this.collection.get('Employees'),
 		headers = this.collection.get('Teams');
+
+		//reset height
+		view.TotalHeight = 0;
 
 		var currentHeader = '';
 
