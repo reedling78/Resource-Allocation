@@ -82,10 +82,16 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 		}
 
 		//Calculate how many day the project is set for
+
+		console.log(endD.getTime());
+		console.log(startD.getTime());
+
 		while (endD.getTime() != startD.getTime()){
+
 			if(startD.getDay() != 0 && startD.getDay() != 6){
 				duration++;
 			}
+			console.log(duration);
 			startD.setDate(startD.getDate()+1);
 		}
 		
