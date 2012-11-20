@@ -5,21 +5,21 @@ o.Models.ProjectCollection = Backbone.Collection.extend({
   	var that = this;
 
     //Project has changed. Redraw
-    o.socket.on('receive projects', function(data){ 
-      console.log('receive projects');
-      console.log(JSON.stringify(data));
-      that.generateModels(data);
+    // o.socket.on('receive projects', function(data){ 
+    //   console.log('receive projects');
+    //   console.log(JSON.stringify(data));
+    //   that.generateModels(data);
 
-      //clear
-      if(o.projectCollectionView != undefined){
-        o.projectCollectionView.clearProjects();
-        o.employeeView.clearEmployees();
-        o.employeeView.render();
-      }
+    //   //clear
+    //   if(o.projectCollectionView != undefined){
+    //     o.projectCollectionView.clearProjects();
+    //     o.employeeView.clearEmployees();
+    //     o.employeeView.render();
+    //   }
 
-      callback();
-    });
-    o.socket.emit('get projects');
+    //   callback();
+    // });
+    // o.socket.emit('get projects');
 
     o.socket.on('save', function(data){ 
       console.log(data);
