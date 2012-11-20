@@ -93,6 +93,10 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 			}
 			console.log(duration);
 			startD.setDate(startD.getDate()+1);
+
+			if(duration > 100){
+				break;
+			}
 		}
 		
 		model.day = (isLessThenToday) ? 1 : day;
