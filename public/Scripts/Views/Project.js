@@ -134,6 +134,14 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 						selectedDay = o.calendarModel.attributes.dayMap[i].date;
 					}
 				};
+
+				console.log($(this));
+
+				// projectView = new o.Views.Project({
+				// 	model: projects[i]
+				// });
+				
+				// view.renderProjectView(projectView);
 				console.log(e.offsetX); 
 				console.log((e.offsetX / 41) + 1); 
 				console.log(selectedDayIndex); 

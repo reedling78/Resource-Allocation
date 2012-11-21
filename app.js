@@ -80,7 +80,13 @@ app.get('/truncateProjects', function(req, res){
 	});
 });
 
-app.get('/insertprojects', function(req, res){
+app.get('/insertProjects', function(req, res){ 
+	db.insertProjects(client, proj[0], function(result){
+		console.log(result);
+	});
+});
+
+app.get('/insertTestProjects', function(req, res){
 
 	var proj = [
 		{
