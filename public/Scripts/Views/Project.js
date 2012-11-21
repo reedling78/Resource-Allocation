@@ -166,12 +166,10 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 					color: "Grey",
 					startdate: selectedDay,
 					enddate: selectedDay
+				}, function(){
+					o.socket.emit('get projects');
 				});
 				
-				console.log('EmployeeId: ' + empid);
-				console.log('SelectedDay' + selectedDay);
-
-				o.socket.emit('get projects');
 			})
 
 			$('h6[contenteditable=true]').on('focusout', function(){

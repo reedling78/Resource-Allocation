@@ -40,11 +40,13 @@ o.Models.ProjectCollection = Backbone.Collection.extend({
     
     o.socket.emit('get projects', projArray);
   },
-  sendNewProject : function(proj){
+  sendNewProject : function(proj, callback){
     o.socket.emit('send new projects', proj);
+    callback();
   },
-  deleteProject : function(id){
+  deleteProject : function(id, callback){
     o.socket.emit('delete projects', id);
+    callback();
   }
 });
 
