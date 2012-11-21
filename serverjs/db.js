@@ -1,5 +1,5 @@
 exports.selectAllProjects = function (client, callback) { 
-	client.query('SELECT * FROM projects ORDER BY startdate DESC', function(err, result){
+	client.query('SELECT * FROM projects ORDER BY startdate ASC', function(err, result){
     	if(err != null){
     		callback(err);
     	} else {
@@ -9,7 +9,7 @@ exports.selectAllProjects = function (client, callback) {
 }
 
 exports.selectCurrentProjects = function (client, callback) { 
-	client.query('SELECT * FROM projects WHERE enddate > now() ORDER BY startdate DESC', function(err, result){
+	client.query('SELECT * FROM projects WHERE enddate > now() ORDER BY startdate ASC', function(err, result){
     	if(err != null){
     		callback(err);
     	} else {
