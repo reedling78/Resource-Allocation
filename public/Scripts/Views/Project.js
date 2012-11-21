@@ -114,10 +114,14 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 			//Project edit area
 			$('div.editproj').on('click', function(){
 				$(this).parent().parent().addClass('Expanded');
+				$('div.editproj h6').attr('contenteditable', 'true');
+				$('div.editproj p').attr('contenteditable', 'true');
 			})
 
 			$('div.editarea').on('mouseleave', function(){
 				$(this).parent().removeClass('Expanded');
+				$('div.editproj h6').attr('contenteditable', 'false');
+				$('div.editproj p').attr('contenteditable', 'false');
 			})
 
 			$('span.Colors span').on('click', function(){
@@ -319,9 +323,9 @@ o.Views.Project = Backbone.View.extend({
 	template: '<li class="projli Duration-{{ duration }} Day-{{ day }} {{ color }}">'
 			+ '	<div data-id="{{ id }}" data-empid={{ empid }} data-duration="{{ duration }}" data-day="{{ day }}" data-startdate="{{ startdate }}" data-enddate="{{ enddate }}" class="editarea">'
 			+ '		<div class="editproj">'
-			+ '			<h6 contenteditable="true">{{ name }}</h6>'
+			+ '			<h6 contenteditable="false">{{ name }}</h6>'
 			+ '			<span class="Dash">&ndash;</span>'
-			+ '			<p contenteditable="true">{{ description }}</p>'
+			+ '			<p contenteditable="false">{{ description }}</p>'
 			+ '			<span class="Colors"><span data-color="Red"></span><span data-color="Orange"></span><span data-color="Yellow"></span><span data-color="Lime"></span><span data-color="Green"></span><span data-color="Aqua"></span><span data-color="Blue"></span><span data-color="Purple"></span><span data-color="Grey"></span></span>'
 			+ '			<span class="Grabber"></span>'
 			+ '			<span class="Dots ui-resizable-handle ui-resizable-e"><span></span><span></span><span></span></span>'
