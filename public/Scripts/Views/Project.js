@@ -10,9 +10,9 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 		'use strict';
 		var view = this,
 			gutters = this.options.employeeList,
-			projects = this.collection.models, 
+			projects = this.collection.models,
 			i,
-			gutterView, 
+			gutterView,
 			projectView;
 
 		view.currentHeadername = gutters[0].headername;
@@ -28,7 +28,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 
 		//set gutter width
 		$('.Projects').css('width', $('.Calendar')[0].scrollWidth + 'px');
-		
+
 		for (i = 0; i < projects.length; i++) {
 		projects[i].attributes = view.setDayInfo(projects[i].attributes);
 			projectView = new o.Views.Project({
@@ -125,6 +125,10 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 				$(projLi).addClass($(this).data('color'));
 			})
 
+			$('.Projects ul ul').on('click', function(e){
+				console.log(e);
+			})
+
 			$('h6[contenteditable=true]').on('focusout', function(){
 				view.collection.sendToServer($('div.Projects>ul>li'));
 			});
@@ -171,6 +175,8 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 					}
 				},
 				stop: function(e, ui){
+					var startD = $(this).attr('data-day')
+						, endD;
 					$(this).parent()
 						.attr('style', '')
 						.removeClass(function (index, css) {
@@ -181,20 +187,13 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 					$(this).attr('style', '')
 						.attr('data-duration', thisElNewDuration); 
 
-					var startD = $(this).attr('data-day');
-					var endD;
-
 					for (var i = 0; i < o.calendarModel.attributes.dayMap.length; i++) {
 						if(o.calendarModel.attributes.dayMap[i].index == startD){
 							endD = o.calendarModel.attributes.dayMap[(i - thisElNewDuration) + 1].date;
 						}
 					};
-					//var endD = new Date(o.calendarModel.attributes.dayMap[startD].date);
-
-					//(startD - thisElNewDuration) + 1
+					
 					$(this).attr('data-enddate', endD.getFullYear() + '-' + (endD.getMonth() + 1) + '-' + endD.getDate());
-					console.log(startD);
-					//console.log(endD);
 					view.collection.sendToServer($('div.Projects>ul>li'));
 				}
 			})
@@ -211,7 +210,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 				drop: function(event, ui) {
 					var dropped = ui.draggable, droppedOn = $(this);
             		$(dropped).detach().attr('style', '').appendTo(droppedOn);
-            		console.log($(droppedOn).parent().attr('data-employee-id'));
+            		
             		view.updateProjectEl(dropped, ((ui.position.left / view.dayWidth)+1),$(droppedOn).parent().attr('data-employee-id'));
 
             		droppedOn.find('li').sortElements(function(a, b){
