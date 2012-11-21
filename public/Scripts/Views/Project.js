@@ -127,6 +127,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 
 			$('span.Colors span').on('click', function(){
 				var projLi = $(this).parent().parent().parent().parent();
+				var projectName = $(projLi).find('h6').text();
 				
 				if($(this).attr('data-color') != 'Delete'){
 					$(this).parent().find('span').removeClass('Selected');
@@ -134,13 +135,10 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 					view.updateProjectColor(projLi, $(this).data('color'));
 					$(projLi).addClass($(this).data('color'));
 				} else {
-					var r = confirm("Are you sure you want to delete this project?");
+					var r = confirm('Are you sure you want to delete ' + projectName + '?');
 					if (r==true) {
 						console.log("You pressed OK!");
-					} else {
-						console.log("You pressed Cancel!");
-					}
-
+					} 
 				}
 				
 			})
