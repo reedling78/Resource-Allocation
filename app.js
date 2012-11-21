@@ -8,7 +8,6 @@ var express = require('express')
 	, pg = require('pg')
 	, connectionString = 'postgres://srboupnqgnwceq:lVyLMZaQNzFBBcXyLlUMF7MIoz@ec2-54-243-139-234.compute-1.amazonaws.com:5432/d7rtclh2oqjsl9'
 	, employeeData = require('./serverjs/static').klt()
-	, projectData = require('./serverjs/Project').projects()
 	, db = require('./serverjs/db');
 
 //Express Config
@@ -26,7 +25,7 @@ client.connect();
 //Socket IO Config
 io.configure(function () { 
 	io.set("transports", ["xhr-polling"]); 
-	io.set("polling duration", 10); 
+	io.set("polling duration", 5); 
 });
 
 io.sockets.on('connection', function (socket) {
@@ -99,7 +98,7 @@ app.get('/truncateProjects', function(req, res){
 
 app.get('/insertProjects', function(req, res){ 
 	db.insertProjects(client, proj[0], function(result){
-		console.log(result);
+		res.json(result);
 	});
 });
 

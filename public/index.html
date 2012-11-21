@@ -1,64 +1,46 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>KeyLimeTie - Resource Allocation</title>
+	<meta charset="UTF-8">
+	<title>KeyLimeTie - Resource Allocation</title>
 
-<link href="Styles/Styles.css" rel="stylesheet" type="text/css">
-<link href="Styles/custom.css" rel="stylesheet" type="text/css">
+	<link href="Styles/Styles.css" rel="stylesheet" type="text/css">
+	<link href="Styles/custom.css" rel="stylesheet" type="text/css">
 
-<script src="js/jquery-1.8.2.js"></script>
-<script src="js/jquery-ui-1.9.0.custom.min.js"></script>
-<script src="js/mustache.js"></script>
-<script src="js/underscore-min.js"></script>
-<script src="js/backbone-min.js"></script>
-<script src="js/backbone.localStorage.js"></script>
-<script src="js/sortElements.js"></script>
-<script type="text/javascript" src="http://klt.rizzonet.com/socket.io/socket.io.js"></script>
-
-<script>
- //  var socket = io.connect('http://klt.rizzonet.com');
-	// socket.on('projects', function (data) {
-	// 	console.log(data);
-	// });
-
-	// socket.on('save', function(data){
-	// 	console.log(data);
-	// });
-
-</script>
+	<script src="js/jquery-1.8.2.js"></script>
+	<script src="js/jquery-ui-1.9.0.custom.min.js"></script>
+	<script src="js/mustache.js"></script>
+	<script src="js/underscore-min.js"></script>
+	<script src="js/backbone-min.js"></script>
+	<script src="js/backbone.localStorage.js"></script>
+	<script src="js/sortElements.js"></script>
+	<script src="http://klt.rizzonet.com/socket.io/socket.io.js"></script>
 
 </head>
 
 <body>
 
-<header>
+	<header>
+		<span class="Trash Dragged-"><span><span><span><span></span><span></span><span></span><span></span><span></span><span></span></span></span><p>Trash</p></span></span>
+		<h1>Resource Allocation</h1>
+	</header>
 
-	<span class="Trash Dragged-"><span><span><span><span></span><span></span><span></span><span></span><span></span><span></span></span></span><p>Trash</p></span></span>
+	<ul class="Employees"></ul>
 
-	<h1>Resource Allocation</h1>
+	<div class="Calendar">
 
-</header>
+		<div class="Dates">
+			<ul class="Month"></ul>
+			<ul class="Day"></ul>
+		</div>
 
-<ul class="Employees">
-</ul>
+		<div class="Projects">
+			<ul></ul>
+		</div>
 
-<div class="Calendar">
-
-	<div class="Dates">
-		<ul class="Month"></ul>
-		<ul class="Day"></ul>
 	</div>
 
-	<div class="Projects">
-	
-		<ul>
-			
-			
-		</ul>
-	
-	</div>
-<script data-main="Scripts/main" src="js/require.js"></script>
+	<script data-main="Scripts/main" src="js/require.js"></script>
 </body>
 
 </html>

@@ -1,6 +1,4 @@
 
-
-
 exports.klt = function () {
 
 	return {
@@ -41,8 +39,7 @@ exports.klt = function () {
 			{name:'Mike Hernandez',         id:30, teamid:5, jobid:2},
 
 			{name:'Erica Magda',            id:31, teamid:6, jobid:2},
-			{name:'Mike Mikulecky',         id:32, teamid:6, jobid:2},
-
+			{name:'Mike Mikulecky',         id:32, teamid:6, jobid:2}
 
 		],
 		Teams: [
