@@ -126,7 +126,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 			})
 
 			$('.Projects ul ul').on('click', function(e){
-				var selectedDayIndex = Math.round((e.offsetX / 41) + 1);
+				var selectedDayIndex = Math.floor((e.offsetX / 41) + 1);
 				var selectedDay;
 				
 				for (var i = 0; i < o.calendarModel.attributes.dayMap.length; i++) {
