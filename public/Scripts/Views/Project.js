@@ -139,6 +139,15 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 					}
 				};
 
+				view.collection.sendNewProject({
+					name: "New Project",
+					description: "Project Description",
+					empid: empid,
+					color: "Grey",
+					startdate: selectedDay,
+					enddate: selectedDay
+				});
+				//sendNewProject
 				
 
 				// projectView = new o.Views.Project({

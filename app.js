@@ -47,6 +47,14 @@ io.sockets.on('connection', function (socket) {
 
 	});
 
+	socket.on('send new projects', function (proj) { 
+		db.insertProjects(client, proj, function(err){
+			db.selectCurrentProjects(client, function(result){
+				socket.broadcast.emit('receive projects', result);
+			});
+		});
+	});
+
 	socket.emit('static', employeeData);
 
 });
