@@ -249,7 +249,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 		var view = this;
 		$(el).removeClass(function (index, css) {
 			return (css.match (/\bDay-\S+/g) || []).join(' ');
-		}).addClass('Day-' + day);
+		}).addClass('Day-' + Math.floor(day));
 
 		$(el).find('div').first().attr('data-day', Math.floor(day));
 
