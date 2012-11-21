@@ -238,16 +238,13 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 			$("div.Projects .droparea").droppable({
 				tolerance: "pointer",
 				drop: function(event, ui) {
-					var dropped = ui.draggable, droppedOn = $(this);
-					
+					var dropped = ui.draggable
+						, droppedOn = $(this)
+						, empid = $(droppedOn).parent().attr('data-employee-id')
+						, day = Math.floor((ui.position.left / view.dayWidth)+1);
+
             		$(dropped).detach().attr('style', '').appendTo(droppedOn);
-            		
-            		view.updateProjectEl(dropped, ((ui.position.left / view.dayWidth)+1),$(droppedOn).parent().attr('data-employee-id'));
-
-     //        		droppedOn.find('li').sortElements(function(a, b){
-					//     return $(a).find('div').first().attr('data-day') > $(b).find('div').first().attr('data-day') ? 1 : -1;
-					// });
-
+            		view.updateProjectEl(dropped, day, empid);
 				}
 			});
 	},
