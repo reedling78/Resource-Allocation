@@ -134,7 +134,13 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 					view.updateProjectColor(projLi, $(this).data('color'));
 					$(projLi).addClass($(this).data('color'));
 				} else {
-					alert('delete');
+					var r = confirm("Are you sure you want to delete this project?");
+					if (r==true) {
+						console.log("You pressed OK!");
+					} else {
+						console.log("You pressed Cancel!");
+					}
+
 				}
 				
 			})
