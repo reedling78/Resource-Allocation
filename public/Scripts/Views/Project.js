@@ -131,7 +131,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 				console.log(Math.round((e.offsetX / 41) + 1)); 
 				for (var i = 0; i < o.calendarModel.attributes.dayMap.length; i++) {
 					if(o.calendarModel.attributes.dayMap[i].index == selectedDayIndex){
-						selectedDay = o.calendarModel.attributes.dayMap[selectedDayIndex].date;
+						selectedDay = o.calendarModel.attributes.dayMap[i].date;
 					}
 				};
 				console.log(selectedDay);
