@@ -128,6 +128,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 			$('.Projects ul ul').on('click', function(e){
 				var selectedDayIndex = Math.floor((e.offsetX / 41) + 1);
 				var selectedDay;
+				var empid = $(this).parent().attr('data-employee-id');
 				
 				for (var i = 0; i < o.calendarModel.attributes.dayMap.length; i++) {
 					if(o.calendarModel.attributes.dayMap[i].index == selectedDayIndex){
@@ -135,17 +136,16 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 					}
 				};
 
-				console.log($(this).parent().attr('data-employee-id'));
+				
 
 				// projectView = new o.Views.Project({
 				// 	model: projects[i]
 				// });
 				
 				// view.renderProjectView(projectView);
-				console.log(e.offsetX); 
-				console.log((e.offsetX / 41) + 1); 
-				console.log(selectedDayIndex); 
-				console.log(selectedDay);
+				
+				console.log('EmployeeId: ' + empid);
+				console.log('SelectedDay' + selectedDay);
 			})
 
 			$('h6[contenteditable=true]').on('focusout', function(){
