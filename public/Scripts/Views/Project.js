@@ -151,7 +151,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 				console.log('EmployeeId: ' + empid);
 				console.log('SelectedDay' + selectedDay);
 
-				view.collection.sendToServer($('div.Projects>ul>li'));
+				o.socket.emit('get projects');
 			})
 
 			$('h6[contenteditable=true]').on('focusout', function(){
