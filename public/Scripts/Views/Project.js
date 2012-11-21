@@ -127,10 +127,16 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 
 			$('span.Colors span').on('click', function(){
 				var projLi = $(this).parent().parent().parent().parent();
-				$(this).parent().find('span').removeClass('Selected');
-				$(this).addClass('Selected');
-				view.updateProjectColor(projLi, $(this).data('color'));
-				$(projLi).addClass($(this).data('color'));
+				
+				if($(this).attr('data-color') != 'Delete'){
+					$(this).parent().find('span').removeClass('Selected');
+					$(this).addClass('Selected');
+					view.updateProjectColor(projLi, $(this).data('color'));
+					$(projLi).addClass($(this).data('color'));
+				} else {
+					alert('delete');
+				}
+				
 			})
 
 			$('.Projects ul ul').on('dblclick', function(e){
@@ -326,7 +332,7 @@ o.Views.Project = Backbone.View.extend({
 			+ '			<h6 contenteditable="false">{{ name }}</h6>'
 			+ '			<span class="Dash">&ndash;</span>'
 			+ '			<p contenteditable="false">{{ description }}</p>'
-			+ '			<span class="Colors"><span data-color="Red"></span><span data-color="Orange"></span><span data-color="Yellow"></span><span data-color="Lime"></span><span data-color="Green"></span><span data-color="Aqua"></span><span data-color="Blue"></span><span data-color="Purple"></span><span data-color="Grey"></span><span data-color="White"></span></span>'
+			+ '			<span class="Colors"><span data-color="Red"></span><span data-color="Orange"></span><span data-color="Yellow"></span><span data-color="Lime"></span><span data-color="Green"></span><span data-color="Aqua"></span><span data-color="Blue"></span><span data-color="Purple"></span><span data-color="Grey"></span><span data-color="Delete">X</span></span>'
 			+ '			<span class="Grabber"></span>'
 			+ '			<span class="Dots ui-resizable-handle ui-resizable-e"><span></span><span></span><span></span></span>'
 			+ '		</div>'
