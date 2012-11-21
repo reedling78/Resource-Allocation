@@ -179,7 +179,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 						.addClass('Duration-' + thisElNewDuration);
 
 					$(this).attr('style', '')
-						.attr('data-duration', thisElNewDuration);
+						.attr('data-duration', thisElNewDuration); 
 
 					var startD = $(this).attr('data-day');
 
