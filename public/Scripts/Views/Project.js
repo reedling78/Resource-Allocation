@@ -185,7 +185,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 
 					for (var i = 0; i < o.calendarModel.attributes.dayMap.length; i++) {
 						if(o.calendarModel.attributes.dayMap[i].index == startD){
-							console.log(o.calendarModel.attributes.dayMap[i - 1].date);
+							console.log(o.calendarModel.attributes.dayMap[i].date);
 						}
 					};
 					//var endD = new Date(o.calendarModel.attributes.dayMap[startD].date);
