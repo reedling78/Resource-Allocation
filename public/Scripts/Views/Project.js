@@ -169,8 +169,8 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 				alsoResize: $(this).parent(),
 				start: function(e, ui){
 					nextEl = $(this).parent().nextAll();
-					thisElStartDuration = parseInt($(this).attr('data-duration'));
-					thisElStartDay = parseInt($(this).attr('data-day'));
+					thisElStartDuration = Math.floor(parseInt($(this).attr('data-duration')));
+					thisElStartDay = Math.floor(parseInt($(this).attr('data-day')));
 				},
 				resize: function(e, ui){
 
@@ -207,10 +207,10 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 						.removeClass(function (index, css) {
 							return (css.match (/\bDuration-\S+/g) || []).join(' ');
 						})
-						.addClass('Duration-' + thisElNewDuration);
+						.addClass('Duration-' + Math.floor(thisElNewDuration));
 
 					$(this).attr('style', '')
-						.attr('data-duration', thisElNewDuration); 
+						.attr('data-duration', Math.floor(thisElNewDuration)); 
 
 					for (var i = 0; i < o.calendarModel.attributes.dayMap.length; i++) {
 						if(o.calendarModel.attributes.dayMap[i].index == startD){
@@ -251,14 +251,14 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 			return (css.match (/\bDay-\S+/g) || []).join(' ');
 		}).addClass('Day-' + day);
 
-		$(el).find('div').first().attr('data-day', day);
+		$(el).find('div').first().attr('data-day', Math.floor(day));
 
 		for (var i = 0; i < o.calendarModel.attributes.dayMap.length; i++) {
 			if(o.calendarModel.attributes.dayMap[i].index == day){
 				
 				var count = 0;
 				var d = new Date(o.calendarModel.attributes.dayMap[i].date);
-				var duration = parseInt($(el).find('div').first().attr('data-duration'));
+				var duration = Math.floor(parseInt($(el).find('div').first().attr('data-duration')));
 				var endD = new Date(o.calendarModel.attributes.dayMap[(i - duration) + 1].date);
 				
 				$(el).find('div').first().attr('data-startdate', d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate());
