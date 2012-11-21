@@ -122,6 +122,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 				$(this).parent().removeClass('Expanded');
 				$('div.editproj h6').attr('contenteditable', 'false');
 				$('div.editproj p').attr('contenteditable', 'false');
+				view.collection.sendToServer($('div.Projects>ul>li'));
 			})
 
 			$('span.Colors span').on('click', function(){
@@ -159,11 +160,11 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 			})
 
 			$('h6[contenteditable=true]').on('focusout', function(){
-				view.collection.sendToServer($('div.Projects>ul>li'));
+				//view.collection.sendToServer($('div.Projects>ul>li'));
 			});
 
 			$('p[contenteditable=true]').on('focusout', function(){
-				view.collection.sendToServer($('div.Projects>ul>li'));
+				//view.collection.sendToServer($('div.Projects>ul>li'));
 			});
 
 			//Project resizable
