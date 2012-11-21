@@ -32,8 +32,6 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 		for (i = 0; i < projects.length; i++) {
 			projects[i].attributes = view.setDayInfo(projects[i].attributes);
 
-			console.log(JSON.stringify(projects[i].attributes));
-
 			projectView = new o.Views.Project({
 				model: projects[i]
 			});
@@ -111,147 +109,147 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 			thisElStartDay, 
 			thisElNewDuration;
 
-			//Project edit area
-			$('div.editproj').on('click', function(){
-				$(this).parent().parent().addClass('Expanded');
-				$(this).find('h6').attr('contenteditable', 'true');
-				$(this).find('p').attr('contenteditable', 'true');
-			})
+		//Project edit area
+		$('div.editproj').on('click', function(){
+			$(this).parent().parent().addClass('Expanded');
+			$(this).find('h6').attr('contenteditable', 'true');
+			$(this).find('p').attr('contenteditable', 'true');
+		})
 
-			$('div.editarea').on('mouseleave', function(){
-				$(this).parent().removeClass('Expanded');
-				$(this).find('h6').attr('contenteditable', 'false');
-				$(this).find('p').attr('contenteditable', 'false');
-				view.collection.sendToServer($('div.Projects>ul>li'));
-			})
+		$('div.editarea').on('mouseleave', function(){
+			$(this).parent().removeClass('Expanded');
+			$(this).find('h6').attr('contenteditable', 'false');
+			$(this).find('p').attr('contenteditable', 'false');
+			view.collection.sendToServer($('div.Projects>ul>li'));
+		})
 
-			$('span.Colors span').on('click', function(){
-				var projLi = $(this).parent().parent().parent().parent();
-				var projectName = $(projLi).find('h6').text();
-				var projId = $(projLi).find('div').first().attr('data-id');
-				
-				if($(this).attr('data-color') != 'Delete'){
-					$(this).parent().find('span').removeClass('Selected');
-					$(this).addClass('Selected');
-					view.updateProjectColor(projLi, $(this).data('color'));
-					$(projLi).addClass($(this).data('color'));
-				} else {
-					var r = confirm('Are you sure you want to delete ' + projectName + '?');
-					if (r==true) {
-						console.log("You pressed OK! " + projId);
-						view.collection.deleteProject(projId, function(){
-							o.socket.emit('get projects');
-						});
-						
-					} 
+		$('span.Colors span').on('click', function(){
+			var projLi = $(this).parent().parent().parent().parent();
+			var projectName = $(projLi).find('h6').text();
+			var projId = $(projLi).find('div').first().attr('data-id');
+			
+			if($(this).attr('data-color') != 'Delete'){
+				$(this).parent().find('span').removeClass('Selected');
+				$(this).addClass('Selected');
+				view.updateProjectColor(projLi, $(this).data('color'));
+				$(projLi).addClass($(this).data('color'));
+			} else {
+				var r = confirm('Are you sure you want to delete ' + projectName + '?');
+				if (r==true) {
+					console.log("You pressed OK! " + projId);
+					view.collection.deleteProject(projId, function(){
+						o.socket.emit('get projects');
+					});
+					
+				} 
+			}
+			
+		})
+
+		$('.Projects ul ul').on('dblclick', function(e){
+			var selectedDayIndex = Math.floor((e.offsetX / 41) + 1);
+			var selectedDay;
+			var empid = $(this).parent().attr('data-employee-id');
+			
+			for (var i = 0; i < o.calendarModel.attributes.dayMap.length; i++) {
+				if(o.calendarModel.attributes.dayMap[i].index == selectedDayIndex){
+					selectedDay = o.calendarModel.attributes.dayMap[i].date;
 				}
-				
-			})
+			};
 
-			$('.Projects ul ul').on('dblclick', function(e){
-				var selectedDayIndex = Math.floor((e.offsetX / 41) + 1);
-				var selectedDay;
-				var empid = $(this).parent().attr('data-employee-id');
-				
-				for (var i = 0; i < o.calendarModel.attributes.dayMap.length; i++) {
-					if(o.calendarModel.attributes.dayMap[i].index == selectedDayIndex){
-						selectedDay = o.calendarModel.attributes.dayMap[i].date;
-					}
-				};
+			view.collection.sendNewProject({
+				name: "New Project",
+				desc: "Project Description",
+				empId: empid,
+				color: "Grey",
+				startdate: selectedDay,
+				enddate: selectedDay
+			}, function(){
+				o.socket.emit('get projects');
+			});
+			
+		})
 
-				view.collection.sendNewProject({
-					name: "New Project",
-					desc: "Project Description",
-					empId: empid,
-					color: "Grey",
-					startdate: selectedDay,
-					enddate: selectedDay
-				}, function(){
-					o.socket.emit('get projects');
-				});
-				
-			})
+		//Project resizable
+		$("div.Projects li>div").resizable({
+			handles: 'e',
+			grid: view.dayWidth,
+			alsoResize: $(this).parent(),
+			start: function(e, ui){
+				nextEl = $(this).parent().nextAll();
+				thisElStartDuration = Math.floor(parseInt($(this).attr('data-duration')));
+				thisElStartDay = Math.floor(parseInt($(this).attr('data-day')));
+			},
+			resize: function(e, ui){
+				thisElNewDuration = Math.floor(parseInt((ui.size.width / view.dayWidth) + 1));
+				var DurationChange = thisElNewDuration - thisElStartDuration,
+					curentElDayIncrease = thisElStartDay + thisElNewDuration,
+					lastElEndDay = 0;
 
-			//Project resizable
-			$("div.Projects li>div").resizable({
-				handles: 'e',
-				grid: view.dayWidth,
-				alsoResize: $(this).parent(),
-				start: function(e, ui){
-					nextEl = $(this).parent().nextAll();
-					thisElStartDuration = Math.floor(parseInt($(this).attr('data-duration')));
-					thisElStartDay = Math.floor(parseInt($(this).attr('data-day')));
-				},
-				resize: function(e, ui){
-					thisElNewDuration = Math.floor(parseInt((ui.size.width / view.dayWidth) + 1));
-					var DurationChange = thisElNewDuration - thisElStartDuration,
-						curentElDayIncrease = thisElStartDay + thisElNewDuration,
-						lastElEndDay = 0;
+				if(DurationChange > 0){
+					for (var i = 0; i < nextEl.length; i++) { 
+						var nxtElDay = parseInt($(nextEl[i]).find('div').first().attr('data-day')),
+							nxtElDur = parseInt($(nextEl[i]).find('div').first().attr('data-duration')),
+							elName = $(nextEl[i]).find('h6').text();
 
-					if(DurationChange > 0){
-						for (var i = 0; i < nextEl.length; i++) { 
-							var nxtElDay = parseInt($(nextEl[i]).find('div').first().attr('data-day')),
-								nxtElDur = parseInt($(nextEl[i]).find('div').first().attr('data-duration')),
-								elName = $(nextEl[i]).find('h6').text();
-
-							if(lastElEndDay > nxtElDay){
-								view.updateProjectEl(nextEl[i], lastElEndDay);
-								nxtElDay = $(nextEl[i]).find('div').first().data('day');
-								lastElEndDay = lastElEndDay + nxtElDur;
-							} else {
-								if(curentElDayIncrease > nxtElDay){
-									var newDays = nxtElDay + (curentElDayIncrease - nxtElDay);
-									view.updateProjectEl(nextEl[i], newDays);
-									lastElEndDay = newDays + nxtElDur;
-								}
+						if(lastElEndDay > nxtElDay){
+							view.updateProjectEl(nextEl[i], lastElEndDay);
+							nxtElDay = $(nextEl[i]).find('div').first().data('day');
+							lastElEndDay = lastElEndDay + nxtElDur;
+						} else {
+							if(curentElDayIncrease > nxtElDay){
+								var newDays = nxtElDay + (curentElDayIncrease - nxtElDay);
+								view.updateProjectEl(nextEl[i], newDays);
+								lastElEndDay = newDays + nxtElDur;
 							}
 						}
 					}
-				},
-				stop: function(e, ui){
-					var startD = $(this).attr('data-day')
-						, endD;
-					$(this).parent()
-						.attr('style', '')
-						.removeClass(function (index, css) {
-							return (css.match (/\bDuration-\S+/g) || []).join(' ');
-						})
-						.addClass('Duration-' + Math.floor(thisElNewDuration));
-
-					$(this).attr('style', '')
-						.attr('data-duration', Math.floor(thisElNewDuration)); 
-
-					for (var i = 0; i < o.calendarModel.attributes.dayMap.length; i++) {
-						if(o.calendarModel.attributes.dayMap[i].index == startD){
-							endD = o.calendarModel.attributes.dayMap[(i - thisElNewDuration) + 1].date;
-						}
-					};
-					
-					$(this).attr('data-enddate', endD.getFullYear() + '-' + (endD.getMonth() + 1) + '-' + endD.getDate());
-					view.collection.sendToServer($('div.Projects>ul>li'));
 				}
-			})
+			},
+			stop: function(e, ui){
+				var startD = $(this).attr('data-day')
+					, endD;
+				$(this).parent()
+					.attr('style', '')
+					.removeClass(function (index, css) {
+						return (css.match (/\bDuration-\S+/g) || []).join(' ');
+					})
+					.addClass('Duration-' + Math.floor(thisElNewDuration));
 
-			$("div.Projects li").draggable({ 
-				handle: 'span.Grabber',
-				snap: 'div.Projects ul ul',
-				grid: [view.dayWidth,1],
-				snapMode: 'inner',
-				revert: 'invalid'
-			});
+				$(this).attr('style', '')
+					.attr('data-duration', Math.floor(thisElNewDuration)); 
 
-			$("div.Projects .droparea").droppable({
-				tolerance: 'pointer',
-				drop: function(event, ui) {
-					var dropped = ui.draggable
-						, droppedOn = $(this)
-						, empid = $(droppedOn).parent().attr('data-employee-id')
-						, day = Math.floor((ui.position.left / view.dayWidth)+1);
+				for (var i = 0; i < o.calendarModel.attributes.dayMap.length; i++) {
+					if(o.calendarModel.attributes.dayMap[i].index == startD){
+						endD = o.calendarModel.attributes.dayMap[(i - thisElNewDuration) + 1].date;
+					}
+				};
+				
+				$(this).attr('data-enddate', endD.getFullYear() + '-' + (endD.getMonth() + 1) + '-' + endD.getDate());
+				view.collection.sendToServer($('div.Projects>ul>li'));
+			}
+		})
 
-            		$(dropped).detach().attr('style', '').appendTo(droppedOn);
-            		view.updateProjectEl(dropped, day, empid);
-				}
-			});
+		$("div.Projects li").draggable({ 
+			handle: 'span.Grabber',
+			snap: 'div.Projects ul ul',
+			grid: [view.dayWidth,1],
+			snapMode: 'inner',
+			revert: 'invalid'
+		});
+
+		$("div.Projects .droparea").droppable({
+			tolerance: 'pointer',
+			drop: function(event, ui) {
+				var dropped = ui.draggable
+					, droppedOn = $(this)
+					, empid = $(droppedOn).parent().attr('data-employee-id')
+					, day = Math.floor((ui.position.left / view.dayWidth)+1);
+
+        		$(dropped).detach().attr('style', '').appendTo(droppedOn);
+        		view.updateProjectEl(dropped, day, empid);
+			}
+		});
 	},
 	updateProjectEl: function(el, day, empid){
 		var view = this;
@@ -314,11 +312,9 @@ o.Views.Gutter = Backbone.View.extend({
 			+ '	<ul class="droparea"></ul>'
 			+ '</li>',
 	render: function (){
-		
 		if(this.options.currentHeadername != this.model.headername){
 			this.model.margin = true;
 		}
-		
 		this.$el.html(Mustache.render(this.template, this.model));
 	}
 });
