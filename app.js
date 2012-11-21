@@ -55,6 +55,15 @@ io.sockets.on('connection', function (socket) {
 		});
 	});
 
+	socket.on('delete projects', function (id) { 
+		db.deleteProjects(client, id, function(err){
+			db.selectCurrentProjects(client, function(result){
+				socket.broadcast.emit('receive projects', result);
+			});
+		});
+	});
+
+
 	socket.emit('static', employeeData);
 
 });

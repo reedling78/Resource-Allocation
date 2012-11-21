@@ -139,6 +139,10 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 					var r = confirm('Are you sure you want to delete ' + projectName + '?');
 					if (r==true) {
 						console.log("You pressed OK! " + projId);
+						view.collection.deleteProject(projId, function(){
+							o.socket.emit('get projects');
+						});
+						
 					} 
 				}
 				
