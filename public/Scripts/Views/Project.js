@@ -135,7 +135,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 					}
 				};
 
-				console.log($(this));
+				console.log($(this).parent().attr('data-employee-id'));
 
 				// projectView = new o.Views.Project({
 				// 	model: projects[i]
