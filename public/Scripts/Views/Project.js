@@ -128,12 +128,15 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 			$('.Projects ul ul').on('click', function(e){
 				var selectedDayIndex = Math.round((e.offsetX / 41) + 1);
 				var selectedDay;
-				console.log(Math.round((e.offsetX / 41) + 1)); 
+				
 				for (var i = 0; i < o.calendarModel.attributes.dayMap.length; i++) {
 					if(o.calendarModel.attributes.dayMap[i].index == selectedDayIndex){
 						selectedDay = o.calendarModel.attributes.dayMap[i].date;
 					}
 				};
+				console.log(e.offsetX); 
+				console.log((e.offsetX / 41) + 1); 
+				console.log(selectedDayIndex); 
 				console.log(selectedDay);
 			})
 
