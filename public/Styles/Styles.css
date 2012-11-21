@@ -747,7 +747,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cccccc', end
 .Colors span:nth-child(9):hover, .Colors span.Selected:nth-child(9)		{background-color: hsl(0,0%,87%); border-color: hsl(0,0%,40%); box-shadow: 0 0 6px hsla(0,0%,50%,0.4);}
 .Colors span:nth-child(9):active, .Colors span.Selected:nth-child(9)		{background-color: hsl(0,0%,70%);}
 /* -------------------------- White -------------------------- */
-.Colors span:nth-child(10)																{background-color: hsl(0,0%,100%); border-color: hsl(0,0%,50%);}
+.Colors span:nth-child(10)																{background-color: hsl(0,0%,0%); border-color: hsl(0,0%,50%);}
 .Colors span:nth-child(10):hover, .Colors span.Selected:nth-child(10)	{border-color: hsl(0,0%,35%); box-shadow: 0 0 9px hsla(0,0%,100%,1);}
 
 /* -------------------------------------------------------- Grabber -------------------------------------------------------- */
