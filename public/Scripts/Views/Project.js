@@ -239,13 +239,14 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 				tolerance: "pointer",
 				drop: function(event, ui) {
 					var dropped = ui.draggable, droppedOn = $(this);
+					
             		$(dropped).detach().attr('style', '').appendTo(droppedOn);
             		
             		view.updateProjectEl(dropped, ((ui.position.left / view.dayWidth)+1),$(droppedOn).parent().attr('data-employee-id'));
 
-            		droppedOn.find('li').sortElements(function(a, b){
-					    return $(a).find('div').first().attr('data-day') > $(b).find('div').first().attr('data-day') ? 1 : -1;
-					});
+     //        		droppedOn.find('li').sortElements(function(a, b){
+					//     return $(a).find('div').first().attr('data-day') > $(b).find('div').first().attr('data-day') ? 1 : -1;
+					// });
 
 				}
 			});
