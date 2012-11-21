@@ -97,8 +97,8 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 			}
 		}
 		
-		model.day = (isLessThenToday) ? 1 : day;
-		model.duration = duration;
+		model.day = Math.floor((isLessThenToday) ? 1 : day);
+		model.duration = Math.floor(duration);
 		model.startdate = model.startdate.substring(0, model.startdate.indexOf('T'));
 		model.enddate = model.enddate.substring(0, model.enddate.indexOf('T'));
 		
