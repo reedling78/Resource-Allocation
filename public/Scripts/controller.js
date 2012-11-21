@@ -32,7 +32,6 @@ o.Controller = Backbone.Model.extend({
 			
 
 			o.socket.on('receive projects', function(data){
-				console.log('receive projects');
 				var projectCollection = new o.Models.ProjectCollection();
 				projectCollection.fetchData(data, function(){
 

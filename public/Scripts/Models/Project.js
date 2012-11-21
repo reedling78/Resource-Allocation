@@ -13,9 +13,7 @@ o.Models.ProjectCollection = Backbone.Collection.extend({
   		};
   },
   initialize : function(){
-  	o.socket.on('save', function(data){
-  		//console.log(data); 
-  	});
+  	
   },
   sendToServer : function(projectsEl){
     var projArray = [];
@@ -39,11 +37,10 @@ o.Models.ProjectCollection = Backbone.Collection.extend({
         });
       }
     });
-    console.log('Send to server');
+    
     o.socket.emit('get projects', projArray);
   },
   sendNewProject : function(proj){
-    console.log('New Project: ' + JSON.stringify(proj));
     o.socket.emit('send new projects', proj);
   }
 });

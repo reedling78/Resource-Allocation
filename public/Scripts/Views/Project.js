@@ -232,8 +232,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 				snap: "div.Projects ul ul",
 				grid: [view.dayWidth,1],
 				snapMode: 'inner',
-				revert: "invalid",
-				helper: 'clone'
+				revert: "invalid"
 			});
 
 			$("div.Projects .droparea").droppable({
