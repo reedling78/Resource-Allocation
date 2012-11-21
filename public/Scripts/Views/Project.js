@@ -126,7 +126,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 			})
 
 			$('.Projects ul ul').on('click', function(e){
-				console.log(e.offsetX / 41);
+				console.log(Math.round((e.offsetX / 41) + 1));
 			})
 
 			$('h6[contenteditable=true]').on('focusout', function(){
