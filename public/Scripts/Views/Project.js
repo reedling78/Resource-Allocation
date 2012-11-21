@@ -180,14 +180,20 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 
 					$(this).attr('style', '')
 						.attr('data-duration', thisElNewDuration);
+
 					var startD = $(this).attr('data-day');
 
-					var endD = new Date(o.calendarModel.attributes.dayMap[startD].date);
+					for (var i = 0; i < o.calendarModel.attributes.dayMap.length; i++) {
+						if(o.calendarModel.attributes.dayMap[i].index == startD){
+							console.log(o.calendarModel.attributes.dayMap[i].date);
+						}
+					};
+					//var endD = new Date(o.calendarModel.attributes.dayMap[startD].date);
 
 					//(startD - thisElNewDuration) + 1
 					//$(this).attr('data-enddate', endD.getFullYear() + '-' + (endD.getMonth() + 1) + '-' + endD.getDate());
 					console.log(startD);
-					console.log(endD);
+					//console.log(endD);
 					//view.collection.sendToServer($('div.Projects>ul>li'));
 				}
 			})
