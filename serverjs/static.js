@@ -19,7 +19,6 @@ exports.klt = function () {
 			{name:'Chris Grove',            id:10, teamid:3, jobid:2},
 			{name:'Rich Pesek',             id:11, teamid:3, jobid:2},
 			{name:'Bob Springer',           id:12, teamid:3, jobid:2},
-			{name:'Reed Rizzo',             id:13, teamid:3, jobid:2},
 			{name:'Geoff Skyles',           id:14, teamid:3, jobid:2},
 			{name:'Ben Munge',              id:15, teamid:3, jobid:2}, 
 			{name:'Brent Panther',          id:16, teamid:3, jobid:2},
@@ -30,6 +29,7 @@ exports.klt = function () {
 			{name:'Dan Strabbing',          id:20, teamid:2, jobid:2},
 			{name:'Kevin Howe',          	id:21, teamid:2, jobid:2},
 			{name:'Mary Wenzel',          	id:22, teamid:2, jobid:2},
+			{name:'Reed Rizzo',             id:13, teamid:2, jobid:2},
 			{name:'Andrew Schwantes',       id:23, teamid:2, jobid:2},
 			{name:'Anthony Avallone',       id:24, teamid:2, jobid:2},
 			{name:'Brian West',          	id:25, teamid:2, jobid:2},
@@ -47,11 +47,11 @@ exports.klt = function () {
 		],
 		Teams: [
 			{name:'Design Team', id:1},
-			{name:'CMS Team', id:2},
+			{name:'Left Over Team', id:2},
 			{name:'ACG Team', id:3},
 			{name:'Universal Team', id:4},
 			{name:'Marketing Team', id:5},
-			{name:'iTravel', id:6}
+			{name:'iTravel Team', id:6}
 		],
 		Job: [
 			{name:'Designer', id:1},
