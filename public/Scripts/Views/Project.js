@@ -172,14 +172,6 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 				
 			})
 
-			$('h6[contenteditable=true]').on('focusout', function(){
-				//view.collection.sendToServer($('div.Projects>ul>li'));
-			});
-
-			$('p[contenteditable=true]').on('focusout', function(){
-				//view.collection.sendToServer($('div.Projects>ul>li'));
-			});
-
 			//Project resizable
 			$("div.Projects li>div").resizable({
 				handles: 'e',
@@ -191,7 +183,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 					thisElStartDay = Math.floor(parseInt($(this).attr('data-day')));
 				},
 				resize: function(e, ui){
-					thisElNewDuration = parseInt((ui.size.width / view.dayWidth) + 1);
+					thisElNewDuration = Math.floor(parseInt((ui.size.width / view.dayWidth) + 1));
 					var DurationChange = thisElNewDuration - thisElStartDuration,
 						curentElDayIncrease = thisElStartDay + thisElNewDuration,
 						lastElEndDay = 0;
