@@ -126,7 +126,15 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 			})
 
 			$('.Projects ul ul').on('click', function(e){
-				console.log(Math.round((e.offsetX / 41) + 1));
+				var selectedDayIndex = Math.round((e.offsetX / 41) + 1);
+				var selectedDay;
+				console.log(Math.round((e.offsetX / 41) + 1)); 
+				for (var i = 0; i < o.calendarModel.attributes.dayMap.length; i++) {
+					if(o.calendarModel.attributes.dayMap[i].index == selectedDayIndex){
+						selectedDay = o.calendarModel.attributes.dayMap[selectedDayIndex].date;
+					}
+				};
+				console.log(selectedDay);
 			})
 
 			$('h6[contenteditable=true]').on('focusout', function(){
