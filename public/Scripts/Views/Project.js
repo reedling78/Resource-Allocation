@@ -233,16 +233,15 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 			})
 
 			$("div.Projects li").draggable({ 
-				handle: "span.Grabber",
-				snap: "div.Projects ul ul",
+				handle: 'span.Grabber',
+				snap: 'div.Projects ul ul',
 				grid: [view.dayWidth,1],
 				snapMode: 'inner',
-				revert: "invalid",
-				helper: 'clone'
+				revert: 'invalid'
 			});
 
 			$("div.Projects .droparea").droppable({
-				tolerance: "pointer",
+				tolerance: 'pointer',
 				drop: function(event, ui) {
 					var dropped = ui.draggable
 						, droppedOn = $(this)
