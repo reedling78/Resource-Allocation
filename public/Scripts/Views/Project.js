@@ -114,14 +114,14 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 			//Project edit area
 			$('div.editproj').on('click', function(){
 				$(this).parent().parent().addClass('Expanded');
-				$('div.editproj h6').attr('contenteditable', 'true');
-				$('div.editproj p').attr('contenteditable', 'true');
+				$(this).find('h6').attr('contenteditable', 'true');
+				$(this).find('p').attr('contenteditable', 'true');
 			})
 
 			$('div.editarea').on('mouseleave', function(){
 				$(this).parent().removeClass('Expanded');
-				$('div.editproj h6').attr('contenteditable', 'false');
-				$('div.editproj p').attr('contenteditable', 'false');
+				$(this).find('h6').attr('contenteditable', 'false');
+				$(this).find('p').attr('contenteditable', 'false');
 				view.collection.sendToServer($('div.Projects>ul>li'));
 			})
 
@@ -178,7 +178,6 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 					thisElStartDay = Math.floor(parseInt($(this).attr('data-day')));
 				},
 				resize: function(e, ui){
-
 					thisElNewDuration = parseInt((ui.size.width / view.dayWidth) + 1);
 					var DurationChange = thisElNewDuration - thisElStartDuration,
 						curentElDayIncrease = thisElStartDay + thisElNewDuration,
@@ -232,7 +231,8 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 				handle: "span.Grabber",
 				snap: "div.Projects ul ul",
 				grid: [view.dayWidth,1],
-				snapMode: 'inner'
+				snapMode: 'inner',
+				revert: "invalid"
 			});
 
 			$("div.Projects .droparea").droppable({
