@@ -128,6 +128,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 			$('span.Colors span').on('click', function(){
 				var projLi = $(this).parent().parent().parent().parent();
 				var projectName = $(projLi).find('h6').text();
+				var projId = $(projLi).find('div').first().attr('data-id');
 				
 				if($(this).attr('data-color') != 'Delete'){
 					$(this).parent().find('span').removeClass('Selected');
@@ -137,7 +138,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 				} else {
 					var r = confirm('Are you sure you want to delete ' + projectName + '?');
 					if (r==true) {
-						console.log("You pressed OK!");
+						console.log("You pressed OK! " + projId);
 					} 
 				}
 				
