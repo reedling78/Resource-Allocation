@@ -128,7 +128,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 				$(projLi).addClass($(this).data('color'));
 			})
 
-			$('.Projects ul ul').on('click', function(e){
+			$('.Projects ul ul').on('dblclick', function(e){
 				var selectedDayIndex = Math.floor((e.offsetX / 41) + 1);
 				var selectedDay;
 				var empid = $(this).parent().attr('data-employee-id');
