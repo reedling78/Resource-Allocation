@@ -57,8 +57,7 @@ o.Views.EmployeeCollectionView = Backbone.View.extend({
 
 		$('.Day, .Day > li, .Day ul li, .Dates, .Month span').css('height', view.TotalHeight + 'px');
 	},
-	clearEmployees: function(){
-		console.log('clear projects');  
+	clearEmployees: function(){ 
 		$('ul.Employees').html('');
 	}
 });
