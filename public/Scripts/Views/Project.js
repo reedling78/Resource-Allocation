@@ -139,14 +139,14 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 					}
 				};
 
-				// view.collection.sendNewProject({
-				// 	name: "New Project",
-				// 	description: "Project Description",
-				// 	empid: empid,
-				// 	color: "Grey",
-				// 	startdate: selectedDay,
-				// 	enddate: selectedDay
-				// });
+				view.collection.sendNewProject({
+					name: "New Project",
+					desc: "Project Description",
+					empId: empid,
+					color: "Grey",
+					startdate: selectedDay,
+					enddate: selectedDay
+				});
 				
 				console.log('EmployeeId: ' + empid);
 				console.log('SelectedDay' + selectedDay);
@@ -293,8 +293,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 
 		return returnColor;
 	},
-	clearProjects: function(){
-		console.log('clear projects');  
+	clearProjects: function(){ 
 		$('.Projects>ul').html('');
 	}
 });

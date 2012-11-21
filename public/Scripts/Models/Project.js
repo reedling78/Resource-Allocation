@@ -7,7 +7,6 @@ o.Models.ProjectCollection = Backbone.Collection.extend({
   },
   generateModels : function(data){
   		for (var i = 0; i < data.rows.length; i++) {
-  			//console.log(data.rows[i]);
   			var project = new o.Models.Project(data.rows[i]);
 			  this.add(project);  
 		    project.save();
@@ -20,6 +19,7 @@ o.Models.ProjectCollection = Backbone.Collection.extend({
   },
   sendToServer : function(projectsEl){
     var projArray = [];
+
 
     $(projectsEl).each(function(index) {
       if($(this).find('ul li').length !== 0){
@@ -39,9 +39,11 @@ o.Models.ProjectCollection = Backbone.Collection.extend({
         });
       }
     });
+    console.log('Send to server');
     o.socket.emit('get projects', projArray);
   },
   sendNewProject : function(proj){
+    console.log('New Project: ' + JSON.stringify(proj));
     o.socket.emit('send new projects', proj);
   }
 });
