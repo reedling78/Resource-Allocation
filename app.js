@@ -5,6 +5,7 @@ var express = require('express')
 	, io = socket.listen(app)
 	, port = process.env.PORT || 3000
 	, pg = require('pg')
+	, kltconnectionString = 'postgres://eyntiddmneohgz:_8BgzBNNQyuQmIV4FGHdpShJBM@ec2-54-243-190-93.compute-1.amazonaws.com:5432/d8i534na3mvk0r'
 	, connectionString = 'postgres://srboupnqgnwceq:lVyLMZaQNzFBBcXyLlUMF7MIoz@ec2-54-243-139-234.compute-1.amazonaws.com:5432/d7rtclh2oqjsl9'
 	, employeeData = require('./serverjs/static').klt()
 	, db = require('./serverjs/db');
@@ -18,7 +19,7 @@ app.configure(function(){
 });
 
 //DB
-var client = new pg.Client(connectionString);
+var client = new pg.Client(kltconnectionString);
 client.connect(); 
 
 //Socket IO Config
