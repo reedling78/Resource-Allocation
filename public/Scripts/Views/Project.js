@@ -138,7 +138,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 					
 				});
 				view.edit.stop();
-					$('div.editarea').off(); 
+				$('div.editarea').off(); 
 			})
 		})
 
@@ -279,6 +279,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 
         		$(dropped).detach().attr('style', '').appendTo(droppedOn);
         		view.updateProjectEl(dropped, day, empid);
+        		view.edit.stop();
 			}
 		});
 	},
