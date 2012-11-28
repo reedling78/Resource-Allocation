@@ -10,14 +10,14 @@ exports.selectAllProjects = function (client, callback) {
 
 exports.createProjectsTable = function (client, callback) { 
 
-    var sql = 'CREATE TABLE films ( '
-        +' id          SERIAL, '
-        +' name        varchar(50), '
+    var sql = 'CREATE TABLE projects ( '
+        +' id SERIAL, '
+        +' name varchar(50), '
         +' description text , '
-        +' empid       integer , '
-        +' color       char(10) , '
-        +' startdate   date , '
-        +' enddate     date) '
+        +' empid integer , '
+        +' color char(10) , '
+        +' startdate date , '
+        +' enddate date) '
 
 
     client.query(sql, function(err, result){
