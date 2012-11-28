@@ -131,20 +131,12 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 				$(this).parent().removeClass('Expanded');
 				$(this).find('h6').attr('contenteditable', 'false');
 				$(this).find('p').attr('contenteditable', 'false');
-				view.collection.sendToServer($('div.Projects>ul>li'));
-				view.edit.stop();
-				$('div.editarea').off();
+				view.collection.sendToServer($('div.Projects>ul>li'), function(){
+					view.edit.stop();
+					$('div.editarea').off();
+				});
 			})
-
 		})
-
-		// $('div.editarea').on('mouseleave', function(){
-		// 	$(this).parent().removeClass('Expanded');
-		// 	$(this).find('h6').attr('contenteditable', 'false');
-		// 	$(this).find('p').attr('contenteditable', 'false');
-		// 	view.collection.sendToServer($('div.Projects>ul>li'));
-		// 	//view.edit.stop();$("p").off()
-		// })
 
 		$('span.Colors span').on('click', function(){
 			var projLi = $(this).parent().parent().parent().parent();
