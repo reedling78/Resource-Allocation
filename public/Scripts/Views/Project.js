@@ -243,7 +243,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 				
 				$(this).attr('data-enddate', endD.getFullYear() + '-' + (endD.getMonth() + 1) + '-' + endD.getDate());
 				view.collection.sendToServer($('div.Projects>ul>li'), function(){
-					view.edit.stop();
+					//view.edit.stop();
 				});
 				
 			}
