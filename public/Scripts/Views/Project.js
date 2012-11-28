@@ -50,6 +50,15 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 		projectView.render();
 		this.$el.find('li[data-employee-id="' + projectView.model.attributes.empid + '"] ul').append(projectView.$el.contents().unwrap())
 	},
+	edit:{
+		start : function(){
+			o.isEditing = true;
+		},
+		stop : function(){
+			o.isEditing = false;
+			o.socket.emit('get projects');
+		}
+	},
 	setDayInfo: function(model){
 		var today = new Date(),
 			startD = new Date(model.startdate),
@@ -115,6 +124,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 			$(this).find('h6').attr('contenteditable', 'true');
 			$(this).find('p').attr('contenteditable', 'true');
 			o.isEditing = true;
+			view.edit.start();
 		})
 
 		$('div.editarea').on('mouseleave', function(){
@@ -122,7 +132,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 			$(this).find('h6').attr('contenteditable', 'false');
 			$(this).find('p').attr('contenteditable', 'false');
 			view.collection.sendToServer($('div.Projects>ul>li'));
-			o.isEditing = false;
+			view.edit.stop();
 		})
 
 		$('span.Colors span').on('click', function(){
@@ -181,6 +191,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 				nextEl = $(this).parent().nextAll();
 				thisElStartDuration = Math.floor(parseInt($(this).attr('data-duration')));
 				thisElStartDay = Math.floor(parseInt($(this).attr('data-day')));
+				view.edit.start();
 			},
 			resize: function(e, ui){
 				thisElNewDuration = Math.floor(parseInt((ui.size.width / view.dayWidth) + 1));
@@ -229,6 +240,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 				
 				$(this).attr('data-enddate', endD.getFullYear() + '-' + (endD.getMonth() + 1) + '-' + endD.getDate());
 				view.collection.sendToServer($('div.Projects>ul>li'));
+				view.edit.stop();
 			}
 		})
 
@@ -237,7 +249,13 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 			snap: 'div.Projects ul ul',
 			grid: [view.dayWidth,1],
 			snapMode: 'inner',
-			revert: 'invalid'
+			revert: 'invalid',
+			start: function(){
+				view.edit.start();
+			},
+			stop: function(){
+				view.edit.stop();
+			}
 		});
 
 		$("div.Projects .droparea").droppable({
