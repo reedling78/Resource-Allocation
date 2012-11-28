@@ -252,9 +252,11 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 			snapMode: 'inner',
 			revert: 'invalid',
 			start: function(){
+				console.log('drag start');
 				view.edit.start();
 			},
 			stop: function(){
+				console.log('drag stop');
 				view.edit.stop();
 			}
 		});
