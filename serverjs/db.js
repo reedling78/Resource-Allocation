@@ -8,6 +8,27 @@ exports.selectAllProjects = function (client, callback) {
     });
 }
 
+exports.createProjectsTable = function (client, callback) { 
+
+    var sql = 'CREATE TABLE films ( '
+        +' id          SERIAL, '
+        +' name        varchar(100), '
+        +' description text , '
+        +' empid       integer , '
+        +' color       char(10) , '
+        +' startdate   date , '
+        +' enddate     date) '
+
+
+    client.query(sql, function(err, result){
+        if(err != null){
+            callback(err);
+        } else {
+            callback(result);
+        }
+    });
+}
+
 exports.selectCurrentProjects = function (client, callback) { 
 	client.query('SELECT * FROM projects ORDER BY startdate ASC', function(err, result){
     	if(err != null){

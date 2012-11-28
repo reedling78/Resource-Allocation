@@ -102,6 +102,13 @@ app.get('/insertProjects', function(req, res){
 	});
 });
 
+
+app.get('/createProjectsTable', function(req, res){ 
+	db.createProjectsTable(client, function(result){
+		res.json(result);
+	});
+});
+
 app.get('/insertTestProjects', function(req, res){
 
 	var proj = [
