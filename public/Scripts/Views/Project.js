@@ -245,6 +245,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 				view.collection.sendToServer($('div.Projects>ul>li'), function(){
 					//view.edit.stop();
 				});
+				view.edit.stop()
 				
 			}
 		})
