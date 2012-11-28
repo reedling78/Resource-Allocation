@@ -133,7 +133,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 			$(this).find('h6').attr('contenteditable', 'false');
 			$(this).find('p').attr('contenteditable', 'false');
 			view.collection.sendToServer($('div.Projects>ul>li'));
-			view.edit.stop();
+			//view.edit.stop();
 		})
 
 		$('span.Colors span').on('click', function(){
