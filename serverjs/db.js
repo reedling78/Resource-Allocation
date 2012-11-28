@@ -12,7 +12,7 @@ exports.createProjectsTable = function (client, callback) {
 
     var sql = 'CREATE TABLE films ( '
         +' id          SERIAL, '
-        +' name        varchar(100), '
+        +' name        varchar(50), '
         +' description text , '
         +' empid       integer , '
         +' color       char(10) , '
