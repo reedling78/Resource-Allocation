@@ -3,7 +3,6 @@ var express = require('express')
 	, app = express.createServer()
 	, socket = require('socket.io')
 	, io = socket.listen(app)
-	, data = {}
 	, port = process.env.PORT || 3000
 	, pg = require('pg')
 	, connectionString = 'postgres://srboupnqgnwceq:lVyLMZaQNzFBBcXyLlUMF7MIoz@ec2-54-243-139-234.compute-1.amazonaws.com:5432/d7rtclh2oqjsl9'

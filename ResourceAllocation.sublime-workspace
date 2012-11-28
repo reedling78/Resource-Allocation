@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"Empl",
+				"Employee"
+			],
+			[
+				"for",
+				"for	for (…) {…}"
+			],
+			[
+				"colo",
+				"colors"
+			],
+			[
+				"find",
+				"findColor"
+			],
+			[
+				"clear",
+				"clearEmployees"
+			],
+			[
 				"sele",
 				"selectAllProjects"
 			],
@@ -22,10 +42,6 @@
 			[
 				"attr",
 				"attributes"
-			],
-			[
-				"for",
-				"for	for (…) {…}"
 			],
 			[
 				"cur",
@@ -208,18 +224,10 @@
 	"buffers":
 	[
 		{
-			"file": "serverjs/Project.js",
+			"file": "public/index.html",
 			"settings":
 			{
-				"buffer_size": 781,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "public/Scripts/Models/Project.js",
-			"settings":
-			{
-				"buffer_size": 942,
+				"buffer_size": 1154,
 				"line_ending": "Unix"
 			}
 		},
@@ -227,39 +235,15 @@
 			"file": "app.js",
 			"settings":
 			{
-				"buffer_size": 2974,
+				"buffer_size": 3628,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "serverjs/db.js",
+			"file": "serverjs/static.js",
 			"settings":
 			{
-				"buffer_size": 1897,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "public/Scripts/Views/Project.js",
-			"settings":
-			{
-				"buffer_size": 7415,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "public/Scripts/controller.js",
-			"settings":
-			{
-				"buffer_size": 1048,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "public/Scripts/Views/Employee.js",
-			"settings":
-			{
-				"buffer_size": 1746,
+				"buffer_size": 2372,
 				"line_ending": "Unix"
 			}
 		}
@@ -300,24 +284,26 @@
 	},
 	"file_history":
 	[
+		"/Users/reed.rizzo/Developer/Resource Allocation/serverjs/static.js",
 		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/Models/Employee.js",
-		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/controller.js",
-		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/Views/Employee.js",
+		"/Users/reed.rizzo/Developer/Resource Allocation/app.js",
+		"/Users/reed.rizzo/Developer/Resource Allocation/serverjs/db.js",
 		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/Views/Project.js",
+		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/controller.js",
+		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/Models/Calendar.js",
+		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/Models/Project.js",
+		"/Users/reed.rizzo/Developer/Resource Allocation/public/Styles/Styles.css",
+		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/Views/Employee.js",
+		"/Users/reed.rizzo/Developer/Resource Allocation/serverjs/Project.js",
 		"/Users/reed.rizzo/Developer/Resource Allocation/public/js/socket-io.js",
 		"/Users/reed.rizzo/Developer/Resource Allocation/public/index.html",
-		"/Users/reed.rizzo/Developer/Resource Allocation/serverjs/static.js",
-		"/Users/reed.rizzo/Developer/Resource Allocation/app.js",
-		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/Models/Project.js",
 		"/Users/reed.rizzo/Developer/Resource Allocation/node_modules/socket.io/lib/socket.js",
-		"/Users/reed.rizzo/Developer/Resource Allocation/public/Styles/Styles.css",
 		"/Users/reed.rizzo/Developer/Facebook Sandbox/default.htm",
 		"/Users/reed.rizzo/Library/Application Support/Sublime Text 2/Packages/User/CSSTidy.sublime-settings",
 		"/Users/reed.rizzo/Developer/Resource Allocation/public/js/sortElements.js",
 		"/Users/reed.rizzo/Library/Application Support/Sublime Text 2/Packages/CSSTidy/CSSTidy.sublime-settings",
 		"/Users/reed.rizzo/Developer/Resource Allocation/public/Styles/custom.css",
 		"/Volumes/KeyLimeTie/Design/Web - Resource Allocation/Web Ready/index.html",
-		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/Models/Calendar.js",
 		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/main.js",
 		"/Users/reed.rizzo/Developer/Resource Allocation/public/Scripts/Views/Calendar.js",
 		"/Users/reed.rizzo/Developer/Resource Allocation/public/default.html",
@@ -414,6 +400,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"data",
+			"projectData",
+			"Day-",
+			"sendToServer",
+			"clearProjects",
+			"setDayInfo",
 			"db",
 			"soc",
 			"console",
@@ -558,28 +550,29 @@
 	"groups":
 	[
 		{
-			"selected": 6,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "serverjs/Project.js",
+					"file": "public/index.html",
 					"settings":
 					{
-						"buffer_size": 781,
+						"buffer_size": 1154,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								44,
-								44
+								1074,
+								1074
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -589,44 +582,18 @@
 				},
 				{
 					"buffer": 1,
-					"file": "public/Scripts/Models/Project.js",
-					"settings":
-					{
-						"buffer_size": 942,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								237,
-								237
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 18.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
 					"file": "app.js",
 					"settings":
 					{
-						"buffer_size": 2974,
+						"buffer_size": 3628,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								803,
-								803
+								154,
+								154
 							]
 						],
 						"settings":
@@ -635,51 +602,25 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 308.0,
+						"translation.y": 249.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "serverjs/db.js",
+					"buffer": 2,
+					"file": "serverjs/static.js",
 					"settings":
 					{
-						"buffer_size": 1897,
+						"buffer_size": 2372,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1745,
-								1745
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 1144.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "public/Scripts/Views/Project.js",
-					"settings":
-					{
-						"buffer_size": 7415,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2451,
-								2451
+								2039,
+								2039
 							]
 						],
 						"settings":
@@ -689,60 +630,6 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "public/Scripts/controller.js",
-					"settings":
-					{
-						"buffer_size": 1048,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								648,
-								648
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 269.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "public/Scripts/Views/Employee.js",
-					"settings":
-					{
-						"buffer_size": 1746,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1366,
-								1366
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 994.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
