@@ -69,12 +69,12 @@ io.sockets.on('connection', function (socket) {
 
 //Default route
 app.get('/', function(req, res) {
-	//res.render('default.html', data);
+	//res.render('default.html', data); 
 });
 
 app.get('/selectAllProjects', function(req, res){
 	db.selectAllProjects(client, function(result){
-		res.json(result);
+		res.json(result);   
 	});
 });
 
