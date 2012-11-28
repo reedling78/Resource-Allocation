@@ -242,8 +242,10 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 				};
 				
 				$(this).attr('data-enddate', endD.getFullYear() + '-' + (endD.getMonth() + 1) + '-' + endD.getDate());
-				view.collection.sendToServer($('div.Projects>ul>li'));
-				view.edit.stop();
+				view.collection.sendToServer($('div.Projects>ul>li'), function(){
+					view.edit.stop();
+				});
+				
 			}
 		})
 
@@ -258,8 +260,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 				view.edit.start();
 			},
 			stop: function(){
-				console.log('drag stop');
-				view.edit.stop();
+				
 			}
 		});
 
@@ -272,11 +273,14 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 					, day = Math.floor((ui.position.left / view.dayWidth)+1);
 
         		$(dropped).detach().attr('style', '').appendTo(droppedOn);
-        		view.updateProjectEl(dropped, day, empid);
+        		view.updateProjectEl(dropped, day, empid, function(){
+        			console.log('drag stop');
+					view.edit.stop();
+        		});
 			}
 		});
 	},
-	updateProjectEl: function(el, day, empid){
+	updateProjectEl: function(el, day, empid, callback){
 		var view = this;
 		$(el).removeClass(function (index, css) {
 			return (css.match (/\bDay-\S+/g) || []).join(' ');
@@ -299,7 +303,11 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 			}
 		};
 
-		view.collection.sendToServer($('div.Projects>ul>li'));
+		view.collection.sendToServer($('div.Projects>ul>li'), function(){
+			if(callback != undefined){
+				callback();
+			}
+		});
 	},
 	updateProjectColor: function(el, color){
 		var view = this;
