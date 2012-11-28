@@ -273,14 +273,11 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 					, day = Math.floor((ui.position.left / view.dayWidth)+1);
 
         		$(dropped).detach().attr('style', '').appendTo(droppedOn);
-        		view.updateProjectEl(dropped, day, empid, function(){
-        			console.log('drag stop');
-					view.edit.stop();
-        		});
+        		view.updateProjectEl(dropped, day, empid);
 			}
 		});
 	},
-	updateProjectEl: function(el, day, empid, callback){
+	updateProjectEl: function(el, day, empid){
 		var view = this;
 		$(el).removeClass(function (index, css) {
 			return (css.match (/\bDay-\S+/g) || []).join(' ');
@@ -303,11 +300,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 			}
 		};
 
-		view.collection.sendToServer($('div.Projects>ul>li'), function(){
-			if(callback != undefined){
-				callback();
-			}
-		});
+		view.collection.sendToServer($('div.Projects>ul>li'));
 	},
 	updateProjectColor: function(el, color){
 		var view = this;
