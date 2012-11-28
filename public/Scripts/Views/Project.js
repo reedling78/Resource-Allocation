@@ -132,9 +132,10 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 				$(this).find('h6').attr('contenteditable', 'false');
 				$(this).find('p').attr('contenteditable', 'false');
 				view.collection.sendToServer($('div.Projects>ul>li'), function(){
-					view.edit.stop();
-					$('div.editarea').off();
+					
 				});
+				view.edit.stop();
+					$('div.editarea').off();
 			})
 		})
 
