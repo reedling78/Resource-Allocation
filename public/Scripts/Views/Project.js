@@ -58,6 +58,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 		stop : function(){
 			console.log('stop');
 			o.isEditing = false;
+			o.socket.emit('get projects');
 		}
 	},
 	setDayInfo: function(model){
