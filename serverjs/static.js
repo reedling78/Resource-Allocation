@@ -13,10 +13,11 @@ exports.klt = function () {
 			{name:'Donna Gailus',           id:7, teamid:4, jobid:3},
 			{name:'Larry Gasik',            id:8, teamid:4, jobid:1},
 			{name:'Jeff Novak',             id:9, teamid:4, jobid:2},
+			{name:'Melissa Zuniga',         id:10, teamid:4, jobid:2},
 			
-			{name:'Chris Grove',            id:10, teamid:3, jobid:2},
-			{name:'Rich Pesek',             id:11, teamid:3, jobid:2},
-			{name:'Bob Springer',           id:12, teamid:3, jobid:2},
+			{name:'Chris Grove',            id:11, teamid:3, jobid:2},
+			{name:'Rich Pesek',             id:12, teamid:3, jobid:2},
+			{name:'Bob Springer',           id:13, teamid:3, jobid:2},
 			{name:'Geoff Skyles',           id:14, teamid:3, jobid:2},
 			{name:'Ben Munge',              id:15, teamid:3, jobid:2}, 
 			{name:'Brent Panther',          id:16, teamid:3, jobid:2},
@@ -27,19 +28,21 @@ exports.klt = function () {
 			{name:'Dan Strabbing',          id:20, teamid:2, jobid:2},
 			{name:'Kevin Howe',          	id:21, teamid:2, jobid:2},
 			{name:'Mary Wenzel',          	id:22, teamid:2, jobid:2},
-			{name:'Reed Rizzo',             id:13, teamid:2, jobid:2},
-			{name:'Andrew Schwantes',       id:23, teamid:2, jobid:2},
-			{name:'Anthony Avallone',       id:24, teamid:2, jobid:2},
-			{name:'Brian West',          	id:25, teamid:2, jobid:2},
-			{name:'Jon Kimball',            id:26, teamid:2, jobid:2},
-			{name:'Keith Franklin',         id:27, teamid:2, jobid:2},
+			{name:'Reed Rizzo',             id:23, teamid:2, jobid:2},
+			{name:'Andrew Schwantes',       id:24, teamid:2, jobid:2},
+			{name:'Anthony Avallone',       id:25, teamid:2, jobid:2},
+			{name:'Brian West',          	id:26, teamid:2, jobid:2},
+			{name:'Jon Kimball',            id:27, teamid:2, jobid:2},
+			{name:'Keith Franklin',         id:28, teamid:2, jobid:2},
 
-			{name:'Chris Pautsch',          id:28, teamid:5, jobid:2},
-			{name:'Betsy Kraft',            id:29, teamid:5, jobid:2},
-			{name:'Mike Hernandez',         id:30, teamid:5, jobid:2},
+			{name:'Chris Pautsch',          id:29, teamid:5, jobid:2},
+			{name:'Betsy Kraft',            id:30, teamid:5, jobid:2},
+			{name:'Mike Hernandez',         id:31, teamid:5, jobid:2},
 
-			{name:'Erica Magda',            id:31, teamid:6, jobid:2},
-			{name:'Mike Mikulecky',         id:32, teamid:6, jobid:2}
+			{name:'Erica Magda',            id:32, teamid:6, jobid:2},
+			{name:'Mike Mikulecky',         id:33, teamid:6, jobid:2},
+			{name:'Patricia Gorecki',       id:34, teamid:6, jobid:2},
+			{name:'Kate Currin-Seiferth',   id:35, teamid:6, jobid:2}
 
 		],
 		Teams: [
