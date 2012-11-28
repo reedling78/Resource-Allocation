@@ -60,7 +60,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 			o.isEditing = false;
 			setTimeout(function(){
 				o.socket.emit('get projects');
-			}, 1000);
+			}, 500);
 			
 		}
 	},
