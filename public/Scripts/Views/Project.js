@@ -135,7 +135,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 					
 				});
 				view.edit.stop();
-					$('div.editarea').off();
+					$('div.editarea').off(); 
 			})
 		})
 
