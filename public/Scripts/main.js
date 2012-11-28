@@ -3,6 +3,7 @@ window.o.Views = {};
 window.o.Models = {};
 window.o.views = {};
 window.o.models = {};
+window.o.isEditing = false;
 
 
 

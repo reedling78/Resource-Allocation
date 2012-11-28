@@ -32,24 +32,26 @@ o.Controller = Backbone.Model.extend({
 			
 
 			o.socket.on('receive projects', function(data){
-				var projectCollection = new o.Models.ProjectCollection();
-				projectCollection.fetchData(data, function(){
+				if(!o.isEditing){
+					var projectCollection = new o.Models.ProjectCollection();
+					projectCollection.fetchData(data, function(){
 
-					//Projects
-					o.projectCollectionView = new o.Views.ProjectCollectionView({
-						collection: projectCollection, 
-						employeeList: o.employeeView.collection.attributes.Employees
+						//Projects
+						o.projectCollectionView = new o.Views.ProjectCollectionView({
+							collection: projectCollection, 
+							employeeList: o.employeeView.collection.attributes.Employees
+						});
+
+						if(o.projectCollectionView != undefined){
+							o.projectCollectionView.clearProjects();
+							o.employeeView.clearEmployees();
+							o.employeeView.render();
+						}
+
+						o.projectCollectionView.render();
+
 					});
-
-					if(o.projectCollectionView != undefined){
-						o.projectCollectionView.clearProjects();
-						o.employeeView.clearEmployees();
-						o.employeeView.render();
-					}
-
-					o.projectCollectionView.render();
-
-				});
+				}
 			});
 			o.socket.emit('get projects');
 

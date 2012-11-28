@@ -114,6 +114,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 			$(this).parent().parent().addClass('Expanded');
 			$(this).find('h6').attr('contenteditable', 'true');
 			$(this).find('p').attr('contenteditable', 'true');
+			o.isEditing = true;
 		})
 
 		$('div.editarea').on('mouseleave', function(){
@@ -121,6 +122,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 			$(this).find('h6').attr('contenteditable', 'false');
 			$(this).find('p').attr('contenteditable', 'false');
 			view.collection.sendToServer($('div.Projects>ul>li'));
+			o.isEditing = false;
 		})
 
 		$('span.Colors span').on('click', function(){
