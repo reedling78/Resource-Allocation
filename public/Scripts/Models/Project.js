@@ -38,24 +38,8 @@ o.Models.ProjectCollection = Backbone.Collection.extend({
       }
     });
 
-    if(callback != undefined){
-      callback();
-    }
-    
-
-  // var socket = io.connect(); // TIP: .connect with no args does auto-discovery
-  // socket.on('connect', function () { // TIP: you can avoid listening on `connect` and listen on events directly too!
-  //   socket.emit('ferret', 'tobi', function (data) {
-  //     console.log(data); // data will be 'woot'
-  //   });
-  // });
-
-
-
-    console.log('send to server');
-    o.socket.emit('get projects', projArray, function(data){
-      console.log(data);
-    });
+    if(callback != undefined){ callback();}
+    o.socket.emit('get projects', projArray);
   },
   sendNewProject : function(proj, callback){
     o.socket.emit('send new projects', proj);

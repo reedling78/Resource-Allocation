@@ -58,9 +58,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 		stop : function(){
 			console.log('stop');
 			o.isEditing = false;
-			setTimeout(function(){
-				o.socket.emit('get projects');
-			}, 500);
+			o.socket.emit('get projects');
 			
 		}
 	},
@@ -134,11 +132,9 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 				$(this).parent().removeClass('Expanded');
 				$(this).find('h6').attr('contenteditable', 'false');
 				$(this).find('p').attr('contenteditable', 'false');
-				view.collection.sendToServer($('div.Projects>ul>li'), function(){
-					
-				});
-				view.edit.stop();
+				view.collection.sendToServer($('div.Projects>ul>li'));
 				$('div.editarea').off(); 
+				view.edit.stop();
 			})
 		})
 
@@ -246,9 +242,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 				};
 				
 				$(this).attr('data-enddate', endD.getFullYear() + '-' + (endD.getMonth() + 1) + '-' + endD.getDate());
-				view.collection.sendToServer($('div.Projects>ul>li'), function(){
-					//view.edit.stop();
-				});
+				view.collection.sendToServer($('div.Projects>ul>li'));
 				view.edit.stop()
 				
 			}

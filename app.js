@@ -28,35 +28,21 @@ io.configure(function () {
 	io.set("polling duration", 5); 
 });
 
-
-// var io = require('socket.io').listen(80);
-
-// io.sockets.on('connection', function (socket) {
-//   socket.on('ferret', function (name, fn) {
-//     fn('woot');
-//   });
-// });
-
 io.sockets.on('connection', function (socket) {
 
 	socket.on('get projects', function (data) {
-		//fn('woot');
 		if(data !== undefined){
 			db.updateProjects(client, data, function(err){
 				db.selectCurrentProjects(client, function(result){
 					socket.broadcast.emit('receive projects', result);
 					socket.emit('receive projects', result);
-					
 				});
 			});
 		} else {
 			db.selectCurrentProjects(client, function(result){
 				socket.emit('receive projects', result);
-				//fn('woot');
 			});
 		}	
-
-
 
 	});
 
