@@ -42,6 +42,7 @@ o.Models.ProjectCollection = Backbone.Collection.extend({
       callback();
     }
     
+    console.log('send to server');
     o.socket.emit('get projects', projArray, function(){
       alert('callback');
     });
