@@ -37,12 +37,11 @@ exports.klt = function () {
 
 			{name:'Chris Pautsch',          id:29, teamid:5, jobid:2},
 			{name:'Betsy Kraft',            id:30, teamid:5, jobid:2},
-			{name:'Mike Hernandez',         id:31, teamid:5, jobid:2},
 
-			{name:'Erica Magda',            id:32, teamid:6, jobid:2},
-			{name:'Mike Mikulecky',         id:33, teamid:6, jobid:2},
-			{name:'Patricia Gorecki',       id:34, teamid:6, jobid:2},
-			{name:'Kate Currin-Seiferth',   id:35, teamid:6, jobid:2}
+			{name:'Erica Magda',            id:31, teamid:6, jobid:2},
+			{name:'Mike Mikulecky',         id:32, teamid:6, jobid:2},
+			{name:'Patricia Gorecki',       id:33, teamid:6, jobid:2},
+			{name:'Kate Currin-Seiferth',   id:34, teamid:6, jobid:2}
 
 		],
 		Teams: [
