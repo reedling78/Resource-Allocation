@@ -186,7 +186,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 		$("div.Projects li>div").resizable({
 			handles: 'e',
 			grid: view.dayWidth,
-			alsoResize: $(this).parent(),
+			alsoResize: $(this).parent(), 
 			start: function(e, ui){
 				nextEl = $(this).parent().nextAll();
 				thisElStartDuration = Math.floor(parseInt($(this).attr('data-duration')));
