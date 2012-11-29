@@ -14,6 +14,7 @@ exports.klt = function () {
 			{name:'Larry Gasik',            id:8, teamid:4, jobid:1},
 			{name:'Jeff Novak',             id:9, teamid:4, jobid:2},
 			{name:'Melissa Zuniga',         id:10, teamid:4, jobid:2},
+			{name:'Larisa Rozin',           id:35, teamid:4, jobid:2},
 			
 			{name:'Chris Grove',            id:11, teamid:3, jobid:2},
 			{name:'Rich Pesek',             id:12, teamid:3, jobid:2},
@@ -42,7 +43,7 @@ exports.klt = function () {
 			{name:'Mike Mikulecky',         id:32, teamid:6, jobid:2},
 			{name:'Patricia Gorecki',       id:33, teamid:6, jobid:2},
 			{name:'Kate Currin-Seiferth',   id:34, teamid:6, jobid:2}
-
+			//36 is next
 		],
 		Teams: [
 			{name:'Design Team', id:1},
