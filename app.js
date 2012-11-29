@@ -39,12 +39,13 @@ io.configure(function () {
 
 io.sockets.on('connection', function (socket) {
 
-	socket.on('get projects', function (data, fn) {
-		fn('woot');
+	socket.on('get projects', function (data) {
+		//fn('woot');
 		if(data !== undefined){
 			db.updateProjects(client, data, function(err){
 				db.selectCurrentProjects(client, function(result){
 					socket.broadcast.emit('receive projects', result);
+					socket.emit('receive projects', result);
 					
 				});
 			});
