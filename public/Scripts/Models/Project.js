@@ -37,8 +37,6 @@ o.Models.ProjectCollection = Backbone.Collection.extend({
         });
       }
     });
-
-    if(callback != undefined){ callback();}
     o.socket.emit('get projects', projArray);
   },
   sendNewProject : function(proj, callback){
