@@ -133,6 +133,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 				$(this).find('p').attr('contenteditable', 'false');
 				view.collection.sendToServer($('div.Projects>ul>li'));
 				$('div.editarea').off(); 
+				
 				$('.Projects ul ul').on('dblclick', function(e){
 					var selectedDayIndex = Math.floor((e.offsetX / 41) + 1);
 					var selectedDay;
@@ -183,29 +184,29 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 			
 		})
 
-		// $('.Projects ul ul').on('dblclick', function(e){
-		// 	var selectedDayIndex = Math.floor((e.offsetX / 41) + 1);
-		// 	var selectedDay;
-		// 	var empid = $(this).parent().attr('data-employee-id');
+		$('.Projects ul ul').on('dblclick', function(e){
+			var selectedDayIndex = Math.floor((e.offsetX / 41) + 1);
+			var selectedDay;
+			var empid = $(this).parent().attr('data-employee-id');
 			
-		// 	for (var i = 0; i < o.calendarModel.attributes.dayMap.length; i++) {
-		// 		if(o.calendarModel.attributes.dayMap[i].index == selectedDayIndex){
-		// 			selectedDay = o.calendarModel.attributes.dayMap[i].date;
-		// 		}
-		// 	};
+			for (var i = 0; i < o.calendarModel.attributes.dayMap.length; i++) {
+				if(o.calendarModel.attributes.dayMap[i].index == selectedDayIndex){
+					selectedDay = o.calendarModel.attributes.dayMap[i].date;
+				}
+			};
 
-		// 	view.collection.sendNewProject({
-		// 		name: "New Project",
-		// 		desc: "Project Description",
-		// 		empId: empid,
-		// 		color: "Grey",
-		// 		startdate: selectedDay,
-		// 		enddate: selectedDay
-		// 	}, function(){
-		// 		o.socket.emit('get projects');
-		// 	});
+			view.collection.sendNewProject({
+				name: "New Project",
+				desc: "Project Description",
+				empId: empid,
+				color: "Grey",
+				startdate: selectedDay,
+				enddate: selectedDay
+			}, function(){
+				o.socket.emit('get projects');
+			});
 			
-		// })
+		})
 
 		//Project resizable
 		$("div.Projects li>div").resizable({
