@@ -40,18 +40,18 @@ io.configure(function () {
 io.sockets.on('connection', function (socket) {
 
 	socket.on('get projects', function (data, fn) {
-		
+		fn('woot');
 		if(data !== undefined){
 			db.updateProjects(client, data, function(err){
 				db.selectCurrentProjects(client, function(result){
 					socket.broadcast.emit('receive projects', result);
-					fn('woot');
+					
 				});
 			});
 		} else {
 			db.selectCurrentProjects(client, function(result){
 				socket.emit('receive projects', result);
-				fn('woot');
+				//fn('woot');
 			});
 		}	
 
