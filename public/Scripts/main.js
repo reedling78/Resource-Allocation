@@ -46,11 +46,9 @@ if(o.CONST.url.indexOf('login') !== -1){
 				o.controller = new o.Controller();
 			});
 		});
-        setTimeout(function(){
-            $('body').animate({ 
-                opacity: 1,
-                backgroundColor: "#d4d4d4"
-            }, 500);
+        $('body').animate({ 
+            opacity: 1,
+            backgroundColor: "#d4d4d4"
         }, 500);
 		
     } else {
