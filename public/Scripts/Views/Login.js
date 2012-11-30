@@ -40,6 +40,7 @@ o.Views.Login = Backbone.View.extend({
                 }
             }
         });
+        console.log(login);
 
     },
     fail: function(){
