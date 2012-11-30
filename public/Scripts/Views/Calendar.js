@@ -11,6 +11,7 @@ o.Views.MonthCollectionView = Backbone.View.extend({
 		$(window).resize(function() {
 		  view.setHeight();
 		});
+		view.setHeight();
 	},
 	renderView: function (monthView){
 		monthView.render();

@@ -6,7 +6,13 @@ o.Views.EmployeeCollectionView = Backbone.View.extend({
 	TotalHeight : 0,
 	initialize: function(){
 		//Sorts emplyeees by team. Get fancy later with other sort options. 
-		this.collection.byTeam();
+		var view = this;
+		
+		view.collection.byTeam();
+		$(window).resize(function() {
+		  view.setHeight();
+		});
+		view.setHeight();
 	},
 	render: function () {
 		var view = this, 
@@ -59,6 +65,11 @@ o.Views.EmployeeCollectionView = Backbone.View.extend({
 	},
 	clearEmployees: function(){ 
 		$('ul.Employees').html('');
+	},
+	setHeight: function(){
+		var innerHeight = window.innerHeight;
+		var diff = 120;
+		$('ul.Employees').css('height', (innerHeight - diff) + 'px');
 	}
 });
 
