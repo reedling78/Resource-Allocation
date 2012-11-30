@@ -68,7 +68,7 @@ o.Views.EmployeeCollectionView = Backbone.View.extend({
 	},
 	setHeight: function(){
 		var innerHeight = window.innerHeight;
-		var diff = 120;
+		var diff = 209;
 		$('div.EmployeesScrollDiv').css('height', (innerHeight - diff) + 'px');
 	}
 });

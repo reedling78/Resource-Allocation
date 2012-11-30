@@ -219,7 +219,7 @@ h1 {
 .Employees {
 	float: left;
 	width: 18.5em;
-	margin-top: 6.8em;
+	
 }
 
 .Employees li {
@@ -254,7 +254,8 @@ div.EmployeesScrollDiv {
 	height: 381px;
 	width: 185px;
 	float: left;
-	overflow: hidden;	
+	overflow: hidden;
+	margin-top: 6.8em;	
 }
 
 
