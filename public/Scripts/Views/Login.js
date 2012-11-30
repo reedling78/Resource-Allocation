@@ -21,7 +21,7 @@ o.Views.Login = Backbone.View.extend({
     },
     submit: function(){
         var that = this;
-        var login = new ea.LoginModel({
+        var login = new o.Models.Login({
             password : that.$el.find('input').val()
         });
 
