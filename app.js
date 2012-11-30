@@ -70,18 +70,32 @@ io.sockets.on('connection', function (socket) {
 
 //Default route
 app.get('/', function(req, res) {
-	console.log('QQQQQQQQQQQQQQQ');
 	res.render('index.html', data); 
 });
 
 //Default route
 app.get('/login', function(req, res) {
-	console.log('PPPPPPPPPPPPPP');
 	res.render('default.html', data); 
-	// db.selectAllProjects(client, function(result){
-	// 	res.json(result);   
-	// });
 });
+
+app.get('/get/login/:password', function(req, res){
+    var passwords = [
+      'rushrules',
+      'rush rules'
+    ]
+
+    var response = {
+    	success : false
+    };
+    
+    for (var i = passwords.length - 1; i >= 0; i--) {
+    	if(passwords[i] == req.params.password.toLowerCase()){
+    		response.success = true;
+    	}
+    };
+
+    res.json(response);
+})
 
 app.get('/selectAllProjects', function(req, res){
 	db.selectAllProjects(client, function(result){
