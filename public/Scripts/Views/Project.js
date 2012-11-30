@@ -3,6 +3,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 	el: $('div.Projects ul'),
 	initialize: function () {
 		'use strict';
+		var view = this;
 		$(window).resize(function() {
 		  view.setHeight();
 		});
