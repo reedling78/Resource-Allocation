@@ -1155,7 +1155,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c2c2c2', end
 
 .Login .Input-Text {
 	width: 217px;
-	background: url(../Images/TextFields-Login.png) left top no-repeat;
+	background: url(../images/TextFields-Login.png) left top no-repeat;
 	position: relative;
 	height: 43px;
 	margin: 0 auto;
