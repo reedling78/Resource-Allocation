@@ -4,13 +4,13 @@ o.Views.Login = Backbone.View.extend({
         var that = this;
 
         if(!this.checkCookie()){
-            ea.loggedOutLoad();
+            //ea.loggedOutLoad();
             $('.Login *').animate({ 
                 opacity: 1 
             }, 500);
         } else {
             this.fadeout();
-            ea.loggedInLoad();
+            //ea.loggedInLoad();
         }
     },
     events: {
@@ -43,7 +43,7 @@ o.Views.Login = Backbone.View.extend({
         this.$el.find('.Error-Message').css('display', 'block');
     },
     success: function(){
-        this.setCookie('oneintakeda',true,365);
+        this.setCookie('kltra',true,365);
         this.fadeout();
     },
     reset: function(){
@@ -77,7 +77,7 @@ o.Views.Login = Backbone.View.extend({
         document.cookie=c_name + "=" + c_value;
     },
     checkCookie : function(){
-        var cookie = this.getCookie("oneintakeda");
+        var cookie = this.getCookie("kltra");
 
         if (cookie != null && cookie != "") {
             return true;
