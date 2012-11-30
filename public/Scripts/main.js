@@ -14,7 +14,7 @@ var cookie = getCookie("kltra");
 if(o.CONST.url.indexOf('login') !== -1){ 
 
 	if (cookie != null && cookie != "") { 
-		window.location = "/"
+		window.location = "/";
 	} else {
 		require(['Views/Login', 'Models/Login'], function() { 
 			$(document).ready(function(){

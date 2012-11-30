@@ -48,6 +48,7 @@ o.Views.Login = Backbone.View.extend({
     success: function(){
         this.setCookie('kltra',true,365);
         this.fadeout();
+        window.location = "/";
     },
     reset: function(){
         this.$el.find('.Input-Text').removeClass('Error');
