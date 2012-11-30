@@ -8,7 +8,9 @@ o.Views.MonthCollectionView = Backbone.View.extend({
 			monthView = new o.Views.Month({model: months[i]});
 			view.renderView(monthView);
 		}
-		view.setHeight();
+		$(window).resize(function() {
+		  view.setHeight();
+		});
 	},
 	renderView: function (monthView){
 		monthView.render();
@@ -16,9 +18,8 @@ o.Views.MonthCollectionView = Backbone.View.extend({
 	},
 	setHeight: function(){
 		var innerHeight = window.innerHeight;
-		var diff = 130;
+		var diff = 120;
 		$('div.Calendar').css('height', (innerHeight - diff) + 'px');
-
 	}
 
 });
