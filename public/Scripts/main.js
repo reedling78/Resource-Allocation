@@ -5,14 +5,31 @@ window.o.views = {};
 window.o.models = {};
 window.o.isEditing = false;
 
+window.o.CONST = {};
+window.o.CONST.ServiceURL = 'klt.rizzonet.com';
+window.o.CONST.url = document.URL;
 
 
-require(['Views/Calendar', 'Models/Calendar', 
-		 'Views/Employee', 'Models/Employee', 
-		 'Views/Project',  'Models/Project',
-		 'controller'], function() { 
-	$(document).ready(function(){
-		o.controller = new o.Controller();
+if(o.CONST.url.indexOf('login') !== -1){ 
+
+	require(['Views/Login', 'Models/Login'], function() { 
+		$(document).ready(function(){
+			//o.controller = new o.Controller();
+		});
 	});
-});
+
+} else {
+
+	require(['Views/Calendar', 'Models/Calendar', 
+			 'Views/Employee', 'Models/Employee', 
+			 'Views/Project',  'Models/Project',
+			 'controller'], function() { 
+		$(document).ready(function(){
+			o.controller = new o.Controller();
+		});
+	});
+
+}
+
+
 

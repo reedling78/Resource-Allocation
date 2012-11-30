@@ -4,15 +4,8 @@ o.Controller = Backbone.Model.extend({
 		]
 	},
 	initialize: function(){
-		var url = document.URL;
-
-		if(url.indexOf('rizzonet') !== -1){
-			o.socket = io.connect('klt.rizzonet.com');
-		} else {
-			o.socket = io.connect('ra.keylimetie.com');
-		}
+		o.socket = io.connect(o.CONST.ServiceURL);
 		
-
 		//Build Calendar 
 		o.calendarModel = new o.Models.Calendar();
 
