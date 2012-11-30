@@ -8,7 +8,8 @@ var express = require('express')
 	, kltconnectionString = 'postgres://eyntiddmneohgz:_8BgzBNNQyuQmIV4FGHdpShJBM@ec2-54-243-190-93.compute-1.amazonaws.com:5432/d8i534na3mvk0r'
 	, connectionString = 'postgres://srboupnqgnwceq:lVyLMZaQNzFBBcXyLlUMF7MIoz@ec2-54-243-139-234.compute-1.amazonaws.com:5432/d7rtclh2oqjsl9'
 	, employeeData = require('./serverjs/static').klt()
-	, db = require('./serverjs/db');
+	, db = require('./serverjs/db')
+	, data = {};
 
 //Express Config
 app.configure(function(){
@@ -70,7 +71,7 @@ io.sockets.on('connection', function (socket) {
 //Default route
 app.get('/', function(req, res) {
 	console.log('QQQQQQQQQQQQQQQ');
-	res.render('default.html'); 
+	res.render('default.html', data); 
 });
 
 //Default route
