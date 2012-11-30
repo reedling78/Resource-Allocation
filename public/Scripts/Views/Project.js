@@ -360,7 +360,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 	},
 	setHeight: function(){
 		var innerHeight = window.innerHeight;
-		var diff = 120;
+		var diff = 215;
 		$('div.Projects').css('height', (innerHeight - diff) + 'px');
 	}
 });
