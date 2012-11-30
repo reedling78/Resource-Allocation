@@ -25,7 +25,7 @@ window.o.CONST.cookie = function(){
 
 if(o.CONST.url.indexOf('login') !== -1){ 
 
-	if (o.CONST.cookie != null && o.CONST.cookie != "") { 
+	if (o.CONST.cookie() != null && o.CONST.cookie() != "") { 
 		window.location = "/";
 	} else {
 		require(['Views/Login', 'Models/Login'], function() { 
@@ -37,7 +37,7 @@ if(o.CONST.url.indexOf('login') !== -1){
 	
 } else {
 
-    if (o.CONST.cookie != null && o.CONST.cookie != "") {
+    if (o.CONST.cookie() != null && o.CONST.cookie() != "") {
         require(['Views/Calendar', 'Models/Calendar', 
 				 'Views/Employee', 'Models/Employee', 
 				 'Views/Project',  'Models/Project',
