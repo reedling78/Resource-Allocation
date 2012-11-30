@@ -13,6 +13,7 @@ var express = require('express')
 //Express Config
 app.configure(function(){
 	app.use(express.static(__dirname + '/public'));
+	app.register('.htm', hb);
 	app.set('view engine', 'handlebars');
 	app.set("view options", { layout: false });
 	app.set('views', __dirname + '/public');
@@ -43,7 +44,6 @@ io.sockets.on('connection', function (socket) {
 				socket.emit('receive projects', result);
 			});
 		}	
-
 	});
 
 	socket.on('send new projects', function (proj) { 
