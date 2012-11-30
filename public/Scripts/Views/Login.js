@@ -30,6 +30,7 @@ o.Views.Login = Backbone.View.extend({
 
         login.fetch({
             success: function(model, response){
+                console.log(response);
                 if(response.success){
                     console.log('success');
                     that.success();
