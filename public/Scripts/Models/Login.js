@@ -11,7 +11,7 @@ o.Models.Login = Backbone.Model.extend({
         }, options);
 
         var results = $.ajax(params);
-
+        console.log(results);
         return results;
     },
     parse: function(response) {
