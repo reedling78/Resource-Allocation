@@ -69,15 +69,17 @@ io.sockets.on('connection', function (socket) {
 
 //Default route
 app.get('/', function(req, res) {
+	console.log('QQQQQQQQQQQQQQQ');
 	res.render('default.html'); 
 });
 
 //Default route
 app.get('/ra', function(req, res) {
-	//res.render('index.html', data); 
-	db.selectAllProjects(client, function(result){
-		res.json(result);   
-	});
+	console.log('PPPPPPPPPPPPPP');
+	res.render('index.html', data); 
+	// db.selectAllProjects(client, function(result){
+	// 	res.json(result);   
+	// });
 });
 
 app.get('/selectAllProjects', function(req, res){
