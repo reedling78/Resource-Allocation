@@ -75,7 +75,7 @@ app.get('/', function(req, res) {
 });
 
 //Default route
-app.get('/ra', function(req, res) {
+app.get('/login', function(req, res) {
 	console.log('PPPPPPPPPPPPPP');
 	res.render('default.html', data); 
 	// db.selectAllProjects(client, function(result){
