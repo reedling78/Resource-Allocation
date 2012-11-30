@@ -46,10 +46,13 @@ if(o.CONST.url.indexOf('login') !== -1){
 				o.controller = new o.Controller();
 			});
 		});
-		$('body').animate({ 
-            opacity: 1,
-            backgroundColor: "#d4d4d4"
+        setTimeout(function(){
+            $('body').animate({ 
+                opacity: 1,
+                backgroundColor: "#d4d4d4"
+            }, 500);
         }, 500);
+		
     } else {
         window.location = "/login"
     }
