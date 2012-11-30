@@ -20,6 +20,7 @@ o.Views.Login = Backbone.View.extend({
         "keypress input": "pressenter"
     },
     submit: function(){
+        console.log('submit');
         var that = this;
         var login = new o.Models.Login({
             password : that.$el.find('input').val()
