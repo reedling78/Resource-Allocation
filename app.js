@@ -13,7 +13,7 @@ var express = require('express')
 //Express Config
 app.configure(function(){
 	app.use(express.static(__dirname + '/public'));
-	app.register('.htm', hb);
+	app.register('.html', hb);
 	app.set('view engine', 'handlebars');
 	app.set("view options", { layout: false });
 	app.set('views', __dirname + '/public');
