@@ -81,7 +81,9 @@ app.get('/login', function(req, res) {
 app.get('/get/login/:password', function(req, res){
     var passwords = [
       'rushrules',
-      'rush rules'
+      'rush rules',
+      'rushrocks',
+      'rush rocks'
     ]
 
     var response = {
