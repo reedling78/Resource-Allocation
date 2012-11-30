@@ -4,13 +4,11 @@ o.Views.Login = Backbone.View.extend({
         var that = this;
 
         if(!this.checkCookie()){
-            //ea.loggedOutLoad();
             $('.Login *').animate({ 
                 opacity: 1 
             }, 500);
         } else {
             this.fadeout();
-            //ea.loggedInLoad();
         }
     },
     events: {
@@ -40,8 +38,8 @@ o.Views.Login = Backbone.View.extend({
                 }
             }
         });
-        console.log(login);
 
+        return false;
     },
     fail: function(){
         this.$el.find('.Input-Text').addClass('Error');
