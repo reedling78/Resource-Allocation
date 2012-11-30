@@ -14,7 +14,7 @@ if(o.CONST.url.indexOf('login') !== -1){
 
 	require(['Views/Login', 'Models/Login'], function() { 
 		$(document).ready(function(){
-			//o.controller = new o.Controller();
+			o.login = new o.Views.Login;
 		});
 	});
 
