@@ -71,13 +71,13 @@ io.sockets.on('connection', function (socket) {
 //Default route
 app.get('/', function(req, res) {
 	console.log('QQQQQQQQQQQQQQQ');
-	res.render('default.html', data); 
+	res.render('index.html', data); 
 });
 
 //Default route
 app.get('/ra', function(req, res) {
 	console.log('PPPPPPPPPPPPPP');
-	res.render('index.html', data); 
+	res.render('default.html', data); 
 	// db.selectAllProjects(client, function(result){
 	// 	res.json(result);   
 	// });
