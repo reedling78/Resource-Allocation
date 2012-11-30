@@ -357,7 +357,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 	clearProjects: function(){ 
 		$('.Projects>ul').html('');
 	},
-	setHeight: function{
+	setHeight: function(){
 		var innerHeight = window.innerHeight;
 		var diff = 120;
 		$('div.Projects').css('height', (innerHeight - diff) + 'px');
