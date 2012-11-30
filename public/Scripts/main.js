@@ -35,7 +35,8 @@ if(o.CONST.url.indexOf('login') !== -1){
 			});
 		});
 		$('body').animate({ 
-            opacity: 1 
+            opacity: 1,
+            backgroundColor: "#d4d4d4"
         }, 500);
     } else {
         window.location = "/login"
