@@ -5,7 +5,7 @@ o.Models.Login = Backbone.Model.extend({
     sync: function(method, model, options) {
         var params = _.extend({
             type: 'GET',
-            dataType: 'jsonp',
+            dataType: 'json',
             url: this.url(),
             processData: true
         }, options);
