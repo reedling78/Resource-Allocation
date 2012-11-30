@@ -249,6 +249,15 @@ h1 {
 .Employees h2::selection			{background-color: #e7e7e7; color: #000;}
 .Employees h2::-moz-selection		{background-color: #e7e7e7; color: #000;}
 
+
+div.EmployeesScrollDiv {
+	height: 381px;
+	width: 185px;
+	float: left;
+	overflow: hidden;	
+}
+
+
 /* -------------------------------------------------------- Calendar -------------------------------------------------------- */
 
 .Calendar {
