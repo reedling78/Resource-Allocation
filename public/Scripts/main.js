@@ -9,14 +9,20 @@ window.o.CONST = {};
 window.o.CONST.ServiceURL = 'http://klt.rizzonet.com';
 window.o.CONST.url = document.URL;
 
+var cookie = this.getCookie("kltra");
 
 if(o.CONST.url.indexOf('login') !== -1){ 
 
-	require(['Views/Login', 'Models/Login'], function() { 
-		$(document).ready(function(){
-			o.login = new o.Views.Login;
+	if (cookie != null && cookie != "") { 
+		window.location = "/"
+	} else {
+		require(['Views/Login', 'Models/Login'], function() { 
+			$(document).ready(function(){
+				o.login = new o.Views.Login;
+			});
 		});
-	});
+	}
+	
 
 } else {
 
