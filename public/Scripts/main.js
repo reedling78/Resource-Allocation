@@ -6,7 +6,7 @@ window.o.models = {};
 window.o.isEditing = false;
 
 window.o.CONST = {};
-window.o.CONST.ServiceURL = 'klt.rizzonet.com';
+window.o.CONST.ServiceURL = 'http://klt.rizzonet.com';
 window.o.CONST.url = document.URL;
 
 
