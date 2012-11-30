@@ -40,7 +40,6 @@ o.Models.ProjectCollection = Backbone.Collection.extend({
     o.socket.emit('get projects', projArray);
   },
   sendNewProject : function(proj, callback){
-    console.log('sendNewProject ');
     o.socket.emit('send new projects', proj);
     callback();
   },

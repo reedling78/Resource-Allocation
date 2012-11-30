@@ -29,8 +29,6 @@ o.Controller = Backbone.Model.extend({
 			o.employeeView.render();
 
 			//Build Employees 
-			
-
 			o.socket.on('receive projects', function(data){
 				
 				if(!o.isEditing){
@@ -55,10 +53,6 @@ o.Controller = Backbone.Model.extend({
 				}
 			});
 			o.socket.emit('get projects');
-
-
-			
-
 		});
 
 	}

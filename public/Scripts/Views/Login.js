@@ -30,10 +30,8 @@ o.Views.Login = Backbone.View.extend({
             success: function(model, response){
                 console.log(response);
                 if(response.success){
-                    console.log('success');
                     that.success();
                 } else {
-                    console.log('fail');
                     that.fail();
                 }
             }

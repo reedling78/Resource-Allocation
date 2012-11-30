@@ -8,12 +8,24 @@ window.o.isEditing = false;
 window.o.CONST = {};
 window.o.CONST.ServiceURL = 'http://klt.rizzonet.com';
 window.o.CONST.url = document.URL;
+window.o.CONST.cookie = function("kltra"){
+    var i,x,y,ARRcookies=document.cookie.split(";");
+    for (i=0;i<ARRcookies.length;i++)
+    {
+        x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
+        y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
+        x=x.replace(/^\s+|\s+$/g,"");
+        if (x==c_name)
+        {
+            return unescape(y);
+        }
+    }
+}
 
-var cookie = getCookie("kltra");
 
 if(o.CONST.url.indexOf('login') !== -1){ 
 
-	if (cookie != null && cookie != "") { 
+	if (o.CONST.cookie != null && o.CONST.cookie != "") { 
 		window.location = "/";
 	} else {
 		require(['Views/Login', 'Models/Login'], function() { 
@@ -25,7 +37,7 @@ if(o.CONST.url.indexOf('login') !== -1){
 	
 } else {
 
-    if (cookie != null && cookie != "") {
+    if (o.CONST.cookie != null && o.CONST.cookie != "") {
         require(['Views/Calendar', 'Models/Calendar', 
 				 'Views/Employee', 'Models/Employee', 
 				 'Views/Project',  'Models/Project',
@@ -41,25 +53,5 @@ if(o.CONST.url.indexOf('login') !== -1){
     } else {
         window.location = "/login"
     }
-
+    
 }
-
-
-function getCookie(c_name){
-    var i,x,y,ARRcookies=document.cookie.split(";");
-    for (i=0;i<ARRcookies.length;i++)
-    {
-        x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
-        y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
-        x=x.replace(/^\s+|\s+$/g,"");
-        if (x==c_name)
-        {
-            return unescape(y);
-        }
-    }
-}
-
-
-
-
-

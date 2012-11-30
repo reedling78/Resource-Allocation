@@ -22,7 +22,6 @@ o.Views.MonthCollectionView = Backbone.View.extend({
 		var diff = 120;
 		$('div.Calendar').css('height', (innerHeight - diff) + 'px');
 	}
-
 });
 
 
