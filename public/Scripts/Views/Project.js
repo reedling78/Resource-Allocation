@@ -9,8 +9,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 		});
 		view.setHeight();
 		$('div.Projects').scroll(function(e){
-			console.log('scroll');
-			console.log(this);
+			console.log($(this).position());
 		});
 	},
 	colors: ['Red', 'Orange', 'Yellow', 'Lime', 'Green', 'Aqua', 'Blue', 'Purple', 'Grey', 'White'],
