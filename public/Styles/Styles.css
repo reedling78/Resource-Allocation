@@ -1127,3 +1127,88 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c2c2c2', end
 ::-webkit-scrollbar-track-piece {
 }
 */
+
+
+.Login {
+	position: fixed;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background-color: #fff;
+	z-index: 10000;
+}
+
+.Login > div {
+	width: 267px;
+	margin: 100px auto 0;
+	text-align: center;
+}
+
+.Login img {
+	margin-bottom: 15px;
+}
+
+.Login .Row {
+	text-align: center;
+}
+
+.Login .Input-Text {
+	width: 217px;
+	background: url(../Images/TextFields-Login.png) left top no-repeat;
+	position: relative;
+	height: 43px;
+	margin: 0 auto;
+}
+
+.Login .Input-Text input[type="password"] {
+	border: 0;
+	color: #777;
+	height: 20px;
+	font: 1.6em/1em Arial, Helvetica, sans-serif;
+	padding: 8px 0 6px;
+	background-color: transparent;
+	position: absolute;
+	top: 5px;
+	left: 15px;
+	width: 195px;
+}
+
+.Login .Input-Text:hover {
+	background-position: 0 -44px;
+	cursor: text;
+}
+
+.Login .Focused, .Login .Focused:hover {
+	background-position: 0 -88px;
+}
+
+.Login .Error {
+	background-position: 0 -132px;
+}
+
+.Login .Error input[type="password"] {
+	color: #d00;
+}
+
+.Login .Error:hover {
+	background-position: 0 -176px;
+}
+
+.Login .Error.Focused {
+	background-position: 0 -220px;
+}
+
+.Login .Error-Message {
+	font: 1.4em/1.2em Arial, Helvetica, sans-serif;
+	color: #d00;
+	margin-bottom: 20px;
+}
+
+.Login .Button {
+	width: 185px;
+	position: relative;
+	left: 3px;
+}
+
+
