@@ -69,7 +69,12 @@ io.sockets.on('connection', function (socket) {
 
 //Default route
 app.get('/', function(req, res) {
-	//res.render('default.html', data); 
+	res.render('default.html', data); 
+});
+
+//Default route
+app.get('/ra', function(req, res) {
+	res.render('index.html', data); 
 });
 
 app.get('/selectAllProjects', function(req, res){
