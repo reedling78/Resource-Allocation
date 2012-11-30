@@ -8,10 +8,17 @@ o.Views.MonthCollectionView = Backbone.View.extend({
 			monthView = new o.Views.Month({model: months[i]});
 			view.renderView(monthView);
 		}
+		view.setHeight();
 	},
 	renderView: function (monthView){
 		monthView.render();
 		this.$el.prepend(monthView.$el.contents().unwrap());
+	},
+	setHeight: function(){
+		var innerHeight = window.innerHeight;
+		var diff = 171;
+		$('div.Calendar').css('height', (innerHeight - diff) + 'px');
+
 	}
 
 });
