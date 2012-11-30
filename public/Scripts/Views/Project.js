@@ -3,6 +3,10 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 	el: $('div.Projects ul'),
 	initialize: function () {
 		'use strict';
+		$(window).resize(function() {
+		  view.setHeight();
+		});
+		view.setHeight();
 	},
 	colors: ['Red', 'Orange', 'Yellow', 'Lime', 'Green', 'Aqua', 'Blue', 'Purple', 'Grey', 'White'],
 	dayWidth : 41,
@@ -352,6 +356,11 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 	},
 	clearProjects: function(){ 
 		$('.Projects>ul').html('');
+	},
+	setHeight: function{
+		var innerHeight = window.innerHeight;
+		var diff = 120;
+		$('div.Projects').css('height', (innerHeight - diff) + 'px');
 	}
 });
 
