@@ -74,7 +74,10 @@ app.get('/', function(req, res) {
 
 //Default route
 app.get('/ra', function(req, res) {
-	res.render('index.html', data); 
+	//res.render('index.html', data); 
+	db.selectAllProjects(client, function(result){
+		res.json(result);   
+	});
 });
 
 app.get('/selectAllProjects', function(req, res){
