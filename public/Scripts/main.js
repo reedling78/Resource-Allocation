@@ -34,6 +34,9 @@ if(o.CONST.url.indexOf('login') !== -1){
 				o.controller = new o.Controller();
 			});
 		});
+		$('body').animate({ 
+            opacity: 1 
+        }, 500);
     } else {
         window.location = "/login"
     }
