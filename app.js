@@ -75,7 +75,7 @@ app.get('/', function(req, res) {
 
 //Default route
 app.get('/login', function(req, res) {
-	res.render('default.html', data); 
+	res.render('login.html', data); 
 });
 
 app.get('/get/login/:password', function(req, res){
