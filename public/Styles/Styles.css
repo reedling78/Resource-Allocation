@@ -1212,3 +1212,63 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c2c2c2', end
 }
 
 
+/* --------------------------------- Buttons -------------------------------- */
+
+.Buttons {
+	text-align: center;
+	margin-top: 10px;
+}
+
+.Buttons a.Button:first-child {
+	margin-right: 8px;
+}
+
+a.Button, a.Button span {
+	background-image: url(../images/Buttons.png);
+}
+
+a.Button {
+	display: inline-block;
+	height: 31px;
+	background-position: left top;
+	background-repeat: no-repeat;
+	font: 1.6em/2em Arial, Helvetica, sans-serif;
+	color: #333;
+	text-shadow: 0 1px #fff;
+	text-decoration: none;
+	padding: 0 8px 0 10px;
+	position: relative;
+	margin-right: 2px;
+}
+
+a.Button span {
+	display: inline-block;
+	height: 31px;
+	width: 2px;
+	position: absolute;
+	right: -2px;
+	top: 0;
+	background-position: right top;
+}
+
+a.Button:hover {background-position: left -32px;}
+a.Button:active {background-position: left -64px; text-shadow: 0 -1px #fff; top: 1px;}
+
+a.Button:hover span {background-position: right -32px;}
+a.Button:active span {background-position: right -64px;}
+
+a.Button-Grey {
+	background-position: left -96px;
+	color: #fff;
+	text-shadow: 0 -1px #484848;
+}
+
+a.Button-Grey span {background-position: right -96px;}
+
+a.Button-Grey:hover {background-position: left -128px;}
+a.Button-Grey:active {background-position: left -160px; text-shadow: 0 1px #484848; top: 1px;}
+
+a.Button-Grey:hover span {background-position: right -128px;}
+a.Button-Grey:active span {background-position: right -160px;}
+
+
