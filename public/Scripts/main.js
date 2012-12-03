@@ -8,9 +8,11 @@ window.o.isEditing = false;
 window.o.CONST = {};
 window.o.CONST.ServiceURL = 'http://ra.keylimetie.com'; 
 window.o.CONST.url = document.URL;
-window.o.CONST.cookie = function () {
-    'use strict';
-    var i, x, y, ARRcookies = document.cookie.split(";");
+window.o.CONST.cookie = checkCookie();
+
+
+function checkCookie(){
+     var i, x, y, ARRcookies = document.cookie.split(";");
     for (i = 0; i < ARRcookies.length; i++) {
         x = ARRcookies[i].substr(0, ARRcookies[i].indexOf("="));
         y = ARRcookies[i].substr(ARRcookies[i].indexOf("=") + 1);
@@ -19,8 +21,7 @@ window.o.CONST.cookie = function () {
             return unescape(y);
         }
     }
-};
-
+}
 
 console.log(o.CONST.cookie());
 
