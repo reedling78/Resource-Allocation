@@ -25,10 +25,11 @@ function getCookie() {
     }
 };
 
+console.log(window.o.CONST.cookie);
 
 if (o.CONST.url.indexOf('login') !== -1) {
 
-	if (o.CONST.cookie !== null && o.CONST.cookie !== "") {
+	if (o.CONST.cookie !== null && o.CONST.cookie !== "" && o.CONST.cookie !== undefined) {
 		window.location = "/";
 	} else {
 		require(['Views/Login', 'Models/Login'], function () {
@@ -41,7 +42,7 @@ if (o.CONST.url.indexOf('login') !== -1) {
 
 } else {
 
-    if (o.CONST.cookie !== null && o.CONST.cookie !== "") {
+    if (o.CONST.cookie !== null && o.CONST.cookie !== "" && o.CONST.cookie !== undefined) {
         require(['Views/Calendar', 'Models/Calendar',
 				 'Views/Employee', 'Models/Employee',
 				 'Views/Project',  'Models/Project',
