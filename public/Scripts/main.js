@@ -8,7 +8,11 @@ window.o.isEditing = false;
 window.o.CONST = {};
 window.o.CONST.ServiceURL = 'http://ra.keylimetie.com'; 
 window.o.CONST.url = document.URL;
-window.o.CONST.cookie = function () {
+window.o.CONST.cookie = getCookie();
+
+
+
+function getCookie() {
     'use strict';
     var i, x, y, ARRcookies = document.cookie.split(";");
     for (i = 0; i < ARRcookies.length; i++) {
@@ -22,24 +26,9 @@ window.o.CONST.cookie = function () {
 };
 
 
-function checkCookie(){
-     var i, x, y, ARRcookies = document.cookie.split(";");
-    for (i = 0; i < ARRcookies.length; i++) {
-        x = ARRcookies[i].substr(0, ARRcookies[i].indexOf("="));
-        y = ARRcookies[i].substr(ARRcookies[i].indexOf("=") + 1);
-        x = x.replace(/^\s+|\s+$/g, "");
-        if (x === 'kltra') {
-            return unescape(y);
-        }
-    }
-}
-
-console.log(o.CONST.cookie());
-console.log(checkCookie());
-
 if (o.CONST.url.indexOf('login') !== -1) {
 
-	if (o.CONST.cookie() !== null && o.CONST.cookie() !== "") {
+	if (o.CONST.cookie !== null && o.CONST.cookie !== "") {
 		window.location = "/";
 	} else {
 		require(['Views/Login', 'Models/Login'], function () {
@@ -52,7 +41,7 @@ if (o.CONST.url.indexOf('login') !== -1) {
 
 } else {
 
-    if (o.CONST.cookie() !== null && o.CONST.cookie() !== "") {
+    if (o.CONST.cookie !== null && o.CONST.cookie !== "") {
         require(['Views/Calendar', 'Models/Calendar',
 				 'Views/Employee', 'Models/Employee',
 				 'Views/Project',  'Models/Project',
