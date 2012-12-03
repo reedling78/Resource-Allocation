@@ -517,7 +517,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cccccc', end
 	left: 8px;
 	top: 95px;
 	z-index: 1000;
-	overflow-y:scroll;
+	overflow-x:scroll;
 }
 
 .Projects li			{list-style: none;}
