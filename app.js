@@ -21,7 +21,7 @@ app.configure(function(){
 });
 
 //DB
-var client = new pg.Client(kltconnectionString); 
+var client = new pg.Client(connectionString); 
 client.connect(); 
 
 //Socket IO Config
