@@ -11,6 +11,11 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 		$('div.Projects').scroll(function(e){
 			$('div.EmployeesScrollDiv').scrollTop($('div.Projects').scrollTop());
 		});
+
+		$('div.Projects').scroll(function(e){
+			$('div.Calendar').scrollLeft($('div.Projects').scrollLeft());
+		});
+
 	},
 	colors: ['Red', 'Orange', 'Yellow', 'Lime', 'Green', 'Aqua', 'Blue', 'Purple', 'Grey', 'White'],
 	dayWidth : 41,
