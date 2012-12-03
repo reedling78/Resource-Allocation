@@ -22,6 +22,8 @@ window.o.CONST.cookie = function () {
 };
 
 
+console.log(o.CONST.cookie());
+
 if (o.CONST.url.indexOf('login') !== -1) {
 
 	if (o.CONST.cookie() !== null && o.CONST.cookie() !== "") {
