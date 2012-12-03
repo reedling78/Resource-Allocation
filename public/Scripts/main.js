@@ -35,6 +35,7 @@ function checkCookie(){
 }
 
 console.log(o.CONST.cookie());
+console.log(checkCookie());
 
 if (o.CONST.url.indexOf('login') !== -1) {
 
