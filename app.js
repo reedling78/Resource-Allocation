@@ -83,7 +83,8 @@ app.get('/get/login/:password', function(req, res){
       'rushrules',
       'rush rules',
       'rushrocks',
-      'rush rocks'
+      'rush rocks',
+      'kltra#'
     ]
 
     var response = {
