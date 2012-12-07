@@ -22,7 +22,7 @@ app.configure(function(){
 
 //DB
 var constring = '';
-if(process.env.HEROKU_POSTGRESQL_OLIVE_URL == 'klt'){
+if(process.env.ENVIRONMENT == 'klt'){
 	constring = process.env.HEROKU_POSTGRESQL_OLIVE_URL;
 } else {
 	constring = connectionString;
