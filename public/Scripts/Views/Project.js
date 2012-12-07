@@ -69,7 +69,6 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 		},
 		stop : function(){
 			o.isEditing = false;
-			//o.socket.emit('get projects');
 		}
 	},
 	setDayInfo: function(model){
@@ -111,7 +110,9 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 			}
 		}
 		
-		model.day = Math.floor((isLessThenToday) ? 1 : day);
+		//model.day = Math.floor((isLessThenToday) ? 1 : day);
+		model.day = o.calendarModel.getDayIndex(new Date(model.startdate));
+
 		model.duration = Math.floor(duration);
 		model.startdate = model.startdate.substring(0, model.startdate.indexOf('T'));
 		model.enddate = model.enddate.substring(0, model.enddate.indexOf('T'));
