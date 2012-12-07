@@ -94,6 +94,23 @@ o.Models.Calendar = Backbone.Model.extend({
 	resetTime: function(d){
 		return new Date((d.getMonth() + 1) + '/' + d.getDate() + '/' + d.getFullYear());
 	},
+	calcDuration: function(start, end){
+		var duration = 1;
+		while (end.getTime() != start.getTime()){
+
+			if(start.getDay() != 0 && start.getDay() != 6){
+				duration++;
+			}
+
+			start.setDate(start.getDate()+1);
+
+			//just in case date compair goes wrong. 
+			if(duration > 300){
+				break;
+			}
+		}
+		return duration;
+	},
 	currentDate: new Date(),
 	monthNames: ['January', 'February','March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
 	dayNames: ['Sun','Mon', 'Tue', 'Wed', 'Thr', 'Fri', 'Sat']
