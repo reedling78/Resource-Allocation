@@ -111,7 +111,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 		}
 		
 		//model.day = Math.floor((isLessThenToday) ? 1 : day);
-		model.day = o.calendarModel.getDayIndex(startD.setDate(startD.getDate()+1));
+		model.day = o.calendarModel.getDayIndex(startD);
 
 		model.duration = Math.floor(duration);
 		model.startdate = model.startdate.substring(0, model.startdate.indexOf('T'));
