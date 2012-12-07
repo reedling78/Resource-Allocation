@@ -5,22 +5,7 @@ o.Models.Calendar = Backbone.Model.extend({
 	},
 	initialize: function(){
 		this.buildCalendarData();
-		var d = new Date(this.currentDate);
-		var today = new Date((d.getMonth() + 1) + '/' + d.getDate() + '/' + d.getFullYear());
-		console.log(today);
-
-		var dateMap = this.get('dayMap');
-
-		for (var i = 0; i < dateMap.length; i++) {
-			var mapDate = new Date(dateMap[i].date);
-			if(mapDate.getFullYear() == today.getFullYear()){
-				if(mapDate.getMonth() == today.getMonth()){
-					if(mapDate.getDate() == today.getDate()){
-						console.log(dateMap[i]);
-					}
-				}
-			}
-		};
+		console.log(this.getDayIndex(new Date(this.currentDate)));
 
 	},
 	buildCalendarData: function(){
@@ -121,6 +106,22 @@ o.Models.Calendar = Backbone.Model.extend({
 			dayMap: dayMap.reverse()
 		});
 	
+	},
+	getDayIndex: function(d){
+		var dateMap = this.get('dayMap')
+		, dateToGet = new Date((d.getMonth() + 1) + '/' + d.getDate() + '/' + d.getFullYear());
+
+		for (var i = 0; i < dateMap.length; i++) {
+			var mapDate = new Date(dateMap[i].date);
+			if(mapDate.getFullYear() == dateToGet.getFullYear()){
+				if(mapDate.getMonth() == dateToGet.getMonth()){
+					if(mapDate.getDate() == dateToGet.getDate()){
+						console.log(dateMap[i]);
+						return dateMap[i].index;
+					}
+				}
+			}
+		};
 	},
 	currentDate: new Date(),
 	monthNames: ['January', 'February','March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
