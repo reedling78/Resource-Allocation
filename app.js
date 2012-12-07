@@ -24,6 +24,12 @@ app.configure(function(){
 var client = new pg.Client(kltconnectionString); 
 client.connect(); 
 
+
+console.log('*********************************************************************');
+console.log(process.env);
+console.log('*********************************************************************');
+
+
 //Socket IO Config
 io.configure(function () { 
 	io.set("transports", ["xhr-polling"]); 
