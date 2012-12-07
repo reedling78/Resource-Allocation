@@ -9,7 +9,8 @@ var express = require('express')
 	, connectionString = 'postgres://srboupnqgnwceq:lVyLMZaQNzFBBcXyLlUMF7MIoz@ec2-54-243-139-234.compute-1.amazonaws.com:5432/d7rtclh2oqjsl9'
 	, employeeData = require('./serverjs/static').klt()
 	, db = require('./serverjs/db')
-	, data = {};
+	, data = {}
+	, constring = '';
 
 //Express Config
 app.configure(function(){
@@ -21,7 +22,6 @@ app.configure(function(){
 });
 
 //DB
-var constring = '';
 if(process.env.ENVIRONMENT == 'klt'){
 	constring = process.env.HEROKU_POSTGRESQL_OLIVE_URL;
 } else {
@@ -29,13 +29,6 @@ if(process.env.ENVIRONMENT == 'klt'){
 }
 var client = new pg.Client(constring); 
 client.connect(); 
-
-
-
-console.log('*********************************************************************');
-console.log(process.env);
-console.log('*********************************************************************');
-
 
 //Socket IO Config
 io.configure(function () { 
@@ -51,19 +44,11 @@ io.sockets.on('connection', function (socket) {
 				db.selectCurrentProjects(client, function(result){
 					socket.broadcast.emit('receive projects', result);
 					socket.emit('receive projects', result);
-					console.log('*********************************************************************');
-					console.log(process.env.HEROKU_POSTGRESQL_OLIVE_URL);
-					console.log('*********************************************************************');
-
 				});
 			});
 		} else {
 			db.selectCurrentProjects(client, function(result){
 				socket.emit('receive projects', result);
-				console.log('*********************************************************************');
-				console.log(process.env.HEROKU_POSTGRESQL_OLIVE_URL);
-				console.log('*********************************************************************');
-
 			});
 		}	
 	});

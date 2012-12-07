@@ -6,7 +6,13 @@ window.o.models = {};
 window.o.isEditing = false;
 
 window.o.CONST = {};
-window.o.CONST.ServiceURL = 'http://ra.keylimetie.com'; 
+
+if(window.location.toLowerCase().indexOf('keylimetie') != -1){
+    window.o.CONST.ServiceURL = 'http://ra.keylimetie.com'; 
+} else {
+    window.o.CONST.ServiceURL = 'http://klt.rizzonet.com'; 
+}
+
 window.o.CONST.url = document.URL;
 window.o.CONST.cookie = getCookie();
 
