@@ -36,13 +36,9 @@ o.Models.Calendar = Backbone.Model.extend({
 				var increment = (addOne == false)? 0 : 1
 					, newDate = new Date(monthLoop.setDate(monthLoop.getDate() + increment));
 				
-
 				if (newDate.getDay() != 0 && newDate.getDay() != 6){
 							
-					if(newDate.getDay() == 1){
-						weeks.push(days);
-						days = [];
-					}
+					
 
 					dayMap.push({
 						index : dayInc++,
@@ -56,56 +52,13 @@ o.Models.Calendar = Backbone.Model.extend({
 					dayCount++;
 				}
 
-				
-				// if (newDate.getMonth() == currentMonth) {
-				// 	if (newDate.getMonth() == today.getMonth()){
-				// 		if (newDate.getDate() > (today.getDate() - 1)){
-
-				// 			if (newDate.getDay() != 0 && newDate.getDay() != 6){
-								
-				// 				if(newDate.getDay() == 1){
-				// 					weeks.push(days);
-				// 					days = [];
-				// 				}
-
-				// 				dayMap.push({
-				// 					index : dayInc++,
-				// 					date: new Date((newDate.getMonth() + 1) + '/' + newDate.getDate() + '/' + newDate.getFullYear())
-				// 				});
-
-				// 				days.push({
-				// 					name: this.dayNames[newDate.getDay()],
-				// 					date: newDate.getDate()
-				// 				})
-				// 				dayCount++;
-				// 			}
-							
-				// 		}
-				// 	} else {
-
-				// 		if (newDate.getDay() != 0 && newDate.getDay() != 6){
-
-				// 			if(newDate.getDay() == 1){
-				// 				weeks.push(days);
-				// 				days = [];
-				// 			}
-
-				// 			dayMap.push({
-				// 				index : dayInc++,
-				// 				date: new Date((newDate.getMonth() + 1) + '/' + newDate.getDate() + '/' + newDate.getFullYear())
-				// 			});
-
-				// 			days.push({
-				// 				name: this.dayNames[newDate.getDay()],
-				// 				date: newDate.getDate()
-				// 			})
-				// 			dayCount++;
-				// 		}
-
-				// 	}
-				// } 
 				addOne = true;
 			};
+
+			if(newDate.getDay() == 1){
+				weeks.push(days);
+				days = [];
+			}
 
 			//add last week
 			if(days.length != 0){
