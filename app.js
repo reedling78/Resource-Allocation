@@ -45,7 +45,7 @@ io.sockets.on('connection', function (socket) {
 					socket.broadcast.emit('receive projects', result);
 					socket.emit('receive projects', result);
 					console.log('*********************************************************************');
-					console.log(process.env);
+					console.log(process.env.HEROKU_POSTGRESQL_OLIVE_URL);
 					console.log('*********************************************************************');
 
 				});
@@ -54,7 +54,7 @@ io.sockets.on('connection', function (socket) {
 			db.selectCurrentProjects(client, function(result){
 				socket.emit('receive projects', result);
 				console.log('*********************************************************************');
-				console.log(process.env);
+				console.log(process.env.HEROKU_POSTGRESQL_OLIVE_URL);
 				console.log('*********************************************************************');
 
 			});
