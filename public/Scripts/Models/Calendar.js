@@ -5,6 +5,9 @@ o.Models.Calendar = Backbone.Model.extend({
 	},
 	initialize: function(){
 		this.buildCalendarData();
+		var today = new Date(this.currentDate);
+		console.log(today);
+
 	},
 	buildCalendarData: function(){
 		var months = []
