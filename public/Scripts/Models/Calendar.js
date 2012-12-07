@@ -12,8 +12,8 @@ o.Models.Calendar = Backbone.Model.extend({
 		var dateMap = this.get('dayMap');
 
 		for (var i = 0; i < dateMap.length; i++) {
-			if(dayMap[i].date === today){
-				console.log(dayMap[i]);
+			if(dateMap[i].date === today){
+				console.log(dateMap[i]);
 			}
 		};
 
