@@ -73,34 +73,18 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 	},
 	setDayInfo: function(model){
 		var today = new Date(),
-			endD = new Date(model.enddate),
 			day = 1,
 			duration = 1
 			isLessThenToday = false;
- 
-			
-			endD.setDate(endD.getDate()+1);
 
-		//reset time so date is comparable
-		//startD = new Date((startD.getMonth() + 1) + '/' + startD.getDate() + '/' + startD.getFullYear());
-		endD = new Date((endD.getMonth() + 1) + '/' + endD.getDate() + '/' + endD.getFullYear());
-
-		//today = new Date((today.getMonth() + 1) + '/' + today.getDate() + '/' + today.getFullYear())
-		//isLessThenToday = (today.getTime() > startD.getTime());
-
-		//set start date to today is date is in the past so duration calculated correctly. 
-		// if(isLessThenToday){
-		// 	startD = today;
-		// } 
-
-
-
-		//convert date to date
 		var startD = new Date(model.startdate);
-		// crank ahead one day
 		startD.setDate(startD.getDate()+1);
-		// get index
+		startD = o.calendarModel.resetTime(startD); 
 		day = o.calendarModel.getDayIndex(startD);
+
+		var endD = new Date(model.enddate);
+		endD.setDate(endD.getDate()+1);
+		endD = o.calendarModel.resetTime(endD); 
 
 		//Calculate how many day the project is set for  
 		while (endD.getTime() != startD.getTime()){
