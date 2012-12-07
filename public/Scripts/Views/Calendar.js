@@ -12,6 +12,10 @@ o.Views.MonthCollectionView = Backbone.View.extend({
 		  view.setHeight();
 		});
 		view.setHeight();
+		// on init scroll to todays date
+
+		var todaysIndex = o.calendarModel.getDayIndex(new Date());
+		$('div.Calendar').scrollLeft(todaysIndex * 41);
 	},
 	renderView: function (monthView){
 		monthView.render();
