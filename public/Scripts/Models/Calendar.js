@@ -36,7 +36,6 @@ o.Models.Calendar = Backbone.Model.extend({
 				var increment = (addOne == false)? 0 : 1
 					, newDate = new Date(monthLoop.setDate(monthLoop.getDate() + increment));
 				
-
 				if (newDate.getDay() != 0 && newDate.getDay() != 6){
 							
 					if(newDate.getDay() == 1){
