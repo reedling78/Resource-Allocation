@@ -109,29 +109,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 				view.collection.sendToServer($('div.Projects>ul>li'));
 				$('div.editarea').off(); 
 				
-				$('.Projects ul ul').on('dblclick', function(e){
-					var selectedDayIndex = Math.floor((e.offsetX / view.dayWidth) + 1);
-					var selectedDay;
-					var empid = $(this).parent().attr('data-employee-id');
-					
-					for (var i = 0; i < o.calendarModel.attributes.dayMap.length; i++) {
-						if(o.calendarModel.attributes.dayMap[i].index == selectedDayIndex){
-							selectedDay = o.calendarModel.attributes.dayMap[i].date;
-						}
-					};
-
-					view.collection.sendNewProject({
-						name: "New Project",
-						desc: "Project Description",
-						empId: empid,
-						color: "Grey",
-						startdate: selectedDay,
-						enddate: selectedDay
-					}, function(){
-						o.socket.emit('get projects');
-					});
-					
-				})
+				setdblclick();
 				view.edit.stop();
 			})
 		})
@@ -159,29 +137,34 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 			
 		})
 
-		$('.Projects ul ul').on('dblclick', function(e){
-			var selectedDayIndex = Math.floor((e.offsetX / 41) + 1);
-			var selectedDay;
-			var empid = $(this).parent().attr('data-employee-id');
-			
-			for (var i = 0; i < o.calendarModel.attributes.dayMap.length; i++) {
-				if(o.calendarModel.attributes.dayMap[i].index == selectedDayIndex){
-					selectedDay = o.calendarModel.attributes.dayMap[i].date;
-				}
-			};
+		function setdblclick(){
+			$('.Projects ul ul').on('dblclick', function(e){
+				var selectedDayIndex = Math.floor((e.offsetX / 41) + 1);
+				var selectedDay;
+				var empid = $(this).parent().attr('data-employee-id');
+				
+				for (var i = 0; i < o.calendarModel.attributes.dayMap.length; i++) {
+					if(o.calendarModel.attributes.dayMap[i].index == selectedDayIndex){
+						selectedDay = o.calendarModel.attributes.dayMap[i].date;
+					}
+				};
 
-			view.collection.sendNewProject({
-				name: "New Project",
-				desc: "Project Description",
-				empId: empid,
-				color: "Grey",
-				startdate: selectedDay,
-				enddate: selectedDay
-			}, function(){
-				o.socket.emit('get projects');
+				view.collection.sendNewProject({
+					name: "New Project",
+					desc: "Project Description",
+					empId: empid,
+					color: "Grey",
+					startdate: selectedDay,
+					enddate: selectedDay
+				}, function(){
+					o.socket.emit('get projects');
+				});
+				
 			});
-			
-		})
+		}
+		setdblclick();
+
+		
 
 		//Project resizable
 		$("div.Projects li>div").resizable({
