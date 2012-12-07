@@ -13,7 +13,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 			console.log(e);
 			$('div.EmployeesScrollDiv').scrollTop($('div.Projects').scrollTop());
 		
-			$('div.Calendar').scrollLeft($('div.Projects').scrollLeft());
+			//$('div.Calendar').scrollLeft($('div.Projects').scrollLeft());
 		});
 
 	},
