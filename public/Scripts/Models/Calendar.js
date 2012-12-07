@@ -12,17 +12,10 @@ o.Models.Calendar = Backbone.Model.extend({
 		var dateMap = this.get('dayMap');
 
 		for (var i = 0; i < dateMap.length; i++) {
-
-
-
-			//o.calendarModel.attributes.dayMap[i].date
-			// if(o.calendarModel.attributes.dayMap[i].index == selectedDayIndex){
-			// 	selectedDay = o.calendarModel.attributes.dayMap[i].date;
-			// }
+			if(dayMap[i].date === today){
+				console.log(dayMap[i]);
+			}
 		};
-
-
-
 
 	},
 	buildCalendarData: function(){
