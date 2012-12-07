@@ -59,18 +59,18 @@ o.Models.Calendar = Backbone.Model.extend({
 				addOne = true;
 			};
 
-			//add last week
-			// if(days.length != 0){
-			// 	weeks.push(days);
-			// 	days = [];
-			// }
-			
 			months.push({
 				name: this.monthNames[d.getMonth()],
 				width: (dayCount * 41) - 1
 			});
 
 		};
+
+		//add last week
+		if(days.length != 0){
+			weeks.push(days);
+			days = [];
+		}
 
 		this.set({
 			months : months.reverse(),
