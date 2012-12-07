@@ -7,7 +7,7 @@ window.o.isEditing = false;
 
 window.o.CONST = {};
 
-if(window.location.toLowerCase().indexOf('keylimetie') != -1){
+if((document.location).toString().toLowerCase().indexOf('keylimetie') != -1){
     window.o.CONST.ServiceURL = 'http://ra.keylimetie.com'; 
 } else {
     window.o.CONST.ServiceURL = 'http://klt.rizzonet.com'; 
