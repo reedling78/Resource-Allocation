@@ -38,7 +38,10 @@ o.Models.Calendar = Backbone.Model.extend({
 				
 				if (newDate.getDay() != 0 && newDate.getDay() != 6){
 							
-					
+					if(newDate.getDay() == 1){
+						weeks.push(days);
+						days = [];
+					}
 
 					dayMap.push({
 						index : dayInc++,
@@ -54,11 +57,6 @@ o.Models.Calendar = Backbone.Model.extend({
 
 				addOne = true;
 			};
-
-			if(newDate.getDay() == 1){
-				weeks.push(days);
-				days = [];
-			}
 
 			//add last week
 			if(days.length != 0){
