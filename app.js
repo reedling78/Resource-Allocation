@@ -25,7 +25,7 @@ app.configure(function(){
 if(process.env.ENVIRONMENT == 'klt'){
 	constring = process.env.HEROKU_POSTGRESQL_OLIVE_URL;
 } else {
-	constring = process.env.HEROKU_POSTGRESQL_BROWN_UR;
+	constring = process.env.HEROKU_POSTGRESQL_BROWN_URL;
 }
 var client = new pg.Client(constring); 
 client.connect(); 
