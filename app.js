@@ -21,8 +21,15 @@ app.configure(function(){
 });
 
 //DB
-var client = new pg.Client(process.env.HEROKU_POSTGRESQL_OLIVE_URL); 
+var constring = '';
+if(process.env.HEROKU_POSTGRESQL_OLIVE_URL == 'klt'){
+	constring = process.env.HEROKU_POSTGRESQL_OLIVE_URL;
+} else {
+	constring = connectionString;
+}
+var client = new pg.Client(constring); 
 client.connect(); 
+
 
 
 console.log('*********************************************************************');
