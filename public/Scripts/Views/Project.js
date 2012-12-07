@@ -73,13 +73,12 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 	},
 	setDayInfo: function(model){
 		var today = new Date(),
-			startD = new Date(model.startdate),
 			endD = new Date(model.enddate),
 			day = 1,
 			duration = 1
 			isLessThenToday = false;
  
-			startD.setDate(startD.getDate()+1);
+			
 			endD.setDate(endD.getDate()+1);
 
 		//reset time so date is comparable
@@ -94,6 +93,13 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 		// 	startD = today;
 		// } 
 
+
+
+		//convert date to date
+		var startD = new Date(model.startdate);
+		// crank ahead one day
+		startD.setDate(startD.getDate()+1);
+		// get index
 		day = o.calendarModel.getDayIndex(startD);
 
 		//Calculate how many day the project is set for  
@@ -111,7 +117,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 		}
 		
 		//model.day = Math.floor((isLessThenToday) ? 1 : day);
-		model.day = o.calendarModel.getDayIndex(startD);
+		model.day = day;
 
 		model.duration = Math.floor(duration);
 		model.startdate = model.startdate.substring(0, model.startdate.indexOf('T'));
