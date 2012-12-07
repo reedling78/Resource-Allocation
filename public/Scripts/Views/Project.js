@@ -72,17 +72,12 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 		}
 	},
 	setDayInfo: function(model){
-		var today = new Date(),
-			day = 1,
-			duration = 1
-			isLessThenToday = false;
+		var day = 1, duration = 1, startD = new Date(model.startdate), endD = new Date(model.enddate);
 
-		var startD = new Date(model.startdate);
 		startD.setDate(startD.getDate()+1);
 		startD = o.calendarModel.resetTime(startD); 
 		day = o.calendarModel.getDayIndex(startD);
 
-		var endD = new Date(model.enddate);
 		endD.setDate(endD.getDate()+1);
 		endD = o.calendarModel.resetTime(endD); 
 
