@@ -5,8 +5,24 @@ o.Models.Calendar = Backbone.Model.extend({
 	},
 	initialize: function(){
 		this.buildCalendarData();
-		var today = new Date(this.currentDate);
+		var d = new Date(this.currentDate);
+		var today = new Date((d.getMonth() + 1) + '/' + d.getDate() + '/' + d.getFullYear());
 		console.log(today);
+
+		var dateMap = o.calendarModel.attributes.dayMap;
+
+		for (var i = 0; i < dateMap.length; i++) {
+
+
+
+			//o.calendarModel.attributes.dayMap[i].date
+			// if(o.calendarModel.attributes.dayMap[i].index == selectedDayIndex){
+			// 	selectedDay = o.calendarModel.attributes.dayMap[i].date;
+			// }
+		};
+
+
+
 
 	},
 	buildCalendarData: function(){
