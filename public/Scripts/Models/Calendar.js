@@ -36,6 +36,7 @@ o.Models.Calendar = Backbone.Model.extend({
 				var increment = (addOne == false)? 0 : 1
 					, newDate = new Date(monthLoop.setDate(monthLoop.getDate() + increment));
 				
+
 				if (newDate.getDay() != 0 && newDate.getDay() != 6){
 							
 					if(newDate.getDay() == 1){
@@ -59,10 +60,10 @@ o.Models.Calendar = Backbone.Model.extend({
 			};
 
 			//add last week
-			if(days.length != 0){
-				weeks.push(days);
-				days = [];
-			}
+			// if(days.length != 0){
+			// 	weeks.push(days);
+			// 	days = [];
+			// }
 			
 			months.push({
 				name: this.monthNames[d.getMonth()],
