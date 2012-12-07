@@ -16,8 +16,6 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 			$('div.Calendar').scrollLeft($('div.Projects').scrollLeft());
 		});
 
-		console.log();
-
 	},
 	colors: ['Red', 'Orange', 'Yellow', 'Lime', 'Green', 'Aqua', 'Blue', 'Purple', 'Grey', 'White'],
 	dayWidth : 41,
@@ -98,12 +96,14 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 		} 
 		
 		//Calculate what day to start on
-		while (today.getTime() < startD.getTime()){
-			if(today.getDay() != 0 && today.getDay() != 6){
-				day++;
-			}
-			today.setDate(today.getDate()+1);
-		}
+		// while (today.getTime() < startD.getTime()){
+		// 	if(today.getDay() != 0 && today.getDay() != 6){
+		// 		day++;
+		// 	}
+		// 	today.setDate(today.getDate()+1);
+		// }
+
+		day = o.calendarModel.getDayIndex(startD);
 
 		//Calculate how many day the project is set for  
 		while (endD.getTime() != startD.getTime()){
