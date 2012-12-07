@@ -4,18 +4,15 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 	initialize: function () {
 		'use strict';
 		var view = this;
+
 		$(window).resize(function() {
 		  view.setHeight();
 		});
 		view.setHeight();
+
 		$('div.Projects').scroll(function(e){
-
-			console.log(e);
 			$('div.EmployeesScrollDiv').scrollTop($('div.Projects').scrollTop());
-		
-			//$('div.Calendar').scrollLeft($('div.Projects').scrollLeft());
 		});
-
 	},
 	colors: ['Red', 'Orange', 'Yellow', 'Lime', 'Green', 'Aqua', 'Blue', 'Purple', 'Grey', 'White'],
 	dayWidth : 41,
@@ -99,11 +96,10 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 
 		//Project edit area
 		$('div.editproj').on('click', function(){
+			view.edit.start();
 			$(this).parent().parent().addClass('Expanded');
 			$(this).find('h6').attr('contenteditable', 'true');
 			$(this).find('p').attr('contenteditable', 'true');
-			o.isEditing = true;
-			view.edit.start();
 			$('.Projects ul ul').off(); 
 
 			$(this).parent().on('mouseleave', function(){
@@ -114,7 +110,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 				$('div.editarea').off(); 
 				
 				$('.Projects ul ul').on('dblclick', function(e){
-					var selectedDayIndex = Math.floor((e.offsetX / 41) + 1);
+					var selectedDayIndex = Math.floor((e.offsetX / view.dayWidth) + 1);
 					var selectedDay;
 					var empid = $(this).parent().attr('data-employee-id');
 					
@@ -257,11 +253,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 			snapMode: 'inner',
 			revert: 'invalid',
 			start: function(){
-				console.log('drag start');
 				view.edit.start();
-			},
-			stop: function(){
-				
 			}
 		});
 
