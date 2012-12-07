@@ -9,7 +9,7 @@ o.Models.Calendar = Backbone.Model.extend({
 		var today = new Date((d.getMonth() + 1) + '/' + d.getDate() + '/' + d.getFullYear());
 		console.log(today);
 
-		var dateMap = o.calendarModel.attributes.dayMap;
+		var dateMap = this.get('dayMap');
 
 		for (var i = 0; i < dateMap.length; i++) {
 
