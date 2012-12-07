@@ -13,7 +13,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 		});
 
 		$('div.Projects').scroll(function(e){
-			$('div.Calendar').scrollLeft($('div.Projects').scrollLeft());
+			$('div.Calendar').scrollLeft($('div.Projects').scrollLeft() + 220);
 		});
 
 	},
