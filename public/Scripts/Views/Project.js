@@ -10,9 +10,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 		view.setHeight();
 		$('div.Projects').scroll(function(e){
 			$('div.EmployeesScrollDiv').scrollTop($('div.Projects').scrollTop());
-		});
-
-		$('div.Projects').scroll(function(e){
+		
 			$('div.Calendar').scrollLeft($('div.Projects').scrollLeft());
 		});
 
