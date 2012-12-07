@@ -20,13 +20,13 @@ exports.createProjectsTable = function (client, callback) {
         +' enddate date) '
 
 
-    // client.query(sql, function(err, result){
-    //     if(err != null){
-    //         callback(err);
-    //     } else {
-    //         callback(result);
-    //     }
-    // });
+    client.query(sql, function(err, result){
+        if(err != null){
+            callback(err);
+        } else {
+            callback(result);
+        }
+    });
 }
 
 exports.selectCurrentProjects = function (client, callback) { 
