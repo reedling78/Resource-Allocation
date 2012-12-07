@@ -10,7 +10,7 @@ var express = require('express')
 	, employeeData = require('./serverjs/static').klt()
 	, db = require('./serverjs/db')
 	, data = {}
-	, constring = '';
+	, constring = ''; 
 
 //Express Config
 app.configure(function(){
