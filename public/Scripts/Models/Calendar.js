@@ -76,12 +76,11 @@ o.Models.Calendar = Backbone.Model.extend({
 			weeks: weeks.reverse(),
 			dayMap: dayMap.reverse()
 		});
-	
 	},
 	getDayIndex: function(d){
 		var dateMap = this.get('dayMap')
-		, dateToGet = new Date((d.getMonth() + 1) + '/' + d.getDate() + '/' + d.getFullYear());
-
+		, dateToGet = this.resetTime(d);
+		
 		for (var i = 0; i < dateMap.length; i++) {
 			var mapDate = new Date(dateMap[i].date);
 			if(mapDate.getFullYear() == dateToGet.getFullYear()){
@@ -93,6 +92,9 @@ o.Models.Calendar = Backbone.Model.extend({
 				}
 			}
 		};
+	},
+	resetTime: function(d){
+		return new Date((d.getMonth() + 1) + '/' + d.getDate() + '/' + d.getFullYear());
 	},
 	currentDate: new Date(),
 	monthNames: ['January', 'February','March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
