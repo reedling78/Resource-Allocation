@@ -5,7 +5,6 @@ o.Models.Calendar = Backbone.Model.extend({
 	},
 	initialize: function(){
 		this.buildCalendarData();
-		console.log(this.getDayIndex(new Date(this.currentDate)));
 	},
 	buildCalendarData: function(){
 		var months = []
@@ -80,13 +79,12 @@ o.Models.Calendar = Backbone.Model.extend({
 	getDayIndex: function(d){
 		var dateMap = this.get('dayMap')
 		, dateToGet = this.resetTime(d);
-		
+
 		for (var i = 0; i < dateMap.length; i++) {
 			var mapDate = new Date(dateMap[i].date);
 			if(mapDate.getFullYear() == dateToGet.getFullYear()){
 				if(mapDate.getMonth() == dateToGet.getMonth()){
 					if(mapDate.getDate() == dateToGet.getDate()){
-						console.log(dateMap[i]);
 						return dateMap[i].index;
 					}
 				}

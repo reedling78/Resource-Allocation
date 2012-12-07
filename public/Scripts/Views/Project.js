@@ -80,30 +80,22 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 			duration = 1
 			isLessThenToday = false;
  
-			startD.setDate(startD.getDate()+1);
+			//startD.setDate(startD.getDate()+1);
 			endD.setDate(endD.getDate()+1);
 
 		//reset time so date is comparable
-		startD = new Date((startD.getMonth() + 1) + '/' + startD.getDate() + '/' + startD.getFullYear());
-		endD = new Date((endD.getMonth() + 1) + '/' + endD.getDate() + '/' + endD.getFullYear());
+		//startD = new Date((startD.getMonth() + 1) + '/' + startD.getDate() + '/' + startD.getFullYear());
+		endD = o.calendarModel.resetTime(endD); //new Date((endD.getMonth() + 1) + '/' + endD.getDate() + '/' + endD.getFullYear());
 
-		today = new Date((today.getMonth() + 1) + '/' + today.getDate() + '/' + today.getFullYear())
-		isLessThenToday = (today.getTime() > startD.getTime());
+		//today = new Date((today.getMonth() + 1) + '/' + today.getDate() + '/' + today.getFullYear())
+		//isLessThenToday = (today.getTime() > startD.getTime());
 
 		//set start date to today is date is in the past so duration calculated correctly. 
-		if(isLessThenToday){
-			startD = today;
-		} 
-		
-		//Calculate what day to start on
-		// while (today.getTime() < startD.getTime()){
-		// 	if(today.getDay() != 0 && today.getDay() != 6){
-		// 		day++;
-		// 	}
-		// 	today.setDate(today.getDate()+1);
-		// }
+		// if(isLessThenToday){
+		// 	startD = today;
+		// } 
 
-		day = o.calendarModel.getDayIndex(startD);
+		day = o.calendarModel.getDayIndex(startD.setDate(startD.getDate()+1));
 
 		//Calculate how many day the project is set for  
 		while (endD.getTime() != startD.getTime()){
