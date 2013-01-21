@@ -41,7 +41,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 
 		for (i = 0; i < projects.length; i++) {
 			projects[i].attributes = view.setDayInfo(projects[i].attributes);
-
+			
 			projectView = new o.Views.Project({
 				model: projects[i]
 			});
@@ -100,6 +100,8 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 			$(this).parent().parent().addClass('Expanded');
 			$(this).find('h6').attr('contenteditable', 'true');
 			$(this).find('p').attr('contenteditable', 'true');
+			
+			//remove dblclick add
 			$('.Projects ul ul').off(); 
 
 			$(this).parent().on('mouseleave', function(){
@@ -109,6 +111,7 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 				view.collection.sendToServer($('div.Projects>ul>li'));
 				$('div.editarea').off(); 
 				
+				//restart dblclick add
 				setdblclick();
 				view.edit.stop();
 			})
@@ -127,11 +130,9 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 			} else {
 				var r = confirm('Are you sure you want to delete ' + projectName + '?');
 				if (r==true) {
-					console.log("You pressed OK! " + projId);
 					view.collection.deleteProject(projId, function(){
 						o.socket.emit('get projects');
 					});
-					
 				} 
 			}
 			
@@ -172,10 +173,10 @@ o.Views.ProjectCollectionView = Backbone.View.extend({
 			grid: view.dayWidth,
 			alsoResize: $(this).parent(), 
 			start: function(e, ui){
+				view.edit.start();
 				nextEl = $(this).parent().nextAll();
 				thisElStartDuration = Math.floor(parseInt($(this).attr('data-duration')));
 				thisElStartDay = Math.floor(parseInt($(this).attr('data-day')));
-				view.edit.start();
 			},
 			resize: function(e, ui){
 				thisElNewDuration = Math.floor(parseInt((ui.size.width / view.dayWidth) + 1));

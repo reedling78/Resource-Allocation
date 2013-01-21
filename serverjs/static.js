@@ -36,13 +36,14 @@ exports.klt = function () {
 			{name:'Jon Kimball',            id:27, teamid:2, jobid:2},
 			{name:'Keith Franklin',         id:28, teamid:2, jobid:2},
 
-			{name:'Chris Pautsch',          id:29, teamid:5, jobid:2},
-			{name:'Betsy Kraft',            id:30, teamid:5, jobid:2},
-
 			{name:'Erica Magda',            id:31, teamid:6, jobid:2},
 			{name:'Mike Mikulecky',         id:32, teamid:6, jobid:2},
 			{name:'Patricia Gorecki',       id:33, teamid:6, jobid:2},
-			{name:'Kate Currin-Seiferth',   id:34, teamid:6, jobid:2}
+			{name:'Kate Currin-Seiferth',   id:34, teamid:6, jobid:2},
+
+			{name:'Chris Pautsch',          id:29, teamid:5, jobid:2},
+			{name:'Betsy Kraft',            id:30, teamid:5, jobid:2}
+
 			//36 is next
 		],
 		Teams: [
