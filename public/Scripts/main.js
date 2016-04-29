@@ -6,13 +6,7 @@ window.o.models = {};
 window.o.isEditing = false;
 
 window.o.CONST = {};
-
-if((document.location).toString().toLowerCase().indexOf('keylimetie') != -1){
-    window.o.CONST.ServiceURL = 'http://ra.keylimetie.com'; 
-} else {
-    window.o.CONST.ServiceURL = 'http://klt.rizzonet.com'; 
-}
-
+window.o.CONST.ServiceURL = 'http://resource-allocation.herokuapp.com'; 
 window.o.CONST.url = document.URL;
 window.o.CONST.cookie = getCookie();
 
