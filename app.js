@@ -25,10 +25,10 @@ var client = new pg.Client(constring);
 client.connect(); 
 
 //Socket IO Config
-io.configure(function () { 
-	io.set("transports", ["xhr-polling"]); 
-	io.set("polling duration", 5); 
-});
+// io.configure(function () { 
+// 	io.set("transports", ["xhr-polling"]); 
+// 	io.set("polling duration", 5); 
+// });
 
 io.sockets.on('connection', function (socket) {
 
