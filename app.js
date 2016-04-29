@@ -20,11 +20,7 @@ app.configure(function(){
 });
 
 //DB
-if(process.env.ENVIRONMENT == 'klt'){
-	constring = process.env.HEROKU_POSTGRESQL_OLIVE_URL;
-} else {
-	constring = process.env.HEROKU_POSTGRESQL_BROWN_URL;
-}
+constring = 'postgres://zorctpwploafie:szxvE0La2mXOC2ixKC3hgzPPDr@ec2-50-16-229-45.compute-1.amazonaws.com:5432/ddfbmgv46mter7';
 var client = new pg.Client(constring); 
 client.connect(); 
 
